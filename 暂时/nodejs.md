@@ -17,6 +17,13 @@
 		1.数据如何存储
 			博客 、用户
 		2.如何与前端对接，即接口设计
+			【描述】							【接口】				【方法】  【URL参数】   		【备注】
+			获取博客列表					/api/blog/list 		get			author、keywords		
+			获取一篇博客的内容		/api/blog/detail  get				id
+			新增一篇博客					/api/blog/new     post
+			更新一篇博客					/api/blog/update  post			id
+			删除一篇博客					/api/blog/del			post			id
+			登录 									/api/blog/login		post
 
 (2)接口开发
 	1.http请求概述：
@@ -42,24 +49,48 @@
 			1.get请求，即客户端要向server端获取数据，如查询博客列表
 			2.通过querystring来传递数据，如a.html?a=100&b=200
 			3.浏览器直接访问，就发送get请求
-				
-				get请求例子 - 试验
+			
+				const http = require('http')
+				const querystring = require('querystring')
+				const server = http.createServer((req, res) => {
+					console.log("method=", req.method) //get
+					console.log("url=", req.url) //url
+					const url = req.url //url
+					req.query = querystring.parse(url.split('?')[1])
+					res.end(JSON.stringify(req.query));
+				})
+				server.listen(8000)
+				console.log('浏览器访问', 'http://localhost:8000/')
 			
 		c.nodejs处理post请求
 			1.post请求，即客户端要向服务器端传递数据，如新建博客
 			2.通过post data 传递数据
-			3.浏览器无法直接模拟，需要手写js或者使用postman 
+			3.浏览器无法直接模拟，需要手写js或者使用postman 来校验post例子demo
 				1.postman chrome crx 安装
 				2.浏览器打开：chrome://apps
 			
-			post请求例子 - 试验
-				req.on('data',calback)//数据一块块处理
+				const http = require('http')
+				const server = http.createServer((req, res) => {
+					console.log("method=", req.method);
+					console.log('content-type=', req.headers['content-type']);
+					//接收数据(数据是以一块块接收)
+					let postData = ''
+					req.on('data', chunk => {
+						postData += chunk.toString()
+					})
+					req.on('end', () => {
+						console.log("postData=", postData)
+						//在这里返回，因为是异步
+						res.end('hello world')
+					})
+				})
+				server.listen(8000)
 				
 			
 			
 (3)		
 	
-	//下一步4-4 ~ 4-12
+	//下一步4-5 ~ 4-12
 		
 		
 		
@@ -132,6 +163,27 @@
 		产品发展速度快，流量可能会迅速增加
 		如何通过扩展机器和服务拆分来承载大流量
 		本课程虽然是但机器开发，但是从设计上支持服务拆分
+
+4.大纲
+	a.课程准备
+		nodejs 介绍
+		服务器特点
+		案例分析和设计
+		
+	b.原生代码
+		api和数据存储
+		登录和redis
+		安全和日志
+	
+	c.使用框架
+		express 和 koa2 
+		中间件和插件
+		中间件原理
+	
+	d.线上环境
+		PM2介绍和配置
+		PM2多进程模型
+		服务器运维
 </pre>
 
 
