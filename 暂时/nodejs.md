@@ -1,3 +1,73 @@
+#nodejs项目（3-8章节）
+<pre>
+(1)项目介绍
+	a.目标
+		开发一个博客系统,具有博客的基本功能
+		只开发server端，不关心前端
+		
+	b.需求
+		首页，作者主页，博客详情页
+		登录页
+		管理中心，新建页，编辑页
+		
+		需求一定要明确，需求指导开发
+		不要纠结于简单的页面样式，并不影响server端的复杂度
+		
+	c.技术方案
+		1.数据如何存储
+			博客 、用户
+		2.如何与前端对接，即接口设计
+
+(2)接口开发
+	1.http请求概述：
+		DNS解析，建立TCP连接，发送http请求 - 浏览器
+		server接收到http请求，处理，并返回 - 服务器端
+		客户端接收到返回数据，处理数据（如渲染页面，执行js）
+	
+	2.nodejs处理http请求简单介绍
+		get请求 和 querystring
+		post请求 和 postdata
+		路由
+		
+		a.简单例子
+			const http = require('http')
+			//req:客户端发送数据，res服务器端返回数据
+			const server = http.createServer((req, res) => {
+				res.end('hello world');
+			})
+			server.listen(8000)
+			console.log('浏览器访问', 'http://localhost:8000/')
+		
+		b.nodejs处理get请求
+			1.get请求，即客户端要向server端获取数据，如查询博客列表
+			2.通过querystring来传递数据，如a.html?a=100&b=200
+			3.浏览器直接访问，就发送get请求
+				
+				get请求例子 - 试验
+			
+		c.nodejs处理post请求
+			1.post请求，即客户端要向服务器端传递数据，如新建博客
+			2.通过post data 传递数据
+			3.浏览器无法直接模拟，需要手写js或者使用postman 
+				1.postman chrome crx 安装
+				2.浏览器打开：chrome://apps
+			
+			post请求例子 - 试验
+				req.on('data',calback)//数据一块块处理
+				
+			
+			
+(3)		
+	
+	//下一步4-4 ~ 4-12
+		
+		
+		
+</pre>
+
+
+
+
 #nodejs的用途
 <pre>
  1.nodejs一个javascript的运行环境
@@ -65,17 +135,6 @@
 </pre>
 
 
-#nodejs项目（3-8章节）
-<pre>
-(1)项目介绍
-	a.目标
-		开发一个博客系统,具有博客的基本功能
-		只开发server端，不关心前端
-		
-	b.需求
-		
-	c.技术方案
-	 
-</pre>
+
 
 
