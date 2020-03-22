@@ -103,15 +103,38 @@
 		
 	3.搭建开发环境
 		1.从0开始搭建,不适用任何框架
-		2.使用nodemon检测文件变化，自动重启node
-		3.使用cross-env设置环境变量，兼容mac linux 和 windows
 		
+		2.使用nodemon检测文件变化，自动重启node
+			//安装nodemon
+				cnpm install -g nodemon 					//全局安装
+				nodemon -v 												//查看版本检测是否安装成功
+				cnpm install nodemon --save-dev   //项目安装
+				
+			//启动node文件
+				nodemon ./bin/www.js
+			
+		3.使用cross-env设置环境变量，兼容mac linux 和 windows
+			//安装cross-env
+				cnpm install cross-env --save-dev
+				
+			//设置环境变量
+				"scripts": {
+					"dev": "cross-env MODE_ENV=dev nodemon ./bin/www.js",
+					"prd": "cross-env MODE_ENV=production nodemon ./bin/www.js"
+				}
+				
+			//调用环境变量	
+				process.env.MODE_ENV //dev/production
+				
 	4.开发接口-路由
 		初始化路由：根据之前技术方案的设计，做出路由
 		返回假数据：将路由和数据处理分离，以符合设计原则
-			
-		//下一步 4-7 ~ 4-12
-		6
+		基本例子：1-开发基本接口思想demo
+		
+		
+		//下一步 4-7 ~ 4-12 （6）===========
+		
+		
 		
 ##(3)博客项目-数据存储
 	1.mysql介绍
@@ -123,14 +146,41 @@
 		
 	2.mysql安装
 		执行安装，过程中需要输入root用户名的密码，要记住这个密码
-		安装mysql操作客户端（Navicat、SQLyog）
+		安装mysql客户端操作工具（Navicat、SQLyog）
 	
 	3.操作数据库
 		a.建库 (myblog)
 		
 		b.建表
 			见图表结构，创建users、blogs表
+			（1）创建users表
+					基本users表数据：
+						id		username		password		realname
+						1			zhangsan		123					张三
+						2			lisi				123					李四
+					
+					创建users表
+						column		datatype		pk主键		nn不为空		AI自动增加		Default
+						id					int					Y						Y						Y
+						username	varchar(20)								Y	
+						password	varchar(20)								Y	
+						realname	varchar(20)								Y	
 			
+			（2）创建blogs表
+					基本blogs表数据：
+						id		title		content		 createtime			 author
+						1			标题1		 内容1		1584871316188		zhangsan
+						2			标题2		 内容2		1584871316188			lisi
+					
+					创建blogs表:
+						column			datatype			pk主键		nn不为空		AI自动增加		Default
+						id						int						Y						Y						Y
+						title				varchar(50)									Y
+						content			 longtext										Y
+						createtime	 bigint(20)									Y
+						author			varchar(20)									Y
+						
+				
 		c.表操作
 			增、删、改、查
 			使用sql语句
@@ -138,6 +188,10 @@
 	4.nodejs操作数据库
 		a.安装mysql
 			npm i mysql --registry=https://registry.npm.taobao.org
+			
+			https://github.com/zhongkai/wxtodo-client/master
+		b.例子：
+		
 		
 	//下一步5-5 ~ 5-10
 		5
