@@ -1,7 +1,4 @@
-#上线与配置（11）
-<pre>
-	
-</pre>
+
 
 #使用Koa2重构博客项目（10章节）
 <pre>
@@ -290,6 +287,137 @@
 		PM2介绍和配置
 		PM2多进程模型
 		服务器运维
+</pre>
+
+#上线与配置（11）
+<pre>
+##线上环境要求
+	1.服务器稳定性
+	2.充分利用服务器硬件资源，以便提高性能
+	3.线上日志记录
+
+##PM2特点
+	1.进程守护，系统崩溃自动重启
+		node app.js 和 nodemon app.js，进程崩溃则不能访问
+		pm2遇到进程崩溃，会自动重启（写例子测试）
+		
+	2.启动多进程，充分利用CPU和内存
+	
+	3.自带日志记录功能
+
+##PM2介绍
+	1.下载安装
+		npm install pm2 -g
+		pm2 -v
+		
+	2.基本使用
+		//启动应用
+		pm2 start app.js
+		
+		启动参数说明：
+			--watch：						监听应用目录的变化，一旦发生变化，自动重启。如果要精确监听、不见听的目录，最好通过配置文件。
+			-i --instances：		启用多少个实例，可用于负载均衡。如果-i 0或者-i max，则根据当前机器核数确定实例数目。
+			--ignore-watch：		排除监听的目录/文件，可以是特定的文件名，也可以是正则。比如--ignore-watch="test node_modules "some scripts""
+			-n --name：					应用的名称。查看应用信息的时候可以用到。
+			-o --output <path>：标准输出日志文件的路径。
+			-e --error <path>：	错误输出日志文件的路径。
+			--interpreter <interpreter>：the interpreter pm2 should use for executing app (bash, python...)。比如你用的coffee script来编写应用。
+
+			eg: pm2 start api.js -i 4 	#后台运行pm2，启动4个app.js 
+
+		//重启
+			pm2 restart app_name|app_id
+		
+		//查看进程状态
+			pm2 list
+		
+		//查看基本信息
+			pm2 info app_name|app_id
+		
+		//查看进程日志打印
+			pm2 log app_name|app_id
+			pm2 logs //所有进程日志
+				
+			
+		
+		//监视进程cpu与内存信息
+			pm2 monit app_name|app_id
+		
+		//产生init脚本保持进程活着
+			pm2 startup
+
+		//停止
+			1.停止特定的应用。可以先通过pm2 list获取应用的名字（--name指定的）或者进程id。
+				pm2 stop app_name|app_id
+			
+			2.停止所有应用
+				pm2 stop all
+			
+		//删除
+			1.杀死特定的进程。可以先通过pm2 list获取应用的名字（--name指定的）或者进程id。
+				pm2 delete app_name|app_id
+				
+			2.杀死所有进程
+				pm2 delete all
+				
+		//0秒停机重载进程 (用于 NETWORKED 进程)
+			pm2 reload all
+			
+		//更新pm2
+			pm2 save 		#记得保存进程状态
+			npm install pm2 -g
+			pm2 update
+			
+		//运行健壮的 computer API endpoint (http://localhost:9615)
+			pm2 web
+
+			
+##PM2配置
+	1.新建PM2配置文件（包括进程数量，日子文件目录等）
+		项目根目录下创建
+			pm2.config.json //pm2配置文件
+			logs/err.log  	//存储错误日志，console.error()的内容
+			logs/out.log 		//输出基本日志，console.log()的内容
+				
+			pm2.config.json文件
+				(进程数量，日志文件目录等)
+				{
+					"apps":{
+						"name":"pm2-test-server",
+						"script":"app.js" //启动文件
+						//监听应用目录的变化，一旦发生变化，自动重启
+						"watch":true, 
+						//不需要监听
+						"ignore_watch":{
+							"node_modules",
+							"logs"
+						},
+						//设置多进程
+						"instances":4, 
+						//日志输出对应的文件
+						"error_file":"logs/err.log",
+						"out_file":"logs/out.log",
+						//日志产生的时间戳
+						"log_date_format":"YYYY-MM-DD HH:mm:ss"
+					}
+				}
+			
+	2.修改PM2启动命令，重启
+		pm2 start pm2.config.json
+		
+	3.访问server，检查日志文件的内容（日志记录是否生效）
+
+##PM2配置
+	1.为何使用多进程
+		单个进程的内存是受限的
+		内存：无法充分利用机器全部内存
+		CPU: 无法充分利用多核cpu的优势
+		
+	2.多进程和redis
+		多进程之间，内存无法共享
+		多进程访问一个redis，实现数据共享
+	
+	
 </pre>
 
 
