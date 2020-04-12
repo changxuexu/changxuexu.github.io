@@ -169,7 +169,7 @@
 	
 	3.操作数据库
 		a.建库 (myblog)
-		
+			
 		b.建表
 			见图表结构，创建users、blogs表
 			（1）创建users表
@@ -200,7 +200,34 @@
 						author			varchar(20)									Y
 						
 				
-		c.表操作
+		c.数据库、表操作
+			//使用myblog数据库
+				USE myblog 	
+				
+			//展示myblog数据库下全部表
+			  SHOW tables 
+				
+			//插入表格数据
+			  INSERT INTO users (username,`password`,realname) VALUES ('lisi',123,'李四')
+			
+			//查询表格
+				SELECT * FROM users //查询users表全部数据
+				SELECT id,username FROM users //查询users表部分数据
+				SELECT * FROM users WHERE `password` LIKE '%1%' ORDER BY id asc //查询条件以及排序
+			
+			//更新表格数据
+				
+CREATE TABLE `users` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(20) CHARACTER SET utf8 NOT NULL,
+  `password` VARCHAR(20) CHARACTER SET utf8 NOT NULL,
+  `realname` VARCHAR(20) CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8
+
+
+
+			
 			增、删、改、查
 			使用sql语句
 		
