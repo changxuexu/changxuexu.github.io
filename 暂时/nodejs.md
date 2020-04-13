@@ -216,28 +216,39 @@
 				SELECT * FROM users WHERE `password` LIKE '%1%' ORDER BY id asc //查询条件以及排序
 			
 			//更新表格数据
-				
-CREATE TABLE `users` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `username` VARCHAR(20) CHARACTER SET utf8 NOT NULL,
-  `password` VARCHAR(20) CHARACTER SET utf8 NOT NULL,
-  `realname` VARCHAR(20) CHARACTER SET utf8 NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=INNODB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8
-
-
-
+				update users set realname = '李四2' where username = 'lisi'
 			
-			增、删、改、查
-			使用sql语句
+			//删除表数据
+				delete from users where username = 'lisi'
+					一般情况下不会删除数据库数据，是按照软删除：即删除数据库之间的关联关系
 		
 	4.nodejs操作数据库
 		a.安装mysql
 			npm i mysql --registry=https://registry.npm.taobao.org
 			
-			https://github.com/zhongkai/wxtodo-client/master
 		b.例子：
-		
+			const mysql = require('mysql')
+			// 创建链接对象
+			const con = mysql.createConnection({
+					host: 'localhost',
+					user: 'root',
+					password: 'Mysql_2018',
+					port: '3306',
+					database: 'myblog'
+			})
+			// 开始连接
+			con.connect()
+			// 执行 sql 语句
+			const sql = `insert into blogs (title, content, createtime, author) values ('标题C', '内容C',1546871704408, 'zhangsan')`
+			con.query(sql, (err, result) => {
+					if (err) {
+							console.error(err)
+							return
+					}
+					console.log(result)
+			})
+			// 关闭连接
+			con.end()
 	
 	5.nodejs连接mysql做成工具
 		src/conf/db.js
