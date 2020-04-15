@@ -9,6 +9,56 @@
 	
 </pre>
 
+##(4)博客项目-登录
+	核心：登录校验&登录信息存储
+				cookie 和 session
+				session写入redis
+				开发登录功能，和前端联调（用到nginx反向代理）
+	
+	cookie
+		1.什么是cookie
+			存储在浏览器的一段字符串（最大5kb）
+			跨域不共享
+			格式如k1=v1;k2=v2;k3=v3;因此可以存储结构化数据
+			每次发送http请求，会将请求域的cookie一起发送给server
+			server可以修改cookie并返回给浏览器
+			浏览器中也可以通过javascript修改cookie(有限制)
+			
+		2.javascript操作cookie,浏览器中查看cookie
+			
+		3.server端操作cookie,实现登录验证
+			/app.js
+				req.cookie = {}
+				const cookieStr = req.headers.cookie || '' //k1=v1;k2=v2; ....
+				cookieStr.split(';').forEach(item => {
+					if (!item) {
+						return
+					}
+					const arr = item.split('=')
+					const key = arr[0]
+					const val = arr[1]
+					req.cookie[key] = val
+				})
+			
+			/user.js
+				if (method = 'GET' && req.path === '/api/user/login-test') {
+					if (req.cookie.username) {
+						return Promise.resolve(new SuccessModel())
+					}
+					return Promise.resolve(new ErrorModel('尚未登录'))
+				}
+				
+			//获取cookie的过期时间
+				const getCookieExpires = () => {
+					const d = new Date()
+					d.setTime(d.getTime() + (24 * 60 * 60 * 1000))
+					return d.toGMTString()
+				}
+				
+			//node设置cookie
+				//httpOnly:不能读不能修改
+				//expires:过期时间
+				res.setHeader('Set-Cookie', `username = ${data.username};path=/;httpOnly;expires=${getCookieExpires()}`)
 
 #nodejs项目（3-8章节）
 <pre>
