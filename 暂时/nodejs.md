@@ -1,3 +1,18 @@
+日志：
+	
+				
+			
+	《c》ettxt
+
+
+
+
+
+
+
+##(5)博客项目-日志
+
+				
 #使用Koa2重构博客项目（10章节）
 <pre>
 	
@@ -8,57 +23,6 @@
 <pre>
 	
 </pre>
-
-##(4)博客项目-登录
-	核心：登录校验&登录信息存储
-				cookie 和 session
-				session写入redis
-				开发登录功能，和前端联调（用到nginx反向代理）
-	
-	cookie
-		1.什么是cookie
-			存储在浏览器的一段字符串（最大5kb）
-			跨域不共享
-			格式如k1=v1;k2=v2;k3=v3;因此可以存储结构化数据
-			每次发送http请求，会将请求域的cookie一起发送给server
-			server可以修改cookie并返回给浏览器
-			浏览器中也可以通过javascript修改cookie(有限制)
-			
-		2.javascript操作cookie,浏览器中查看cookie
-			
-		3.server端操作cookie,实现登录验证
-			/app.js
-				req.cookie = {}
-				const cookieStr = req.headers.cookie || '' //k1=v1;k2=v2; ....
-				cookieStr.split(';').forEach(item => {
-					if (!item) {
-						return
-					}
-					const arr = item.split('=')
-					const key = arr[0]
-					const val = arr[1]
-					req.cookie[key] = val
-				})
-			
-			/user.js
-				if (method = 'GET' && req.path === '/api/user/login-test') {
-					if (req.cookie.username) {
-						return Promise.resolve(new SuccessModel())
-					}
-					return Promise.resolve(new ErrorModel('尚未登录'))
-				}
-				
-			//获取cookie的过期时间
-				const getCookieExpires = () => {
-					const d = new Date()
-					d.setTime(d.getTime() + (24 * 60 * 60 * 1000))
-					return d.toGMTString()
-				}
-				
-			//node设置cookie
-				//httpOnly:不能读不能修改
-				//expires:过期时间
-				res.setHeader('Set-Cookie', `username = ${data.username};path=/;httpOnly;expires=${getCookieExpires()}`)
 
 #nodejs项目（3-8章节）
 <pre>
@@ -321,8 +285,126 @@
 			3.封装exec函数，API使用exec操作数据库
 		
 ##(4)博客项目-登录
+	核心：登录校验&登录信息存储
+				cookie 和 session
+				session写入redis
+				开发登录功能，和前端联调（用到nginx反向代理）
+	
+	cookie
+		1.什么是cookie
+			1.存储在浏览器的一段字符串（最大5kb）
+			2.跨域不共享
+			3.格式如k1=v1;k2=v2;k3=v3;因此可以存储结构化数据
+			4.每次发送http请求，浏览器会将请求域的cookie一起发送给server
+			5.server(服务器端)可以修改cookie并返回给浏览器
+			6.浏览器中也可以通过javascript修改cookie(有限制)
+			
+		2.客户端查看cookie三种方式，javascript查看、修改cookie(有限制)
+			a.浏览器Network请求查看 / b.浏览器Application查看 / 
+			设置与修改cookie：document.cookie="k1=1;k2=2"
+			查看cookie：document.cookie
+			
+		3.server端操作cookie,实现登录验证
+			/app.js
+				req.cookie = {}
+				const cookieStr = req.headers.cookie || '' //k1=v1;k2=v2; ....
+				cookieStr.split(';').forEach(item => {
+					if (!item) {
+						return
+					}
+					const arr = item.split('=')
+					const key = arr[0]
+					const val = arr[1]
+					req.cookie[key] = val
+				})
+			
+			/user.js
+				if (method = 'GET' && req.path === '/api/user/login-test') {
+					if (req.cookie.username) {
+						return Promise.resolve(new SuccessModel())
+					}
+					return Promise.resolve(new ErrorModel('尚未登录'))
+				}
+				
+			//获取cookie的过期时间
+				const getCookieExpires = () => {
+					const d = new Date()
+					d.setTime(d.getTime() + (24 * 60 * 60 * 1000))
+					return d.toGMTString()
+				}
+				
+			//node设置cookie
+				//httpOnly:客户端不能读不能修改
+				//expires:过期时间
+				res.setHeader('Set-Cookie', `username = ${data.username};path=/;httpOnly;expires=${getCookieExpires()}`)
 
+				https://www.runoob.com/js/js-cookies.html
+
+				
 ##(5)博客项目-日志
+	《1》系统没有日志，就等于人没有眼睛。日志类型：
+				第一：访问日志access log(server端最重要的日志)
+				第二：自定义日志(包括自定义事件、错误记录等)
+
+	《2》nodejs文件操作；nodejs stream
+				日志要存储到文件中
+				为何不存储在mysql中？
+				为何不存储在redis中？
+				
+	《3》日志功能开发和使用
+	《4》日志拆分，日志内容分析
+
+	《a》nodejs文件操作
+			//文件操作库
+			const fs = require('fs')
+			//文件路径操作库
+			const path = require('path')
+			//当前data文件路径
+			const fileName = path.resolve(__dirname, 'data.txt')
+
+			//读取文件内容
+			fs.readFile(fileName, (err, data) => {
+				if (err) {
+					console.error(err)
+					return
+				}
+				// data二进制值表示的字符串
+				console.log(data.toString())
+			})
+
+
+			//写入文件
+			const content = '\n这是新写入的内容\n'
+			const opt = { //写入的方式
+				flag: 'a' //追加写入。覆盖用'w'
+			}
+			fs.writeFile(fileName, content, opt, (err) => {
+				if (err) {
+					console.error(err)
+				}
+			})
+
+			//判断文件是否存在
+			fs.exists(fileName, (exist) => {
+				console.log("exist=", exist)
+			})
+
+	《b》IO操作的性能瓶颈
+			IO包括"网络IO" 和 "文件IO"
+			相比于CPU计算和内存读写，IO的突出特点就是：慢！
+			如何在有限的硬件资源下提高IO的操作效率？
+			解决以上问题：stream
+			理解：等于看视屏一样，一遍看一遍加载，以流的形式慢慢返回
+			场景：node post向服务器端传递数据的过程
+			
+			stream:
+				//标准输入输出，pipe就是管道（符合水流管道的模型图）
+				//process.stdin获取数据，直接通过管道传递给process.stdout
+					process.stdin.pipe(process.stdout) //输入一点马上输出
+					
+			stream演示例子
+
+			
 
 ##(6)博客项目-安全
 基本安全
