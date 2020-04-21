@@ -1,16 +1,14 @@
-日志：
+#session
+	cookie问题：会暴露username,很危险
+	如何解决：cookie中存储userid,server端对应username
+	解决方案：session,即server端存储用户信息
 	
-				
-			
-	《c》ettxt
+		
 
+		
+		
+		
 
-
-
-
-
-
-##(5)博客项目-日志
 
 				
 #使用Koa2重构博客项目（10章节）
@@ -303,6 +301,36 @@
 			a.浏览器Network请求查看 / b.浏览器Application查看 / 
 			设置与修改cookie：document.cookie="k1=1;k2=2"
 			查看cookie：document.cookie
+			删除cookie: document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 GMT"; //设置过期时间以及不指定cookie的值
+			
+			function setCookie(cname,cvalue,exdays){
+				var d = new Date();
+				d.setTime(d.getTime()+(exdays*24*60*60*1000));
+				var expires = "expires="+d.toGMTString();
+				document.cookie = cname+"="+cvalue+"; "+expires;
+			}
+			function getCookie(cname){
+				var name = cname + "=";
+				var ca = document.cookie.split(';');
+				for(var i=0; i<ca.length; i++) {
+					var c = ca[i].trim();
+					if (c.indexOf(name)==0) { return c.substring(name.length,c.length); }
+				}
+				return "";
+			}
+			function checkCookie(){
+				var user=getCookie("username");
+				if (user!=""){
+					alert("欢迎 " + user + " 再次访问");
+				}
+				else {
+					user = prompt("请输入你的名字:","");
+						if (user!="" && user!=null){
+							setCookie("username",user,30);
+						}
+				}
+			}
+			checkCookie()
 			
 		3.server端操作cookie,实现登录验证
 			/app.js
@@ -334,8 +362,10 @@
 				}
 				
 			//node设置cookie
-				//httpOnly:客户端不能读不能修改
-				//expires:过期时间
+				//httpOnly :客户端不能读不能修改
+				//expires  :过期时间(默认情况下,cookie 在浏览器关闭时删除)
+				//path=/   :浏览器cookie的路径(默认情况下,cookie 属于当前页面)
+				
 				res.setHeader('Set-Cookie', `username = ${data.username};path=/;httpOnly;expires=${getCookieExpires()}`)
 
 				https://www.runoob.com/js/js-cookies.html
