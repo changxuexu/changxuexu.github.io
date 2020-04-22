@@ -1,16 +1,14 @@
-#session
-	cookie问题：会暴露username,很危险
-	如何解决：cookie中存储userid,server端对应username
-	解决方案：session,即server端存储用户信息
-	
-		
+##4.session存入redis
 
-		
-		
+
+
+
+nginx反向代理的配置
+前后端如何同域联调
 		
 
 
-				
+		
 #使用Koa2重构博客项目（10章节）
 <pre>
 	
@@ -288,7 +286,7 @@
 				session写入redis
 				开发登录功能，和前端联调（用到nginx反向代理）
 	
-	cookie
+	##cookie
 		1.什么是cookie
 			1.存储在浏览器的一段字符串（最大5kb）
 			2.跨域不共享
@@ -369,7 +367,81 @@
 				res.setHeader('Set-Cookie', `username = ${data.username};path=/;httpOnly;expires=${getCookieExpires()}`)
 
 				https://www.runoob.com/js/js-cookies.html
+		
+		##session
+			cookie问题：会暴露username,很危险
+			如何解决：cookie中存储userid,server端对应username
+			解决方案：session,即server端存储用户信息
+			
+			代码？？？？？？
+			
+			session问题？
+				目前session直接是js变量，放在nodejs进程内存中
+				第一：进程内存有限，访问量过大，内存暴增怎么办？
+							内存有限.png
+							
+				第二：正式线上运行时多进程，进程之间内存无法共享？
+							进程之间无法共享.png
+							
+				解决方案redis:
+					1.web server最常用的缓存数据库，数据存放在内存中
+					2.相比于mysql,访问速度快（内存和硬盘不是一个数量级的）
+					3.但是成本更高，可存储的数据量更小（内存的硬伤）
+				
+				如何解决？
+					redis与mysql.png
+					1.将web server 和 redis拆分为两个单独的服务
+					2.双方都是独立的，都是可扩展的（例如都扩展成集群）
+					3.包括mysql，也是一个单独的服务，也可扩展
+					
+				为何session适用于redis?
+					1.session访问频繁，对性能要求极高
+					2.session可不考虑断电丢失数据的问题（内存的硬伤）
+					3.seesion数据量不会太大（相比于mysql中存储的数据）
+				
+				为何网站数据不适合用redis?
+					1.操作频率不是太高（相比于seesion操作）
+					2.断电不能丢失，必须保留
+					3.数据量太大，内存成本太高
+					
+		##redis
+			1.安装redis
+				windows：http://www.runoob.com/redis/redis-install.html
+								 https://github.com/microsoftarchive/redis/releases
+								 
+				Mac使用 brew install redis
 
+				简单使用
+					set key keyvalue //存储key值
+					get key 				 //获取key值
+					keys * 					 //查看有哪些值
+					del key 				 //删除特定key值
+			
+			2.node连接redis案例
+				安装redis : npm install redis
+				案例：
+					const redis = require('redis')
+					//创建客户端
+					const redisClient = redis.createClient(6379,'127.0.0.1')
+					redisClient.on('error',err=>{
+						console.log(err)
+					})
+					//测试
+					redisClient.set('myname','zhangsan2',redis.print)
+					redisClient.get('myname',(err,val)=>{
+						if(err){
+							console.log(err)
+							return 
+						}
+						console.log("val=",val)
+						//退出
+						redisClient.quit()
+					})
+
+			3.node连接redis封装成工具
+				/src/conf/db.js
+				/src/db/redis.js
+		
 				
 ##(5)博客项目-日志
 	《1》系统没有日志，就等于人没有眼睛。日志类型：
