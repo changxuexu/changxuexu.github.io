@@ -1,10 +1,31 @@
+nginx介绍
+	1.高性能的web服务器，开源免费
+	2.一般用于做静态服务、负载均衡（本课程用不到）
+	3.高性能的web服务器，开源免费
+	4.一般用于做静态服务、负载均衡（本课程用不到）
+	5.还有反向代理（本课用到）
+
+nginx下载
+	windows: http://nginx.org/en/download.html
+	Mac: brew install nginx
+
+nginx配置
+	Windows: C:\nginx\conf\nginx.conf
+	Mac: /usr/local/etc/nginx/nginx.conf
+
+nginx命令
+	测试配置文件格式是否正确 nginx -t
+	启动 nginx ；重启 nginx -s reload
+	停止 nginx -s stop
+
+nginx配置文件
+	worker_processes:2; //cpu几核
+	
+
 ##4.session存入redis
 
-
-
-
-nginx反向代理的配置
-前后端如何同域联调
+	nginx反向代理的配置
+	前后端如何同域联调
 		
 
 
