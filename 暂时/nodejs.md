@@ -1,3 +1,12 @@
+##4.session存入redis
+	nginx反向代理的配置
+	前后端如何同域联调
+		1.登录功能依赖cookie，必须用浏览器来联调
+		2.cookie跨域不共享，前端和server端必须同域
+	
+
+
+
 nginx介绍
 	1.高性能的web服务器，开源免费
 	2.一般用于做静态服务、负载均衡（本课程用不到）
@@ -20,12 +29,6 @@ nginx命令
 
 nginx配置文件
 	worker_processes:2; //cpu几核
-	
-
-##4.session存入redis
-
-	nginx反向代理的配置
-	前后端如何同域联调
 		
 
 
@@ -431,12 +434,20 @@ nginx配置文件
 								 https://github.com/microsoftarchive/redis/releases
 								 
 				Mac使用 brew install redis
+			
+			简单使用：
+				1.在解压redis的文件夹打开cmd指令窗口
+				2.然后输入 redis-server redis.windows.conf 命令
+				
+			部署Redis为windows下的服务
+				1.首先关掉上一个窗口再打开一个新的cmd命令窗口
+				2.输入指令 redis-server --service-install redis.windows.conf
 
-				简单使用
-					set key keyvalue //存储key值
-					get key 				 //获取key值
-					keys * 					 //查看有哪些值
-					del key 				 //删除特定key值
+			命令使用
+				set key keyvalue //存储key值
+				get key 				 //获取key值
+				keys * 					 //查看有哪些值
+				del key 				 //删除特定key值
 			
 			2.node连接redis案例
 				安装redis : npm install redis
