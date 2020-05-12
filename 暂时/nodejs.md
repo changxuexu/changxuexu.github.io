@@ -3,9 +3,6 @@
 	前后端如何同域联调
 		1.登录功能依赖cookie，必须用浏览器来联调
 		2.cookie跨域不共享，前端和server端必须同域
-	
-
-
 
 nginx介绍
 	1.高性能的web服务器，开源免费
@@ -78,7 +75,7 @@ nginx配置文件
 		客户端接收到返回数据，处理数据（如渲染页面，执行js）
 	
 	2.nodejs处理http请求简单介绍
-		get请求 和 querystring
+		get请求  和 querystring
 		post请求 和 postdata
 		路由
 		
