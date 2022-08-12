@@ -1,0 +1,102 @@
+* { padding: 0; margin: 0 }
+html, body {
+  font-family:'Microsoft Yahei', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', sans-serif;
+  font-size: 14px;
+  color:#333333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/* 左边 */
+.nav-slide-wrap{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width:250px;
+  min-height: 100vh;
+  overflow-y:auto;
+  z-index: 0;
+  background-color: #1D1F20;
+  background-image: linear-gradient(145deg, #1D1F20, #404348);
+}
+
+.nav-slide-wrap .menu-section-list li{
+  padding: 10px 20px;
+  cursor: pointer;
+  color:#ffffff;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.nav-slide-wrap .menu-section-list li:hover{
+  background-color: rgba(255, 255, 255, 0.1);
+}
+/* 左边-end */
+
+/* 右边 */
+.nav-content-wrap{
+  box-sizing: border-box;
+  margin-left:250px;
+  width:calc(100vw - 250px);
+  min-height:100vh;
+  padding:15px 30px;
+}
+
+.nav-content-wrap .floor-item{
+  position: relative;
+  padding-top:15px;
+  padding-bottom:15px;
+}
+.nav-content-wrap .floor-item::after{
+  content: '';
+  position: absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:2px;
+  background-size: 70px;
+  background-image: repeating-linear-gradient(-45deg, #ff6c6c 0, #ff6c6c 20%, transparent 0, transparent 25%, #1989fa 0, #1989fa 45%, transparent 0, transparent 50%);
+}
+.nav-content-wrap .super-tit{
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  color: #39A4DC;
+  line-height:70px;
+}
+.nav-content-wrap .super-idx{
+  color: #ccc;
+  font-family:Arial;
+  font-style: italic;
+  font-size:25px;
+}
+
+.nav-content-wrap .second-content{
+  /* margin-top:15px; */
+}
+
+.nav-content-wrap .second-tit{
+  font-size:16px;
+  font-weight:bold;
+  color:#000000;
+}
+
+.nav-content-wrap a{
+  display: inline-block;
+  text-decoration: none;
+  font-size:16px;
+  color: #333333;
+  margin-right:20px;
+  margin-bottom:20px;
+}
+.nav-content-wrap a:hover{
+  color:red;
+}
+/* 右边-end */

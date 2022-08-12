@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>导航</title>
+  <link rel="stylesheet" href="./static/css/page.css" type="text/css">
+</head>
+<body>
+<div id="app">
+  <div class="nav-slide-wrap">
+    <ul class="menu-section-list">
+      <li v-for="(super_tit_item,idx) in arr_super_tit" :key="`super_tit_${idx}`">{{super_tit_item}}</li>
+    </ul>
+  </div>
+  <div class="nav-content-wrap">
+    <div>关闭/隐藏</div>
+    <template v-for="(item,superidx) in arr_data">
+      <div class="floor-item" :key="`super_${superidx}`">
+        <div class="super-tit">
+          <span class="super-idx">{{superidx+1}}.</span>
+          {{item.super_tit}}
+        </div>
+        <template v-for="(super_child_item,superchildidx) in item.super_child">
+          <div class="second-content" :key="`super_child_${superchildidx}`">
+            <span class="second-tit" v-if="super_child_item.second_tit">{{super_child_item.second_tit}}：</span>
+            <template v-for="(second_child_item,secondchildidx) in super_child_item.second_child">
+              <a :href="second_child_item.href" :title="second_child_item.title" target="_blank" :key="`second_child_${secondchildidx}`">{{second_child_item.name}}</a>
+            </template>
+          </div>
+        </template>
+      </div>
+    </template>
+  </div>
+</div>
+</body>
+<script src="./static/js/vue3.js" type="text/javascript"></script>
+<script src="./static/js/data.js" type="text/javascript"></script>
+<script src="./static/js/page.js" type="text/javascript"></script>
+</html>
