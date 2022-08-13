@@ -13,11 +13,9 @@
   <div class="navslide-scroll-wrap">
     <div class="nav-slide-wrap">
       <ul class="menu-section-list">
-        <!-- :class="`#element_super_${idx+1}`" -->
-        <li 
-          v-for="(super_tit_item,idx) in arr_super_tit" 
+        <li v-for="(super_tit_item,idx) in arr_super_tit" 
           v-scroll-to="`#element_super_${idx+1}`"
-          :class="{'active':1}"
+          :class="{'active':currentfloor == `element_super_${idx+1}`}"
           :key="`super_tit_${idx}`">{{super_tit_item}}</li>
       </ul>
     </div>

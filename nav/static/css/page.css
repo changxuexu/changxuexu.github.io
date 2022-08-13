@@ -40,7 +40,7 @@ html, body {
   background-color: rgba(255, 255, 255, 0.1);
 }
 .nav-slide-wrap .menu-section-list li:hover{
-  
+  background-color: rgba(255, 255, 255, 0.1);
 }
 /* 左边-end */
 

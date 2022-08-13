@@ -3,7 +3,7 @@ const option = {
   data() {
     return {
       arr_data,
-      currentfloor:'1'
+      currentfloor:''
     }
   },
   computed: {
@@ -32,16 +32,18 @@ app.use(VueScrollTo,{
   offset: 0,
   force: true,
   cancelable: true,
-  onStart: false,
-  onDone(el){
-    console.log(option);
-    console.log(el.id)
-  },
+  onStart:(el) => { this._active(el) },
+  onDone:false,
   onCancel: false,
   x: false,
   y: true
 })
-console.log(VueScrollTo);
-app.mount('#app')
+const vm = app.mount('#app')
+
+/* 工具函数 */
+function _active(el) {
+  vm.currentfloor = el['id']
+}
+
 
 // https://www.freesion.com/article/21051455961/
