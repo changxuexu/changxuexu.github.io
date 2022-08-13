@@ -3,7 +3,7 @@ const option = {
   data() {
     return {
       arr_data,
-      currentfloor:''
+      currentfloor: ''
     }
   },
   computed: {
@@ -17,14 +17,14 @@ const option = {
     }
   },
   mounted() {
-    
+
   },
   methods: {
   }
 }
 
 const app = Vue.createApp(option)
-app.use(VueScrollTo,{
+app.use(VueScrollTo, {
   container: "body",
   duration: 500,
   lazy: false,
@@ -32,14 +32,14 @@ app.use(VueScrollTo,{
   offset: 0,
   force: true,
   cancelable: true,
-  onStart:(el) => { this._active(el) },
-  onDone:false,
+  onStart: (el) => { this._active(el) },
+  onDone: false,
   onCancel: false,
   x: false,
   y: true
 })
-const vm = app.mount('#app')
 
+const vm = app.mount('#app')
 /* 工具函数 */
 function _active(el) {
   vm.currentfloor = el['id']
