@@ -336,7 +336,11 @@ var data_Crossplatform = {
     {
       second_tit: '其他',
       second_child: [
-        { name: '', href: '', title: '' },
+        { name: 'Taro', href: 'https://taro.jd.com/', title: 'Taro 是一个京东开放式跨端跨框架解决方案，支持使用 React/Vue/Nerv等框架来开发小程序(微信/京东/百度/支付宝/字节跳动/QQ/飞书)/H5/RN 等应用' },
+        { name: 'Chameleon 变色龙', href: 'https://cml.js.org/', title: '滴滴开放Native端/小程序/快应用' },
+        { name: 'Hippy', href: 'https://hippyjs.org/', title: '腾讯开放支持iOS、Android、Web,支持react/vue' },
+        { name: 'Electron', href: 'https://www.electronjs.org/', title: '使用 JavaScript，HTML 和 CSS 构建跨平台的桌面应用程序' },
+        { name: 'Tauri', href: 'https://tauri.app/zh/', title: '构建桌面应用' },
       ]
     },
     {
