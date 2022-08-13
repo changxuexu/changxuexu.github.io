@@ -13,11 +13,14 @@ html, body {
   text-overflow: ellipsis;
 }
 /* 左边 */
+.navslide-scroll-wrap{
+  width:200px;
+}
 .nav-slide-wrap{
   position: fixed;
   top: 0;
   bottom: 0;
-  width:250px;
+  width:200px;
   min-height: 100vh;
   overflow-y:auto;
   z-index: 0;
@@ -33,17 +36,19 @@ html, body {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-
-.nav-slide-wrap .menu-section-list li:hover{
+.nav-slide-wrap .menu-section-list li.active{
   background-color: rgba(255, 255, 255, 0.1);
+}
+.nav-slide-wrap .menu-section-list li:hover{
+  
 }
 /* 左边-end */
 
 /* 右边 */
 .nav-content-wrap{
   box-sizing: border-box;
-  margin-left:250px;
-  width:calc(100vw - 250px);
+  margin-left:200px;
+  width:calc(100vw - 200px);
   min-height:100vh;
   padding:15px 30px;
 }
@@ -86,12 +91,14 @@ html, body {
   font-size:16px;
   font-weight:bold;
   color:#000000;
+  display: inline-block;
+  min-width:90px;
 }
 
 .nav-content-wrap a{
   display: inline-block;
   text-decoration: none;
-  font-size:16px;
+  font-size:17px;
   color: #333333;
   margin-right:20px;
   margin-bottom:20px;

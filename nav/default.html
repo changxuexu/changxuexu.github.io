@@ -9,33 +9,46 @@
 </head>
 <body>
 <div id="app">
-  <div class="nav-slide-wrap">
-    <ul class="menu-section-list">
-      <li v-for="(super_tit_item,idx) in arr_super_tit" :key="`super_tit_${idx}`">{{super_tit_item}}</li>
-    </ul>
+<div id="test">
+  <div class="navslide-scroll-wrap">
+    <div class="nav-slide-wrap">
+      <ul class="menu-section-list">
+        <!-- :class="`#element_super_${idx+1}`" -->
+        <li 
+          v-for="(super_tit_item,idx) in arr_super_tit" 
+          v-scroll-to="`#element_super_${idx+1}`"
+          :class="{'active':1}"
+          :key="`super_tit_${idx}`">{{super_tit_item}}</li>
+      </ul>
+    </div>
   </div>
   <div class="nav-content-wrap">
     <div>关闭/隐藏</div>
-    <template v-for="(item,superidx) in arr_data">
-      <div class="floor-item" :key="`super_${superidx}`">
+    <template v-for="(item,superidx) in arr_data" :key="`super_${superidx}`">
+      <div class="floor-item" :id="`element_super_${superidx+1}`">
         <div class="super-tit">
           <span class="super-idx">{{superidx+1}}.</span>
           {{item.super_tit}}
         </div>
-        <template v-for="(super_child_item,superchildidx) in item.super_child">
-          <div class="second-content" :key="`super_child_${superchildidx}`">
+        <template v-for="(super_child_item,superchildidx) in item.super_child" :key="`super_child_${superchildidx}`">
+          <div class="second-content">
             <span class="second-tit" v-if="super_child_item.second_tit">{{super_child_item.second_tit}}：</span>
-            <template v-for="(second_child_item,secondchildidx) in super_child_item.second_child">
-              <a :href="second_child_item.href" :title="second_child_item.title" target="_blank" :key="`second_child_${secondchildidx}`">{{second_child_item.name}}</a>
+            <template v-for="(second_child_item,secondchildidx) in super_child_item.second_child" :key="`second_child_${secondchildidx}`">
+              <a :href="second_child_item.href" :title="second_child_item.title" target="_blank">{{second_child_item.name}}</a>
             </template>
           </div>
         </template>
       </div>
     </template>
+    <!-- <div id="element">element</div> -->
   </div>
+</div>
 </div>
 </body>
 <script src="./static/js/vue3.js" type="text/javascript"></script>
+<script src="./static/js/vue-scrollto.js" type="text/javascript"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-scrollto"></script> -->
 <script src="./static/js/data.js" type="text/javascript"></script>
 <script src="./static/js/page.js" type="text/javascript"></script>
 </html>
