@@ -256,9 +256,32 @@ var data_WeChat = {
   super_tit: '微应用',
   super_child: [
     {
-      second_tit: '搜索',
+      second_tit: '文档资料',
       second_child: [
-        { name: '', href: '', title: '' }
+        { name: '微信开放文档', href: 'https://developers.weixin.qq.com/miniprogram/dev/framework', title: '' },
+        { name: '微信公众平台', href: 'https://mp.weixin.qq.com', title: '' },
+        { name: '开放服务类目', href: 'https://developers.weixin.qq.com/miniprogram/product/material', title: '开发之前要仔细考虑下该类目是否能审核通过,可在社区进行搜索' },
+        { name: '微信开放社区', href: 'https://developers.weixin.qq.com/community/develop/mixflow', title: '' },
+        { name: '小程序当前bug', href: 'https://developers.weixin.qq.com/community/develop/issueList?type=修复中&block=bug', title: '' },
+        { name: '小程序官方案例', href: 'https://github.com/wechat-miniprogram/miniprogram-demo', title: '' },
+        { name: '小程序开发教程', href: 'https://cloud.tencent.com/edu/paths/series/applet', title: '' },
+        { name: '微信公众平台接口测试', href: 'https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login', title: '' },
+        { name: '调试资料', href: 'https://www.cnblogs.com/yimiyan/p/6594205.html', title: '' },
+        { name: '微信公众平台接口调试工具', href: 'https://mp.weixin.qq.com/debug', title: '' }
+      ]
+    },
+    {
+      second_tit: '组件库',
+      second_child: [
+        { name: 'Vant Weapp', href: 'https://youzan.github.io/vant-weapp/#/intro', title: '' },
+        { name: 'wepy', href: 'https://wepyjs.github.io/wepy-docs', title: '' }
+      ]
+    },
+    {
+      second_tit: '插件库',
+      second_child: [
+        { name: '腾讯视频小程序播放器SDK', href: 'https://github.com/tvfe/txv-miniprogram-plugin', title: '' },
+        { name: '智能对话', href: 'https://developers.weixin.qq.com/doc/aispeech/platform/INTRODUCTION.html', title: '' }
       ]
     }
   ]
@@ -294,11 +317,43 @@ var data_Crossplatform = {
   super_tit: '跨平台',
   super_child: [
     {
-      second_tit: '搜索',
+      second_tit: 'Flutter',
       second_child: [
-        { name: '', href: '', title: '' }
+        { name: 'Flutter中文网', href: 'https://flutterchina.club', title: '' },
+        { name: 'Dart库搜索', href: 'https://pub.flutter-io.cn/packages', title: '' },
+        { name: 'Flutter掘金社区', href: 'https://juejin.im/tag/Flutter?utm_source=flutterchina&utm_medium=word&utm_content=btn&utm_campaign=q3_website', title: '' }
       ]
-    }
+    },
+    {
+      second_tit: 'uni-app',
+      second_child: [
+        { name: 'uni-app文档', href: 'https://uniapp.dcloud.net.cn/', title: '' },
+        { name: 'uni-app官网案例', href: 'https://hellouniapp.dcloud.net.cn/pages/component/view/view', title: '' },
+        { name: 'uni-app视频教程', href: 'https://www.bilibili.com/video/av80616176/?p=1&share_source=qq&share_medium=iphone&bbid=ZF42B7FFBC689D40490794596C2AA393DD77&ts=1577338060', title: '' },
+        { name: 'MUI', href: 'http://dev.dcloud.net.cn/mui', title: '' }
+      ]
+    },
+    {
+      second_tit: '其他',
+      second_child: [
+        { name: '', href: '', title: '' },
+      ]
+    },
+    {
+      second_tit: '安卓',
+      second_child: [
+        { name: 'android开放平台', href: 'https://developer.android.google.cn/index.html', title: '' },
+        { name: 'Android入门教程', href: 'https://www.runoob.com/w3cnote/android-tutorial-intro.html', title: '' },
+        { name: 'AndroidDevTools开发工具', href: 'http://www.androiddevtools.cn', title: '' },
+        { name: 'Android学习资源', href: 'https://github.com/coder-pig/Android-Storage-Box', title: '' }
+      ]
+    },
+    {
+      second_tit: 'IOS',
+      second_child: [
+        { name: 'IOS开放平台', href: 'https://developer.apple.com', title: '' },
+      ]
+    },
   ]
 }
 
@@ -381,9 +436,9 @@ var data_jsplug = {
     {
       second_tit: '地图',
       second_child: [
-        { name: '', href: '', title: '' },
-        { name: '', href: '', title: '' },
-        { name: '', href: '', title: '' }
+        { name: '百度地图', href: 'https://lbsyun.baidu.com/', title: '' },
+        { name: '高德地图', href: 'https://lbs.amap.com/', title: '' },
+        { name: '腾讯地图', href: 'https://lbs.qq.com/', title: '' }
       ]
     },
     {
