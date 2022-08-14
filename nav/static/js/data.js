@@ -29,6 +29,12 @@ var data_daily = {
         { name: 'gitee', href: 'https://gitee.com/changxuexu/projects', title: '码云' },
         { name: 'coding', href: 'https://coding.net', title: 'git仓库' }
       ]
+    },
+    {
+      second_tit: '便利工具',
+      second_child: [
+        { name: '菜鸟工具', href: 'https://c.runoob.com/', title: '' }
+      ]
     }
   ]
 }
@@ -365,9 +371,73 @@ var data_tool = {
   super_tit: '辅助工具',
   super_child: [
     {
-      second_tit: '搜索',
+      second_tit: '产品设计',
       second_child: [
-        { name: '', href: '', title: '' }
+        { name: '在线PS', href: 'https://ps.gaoding.com/#/', title: '' },
+        { name: 'tinypng图片压缩', href: 'https://tinypng.com', title: '' },
+        { name: '阿里矢量图标库', href: 'https://www.iconfont.cn', title: '' },
+        { name: '蓝湖', href: 'https://lanhuapp.com', title: '' },
+        { name: 'chainco', href: 'http://www.chainco.cn', title: 'UI设计交互演示' },
+        { name: '犸良', href: 'https://design.alipay.com/emotion', title: '素材动效制作' },
+        { name: '鹿班', href: 'https://luban.taobao.com', title: '海报/商品图文/直播间背景' }
+      ]
+    },
+    {
+      second_tit: '第三方api',
+      second_child: [
+        { name: '快递100', href: 'http://api.kuaidi100.com/home', title: '' },
+        { name: '快递鸟', href: 'http://www.kdniao.com', title: '' },
+        { name: '腾讯ocr识别', href: 'https://cloud.tencent.com/document/product/866/45338', title: '' }
+      ]
+    },
+    {
+      second_tit: '接口管理',
+      second_child: [
+        { name: 'Apipost', href: 'https://www.apipost.cn', title: '' },
+        { name: 'apizza', href: 'https://www.apizza.net', title: '' },
+        { name: 'yapi', href: 'https://hellosean1025.github.io/yapi', title: '' },
+        { name: 'eolinker', href: 'https://www.eolinker.com', title: '' },
+        { name: 'mockjs', href: 'http://mockjs.com/examples.html', title: '接口数据模拟' }
+      ]
+    },
+    {
+      second_tit: 'Git',
+      second_child: [
+        { name: 'git文档', href: 'https://backlog.com/git-tutorial/cn/contents', title: '' },
+        { name: 'git视屏教程', href: 'https://m.php.cn/code/7947.html', title: '' },
+        { name: 'SourceTree教程', href: 'https://jingyan.baidu.com/article/dca1fa6f19c0abf1a5405246.html', title: '' },
+        { name: '从零做一个前端开源项目', href: 'https://www.imooc.com/article/28240', title: '' }
+      ]
+    },
+    {
+      second_tit: 'webpack',
+      second_child: [
+        { name: 'Webpack中文', href: 'https://www.webpackjs.com/concepts', title: '' }
+      ]
+    },
+    {
+      second_tit: 'svg优化器',
+      second_child: [
+        { name: 'SVGOMG', href: 'https://jakearchibald.github.io/svgomg', title: '' },
+        { name: 'SVG Optimizers', href: 'https://online-converting.com/svg-optimizer', title: '' }
+      ]
+    },
+    {
+      second_tit: '在线编辑',
+      second_child: [
+        { name: 'Stackblitz', href: 'https://stackblitz.com/', title: '' },
+        { name: 'codepen', href: 'https://codepen.io', title: '' },
+        { name: 'jsrun.net', href: 'http://jsrun.net', title: '' },
+        { name: 'SoloLearn', href: 'https://www.sololearn.com/home', title: '' },
+      ]
+    },
+    {
+      second_tit: '内网穿透',
+      second_child: [
+        { name: 'Sunny-Ngrok', href: 'https://www.ngrok.cc', title: '' },
+        { name: 'NATAPP', href: 'https://natapp.cn', title: '基于ngrok高速内网穿透' },
+        { name: '花生壳', href: 'https://hsk.oray.com', title: '' },
+        { name: 'ngrok', href: 'https://ngrok.com', title: '' }
       ]
     }
   ]
@@ -377,11 +447,29 @@ var data_study = {
   super_tit: '学习网站',
   super_child: [
     {
-      second_tit: '搜索',
+      second_tit: '课程',
       second_child: [
         { name: '', href: '', title: '' }
       ]
-    }
+    },
+    {
+      second_tit: '团队',
+      second_child: [
+        { name: '', href: '', title: '' }
+      ]
+    },
+    {
+      second_tit: '博文',
+      second_child: [
+        { name: '', href: '', title: '' }
+      ]
+    },
+    {
+      second_tit: '个人',
+      second_child: [
+        { name: '', href: '', title: '' }
+      ]
+    },
   ]
 }
 
