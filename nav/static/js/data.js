@@ -33,7 +33,8 @@ var data_daily = {
     {
       second_tit: '便利工具',
       second_child: [
-        { name: '菜鸟工具', href: 'https://c.runoob.com/', title: '' }
+        { name: '菜鸟工具', href: 'https://c.runoob.com/', title: '' },
+        { name: '程序猿在线工具', href: 'http://www.ofmonkey.com/format/css', title: '' }
       ]
     }
   ]
@@ -455,13 +456,22 @@ var data_study = {
     {
       second_tit: '团队',
       second_child: [
-        { name: '', href: '', title: '' }
+        { name: '饿了么', href: 'https://zhuanlan.zhihu.com/ElemeFE', title: '' },
+        { name: '有赞技术团队', href: 'https://tech.youzan.com', title: '' },
+        { name: '腾讯Alloyteam', href: 'http://www.alloyteam.com', title: '' },
+        { name: '腾讯IMWeb', href: 'https://www.imweb.io', title: '' },
+        { name: '百度FEX', href: 'http://fex.baidu.com', title: '' },
+        { name: '百度EFE', href: 'https://efe.baidu.com', title: '' }
       ]
     },
     {
       second_tit: '博文',
       second_child: [
-        { name: '', href: '', title: '' }
+        { name: '掘金', href: 'https://juejin.im', title: '' },
+        { name: '慕课网手记', href: 'https://www.imooc.com/article', title: '' },
+        { name: '廖雪峰', href: 'https://www.liaoxuefeng.com', title: '' },
+        { name: '', href: '', title: '' },
+        { name: '', href: '', title: '' },
       ]
     },
     {
