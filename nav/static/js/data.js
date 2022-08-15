@@ -715,6 +715,17 @@ var data_other = {
         { name: '大白菜', href: 'http://dbc.trmfb.com/win10.html', title: '重装系统' },
         { name: '小熊', href: 'https://www.xiaoxiongxitong.com', title: '小熊一键重装系统' }
       ]
+    },
+    {
+      second_tit: '在线书籍',
+      second_child: [
+        { name: '微信读书', href: 'https://weread.qq.com/web/category/700002', title: '' },
+        { name: '清华大学开放书籍', href: 'https://lib-nuanxin.wqxuetang.com/#/', title: '' },
+        { name: '', href: '', title: '' },
+        { name: '国家中小学网络云平台', href: 'https://ykt.eduyun.cn', title: '' },
+        { name: '国家教育资源公共服务平台', href: 'https://www.eduyun.cn', title: '' },
+        { name: '皖教云', href: 'http://www.ahedu.cn/#/', title: '' }
+      ]
     }
   ]
 }
