@@ -422,7 +422,8 @@ var data_tool = {
       second_tit: 'svg优化器',
       second_child: [
         { name: 'SVGOMG', href: 'https://jakearchibald.github.io/svgomg', title: '' },
-        { name: 'SVG Optimizers', href: 'https://online-converting.com/svg-optimizer', title: '' }
+        { name: 'SVG Optimizers', href: 'https://online-converting.com/svg-optimizer', title: '' },
+        { name: 'Snap.svg', href: 'http://snapsvg.io', title: '' }
       ]
     },
     {
@@ -484,7 +485,7 @@ var data_study = {
       ]
     },
     {
-      second_tit: '博文',
+      second_tit: '博客',
       second_child: [
         { name: '掘金', href: 'https://juejin.im', title: '' },
         { name: '慕课网手记', href: 'https://www.imooc.com/article', title: '' },
@@ -505,26 +506,40 @@ var data_study = {
         { name: 'Ben Alman', href: 'https://github.com/cowboy', title: 'http://benalman.com' },
         { name: 'Haorooms', href: 'https://www.haorooms.com', title: '' },
         { name: '龙恩0707', href: 'https://www.cnblogs.com/tugenhua0707/', title: '' },
-        { name: '', href: '', title: '' },
+        { name: 'alili前端大爆炸', href: 'https://alili.tech', title: '' },
+        { name: 'ifrontend', href: 'https://www.ifrontend.net/index.php', title: '' },
+        { name: 'Shymean', href: 'http://shymean.com', title: '' },
+        { name: 'imqianduan', href: 'https://www.imqianduan.com', title: '' },
+        { name: '0x98k’s', href: 'https://0x98k.com', title: '' },
+        { name: '爱码网', href: 'https://www.likecs.com', title: '' },
+        { name: '芋道源码', href: 'http://www.iocoder.cn', title: '' },
+        { name: 'w3cplus', href: 'http://caibaojian.com/w3cplus', title: '' },
+        { name: 'fly63', href: 'http://www.fly63.com', title: '' }
+      ]
+    },
+    {
+      second_tit: '面试',
+      second_child: [
+        { name: '木易杨前端进阶', href: 'https://muyiy.cn', title: '' },
+        { name: 'Daily-Interview-Question', href: 'https://github.com/Advanced-Frontend/Daily-Interview-Question/blob/master/datum/summary.md', title: '' },
+        { name: '合格前端系列', href: 'https://zhuanlan.zhihu.com/p/32911022', title: '' },
+        { name: '饥人谷 2019', href: 'https://zhuanlan.zhihu.com/p/59707202', title: '' },
+        { name: 'Interview Book', href: 'https://mountain-buzhou.github.io/Interview-Book/guide', title: '' }
       ]
     },
     {
       second_tit: '运维',
       second_child: [
         { name: '运维派', href: 'http://www.yunweipai.com', title: '' },
-        { name: '阿汤运维', href: 'https://www.amd5.cn', title: '' },
-        { name: '', href: '', title: '' },
-        { name: '', href: '', title: '' }
+        { name: '阿汤运维', href: 'https://www.amd5.cn', title: '' }
       ]
     },
     {
       second_tit: '源码',
       second_child: [
+        { name: 'tricks', href: 'https://www.html5tricks.com', title: '' },
         { name: '源码世界', href: 'https://www.ym4j.com', title: 'h5、网页游戏、vue等' },
-        { name: 'F2EX', href: 'http://f2ex.cn', title: '' },
-        { name: '', href: '', title: '' },
-        { name: '', href: '', title: '' },
-        { name: '', href: '', title: '' }
+        { name: 'F2EX', href: 'http://f2ex.cn', title: '' }
       ]
     }
   ]
@@ -537,7 +552,15 @@ var data_javascript = {
       second_tit: '文档资料',
       second_child: [
         { name: 'es6入门教程', href: 'http://es6.ruanyifeng.com', title: '' },
-        { name: 'es5入门手册', href: 'https://wangdoc.com', title: '' }
+        { name: 'es5入门手册', href: 'https://wangdoc.com', title: '' },
+        { name: 'js知识体系', href: 'https://github.com/yzsunlei/awesome-web-tutorial', title: '' }
+      ]
+    },
+    {
+      second_tit: '工具函数',
+      second_child: [
+        { name: 'Lodash', href: 'https://www.lodashjs.com', title: 'javascript工具库' },
+        { name: 'JavaScript代码片段', href: 'https://www.html.cn/30-seconds-of-code', title: '' }
       ]
     }
   ]
@@ -609,7 +632,8 @@ var data_jsplug = {
         { name: 'Anime.js', href: 'https://animejs.com', title: '轻量级,强大API' },
         { name: 'GreenSock', href: 'https://www.tweenmax.com.cn', title: '' },
         { name: 'Mo.js', href: 'https://mojs.github.io', title: '模块化,流畅' },
-        { name: 'particlesJS', href: 'https://github.com/VincentGarreau/particles.js', title: '粒子背景：粒子的密度、颜色、不透明度、形状和大小' }
+        { name: 'particlesJS', href: 'https://github.com/VincentGarreau/particles.js', title: '粒子背景：粒子的密度、颜色、不透明度、形状和大小' },
+        { name: 'SVGA动画', href: 'http://svga.io/index.html', title: '跨平台的开源动画方案' }
       ]
     },
     {
