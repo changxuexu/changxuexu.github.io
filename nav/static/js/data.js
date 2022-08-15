@@ -19,6 +19,7 @@ var data_daily = {
         { name: 'MDN-developer', href: 'https://developer.mozilla.org/zh-CN', title: '' },
         { name: 'Can I use', href: 'https://www.caniuse.com', title: '' },
         { name: 'Stack Overflow', href: 'https://stackoverflow.com', title: '' },
+        { name: 'segmentfault', href: 'https://segmentfault.com/', title: '' },
         { name: 'node_modules包大小查询', href: 'https://bundlephobia.com', title: '查询node_modules安装包大小' }
       ]
     },
@@ -36,6 +37,7 @@ var data_daily = {
       second_child: [
         { name: '菜鸟工具', href: 'https://c.runoob.com/', title: '' },
         { name: '程序猿在线工具', href: 'http://www.ofmonkey.com/format/css', title: '' },
+        { name: '前端导航', href: 'http://uyi2.com/bus', title: '' },
         { name: 'Chrome开发者工具中文文档', href: 'https://www.html.cn/doc/chrome-devtools', title: '' },
       ]
     }
@@ -449,8 +451,8 @@ var data_tool = {
       second_child: [
         { name: '转转大师', href: 'https://pdftoword.55.la/', title: '办公软件转换' },
         { name: '蛙蛙工具', href: 'https://www.iamwawa.cn', title: '' },
-        { name: 'VSCode插件开发', href: 'https://www.cnblogs.com/liuxianan/p/vscode-plugin-overview.html', title: '' },
-        { name: '', href: '', title: '' }
+        { name: 'VSCode插件开发教程', href: 'https://www.cnblogs.com/liuxianan/p/vscode-plugin-overview.html', title: '' },
+        { name: 'vscode官网', href: 'https://code.visualstudio.com/', title: '' }
       ]
     }
   ]
@@ -491,6 +493,7 @@ var data_study = {
         { name: '慕课网手记', href: 'https://www.imooc.com/article', title: '' },
         { name: '廖雪峰', href: 'https://www.liaoxuefeng.com', title: '' },
         { name: '张鑫旭', href: 'https://www.zhangxinxu.com/', title: '' },
+        { name: 'w3cplus', href: 'https://www.w3cplus.com', title: '' },
         { name: '印记中文', href: 'https://docschina.org/', title: '' },
         { name: 'oschina开源软件', href: 'https://www.oschina.net/project', title: '' }
       ]
@@ -561,6 +564,13 @@ var data_javascript = {
       second_child: [
         { name: 'Lodash', href: 'https://www.lodashjs.com', title: 'javascript工具库' },
         { name: 'JavaScript代码片段', href: 'https://www.html.cn/30-seconds-of-code', title: '' }
+      ]
+    },
+    {
+      second_tit: '其他',
+      second_child: [
+        { name: 'gulpjs构建工具', href: 'https://www.gulpjs.com.cn', title: '' },
+        { name: 'babel', href: 'https://www.babeljs.cn', title: 'js语法兼容降级处理' },
       ]
     }
   ]
