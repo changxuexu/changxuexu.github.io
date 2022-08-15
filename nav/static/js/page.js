@@ -3,8 +3,9 @@ const option = {
   data() {
     return {
       arr_data,
-      currentfloor: '',
-      timer: null
+      currentfloor: '',//当前楼层
+      timer: null,
+      showsidebar: true
     }
   },
   computed: {
@@ -40,6 +41,10 @@ const option = {
           }
         })
       }, 20)
+    },
+    showsidebarhandle() {
+      let showsidebar = this.showsidebar
+      this.showsidebar = !showsidebar
     }
   },
   beforeUnmount() {

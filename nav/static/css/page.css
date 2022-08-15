@@ -50,6 +50,42 @@ html, body {
 .nav-slide-wrap .menu-section-list li:hover{
   background-color: rgba(255, 255, 255, 0.1);
 }
+.avtarwrap{
+  margin-top:15px;
+  text-align: center;
+  color:#ffffff;
+  position: relative;
+}
+.avtarwrap::after{
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  right: 15px;
+  left: 15px;
+  bottom: 0;
+  border-bottom: 1px solid #ffffff;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.avtarwrap .avtar{
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  padding: 1px;
+  border: 3px solid rgba(255,255,255,.5);
+  border-radius: 100%;
+  box-shadow: inset 1px 1px 4px rgba(0,0,0,.3), 0 2px 3px rgba(0,0,0,.4);
+  transition: transform 1s ease-out;
+  cursor: pointer;
+}
+.avtarwrap .avtar:hover{
+  transform: rotateZ(360deg);
+}
+.avtarwrap .username{
+  padding-top:5px;
+  padding-bottom:10px;
+}
 /* 左边-end */
 
 /* 右边 */
@@ -58,7 +94,12 @@ html, body {
   margin-left:200px;
   width:calc(100vw - 200px);
   min-height:100vh;
-  padding:15px 30px;
+  padding:0 30px;
+}
+
+.nav-content-closewrap{
+  margin-left:0;
+  width:100%;
 }
 
 .nav-content-wrap .floor-item{
@@ -116,5 +157,27 @@ html, body {
 .nav-content-wrap a:hover{
   color:#39A4DC;
   text-decoration: underline;
+}
+.headertopwrap{
+  height:46px;
+}
+.headertop{
+  display:flex;
+  align-items: center;
+  justify-content:space-between;
+  padding-top:8px;
+  padding-bottom:8px;
+}
+.headertop .iconOprate{
+  width:30px;
+  height:30px;
+  display: block;
+  cursor: pointer;
+}
+.headertop .iconOprate:hover{
+  opacity:0.8;
+}
+.headertop .des{
+  color:#999;
 }
 /* 右边-end */
