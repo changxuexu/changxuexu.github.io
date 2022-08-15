@@ -18,7 +18,8 @@ var data_daily = {
         { name: 'npm插件搜索', href: 'https://www.npmjs.com', title: '' },
         { name: 'MDN-developer', href: 'https://developer.mozilla.org/zh-CN', title: '' },
         { name: 'Can I use', href: 'https://www.caniuse.com', title: '' },
-        { name: 'Stack Overflow', href: 'https://stackoverflow.com', title: '' }
+        { name: 'Stack Overflow', href: 'https://stackoverflow.com', title: '' },
+        { name: 'node_modules包大小查询', href: 'https://bundlephobia.com', title: '查询node_modules安装包大小' }
       ]
     },
     {
@@ -34,7 +35,8 @@ var data_daily = {
       second_tit: '便利工具',
       second_child: [
         { name: '菜鸟工具', href: 'https://c.runoob.com/', title: '' },
-        { name: '程序猿在线工具', href: 'http://www.ofmonkey.com/format/css', title: '' }
+        { name: '程序猿在线工具', href: 'http://www.ofmonkey.com/format/css', title: '' },
+        { name: 'Chrome开发者工具中文文档', href: 'https://www.html.cn/doc/chrome-devtools', title: '' },
       ]
     }
   ]
@@ -440,6 +442,15 @@ var data_tool = {
         { name: '花生壳', href: 'https://hsk.oray.com', title: '' },
         { name: 'ngrok', href: 'https://ngrok.com', title: '' }
       ]
+    },
+    {
+      second_tit: '其他',
+      second_child: [
+        { name: '转转大师', href: 'https://pdftoword.55.la/', title: '办公软件转换' },
+        { name: '', href: '', title: '' },
+        { name: '', href: '', title: '' },
+        { name: '', href: '', title: '' }
+      ]
     }
   ]
 }
@@ -450,7 +461,16 @@ var data_study = {
     {
       second_tit: '课程',
       second_child: [
-        { name: '', href: '', title: '' }
+        { name: '技术胖', href: 'https://jspang.com', title: '' },
+        { name: '慕课网', href: 'https://www.imooc.com', title: '' },
+        { name: '腾讯课堂', href: 'https://ke.qq.com', title: '' },
+        { name: '腾讯产业互联网学堂', href: 'https://cloud.tencent.com/edu', title: '' },
+        { name: '开课吧', href: 'https://www.kaikeba.com', title: '' },
+        { name: '网易云课堂', href: 'https://study.163.com', title: '' },
+        { name: '尚硅谷', href: 'https://www.gulixueyuan.com/', title: '' },
+        { name: 'php中文网', href: 'https://www.php.cn/', title: '' },
+        { name: 'html中文网', href: 'https://www.html.cn', title: '' },
+        { name: 'kuangstudy个人', href: '', title: '' },
       ]
     },
     {
@@ -470,16 +490,35 @@ var data_study = {
         { name: '掘金', href: 'https://juejin.im', title: '' },
         { name: '慕课网手记', href: 'https://www.imooc.com/article', title: '' },
         { name: '廖雪峰', href: 'https://www.liaoxuefeng.com', title: '' },
-        { name: '', href: '', title: '' },
-        { name: '', href: '', title: '' },
+        { name: '张鑫旭', href: 'https://www.zhangxinxu.com/', title: '' },
+        { name: '印记中文', href: 'https://docschina.org/', title: '' },
+        { name: 'oschina开源软件', href: 'https://www.oschina.net/project', title: '' }
       ]
     },
     {
       second_tit: '个人',
       second_child: [
-        { name: '', href: '', title: '' }
+        { name: '尤雨溪', href: 'https://github.com/yyx990803', title: '' },
+        { name: 'Nicholas C.Zakas', href: 'https://humanwhocodes.com', title: 'ESLint开源项目' },
+        { name: 'Addy Osmani', href: 'https://github.com/addyosmani', title: '' },
+        { name: 'Lea Verou', href: 'https://github.com/LeaVerou', title: '' },
+        { name: 'Axel Rauschmayer', href: 'https://2ality.com/index.html', title: '' },
+        { name: 'Ben Alman', href: 'https://github.com/cowboy', title: 'http://benalman.com' },
+        { name: 'Haorooms', href: 'https://www.haorooms.com', title: '' },
+        { name: '龙恩0707', href: 'https://www.cnblogs.com/tugenhua0707/', title: '' },
+        { name: '', href: '', title: '' },
       ]
     },
+    {
+      second_tit: '源码',
+      second_child: [
+        { name: '源码世界', href: 'https://www.ym4j.com', title: 'h5、网页游戏、vue等' },
+        { name: '', href: '', title: '' },
+        { name: '', href: '', title: '' },
+        { name: '', href: '', title: '' },
+        { name: '', href: '', title: '' }
+      ]
+    }
   ]
 }
 
