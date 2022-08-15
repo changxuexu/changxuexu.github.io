@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>导航</title>
+  <title>￡AP︶ㄣOL◢◤LO</title>
   <link rel="stylesheet" href="./static/css/page.css" type="text/css">
 </head>
 <body>
@@ -13,10 +13,8 @@
   <div class="navslide-scroll-wrap">
     <div class="nav-slide-wrap">
       <ul class="menu-section-list">
-        <template v-for="(super_tit_item,idx) in arr_super_tit">
-          <li v-scroll-to="`#element_super_${idx+1}`"
-            :class="{'active':currentfloor == `element_super_${idx+1}`}"
-            :key="`super_tit_${idx}`">{{super_tit_item}}</li>
+        <template v-for="(super_tit_item,idx) in arr_super_tit" :key="`super_tit_${idx}`">
+          <li v-scroll-to="`#element_super_${idx+1}`" :class="{'active':currentfloor == `element_super_${idx+1}`}" >{{super_tit_item}}</li>
         </template>
       </ul>
     </div>
@@ -24,7 +22,7 @@
   <div class="nav-content-wrap">
     <div>关闭/隐藏</div>
     <template v-for="(item,superidx) in arr_data" :key="`super_${superidx}`">
-      <div class="floor-item" :id="`element_super_${superidx+1}`">
+      <div class="floor-item" ref="flooritem" :id="`element_super_${superidx+1}`">
         <div class="super-tit">
           <span class="super-idx">{{superidx+1}}.</span>
           {{item.super_tit}}

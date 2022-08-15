@@ -447,8 +447,8 @@ var data_tool = {
       second_tit: '其他',
       second_child: [
         { name: '转转大师', href: 'https://pdftoword.55.la/', title: '办公软件转换' },
-        { name: '', href: '', title: '' },
-        { name: '', href: '', title: '' },
+        { name: '蛙蛙工具', href: 'https://www.iamwawa.cn', title: '' },
+        { name: 'VSCode插件开发', href: 'https://www.cnblogs.com/liuxianan/p/vscode-plugin-overview.html', title: '' },
         { name: '', href: '', title: '' }
       ]
     }
@@ -469,8 +469,7 @@ var data_study = {
         { name: '网易云课堂', href: 'https://study.163.com', title: '' },
         { name: '尚硅谷', href: 'https://www.gulixueyuan.com/', title: '' },
         { name: 'php中文网', href: 'https://www.php.cn/', title: '' },
-        { name: 'html中文网', href: 'https://www.html.cn', title: '' },
-        { name: 'kuangstudy个人', href: '', title: '' },
+        { name: 'html中文网', href: 'https://www.html.cn', title: '' }
       ]
     },
     {
@@ -510,10 +509,19 @@ var data_study = {
       ]
     },
     {
+      second_tit: '运维',
+      second_child: [
+        { name: '运维派', href: 'http://www.yunweipai.com', title: '' },
+        { name: '阿汤运维', href: 'https://www.amd5.cn', title: '' },
+        { name: '', href: '', title: '' },
+        { name: '', href: '', title: '' }
+      ]
+    },
+    {
       second_tit: '源码',
       second_child: [
         { name: '源码世界', href: 'https://www.ym4j.com', title: 'h5、网页游戏、vue等' },
-        { name: '', href: '', title: '' },
+        { name: 'F2EX', href: 'http://f2ex.cn', title: '' },
         { name: '', href: '', title: '' },
         { name: '', href: '', title: '' },
         { name: '', href: '', title: '' }
@@ -615,7 +623,8 @@ var data_jsplug = {
         { name: 'momentjs', href: 'http://momentjs.cn', title: '日期时间处理类库' },
         { name: 'html2canvas', href: 'http://html2canvas.hertzen.com', title: '对网页html屏幕截图,用于生成图片' },
         { name: 'Typed.js', href: 'https://www.typeitjs.com', title: '打字机效果' },
-        { name: 'AlloyFinger', href: 'http://alloyteam.github.io/AlloyFinger', title: '手势插件' }
+        { name: 'AlloyFinger', href: 'http://alloyteam.github.io/AlloyFinger', title: '手势插件' },
+        { name: 'zTree', href: 'https://treejs.cn', title: '树插件' }
       ]
     }
   ]

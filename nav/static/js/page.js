@@ -3,7 +3,8 @@ const option = {
   data() {
     return {
       arr_data,
-      currentfloor: ''
+      currentfloor: '',
+      timer: null
     }
   },
   computed: {
@@ -17,9 +18,32 @@ const option = {
     }
   },
   mounted() {
-
+    this.init()
   },
   methods: {
+    init() {
+      this.$nextTick(() => {
+        // window.scrollTo({ top: 0, behavior: "smooth" })
+        window.addEventListener("scroll", this.scroll)
+      })
+    },
+    scroll() {
+      if (this.timer) { clearTimeout(this.timer) }
+      this.timer = setTimeout(() => {
+        let scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+        let temp = []
+        let arr_flooritem = this.$refs.flooritem
+        arr_flooritem.length && arr_flooritem.forEach((item, idx) => { temp.push(item.offsetTop) });
+        temp.forEach((item, idx, arr) => {
+          if (arr[idx] <= scrollTop && arr[idx + 1] >= scrollTop) {
+            this.currentfloor = `element_super_${idx + 1}`
+          }
+        })
+      }, 20)
+    }
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.scroll)
   }
 }
 

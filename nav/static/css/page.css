@@ -12,6 +12,14 @@ html, body {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  content: "";
+  height: 0;
+  line-height: 0;
+  clear: both;
+}
 /* 左边 */
 .navslide-scroll-wrap{
   width:200px;
@@ -102,8 +110,11 @@ html, body {
   color: #333333;
   margin-right:20px;
   margin-bottom:20px;
+  transition: all 0.3s ease;
+  position: relative;
 }
 .nav-content-wrap a:hover{
-  color:red;
+  color:#39A4DC;
+  text-decoration: underline;
 }
 /* 右边-end */
