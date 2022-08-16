@@ -676,7 +676,8 @@ var data_jsplug = {
       second_child: [
         { name: 'Three.js', href: 'https://threejs.org', title: '3Djs库，canvas、svg、css3d、webgl' },
         { name: 'Anime.js', href: 'https://animejs.com', title: '轻量级,强大API' },
-        { name: 'GreenSock', href: 'https://www.tweenmax.com.cn', title: '' },
+        { name: 'Tweenmax', href: 'https://www.tweenmax.com.cn', title: '' },
+        { name: 'greensock', href: 'https://greensock.com', title: 'https://www.npmjs.com/package/gsap' },
         { name: 'Mo.js', href: 'https://mojs.github.io', title: '模块化,流畅' },
         { name: 'particlesJS', href: 'https://github.com/VincentGarreau/particles.js', title: '粒子背景：粒子的密度、颜色、不透明度、形状和大小' },
         { name: 'SVGA动画', href: 'http://svga.io/index.html', title: '跨平台的开源动画方案' }
