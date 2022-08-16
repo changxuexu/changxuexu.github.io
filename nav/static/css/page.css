@@ -98,7 +98,7 @@ html, body {
   margin-left:180px;
   min-height:100vh;
   box-sizing: border-box;
-  padding:0 30px;
+  padding:0 20px;
   transition:  all 0.9s ease-in-out;
 }
 
@@ -165,18 +165,31 @@ html, body {
   text-decoration: underline;
 }
 .headertopwrap{
-  height:46px;
+  height:36px;
 }
 .headertop{
+  position: fixed;
+  left:180px;
+  right:0;
+  top:0;
+  z-index:1;
+  background:#ffffff;
   display:flex;
   align-items: center;
   justify-content:space-between;
   padding-top:8px;
   padding-bottom:8px;
+  transition:  all 0.9s ease-in-out;
+  box-shadow: rgba(0, 0, 0, .05) 0 1px 4px, rgba(0, 0, 0, .12) 0 1px 2px;
+}
+.headertopClose{
+  left:0;
+  transition:  all 0.5s ease-in-out;
 }
 .headertop .iconOprate{
-  width:30px;
-  height:30px;
+  margin-left:20px;
+  width:20px;
+  height:20px;
   display: block;
   cursor: pointer;
 }
@@ -185,5 +198,10 @@ html, body {
 }
 .headertop .des{
   color:#999;
+  margin-right:20px;
+  margin-left: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 /* 右边-end */

@@ -23,7 +23,7 @@
   </div>
   <div class="nav-content-wrap" :class="{'nav-content-closewrap':!showsidebar}">
     <div class="headertopwrap">
-      <div class="headertop">
+      <div class="headertop" :class="{'headertopClose':!showsidebar}">
         <img @click="showsidebarhandle" :src="showsidebar ? './static/img/icon_close.png':'./static/img/icon_open.png'" class="iconOprate">
         <div class="des">平平淡淡，随心生活；心无所贪，净土则生</div>
       </div>
