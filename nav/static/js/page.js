@@ -4,8 +4,8 @@ const option = {
     return {
       arr_data,
       currentfloor: '',//当前楼层
-      timer: null,
-      perfectScrollbar: null,
+      scrolltimer: null,
+      resizetimer: null,
       showsidebar: true
     }
   },
@@ -19,21 +19,24 @@ const option = {
       }
     }
   },
+  created() {
+    this.showsidebar = !this._isMobile()
+  },
   mounted() {
     this.init()
   },
   methods: {
     init() {
-      //滚动条PerfectScrollbar ps.update()
-      this.perfectScrollbar = new PerfectScrollbar('#slidescrollbar');
+      // window.scrollTo({ top: 0, behavior: "smooth" })
       this.$nextTick(() => {
-        // window.scrollTo({ top: 0, behavior: "smooth" })
+        this._scrollbar()
         window.addEventListener("scroll", this.scroll)
+        window.addEventListener('resize', this.resizehandle)
       })
     },
     scroll() {
-      if (this.timer) { clearTimeout(this.timer) }
-      this.timer = setTimeout(() => {
+      if (this.scrolltimer) { clearTimeout(this.scrolltimer) }
+      this.scrolltimer = setTimeout(() => {
         let scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
         let temp = []
         let arr_flooritem = this.$refs.flooritem
@@ -48,10 +51,28 @@ const option = {
     showsidebarhandle() {
       let showsidebar = this.showsidebar
       this.showsidebar = !showsidebar
+      this.$nextTick(() => { this._scrollbar() })
+    },
+    resizehandle() {
+      if (!document.hidden) {
+        if (this.resizetimer) { clearTimeout(this.resizetimer) }
+        this.resizetimer = setTimeout(() => {
+          this.showsidebar = !this._isMobile()
+          this.$nextTick(() => { this._scrollbar() })
+        }, 20)
+      }
+    },
+    _isMobile() {
+      const rect = document.body.getBoundingClientRect()
+      return rect.width < 768
+    },
+    _scrollbar() {
+      new PerfectScrollbar('#slidescrollbar');
     }
   },
   beforeUnmount() {
     window.removeEventListener('scroll', this.scroll)
+    window.removeEventListener('resize', this.resizehandle)
   }
 }
 
