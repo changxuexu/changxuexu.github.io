@@ -5,6 +5,7 @@ const option = {
       arr_data,
       currentfloor: '',//当前楼层
       timer: null,
+      perfectScrollbar: null,
       showsidebar: true
     }
   },
@@ -23,6 +24,8 @@ const option = {
   },
   methods: {
     init() {
+      //滚动条PerfectScrollbar ps.update()
+      this.perfectScrollbar = new PerfectScrollbar('#slidescrollbar');
       this.$nextTick(() => {
         // window.scrollTo({ top: 0, behavior: "smooth" })
         window.addEventListener("scroll", this.scroll)

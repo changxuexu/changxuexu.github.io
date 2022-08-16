@@ -38,6 +38,7 @@ var data_daily = {
         { name: '菜鸟工具', href: 'https://c.runoob.com/', title: '' },
         { name: '程序猿在线工具', href: 'http://www.ofmonkey.com/format/css', title: '' },
         { name: '前端导航', href: 'http://uyi2.com/bus', title: '' },
+        { name: '开发综合文档', href: 'https://devdocs.io', title: '' },
         { name: 'Chrome开发者工具中文文档', href: 'https://www.html.cn/doc/chrome-devtools', title: '' },
       ]
     }
@@ -103,7 +104,8 @@ var data_vue = {
         { name: 'vue-element-admin', href: 'https://panjiachen.github.io/vue-element-admin-site/zh', title: '' },
         { name: 'iview-admin', href: 'https://github.com/iview/iview-admin', title: '' },
         { name: 'iview-admin文档', href: 'https://lison16.github.io/iview-admin-doc', title: '' },
-        { name: '', href: '', title: '' }
+        { name: 'xboot', href: 'http://xboot.exrick.cn/home', title: '' },
+        { name: 'Vue Bulma', href: 'https://github.com/vue-bulma/vue-admin', title: '基于Vue和Bulma的控制面板' }
       ]
     }
   ]
@@ -214,6 +216,12 @@ var data_Node = {
         { name: 'koa', href: 'https://www.koajs.com.cn', title: '' },
         { name: 'egg', href: 'https://www.eggjs.org/zh-CN', title: '' },
         { name: 'fastify', href: 'https://www.fastify.io', title: '' }
+      ]
+    },
+    {
+      second_tit: '其他',
+      second_child: [
+        { name: 'jwt', href: 'https://jwt.io', title: 'json网络令牌,进行解码,显示有效负载' }
       ]
     }
   ]
@@ -351,6 +359,7 @@ var data_Crossplatform = {
         { name: 'Chameleon 变色龙', href: 'https://cml.js.org/', title: '滴滴开放Native端/小程序/快应用' },
         { name: 'Hippy', href: 'https://hippyjs.org/', title: '腾讯开放支持iOS、Android、Web,支持react/vue' },
         { name: 'Electron', href: 'https://www.electronjs.org/', title: '使用 JavaScript，HTML 和 CSS 构建跨平台的桌面应用程序' },
+        { name: 'electron-vue', href: 'https://simulatedgreg.gitbooks.io/electron-vue/content/cn', title: '' },
         { name: 'Tauri', href: 'https://tauri.app/zh/', title: '构建桌面应用' },
       ]
     },
@@ -382,9 +391,17 @@ var data_tool = {
         { name: 'tinypng图片压缩', href: 'https://tinypng.com', title: '' },
         { name: '阿里矢量图标库', href: 'https://www.iconfont.cn', title: '' },
         { name: '蓝湖', href: 'https://lanhuapp.com', title: '' },
+        { name: '墨刀', href: 'https://modao.cc', title: '' },
         { name: 'chainco', href: 'http://www.chainco.cn', title: 'UI设计交互演示' },
         { name: '犸良', href: 'https://design.alipay.com/emotion', title: '素材动效制作' },
         { name: '鹿班', href: 'https://luban.taobao.com', title: '海报/商品图文/直播间背景' }
+      ]
+    },
+    {
+      second_tit: '思维导图',
+      second_child: [
+        { name: 'GitMind', href: 'https://gitmind.cn', title: '' },
+        { name: 'ProcessOn', href: 'https://www.processon.com', title: '' }
       ]
     },
     {
@@ -538,11 +555,26 @@ var data_study = {
       ]
     },
     {
+      second_tit: '测试',
+      second_child: [
+        { name: '测试教程', href: 'http://lemon.ke.qq.com/#category=15380424295395507&tab=1', title: '' },
+        { name: 'Jest', href: 'https://www.jestjs.cn', title: 'JavaScript测试框架,可使用在Babel、TypeScript、Node、React、Angular、Vue等等!' }
+      ]
+    },
+    {
       second_tit: '源码',
       second_child: [
         { name: 'tricks', href: 'https://www.html5tricks.com', title: '' },
         { name: '源码世界', href: 'https://www.ym4j.com', title: 'h5、网页游戏、vue等' },
         { name: 'F2EX', href: 'http://f2ex.cn', title: '' }
+      ]
+    },
+    {
+      second_tit: '业务参考',
+      second_child: [
+        { name: '意象商城系统', href: 'https://gitee.com/guchengwuyue', title: '' },
+        { name: 'likeshop', href: 'https://www.likeshop.cn', title: '' },
+        { name: '鲁班H5', href: 'https://github.com/ly525/luban-h5', title: '类似易企秀Maka百度 H5等平台,通过拖拽快速生成页面的平台' }
       ]
     }
   ]

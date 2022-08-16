@@ -21,19 +21,23 @@ html, body {
   clear: both;
 }
 /* 左边 */
-.navslide-scroll-wrap{
-  width:200px;
-}
 .nav-slide-wrap{
   position: fixed;
+  left:0;
   top: 0;
   bottom: 0;
-  width:200px;
+  width:180px;
   min-height: 100vh;
   overflow-y:auto;
   z-index: 2;
   background-color: #1D1F20;
   background-image: linear-gradient(145deg, #1D1F20, #404348);
+  transition: all 0.5s ease-in;
+}
+
+.nav-slide-closewrap{
+  left:-200px;
+  transition: all 0.9s ease-out;
 }
 
 .nav-slide-wrap .menu-section-list li{
@@ -90,17 +94,17 @@ html, body {
 
 /* 右边 */
 .nav-content-wrap{
-  box-sizing: border-box;
-  margin-left:200px;
-  width:calc(100vw - 200px);
+  margin-left:180px;
   min-height:100vh;
+  box-sizing: border-box;
   padding:0 30px;
-  transition: all 0.5s ease-out;
+  transition:  all 0.9s ease-in-out;
 }
 
 .nav-content-closewrap{
   margin-left:0;
   width:100%;
+  transition:  all 0.5s ease-in-out;
 }
 
 .nav-content-wrap .floor-item{

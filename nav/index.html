@@ -6,21 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>￡AP︶ㄣOL◢◤LO</title>
   <link rel="stylesheet" href="./static/css/page.css" type="text/css">
+  <link rel="stylesheet" href="./static/js/perfect-scrollbar/perfect-scrollbar.css">
 </head>
 <body>
 <div id="app">
-  <div class="navslide-scroll-wrap" v-if="showsidebar">
-    <div class="nav-slide-wrap">
-      <div class="avtarwrap">
-        <img src="./static/img/avtar.jpg" class="avtar">
-        <div class="username">￡AP︶ㄣOL◢◤LO</div>
-      </div>
-      <ul class="menu-section-list">
-        <template v-for="(super_tit_item,idx) in arr_super_tit" :key="`super_tit_${idx}`">
-          <li v-scroll-to="`#element_super_${idx+1}`" :class="{'active':currentfloor == `element_super_${idx+1}`}" >{{super_tit_item}}</li>
-        </template>
-      </ul>
+  <div class="nav-slide-wrap" id="slidescrollbar" :class="{'nav-slide-closewrap':!showsidebar}">
+    <div class="avtarwrap">
+      <img src="./static/img/avtar.jpg" class="avtar">
+      <div class="username">￡AP︶ㄣOL◢◤LO</div>
     </div>
+    <ul class="menu-section-list">
+      <template v-for="(super_tit_item,idx) in arr_super_tit" :key="`super_tit_${idx}`">
+        <li v-scroll-to="`#element_super_${idx+1}`" :class="{'active':currentfloor == `element_super_${idx+1}`}" >{{super_tit_item}}</li>
+      </template>
+    </ul>
   </div>
   <div class="nav-content-wrap" :class="{'nav-content-closewrap':!showsidebar}">
     <div class="headertopwrap">
@@ -51,7 +50,7 @@
 </body>
 <script src="./static/js/vue3.js" type="text/javascript"></script>
 <script src="./static/js/vue-scrollto.js" type="text/javascript"></script>
-<!-- <script src="./static/js/vue-scroll-sync.js" type="text/javascript"></script> -->
+<script src="./static/js/perfect-scrollbar/perfect-scrollbar.js" type="text/javascript"></script>
 <script src="./static/js/data.js" type="text/javascript"></script>
 <script src="./static/js/page.js" type="text/javascript"></script>
 </html>
