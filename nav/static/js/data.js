@@ -54,11 +54,13 @@ var data_vue = {
         { name: 'Vue3文档', href: 'https://cn.vuejs.org/guide/introduction.html', title: '' },
         { name: 'Vue Router', href: 'https://router.vuejs.org/zh/index.html', title: '' },
         { name: 'Pinia(状态管理)', href: 'https://pinia.vuejs.org/api/modules/pinia.html', title: '' },
+        { name: 'NuxtJS', href: 'https://v3.nuxtjs.org', title: '' },
         { name: 'vite', href: 'https://cn.vitejs.dev/guide', title: '' },
         { name: 'vue-cli', href: 'https://cli.vuejs.org/zh/guide', title: '' },
         { name: 'Vue3相比vue2新功能', href: 'https://v3-migration.vuejs.org', title: '' },
         { name: 'StackBlitz在线编辑', href: 'https://stackblitz.com', title: '代码在线构建工具' },
-        { name: 'Vue2到Vue3项目升级指南', href: 'https://gogocode.io/zh/docs/vue/vue2-to-vue3', title: '' }
+        { name: 'Vue2到Vue3项目升级指南', href: 'https://gogocode.io/zh/docs/vue/vue2-to-vue3', title: '' },
+        { name: 'petite-vue', href: 'https://github.com/vuejs/petite-vue', title: '非构建工程化,在页面直接使用' }
       ]
     },
     {
@@ -356,11 +358,13 @@ var data_Crossplatform = {
       second_tit: '其他',
       second_child: [
         { name: 'Taro', href: 'https://taro.jd.com/', title: 'Taro 是一个京东开放式跨端跨框架解决方案，支持使用 React/Vue/Nerv等框架来开发小程序(微信/京东/百度/支付宝/字节跳动/QQ/飞书)/H5/RN 等应用' },
+        { name: 'Ionic', href: 'https://tauri.app/zh/', title: '使用Web技术构建高性能、高质量的移动和桌面应用程序，并集成了Angular、React和Vue等流行框架' },
+        { name: 'Quasar', href: 'https://quasar.dev/', title: '用同一套代码同时开发桌面端和移动端应用' },
         { name: 'Chameleon 变色龙', href: 'https://cml.js.org/', title: '滴滴开放Native端/小程序/快应用' },
         { name: 'Hippy', href: 'https://hippyjs.org/', title: '腾讯开放支持iOS、Android、Web,支持react/vue' },
         { name: 'Electron', href: 'https://www.electronjs.org/', title: '使用 JavaScript，HTML 和 CSS 构建跨平台的桌面应用程序' },
         { name: 'electron-vue', href: 'https://simulatedgreg.gitbooks.io/electron-vue/content/cn', title: '' },
-        { name: 'Tauri', href: 'https://tauri.app/zh/', title: '构建桌面应用' },
+        { name: 'Tauri', href: 'https://tauri.app/zh/', title: '构建桌面应用' }
       ]
     },
     {
