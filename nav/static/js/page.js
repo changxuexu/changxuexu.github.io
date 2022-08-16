@@ -29,7 +29,6 @@ const option = {
     init() {
       // window.scrollTo({ top: 0, behavior: "smooth" })
       this.$nextTick(() => {
-        this._scrollbar()
         window.addEventListener("scroll", this.scroll)
         window.addEventListener('resize', this.resizehandle)
       })
@@ -51,23 +50,18 @@ const option = {
     showsidebarhandle() {
       let showsidebar = this.showsidebar
       this.showsidebar = !showsidebar
-      this.$nextTick(() => { this._scrollbar() })
     },
     resizehandle() {
       if (!document.hidden) {
         if (this.resizetimer) { clearTimeout(this.resizetimer) }
         this.resizetimer = setTimeout(() => {
           this.showsidebar = !this._isMobile()
-          this.$nextTick(() => { this._scrollbar() })
         }, 20)
       }
     },
     _isMobile() {
       const rect = document.body.getBoundingClientRect()
       return rect.width < 768
-    },
-    _scrollbar() {
-      new PerfectScrollbar('#slidescrollbar');
     }
   },
   beforeUnmount() {
