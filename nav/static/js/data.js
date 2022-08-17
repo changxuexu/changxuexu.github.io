@@ -60,7 +60,8 @@ var data_vue = {
         { name: 'Vue3相比vue2新功能', href: 'https://v3-migration.vuejs.org', title: '' },
         { name: 'StackBlitz在线编辑', href: 'https://stackblitz.com', title: '代码在线构建工具' },
         { name: 'Vue2到Vue3项目升级指南', href: 'https://gogocode.io/zh/docs/vue/vue2-to-vue3', title: '' },
-        { name: 'petite-vue', href: 'https://github.com/vuejs/petite-vue', title: '非构建工程化,在页面直接使用' }
+        { name: 'petite-vue', href: 'https://github.com/vuejs/petite-vue', title: '非构建工程化,在页面直接使用' },
+        { name: 'VueUse', href: 'https://vueuse.org', title: '工具型组合式函数集合' }
       ]
     },
     {
