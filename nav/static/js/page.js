@@ -80,15 +80,21 @@ const app = Vue.createApp(option)
 app.use(VueScrollTo, {
   container: "body",
   duration: 500,
-  lazy: false,
+  //默认情况下，targetX/targetY在滚动开始时计算一次；但是，如果目标可能在滚动过程中四处移动，则将lazy设置为false将强制在每个滚动步骤重新计算targetX/targetY
+  lazy: true,
   easing: "ease",
-  offset: 0,
+  // 滚动时应应用的偏移量，>=v2.8.0 可以使用回调函数
+  offset: -36,
+  // 滚动正在进行，触发其他滚动是否立即执行
   force: true,
+  //是否可以取消滚动
   cancelable: true,
   onStart: (el) => { this._active(el) },
   onDone: false,
   onCancel: false,
+  // x轴滚动
   x: false,
+  //y轴滚动
   y: true
 })
 
