@@ -21,6 +21,7 @@ html, body {
   clear: both;
 }
 #app{ overflow-x: hidden }
+[v-cloak] { display: none;}
 /* 左边 */
 .nav-slide-wrap{
   position: fixed;

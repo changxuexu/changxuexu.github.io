@@ -59,6 +59,12 @@ const option = {
         }, 20)
       }
     },
+    movescrollbar() {
+      document.body.style.overflow = 'hidden';
+    },
+    leavescrollbar() {
+      document.body.style.overflow = 'auto';
+    },
     _isMobile() {
       const rect = document.body.getBoundingClientRect()
       return rect.width < 768
