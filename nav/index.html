@@ -9,7 +9,10 @@
 </head>
 <body>
 <div id="app" v-cloak>
-  <div @mousemove="movescrollbar" @mouseleave="leavescrollbar" class="nav-slide-wrap" id="slidescrollbar" :class="{'nav-slide-closewrap':!showsidebar}">
+  <div 
+    @mousemove="movescrollbar" 
+    @mouseleave="leavescrollbar"
+    class="nav-slide-wrap" id="slidescrollbar" :class="{'nav-slide-closewrap':!showsidebar}">
     <div class="avtarwrap">
       <img src="./static/img/avtar.jpg" class="avtar">
       <div class="username">￡AP︶ㄣOL◢◤LO</div>
