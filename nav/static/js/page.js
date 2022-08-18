@@ -1,4 +1,5 @@
 let { reactive, ref, onMounted, watchEffect, toRaw } = Vue
+const offsetY = 36 //滚动y轴偏移量
 const option = {
   data() {
     return {
@@ -39,7 +40,7 @@ const option = {
         let scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
         let temp = []
         let arr_flooritem = this.$refs.flooritem
-        arr_flooritem.length && arr_flooritem.forEach((item, idx) => { temp.push(item.offsetTop) });
+        arr_flooritem.length && arr_flooritem.forEach((item, idx) => { temp.push(item.offsetTop - offsetY) });
         temp.forEach((item, idx, arr) => {
           if (arr[idx] <= scrollTop && arr[idx + 1] >= scrollTop) {
             this.currentfloor = `element_super_${idx + 1}`
@@ -84,12 +85,14 @@ app.use(VueScrollTo, {
   lazy: true,
   easing: "ease",
   // 滚动时应应用的偏移量，>=v2.8.0 可以使用回调函数
-  offset: -36,
+  offset: -offsetY,
   // 滚动正在进行，触发其他滚动是否立即执行
   force: true,
   //是否可以取消滚动
   cancelable: true,
-  onStart: (el) => { this._active(el) },
+  onStart: (el) => {
+    this._active(el)
+  },
   onDone: false,
   onCancel: false,
   // x轴滚动
