@@ -83,6 +83,7 @@ app.use(VueScrollTo, {
   duration: 500,
   //默认情况下，targetX/targetY在滚动开始时计算一次；但是，如果目标可能在滚动过程中四处移动，则将lazy设置为false将强制在每个滚动步骤重新计算targetX/targetY
   lazy: true,
+  // let easings = {'ease': [0.25, 0.1, 0.25, 1.0],'linear': [0.00, 0.0, 1.00, 1.0],'ease-in': [0.42, 0.0, 1.00, 1.0],'ease-out': [0.00, 0.0, 0.58, 1.0], 'ease-in-out': [0.42, 0.0, 0.58, 1.0] } 
   easing: "ease",
   // 滚动时应应用的偏移量，>=v2.8.0 可以使用回调函数
   offset: -offsetY,
