@@ -720,7 +720,7 @@ var data_css = {
       second_tit: 'css库',
       second_child: [
         { name: 'loading动画', href: 'https://loading.io', title: '' },
-        { name: 'Animate.css', href: 'https://www.dowebok.com/demo/2014/98/', title: '' },
+        { name: 'Animate.css', href: 'https://animate.style/', spare_href: 'https://www.dowebok.com/demo/2014/98/', title: '' },
         { name: 'Hover.css', href: 'http://ianlunn.github.io/Hover', title: '按钮悬浮效果' },
         { name: '数学公式css', href: 'https://github.com/parsegon/math-css', title: 'math-css' }
       ]
@@ -728,12 +728,22 @@ var data_css = {
     {
       second_tit: 'css工具',
       second_child: [
-        { name: 'css3样式在线兼容', href: 'https://autoprefixer.github.io', title: '' },
         { name: 'CSS3动画生成器', href: 'https://www.w3cways.com/css3-animation-tool', title: '' },
+        { name: 'Animista动画生成器', href: 'https://animista.net/', title: '' },
+        { name: 'Transition.css', href: 'https://www.transition.style/', title: '' },
+        { name: 'css3样式在线兼容', href: 'https://autoprefixer.github.io', title: '' },
         { name: 'CSS3 Developer', href: 'http://css3developer.com/', title: 'css3样式生成器' },
         { name: 'css在线三角形生成器', href: 'https://www.jiangweishan.com/tool/sanjx/index.html', title: '' },
         { name: 'CSS3 clip-path生成器', href: 'https://www.html.cn/tool/css-clip-path', title: '' },
-        { name: 'ColorSpace', href: 'https://mycolor.space/', title: '调色板或css颜色渐变' }
+        { name: 'ColorSpace', href: 'https://mycolor.space/', title: '调色板或css颜色渐变生成器' },
+        { name: 'CSS Gradient', href: 'https://cssgradient.io/', title: '在线编辑css渐变色背景' },
+        { name: 'Button Generator', href: 'https://cssbuttongenerator.com/', title: '按钮生成器' },
+        { name: '边框阴影生成器', href: 'https://neumorphism.io/', title: '' },
+        { name: 'Smooth Shadow', href: 'https://shadows.brumm.af/', title: '生成多个分层阴影，可以自定义颜色' },
+        { name: 'fancy-border-radius', href: 'https://9elements.github.io/fancy-border-radius/', title: '个性化的圆角生成' },
+        { name: '波浪效果生成器', href: 'https://getwaves.io/', title: '在线生成编辑波浪效果的SVG格式' },
+        { name: 'CSS Grid Generator', href: 'https://cssgrid-generator.netlify.app/', title: '可以设置行和列的数字还有单位，生成一个 CSS Grid 网格布局' },
+        { name: '零代码工具箱', href: 'https://www.lingdaima.com/', title: '' }
       ]
     }
   ]
