@@ -92,7 +92,7 @@ var data_vue = {
       second_tit: '组件库P',
       second_child: [
         { name: 'Element2', href: 'https://element.eleme.cn/#/zh-CN/component/installation', title: '' },
-        { name: 'Element3', href: 'https://element-plus.gitee.io/#/zh-CN/component/installation', title: '' },
+        { name: 'Element3', href: 'https://element-plus.gitee.io/zh-CN/', title: '' },
         { name: 'iview2', href: 'http://v4.iviewui.com/docs/introduce', title: '' },
         { name: 'iview3', href: 'https://www.iviewui.com/view-ui-plus/guide/introduce', title: '' },
         { name: 'Ant Design Vue', href: 'https://www.antdv.com/docs/vue/introduce-cn', title: '' },
@@ -104,6 +104,8 @@ var data_vue = {
     {
       second_tit: '管理框架',
       second_child: [
+        { name: 'fantastic-admin', href: 'https://hooray.gitee.io/fantastic-admin/', title: 'Vite + Vue3 + Vue-router + Pinia + Element Plus' },
+        { name: 'BuildAdmin', href: 'https://wonderful-code.gitee.io/', title: 'Vue3+Element Plus' },
         { name: 'vue-element-admin', href: 'https://panjiachen.github.io/vue-element-admin-site/zh', title: '' },
         { name: 'iview-admin', href: 'https://github.com/iview/iview-admin', title: '' },
         { name: 'iview-admin文档', href: 'https://lison16.github.io/iview-admin-doc', title: '' },
