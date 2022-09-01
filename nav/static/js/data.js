@@ -732,7 +732,8 @@ var data_css = {
         { name: 'CSS3动画生成器', href: 'https://www.w3cways.com/css3-animation-tool', title: '' },
         { name: 'CSS3 Developer', href: 'http://css3developer.com/', title: 'css3样式生成器' },
         { name: 'css在线三角形生成器', href: 'https://www.jiangweishan.com/tool/sanjx/index.html', title: '' },
-        { name: 'CSS3 clip-path生成器', href: 'https://www.html.cn/tool/css-clip-path', title: '' }
+        { name: 'CSS3 clip-path生成器', href: 'https://www.html.cn/tool/css-clip-path', title: '' },
+        { name: 'ColorSpace', href: 'https://mycolor.space/', title: '调色板或css颜色渐变' }
       ]
     }
   ]
