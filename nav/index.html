@@ -33,6 +33,9 @@
       <div class="headertop" :class="{'headertopClose':!ismobile && !showsidebar, 'headertop-ltME':ismobile  }">
         <img @click="showsidebarhandle" :src="showsidebar ? './static/img/icon_close.png':'./static/img/icon_open.png'" class="iconOprate">
         <div class="des" v-scroll-to="`#app`">平平淡淡，随心生活；心无所贪，净土则生</div>
+        <div class="scrollinebox">
+          <div class="scrollineinside"></div>
+        </div>
       </div>
     </div>
     <template v-for="(item,superidx) in arr_data" :key="`super_${superidx}`">

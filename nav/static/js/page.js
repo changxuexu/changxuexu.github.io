@@ -35,10 +35,13 @@ const option = {
         window.addEventListener("scroll", this.scroll)
         window.addEventListener('resize', this.resizehandle)
       })
+      //
+      this.windowHeight = document.documentElement.clientHeight || document.body.clientHeight
     },
     scroll() {
       if (this.scrolltimer) { clearTimeout(this.scrolltimer) }
       this.scrolltimer = setTimeout(() => {
+        //滚动高度
         let scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
         let temp = []
         let arr_flooritem = this.$refs.flooritem
