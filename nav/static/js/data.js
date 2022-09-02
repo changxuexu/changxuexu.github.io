@@ -699,7 +699,9 @@ var data_jsplug = {
         { name: 'html2canvas', href: 'http://html2canvas.hertzen.com', title: '对网页html屏幕截图,用于生成图片' },
         { name: 'Typed.js', href: 'https://www.typeitjs.com', title: '打字机效果' },
         { name: 'AlloyFinger', href: 'http://alloyteam.github.io/AlloyFinger', title: '手势插件' },
-        { name: 'zTree', href: 'https://treejs.cn', title: '树插件' }
+        { name: 'zTree', href: 'https://treejs.cn', title: '树插件' },
+        { name: 'Shepherd', href: 'https://shepherdjs.dev/', title: '为应用创建新手引导' },
+        { name: 'favico.js', href: 'https://www.npmjs.com/package/favico.js', title: '动态 favicon' },
       ]
     }
   ]

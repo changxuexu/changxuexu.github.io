@@ -1,4 +1,5 @@
 let { reactive, ref, onMounted, watchEffect, toRaw } = Vue
+let favicon = new Favico({ animation: "pop", position: 'down' }); // 动态favico.ico
 const offsetY = 36 //滚动y轴偏移量
 const option = {
   data() {
@@ -47,6 +48,9 @@ const option = {
             this.currentfloor = `element_super_${idx + 1}`
           }
         })
+
+        favicon.badge(' ');
+
       }, 20)
     },
     showsidebarhandle() {
