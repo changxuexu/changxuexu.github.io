@@ -13,8 +13,8 @@ const option = {
       currentfloor: '',   //当前楼层
       showsidebar: false, //展示侧边栏
       ismobile: false,    //手机端
-      wscrolline: 0, //滚动百分比
-      scrollAvail: 0
+      wscrolline: 0,  //滚动百分比
+      scrollAvail: 0  //可滚动区域总高度
     }
   },
   computed: {
@@ -38,10 +38,9 @@ const option = {
       // window.scrollTo({ top: 0, behavior: "smooth" })
 
       this.$nextTick(() => {
-
         let pageHeight = document.body.scrollHeight || document.documentElement.scrollHeight;
         let windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
-        let scrollAvail = pageHeight - windowHeight; //滚动总高度
+        let scrollAvail = pageHeight - windowHeight; //可滚动区域总高度
         this.scrollAvail = scrollAvail
 
         window.addEventListener("scroll", this.scroll)
@@ -65,10 +64,9 @@ const option = {
 
         favicon.badge(' ');
 
-
-
+        //方式1：(滚动高度/可滚动区域总高度)*100 %
+        //方式2：（scrollTop + windowHeight）* windowWidth / pageHeight  px
         this.wscrolline = (Math.max(0, Math.min(1, scrollTop / this.scrollAvail))) * 100
-
 
       }, 20)
     },

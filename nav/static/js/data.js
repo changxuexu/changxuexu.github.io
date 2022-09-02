@@ -684,7 +684,27 @@ var data_jsplug = {
         { name: 'greensock', href: 'https://greensock.com', title: 'https://www.npmjs.com/package/gsap' },
         { name: 'Mo.js', href: 'https://mojs.github.io', title: '模块化,流畅' },
         { name: 'particlesJS', href: 'https://github.com/VincentGarreau/particles.js', title: '粒子背景：粒子的密度、颜色、不透明度、形状和大小' },
-        { name: 'SVGA动画', href: 'http://svga.io/index.html', title: '跨平台的开源动画方案' }
+        { name: 'Velocity.js', href: 'https://www.npmjs.com/package/velocity-animate', title: '' }
+      ]
+    },
+    {
+      second_tit: 'svg动画',
+      second_child: [
+        { name: 'SVGA动画', href: 'http://svga.io/index.html', title: '跨平台的开源动画方案' },
+        { name: 'Vivus.js', href: 'https://github.com/maxwellito/vivus', title: '在 SVG 上绘制动画' }
+      ]
+    },
+    {
+      second_tit: '滚动',
+      second_child: [
+        { name: 'Pagepiling.js', href: 'https://github.com/alvarotrigo/pagePiling.js', title: '全屏一页滚动' },
+        { name: 'One page scroll', href: 'https://github.com/peachananr/onepage-scroll', title: '全屏一页滚动' },
+        { name: 'Multiscroll.js', href: 'https://github.com/alvarotrigo/multiscroll.js', title: '两列垂直滚动面板创建拆分页面,反向滚动' },
+        { name: 'Animate on scroll', href: 'https://github.com/michalsnik/aos', title: '滚动时页面元素展现动画' },
+        { name: 'Wow.js', href: 'https://github.com/graingert/WOW', title: '滚动时页面元素展现动画' },
+        { name: 'Parallax.js', href: 'https://github.com/MobiusHorizons/parallax.js', title: '对智能设备方向变化做出响应的视差引擎' },
+        { name: 'jInvertScroll', href: 'https://github.com/pixxelfactory/jInvertScroll', title: '视差滚动' },
+        { name: '', href: '', title: '' }
       ]
     },
     {
@@ -702,6 +722,8 @@ var data_jsplug = {
         { name: 'zTree', href: 'https://treejs.cn', title: '树插件' },
         { name: 'Shepherd', href: 'https://shepherdjs.dev/', title: '为应用创建新手引导' },
         { name: 'favico.js', href: 'https://www.npmjs.com/package/favico.js', title: '动态 favicon' },
+        { name: 'Keycode', href: 'https://www.npmjs.com/package/keycode-js', title: '获取键盘按键的 JavaScript keycode' },
+        { name: 'Slideout.js', href: 'https://slideout.js.org/', title: '移动应用侧滑导航' },
       ]
     }
   ]

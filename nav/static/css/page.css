@@ -29,7 +29,7 @@ html, body {
   left:0;
   top: 0;
   bottom: 0;
-  width:180px;
+  width:150px;
   min-height: 100vh;
   overflow-y:auto;
   z-index: 3;
@@ -45,12 +45,11 @@ html, body {
   transition: all 0.9s ease-out;
 }
 
-
-
 .nav-slide-wrap .menu-section-list li{
   padding: 10px 20px;
   cursor: pointer;
   color:#ffffff;
+  text-align: center;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -81,8 +80,8 @@ html, body {
 }
 .avtarwrap .avtar{
   display: inline-block;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   padding: 1px;
   border: 3px solid rgba(255,255,255,.5);
   border-radius: 100%;
@@ -96,6 +95,7 @@ html, body {
 .avtarwrap .username{
   padding-top:5px;
   padding-bottom:10px;
+  font-size:13px;
 }
 .nav-slide-backdrop{
   position: fixed;
@@ -111,7 +111,7 @@ html, body {
 
 /* 右边 */
 .nav-content-wrap{
-  margin-left:180px;
+  margin-left:150px;
   min-height:100vh;
   box-sizing: border-box;
   padding:0 20px;
@@ -188,7 +188,7 @@ html, body {
 }
 .headertop{
   position: fixed;
-  left:180px;
+  left:150px;
   right:0;
   top:0;
   z-index:1;
@@ -234,11 +234,12 @@ html, body {
   left: 0px;
   right: 0px;
   top: 0px;
-  height:4px;
+  height:2px;
 }
 .scrollineinside{
   background: #39A4DC;
   background-image: linear-gradient(to right bottom, #00d4d0, #00c9d9, #00bedf, #00b1e0, #39a4dc);
-  height:3px;
+  height:2px;
   width:0;
+  transition: width 0.5s ease-in-out;
 }

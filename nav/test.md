@@ -1,26 +1,14 @@
-加载进度
+Highlight.js web 语法高亮
 
-	var value = ;
-	$progress.css({width: value * 100 + '%'});
-	
-	function scrollBar() {
-		let pageHeight = document.body.scrollHeight || document.documentElement.scrollHeight;
-		let windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
-		let scrollAvail = pageHeight - windowHeight; //滚动总高度
-		window.onscroll = function () {
-		  let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-		  document.querySelector('.scrollBar').style.width = (scrollTop/scrollAvail)*100   '%';
-		  滚动高度/滚动总高度
-		};
-	}
+Motio — 一个基于动画和平移的雪碧图库
 
-	var self = this,
-	hWin = $(window).height(), //window高度
-	wWin = $(window).width(),  //宽度
-	hDoc = $(document).height(), //文档的高度
-	scrollValue = $(window).scrollTop(), //滚动高度
-	wBack, hBack, wFront, hFront, scrollineVal, wRef;
+Barba.js — 流式页面过渡
+
+TwentyTwenty — 一个对比图片的可视化 diff 工具
+Handlebars.js — Javascript 模板
 
 
-	//默认 (滚动高度+window高度)为总滚动高度
-  scrollineVal = (scrollValue + hWin) * wWin / hDoc;
+Typeahead.js — 搜索补全
+
+Dragdealer.js — 炫酷拖拽
+	http://skidding.github.io/dragdealer/
