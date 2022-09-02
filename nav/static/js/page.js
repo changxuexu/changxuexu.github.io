@@ -7,7 +7,8 @@ const option = {
       currentfloor: '',//当前楼层
       scrolltimer: null,
       resizetimer: null,
-      showsidebar: true
+      showsidebar: false,
+      ismobile: false //手机端
     }
   },
   computed: {
@@ -61,13 +62,18 @@ const option = {
       }
     },
     movescrollbar() {
-      document.body.style.overflow = 'hidden';
+      if (!this._isMobile()) {
+        document.body.style.overflow = 'hidden';
+      }
     },
     leavescrollbar() {
-      document.body.style.overflow = 'auto';
+      if (!this._isMobile()) {
+        document.body.style.overflow = 'auto';
+      }
     },
     _isMobile() {
       const rect = document.body.getBoundingClientRect()
+      this.ismobile = rect.width < 768
       return rect.width < 768
     }
   },

@@ -11,12 +11,10 @@
 </head>
 <body>
 <div id="app" v-cloak>
-  <div @click.self="showsidebarhandle" class="nav-slide-backdrop" v-if="ismobile && showsidebar"></div>
   <div 
     @mousemove="movescrollbar" 
     @mouseleave="leavescrollbar"
-    class="nav-slide-wrap" 
-    :class="{'nav-slide-closewrap':!showsidebar}">
+    class="nav-slide-wrap" id="slidescrollbar" :class="{'nav-slide-closewrap':!showsidebar}">
     <div class="avtarwrap">
       <img src="./static/img/avtar.jpg" class="avtar">
       <div class="username">￡AP︶ㄣOL◢◤LO</div>
@@ -27,11 +25,11 @@
       </template>
     </ul>
   </div>
-  <div class="nav-content-wrap" :class="{'nav-content-closewrap':!ismobile && !showsidebar ,'nav-content-ltME':ismobile}">
+  <div class="nav-content-wrap" :class="{'nav-content-closewrap':!showsidebar}">
     <div class="headertopwrap">
-      <div class="headertop" :class="{'headertopClose':!ismobile && !showsidebar, 'headertop-ltME':ismobile  }">
+      <div class="headertop" :class="{'headertopClose':!showsidebar}">
         <img @click="showsidebarhandle" :src="showsidebar ? './static/img/icon_close.png':'./static/img/icon_open.png'" class="iconOprate">
-        <div class="des" v-scroll-to="`#app`">平平淡淡，随心生活；心无所贪，净土则生</div>
+        <div class="des">平平淡淡，随心生活；心无所贪，净土则生</div>
       </div>
     </div>
     <template v-for="(item,superidx) in arr_data" :key="`super_${superidx}`">
