@@ -1,15 +1,20 @@
 let { reactive, ref, onMounted, watchEffect, toRaw } = Vue
 let favicon = new Favico({ animation: "pop", position: 'down' }); // 动态favico.ico
 const offsetY = 36 //滚动y轴偏移量
+
+
+
 const option = {
   data() {
     return {
       arr_data,
-      currentfloor: '',//当前楼层
       scrolltimer: null,
       resizetimer: null,
-      showsidebar: false,
-      ismobile: false //手机端
+      currentfloor: '',   //当前楼层
+      showsidebar: false, //展示侧边栏
+      ismobile: false,    //手机端
+      wscrolline: 0, //滚动百分比
+      scrollAvail: 0
     }
   },
   computed: {
@@ -31,12 +36,18 @@ const option = {
   methods: {
     init() {
       // window.scrollTo({ top: 0, behavior: "smooth" })
+
       this.$nextTick(() => {
+
+        let pageHeight = document.body.scrollHeight || document.documentElement.scrollHeight;
+        let windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
+        let scrollAvail = pageHeight - windowHeight; //滚动总高度
+        this.scrollAvail = scrollAvail
+
         window.addEventListener("scroll", this.scroll)
         window.addEventListener('resize', this.resizehandle)
       })
-      //
-      this.windowHeight = document.documentElement.clientHeight || document.body.clientHeight
+
     },
     scroll() {
       if (this.scrolltimer) { clearTimeout(this.scrolltimer) }
@@ -53,6 +64,11 @@ const option = {
         })
 
         favicon.badge(' ');
+
+
+
+        this.wscrolline = (Math.max(0, Math.min(1, scrollTop / this.scrollAvail))) * 100
+
 
       }, 20)
     },

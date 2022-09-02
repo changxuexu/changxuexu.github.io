@@ -1,20 +1,7 @@
 加载进度
-	https://zhuanlan.zhihu.com/p/66672090
-	$(function(){
-		var $window = $(window);
-		var $progress = $('.progress');
-		var sHeight = $('body').height() - $window.height();
-		$window.on('scroll', function() {
-			window.requestAnimationFrame(function(){
-				var value = Math.max(0, Math.min(1, $window.scrollTop() / sHeight));
-				updateProgressBar(value);
-			});
-		});
 
-		function updateProgressBar(value) {
-			$progress.css({width: value * 100 + '%'});
-		}
-	});
+	var value = ;
+	$progress.css({width: value * 100 + '%'});
 	
 	function scrollBar() {
 		let pageHeight = document.body.scrollHeight || document.documentElement.scrollHeight;
