@@ -40,6 +40,7 @@ var data_daily = {
         { name: '程序猿在线工具', href: 'http://www.ofmonkey.com/format/css', title: '' },
         { name: '前端导航', href: 'http://uyi2.com/bus', title: '' },
         { name: '开发综合文档', href: 'https://devdocs.io', title: '' },
+        { name: '开发语言学习资源', href: 'https://learn-anything.xyz/learn-anything', title: '以思维导图形式提供各种学习资源' },
         { name: 'Chrome开发者工具中文文档', href: 'https://www.html.cn/doc/chrome-devtools', title: '' },
       ]
     }
@@ -196,8 +197,7 @@ var data_jquery = {
       second_tit: '插件资源',
       second_child: [
         { name: 'jq22', href: 'http://www.jq22.com', title: '' },
-        { name: 'jquery之家', href: 'http://www.htmleaf.com', title: '' },
-        { name: '', href: '', title: '' }
+        { name: 'jquery之家', href: 'http://www.htmleaf.com', title: '' }
       ]
     }
   ]
@@ -244,8 +244,7 @@ var data_Redis = {
         { name: 'redis命令参考', href: 'http://doc.redisfans.com', title: '' },
         { name: '安装包下载', href: 'https://github.com/tporadowski/redis/releases', title: '' },
         { name: 'redis在线测试', href: 'https://try.redis.io', title: '' },
-        { name: 'redis源码', href: 'https://github.com/redis/redis', title: '' },
-        { name: '', href: '', title: '' }
+        { name: 'redis源码', href: 'https://github.com/redis/redis', title: '' }
       ]
     }
   ]
@@ -331,8 +330,7 @@ var data_Tiktok = {
       second_tit: '文档资料',
       second_child: [
         { name: '字节小程序', href: 'https://microapp.bytedance.com/', title: '' },
-        { name: '抖音开放平台', href: 'https://open.douyin.com/platform', title: '' },
-        { name: '', href: '', title: '' }
+        { name: '抖音开放平台', href: 'https://open.douyin.com/platform', title: '' }
       ]
     }
   ]
@@ -699,12 +697,12 @@ var data_jsplug = {
       second_child: [
         { name: 'Pagepiling.js', href: 'https://github.com/alvarotrigo/pagePiling.js', title: '全屏一页滚动' },
         { name: 'One page scroll', href: 'https://github.com/peachananr/onepage-scroll', title: '全屏一页滚动' },
+        { name: 'fullPage.js', href: 'https://alvarotrigo.com/fullPage/zh/', title: '全屏滚动' },
         { name: 'Multiscroll.js', href: 'https://github.com/alvarotrigo/multiscroll.js', title: '两列垂直滚动面板创建拆分页面,反向滚动' },
         { name: 'Animate on scroll', href: 'https://github.com/michalsnik/aos', title: '滚动时页面元素展现动画' },
         { name: 'Wow.js', href: 'https://github.com/graingert/WOW', title: '滚动时页面元素展现动画' },
         { name: 'Parallax.js', href: 'https://github.com/MobiusHorizons/parallax.js', title: '对智能设备方向变化做出响应的视差引擎' },
-        { name: 'jInvertScroll', href: 'https://github.com/pixxelfactory/jInvertScroll', title: '视差滚动' },
-        { name: '', href: '', title: '' }
+        { name: 'jInvertScroll', href: 'https://github.com/pixxelfactory/jInvertScroll', title: '视差滚动' }
       ]
     },
     {
@@ -724,6 +722,14 @@ var data_jsplug = {
         { name: 'favico.js', href: 'https://www.npmjs.com/package/favico.js', title: '动态 favicon' },
         { name: 'Keycode', href: 'https://www.npmjs.com/package/keycode-js', title: '获取键盘按键的 JavaScript keycode' },
         { name: 'Slideout.js', href: 'https://slideout.js.org/', title: '移动应用侧滑导航' },
+        { name: 'highlight.js', href: 'https://highlightjs.org/',black_href:'https://www.cnblogs.com/mmzuo-798/p/11325187.html', title: '自动检测代码类似编辑器内高亮展示' },
+        { name: 'Dragdealer.js', href: 'http://skidding.github.io/dragdealer/', title: '炫酷拖拽' },
+        { name: 'Barba.js', href: 'https://github.com/barbajs/barba', title: '在网站页面之间创建流畅流畅的过渡' },
+        { name: 'Tippy.js', href: 'https://atomiks.github.io/tippyjs/', title: 'Tooltip提示插件' },
+        { name: 'Nice select', href: 'https://jqueryniceselect.hernansartorio.com/', title: '' },
+        { name: 'Typeahead.js', href: 'http://twitter.github.io/typeahead.js/', title: '自动匹配搜索' },
+        { name: 'Handlebars.js', href: 'https://handlebarsjs.com/', title: 'js模板引擎,用于快速渲染数据' },
+        { name: 'TwentyTwenty', href: 'https://zurb.com/playground/twentytwenty', title: '展示两个图像之间的视觉差异' },
       ]
     }
   ]
@@ -769,6 +775,12 @@ var data_css = {
         { name: '波浪效果生成器', href: 'https://getwaves.io/', title: '在线生成编辑波浪效果的SVG格式' },
         { name: 'CSS Grid Generator', href: 'https://cssgrid-generator.netlify.app/', title: '可以设置行和列的数字还有单位，生成一个 CSS Grid 网格布局' },
         { name: '零代码工具箱', href: 'https://www.lingdaima.com/', title: '' }
+      ]
+    },
+    {
+      second_tit: 'html',
+      second_child: [
+        { name: 'head标签', href: 'https://github.com/joshbuchea/HEAD', title: 'head标签的所有内容列表' }
       ]
     }
   ]
