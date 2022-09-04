@@ -31,8 +31,10 @@
   <div class="nav-content-wrap" :class="{'nav-content-closewrap':!ismobile && !showsidebar ,'nav-content-ltME':ismobile}">
     <div class="headertopwrap">
       <div class="headertop" :class="{'headertopClose':!ismobile && !showsidebar, 'headertop-ltME':ismobile  }">
-        <img @click="showsidebarhandle" :src="showsidebar ? './static/img/icon_close.png':'./static/img/icon_open.png'" class="iconOprate">
-        <div class="des" v-scroll-to="`#app`">平平淡淡，随心生活；心无所贪，净土则生</div>
+        <img @click="showsidebarhandle" 
+          :src="showsidebar ? './static/img/icon_close.png':'./static/img/icon_open.png'"
+          class="iconOprate">
+        <div class="des" id="typeitmotto" v-scroll-to="`#app`"></div>
         <div class="scrollinebox" v-if="wscrolline">
           <div class="scrollineinside" :style="{'width':`${wscrolline}%`}"></div>
         </div>
@@ -50,9 +52,10 @@
             <template v-for="(second_child_item,secondchildidx) in super_child_item.second_child" :key="`second_child_${secondchildidx}`">
               <a 
                 :href="second_child_item.href" 
-                :data-tippy-placement="second_child_item.title ? top:null"
                 :data-tippy-content="second_child_item.title ? second_child_item.title:null" 
-                :data-animation="second_child_item.title ? shift-away:null"
+                :data-tippy-placement="second_child_item.title ? 'top':null"
+                :data-tippy-animation="second_child_item.title ? 'shift-away':null"
+                :data-tippy-delay="second_child_item.title ? '[150, null]':null"
                 target="_blank">{{second_child_item.name}}</a>
             </template>
           </div>
@@ -70,6 +73,8 @@
 <!-- tooltip -->
 <script src="./static/js/popper.min.js" type="text/javascript"></script>
 <script src="./static/js/tippy.js" type="text/javascript"></script>
+<!-- typeit -->
+<script src="./static/js/typeit.js" type="text/javascript"></script>
 <!-- 页面 -->
 <script src="./static/js/data.js" type="text/javascript"></script>
 <script src="./static/js/page.js" type="text/javascript"></script>
