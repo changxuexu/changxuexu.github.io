@@ -1,8 +1,7 @@
 let { reactive, ref, onMounted, watchEffect, toRaw } = Vue
 let favicon = new Favico({ animation: "pop", position: 'down' }); // 动态favico.ico
+
 const offsetY = 36 //滚动y轴偏移量
-
-
 
 const option = {
   data() {
@@ -36,12 +35,14 @@ const option = {
   methods: {
     init() {
       // window.scrollTo({ top: 0, behavior: "smooth" })
-
       this.$nextTick(() => {
         let pageHeight = document.body.scrollHeight || document.documentElement.scrollHeight;
         let windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
         let scrollAvail = pageHeight - windowHeight; //可滚动区域总高度
         this.scrollAvail = scrollAvail
+
+        // tooltip
+        tippy('[data-tippy-content]')
 
         window.addEventListener("scroll", this.scroll)
         window.addEventListener('resize', this.resizehandle)
