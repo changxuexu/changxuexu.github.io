@@ -86,8 +86,10 @@ var data_vue = {
         { name: 'NutUI', href: 'https://nutui.jd.com/#/intro', title: '京东' },
         { name: 'Mint', href: 'http://mint-ui.github.io/#!/zh-cn', title: '饿了么' },
         { name: 'Cube UI', href: 'https://didi.github.io/cube-ui/#/zh-CN', title: '滴滴' },
+        { name: 'TDesign', href: 'https://tdesign.tencent.com/', title: 'Vue3 桌面端/移动端/小程序' },
         { name: 'Muse UI', href: 'https://muse-ui.org/#/zh-CN', title: '' },
-        { name: 'we-vue', href: 'https://github.com/tianyong90/we-vue', title: '是一套基于 Vue.js 的移动关组件库，结合 weui 官方样式库，封装了一系列组件，适合微信公众号等移动端开发' }
+        { name: 'we-vue', href: 'https://github.com/tianyong90/we-vue', title: '是一套基于 Vue.js 的移动关组件库，结合 weui 官方样式库，封装了一系列组件，适合微信公众号等移动端开发' },
+        { name: 'Varlet', href: 'https://varlet.gitee.io/varlet-ui', title: 'Vue3 开发的 Material 风格移动端组件库，由社区的小伙伴开发和维护' },
       ]
     },
     {
@@ -127,7 +129,16 @@ var data_React = {
         { name: 'React', href: 'https://zh-hans.reactjs.org/', title: 'react_reactjs' },
         { name: 'React', href: 'https://reactjs.bootcss.com/', title: 'react_bootcss' },
         { name: 'React-native', href: 'https://www.react-native.cn/', title: '' },
-        { name: 'React菜鸟教程', href: 'https://www.runoob.com/react/react-tutorial.html', title: '' }
+        { name: 'React菜鸟教程', href: 'https://www.runoob.com/react/react-tutorial.html', title: '' },
+        { name: 'Preact', href: 'https://preactjs.com/', title: 'React 的轻量级替代方案，体积仅有 3kB，并且拥有与 React 相同的 API' }
+      ]
+    },
+    {
+      second_tit: '应用框架',
+      second_child: [
+        { name: 'Next.js', href: 'https://www.nextjs.cn', title: '轻量级的 React 服务端渲染应用框架' },
+        { name: 'Remix', href: 'https://remix.run', title: '服务端渲染应用框架' },
+        { name: 'Gatsby', href: 'https://www.gatsbyjs.cn', title: '预渲染页面' }
       ]
     },
     {
@@ -221,7 +232,8 @@ var data_Node = {
         { name: 'express', href: 'https://www.expressjs.com.cn', title: '' },
         { name: 'koa', href: 'https://www.koajs.com.cn', title: '' },
         { name: 'egg', href: 'https://www.eggjs.org/zh-CN', title: '' },
-        { name: 'fastify', href: 'https://www.fastify.io', title: '' }
+        { name: 'fastify', href: 'https://www.fastify.io', title: '' },
+        { name: 'NestJs', href: 'https://nestjs.com', title: '用于构建高效、可靠和可扩展的服务器端应用程序的渐进式 Node.js 框架' },
       ]
     },
     {
@@ -614,6 +626,18 @@ var data_javascript = {
   ]
 }
 
+var data_typeScript = {
+  super_tit: 'TypeScript',
+  super_child: [
+    {
+      second_tit: '文档资料',
+      second_child: [
+        { name: 'TypeScript官网', href: 'https://www.typescriptlang.org/docs/handbook/intro.html', title: '' }
+      ]
+    },
+  ]
+}
+
 var data_jsplug = {
   super_tit: 'Js插件库',
   super_child: [
@@ -836,6 +860,7 @@ var arr_data = [
   data_Crossplatform,
   data_jquery,
   data_javascript,
+  data_typeScript,
   data_css,
   data_Node,
   data_Redis,
