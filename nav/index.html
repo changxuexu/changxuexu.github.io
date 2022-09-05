@@ -31,10 +31,9 @@
   <div class="nav-content-wrap" :class="{'nav-content-closewrap':!ismobile && !showsidebar ,'nav-content-ltME':ismobile}">
     <div class="headertopwrap">
       <div class="headertop" :class="{'headertopClose':!ismobile && !showsidebar, 'headertop-ltME':ismobile  }">
-        <img @click="showsidebarhandle" 
-          :src="showsidebar ? './static/img/icon_close.png':'./static/img/icon_open.png'"
-          class="iconOprate">
-        <div class="des" id="typeitmotto" v-scroll-to="`#app`"></div>
+        <img @click="showsidebarhandle" :src="showsidebar ? './static/img/icon_close.png':'./static/img/icon_open.png'" class="iconOprate">
+        <div class="des" id="typeitmotto" v-scroll-to="`#app`">
+        </div>
         <div class="scrollinebox" v-if="wscrolline">
           <div class="scrollineinside" :style="{'width':`${wscrolline}%`}"></div>
         </div>
@@ -74,7 +73,7 @@
 <script src="./static/js/popper.min.js" type="text/javascript"></script>
 <script src="./static/js/tippy.js" type="text/javascript"></script>
 <!-- typeit -->
-<script src="./static/js/typeit.js" type="text/javascript"></script>
+<script src="./static/js/typed.js" type="text/javascript"></script>
 <!-- 页面 -->
 <script src="./static/js/data.js" type="text/javascript"></script>
 <script src="./static/js/page.js" type="text/javascript"></script>

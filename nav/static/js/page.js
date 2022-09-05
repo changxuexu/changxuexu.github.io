@@ -44,8 +44,8 @@ const option = {
         // tooltip
         tippy('[data-tippy-content]')
 
-        // TypeIt
-        new TypeIt("#typeitmotto", { strings: "平平淡淡，随心生活；心无所贪，净土则生",speed:250,loop: true}).go();
+        // Typed
+        new Typed('#typeitmotto', { strings: ['平平淡淡，随心生活；心无所贪，净土则生'], typeSpeed: 300, startDelay: 300, backSpeed: 300, showCursor: false, loop: true })
 
         window.addEventListener("scroll", this.scroll)
         window.addEventListener('resize', this.resizehandle)
