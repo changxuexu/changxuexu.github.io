@@ -89,6 +89,7 @@ var data_vue = {
         { name: 'TDesign', href: 'https://tdesign.tencent.com/', title: 'Vue3 桌面端/移动端/小程序' },
         { name: 'Muse UI', href: 'https://muse-ui.org/#/zh-CN', title: '' },
         { name: 'we-vue', href: 'https://github.com/tianyong90/we-vue', title: '是一套基于 Vue.js 的移动关组件库，结合 weui 官方样式库，封装了一系列组件，适合微信公众号等移动端开发' },
+        { name: 'Mand Mobile', href: 'https://didi.github.io/mand-mobile/#/zh-CN/home', title: '滴滴研发的面向金融场景的 UI 组件库，支持 Vue3' },
         { name: 'Varlet', href: 'https://varlet.gitee.io/varlet-ui', title: 'Vue3 开发的 Material 风格移动端组件库，由社区的小伙伴开发和维护' },
       ]
     },
@@ -145,6 +146,7 @@ var data_React = {
       second_tit: '组件库P',
       second_child: [
         { name: 'Ant Design', href: 'https://ant.design/docs/react/introduce-cn', title: '' },
+        { name: 'Ant Design Mobile', href: 'https://antd-mobile.gitee.io/zh', title: '' },
         { name: 'Semi Design', href: 'https://semi.design/zh-CN/', title: '抖音/UED' },
         { name: 'ZEIT UI', href: 'https://github.com/zeit-ui/react', title: '抖音/UED' },
       ]
@@ -170,6 +172,32 @@ var data_Angular = {
     }
   ]
 }
+
+var data_svelte = {
+  super_tit: 'Svelte',
+  super_child: [
+    {
+      second_tit: '文档资料',
+      second_child: [
+        { name: 'Svelte文档', href: 'https://www.sveltejs.cn/', title: '传统框架如 React 和 Vue 在浏览器中需要做大量的工作，而 Svelte 在 构建/编译阶段 将你的应用程序转换为理想的 JavaScript 应用，而不是在 运行阶段 解释应用程序的代码' },
+        { name: '初识Svelte', href: 'https://www.cnblogs.com/sucls/articles/16094552.html', title: '' },
+      ]
+    }
+  ]
+}
+
+var data_ember = {
+  super_tit: 'Ember',
+  super_child: [
+    {
+      second_tit: '文档资料',
+      second_child: [
+        { name: 'Ember文档', href: 'https://emberjs.com/', title: 'MVC(模型-视图-控制器)架构模式' },
+      ]
+    }
+  ]
+}
+
 
 var data_jquery = {
   super_tit: 'jquery/Zepto',
@@ -857,6 +885,8 @@ var arr_data = [
   data_vue,
   data_React,
   data_Angular,
+  data_svelte,
+  data_ember,
   data_Crossplatform,
   data_jquery,
   data_javascript,
