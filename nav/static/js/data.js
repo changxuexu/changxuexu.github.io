@@ -790,7 +790,7 @@ var data_jsplug = {
 }
 
 var data_css = {
-  super_tit: 'Css',
+  super_tit: 'Html/Css',
   super_child: [
     {
       second_tit: '文档资料',
@@ -834,7 +834,8 @@ var data_css = {
     {
       second_tit: 'html',
       second_child: [
-        { name: 'head标签', href: 'https://github.com/joshbuchea/HEAD', title: 'head标签的所有内容列表' }
+        { name: 'head标签', href: 'https://github.com/joshbuchea/HEAD', title: 'head标签的所有内容列表' },
+        { name: '50projects50days', href: 'https://github.com/bradtraversy/50projects50days', title: '入门练习案例' }
       ]
     }
   ]

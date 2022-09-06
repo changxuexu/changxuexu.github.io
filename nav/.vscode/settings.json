@@ -1,3 +1,4 @@
 {
-    "liveServer.settings.multiRootWorkspaceName": "nav"
+    "liveServer.settings.multiRootWorkspaceName": "nav",
+    "liveServer.settings.port": 1001
 }
