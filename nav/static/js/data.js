@@ -6,7 +6,8 @@ var data_daily = {
       second_child: [
         { name: '百度搜索', href: 'https://www.baidu.com', title: '' },
         { name: '头条搜索', href: 'https://www.toutiao.com', title: '' },
-        { name: '搜猫搜索', href: 'https://www.soumao.cc/', title: '' },
+        { name: '搜猫搜索', href: 'https://www.soumao.cc', title: '' },
+        { name: 'libraryMirror', href: 'https://www.library.ac.cn', title: '' },
         { name: '谷歌搜索', href: 'https://www.google.com', title: '' },
         { name: '百度翻译', href: 'https://fanyi.baidu.com', title: '' },
         { name: '火山翻译', href: 'https://translate.volcengine.com/translate', title: '' },
