@@ -873,6 +873,7 @@ var data_other = {
       second_child: [
         { name: '微信读书', href: 'https://weread.qq.com/web/category/700002', title: '' },
         { name: '清华大学开放书籍', href: 'https://lib-nuanxin.wqxuetang.com/#/', title: '' },
+        { name: '清北浙大计算机教程', href: 'https://github.com/lib-pku/libpku', title: '' },
         { name: '国家中小学网络云平台', href: 'https://ykt.eduyun.cn', title: '' },
         { name: '国家教育资源公共服务平台', href: 'https://www.eduyun.cn', title: '' },
         { name: '皖教云', href: 'http://www.ahedu.cn/#/', title: '' }
