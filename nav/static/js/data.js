@@ -605,7 +605,9 @@ var data_study = {
       second_tit: '测试',
       second_child: [
         { name: '测试教程', href: 'http://lemon.ke.qq.com/#category=15380424295395507&tab=1', title: '' },
-        { name: 'Jest', href: 'https://www.jestjs.cn', title: 'JavaScript测试框架,可使用在Babel、TypeScript、Node、React、Angular、Vue等等!' }
+        { name: 'Jest', href: 'https://www.jestjs.cn', title: 'JavaScript测试框架,可使用在Babel、TypeScript、Node、React、Angular、Vue等等!' },
+        { name: 'mocha', href: 'https://mochajs.org/', github_href: 'https://github.com/mochajs/mocha', title: 'JavaScript 测试框架，运行在Node.js和浏览器中，让异步测试变得简单有趣' },
+        { name: 'Vitest', href: 'https://cn.vitest.dev/', title: '由 Vite 提供支持的极速单元测试框架' }
       ]
     },
     {
