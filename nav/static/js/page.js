@@ -47,8 +47,16 @@ const option = {
         // Typed
         new Typed('#typeitmotto', { strings: ['平平淡淡，随心生活；心无所贪，净土则生'], typeSpeed: 300, startDelay: 300, backSpeed: 300, showCursor: false, loop: true })
 
+        // 数字增加
+        this._updateCounter()
+
+        // favicon.js
+        favicon.badge(' ');
+
+        // 
         window.addEventListener("scroll", this.scroll)
         window.addEventListener('resize', this.resizehandle)
+
       })
 
     },
@@ -65,8 +73,6 @@ const option = {
             this.currentfloor = `element_super_${idx + 1}`
           }
         })
-
-        favicon.badge(' ');
 
         //方式1：(滚动高度/可滚动区域总高度)*100 %
         //方式2：（scrollTop + windowHeight）* windowWidth / pageHeight  px
@@ -100,6 +106,27 @@ const option = {
       const rect = document.body.getBoundingClientRect()
       this.ismobile = rect.width < 768
       return rect.width < 768
+    },
+    _updateCounter() {
+      const counters = this.$refs.superidxdom
+      counters.forEach(counter => {
+        counter.innerText = 0
+        const updateCounter = () => {
+          const target = +counter.getAttribute('data-target')
+          const c = +counter.innerText
+
+          const increment = target / 200
+
+          if (c < target) {
+            counter.innerText = `${Math.ceil(c + increment)}`
+            setTimeout(updateCounter, 100)
+          } else {
+            counter.innerText = target
+          }
+        }
+
+        updateCounter()
+      })
     }
   },
   beforeUnmount() {

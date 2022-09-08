@@ -42,7 +42,8 @@
     <template v-for="(item,superidx) in arr_data" :key="`super_${superidx}`">
       <div class="floor-item" ref="flooritem" :id="`element_super_${superidx+1}`">
         <div class="super-tit">
-          <span class="super-idx">{{superidx+1}}.</span>
+          <span class="super-idx" ref="superidxdom" :data-target="superidx+1"></span>
+          <span class="super-idx">.</span>
           {{item.super_tit}}
         </div>
         <template v-for="(super_child_item,superchildidx) in item.super_child" :key="`super_child_${superchildidx}`">
