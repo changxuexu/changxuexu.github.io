@@ -1,3 +1,7 @@
+/* 伪类，表示文档根元素，所有主流浏览器均支持 :root 选择器，除了 IE8 及更早的版本,使用var()来引用在:root中声明相当于全局属性 */
+:root{
+  --main-color:#39A4DC;
+}
 * { padding: 0; margin: 0; outline:none }
 html, body {
   font-family:'Microsoft Yahei', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', sans-serif;
@@ -148,7 +152,7 @@ html, body {
   display: inline-block;
   font-size: 20px;
   font-weight: bold;
-  color: #39A4DC;
+  color: var(--main-color);
   line-height:70px;
 }
 .nav-content-wrap .super-idx{
@@ -181,7 +185,7 @@ html, body {
   position: relative;
 }
 .nav-content-wrap a:hover{
-  color:#39A4DC;
+  color:var(--main-color);
   text-decoration: underline;
 }
 .headertopwrap{
@@ -221,7 +225,7 @@ html, body {
   opacity:0.8;
 }
 .headertop .des{
-  color:#39A4DC;
+  color:var(--main-color);
   margin-right:20px;
   margin-left: 20px;
   overflow: hidden;
@@ -238,7 +242,7 @@ html, body {
   height:2px;
 }
 .scrollineinside{
-  background: #39A4DC;
+  background: var(--main-color);
   background-image: linear-gradient(to right bottom, #00d4d0, #00c9d9, #00bedf, #00b1e0, #39a4dc);
   height:2px;
   width:0;

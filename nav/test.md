@@ -18,24 +18,19 @@ CKEditor5
   
  
 
-//样式
+//js样式
 const nav = document.querySelector('.nav')
 nav.classList.add('active')
 nav.classList.remove('active')
 nav.classList.toggle('active')
 
-
-
-:root {
-  --left-bg-color: rgba(87, 84, 236, 0.7);
-  --right-bg-color: rgba(43, 43, 43, 0.8);
-  --left-btn-hover-color: rgba(87, 84, 236, 1);
-  --right-btn-hover-color: rgba(28, 122, 28, 1);
-  --hover-width: 75%;
-  --other-width: 25%;
-  --speed: 1000ms;
-}
-width: var(--other-width);
-
+//原生form监听
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    addTodo()
+})
 
 //骨架屏实现方案
+  https://segmentfault.com/a/1190000038450165
+  https://xiaoiver.github.io/coding/2017/07/30/%E4%B8%BAvue%E9%A1%B9%E7%9B%AE%E6%B7%BB%E5%8A%A0%E9%AA%A8%E6%9E%B6%E5%B1%8F.html
+
