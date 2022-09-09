@@ -34,3 +34,33 @@ form.addEventListener('submit', (e) => {
   https://segmentfault.com/a/1190000038450165
   https://xiaoiver.github.io/coding/2017/07/30/%E4%B8%BAvue%E9%A1%B9%E7%9B%AE%E6%B7%BB%E5%8A%A0%E9%AA%A8%E6%9E%B6%E5%B1%8F.html
 
+
+//fetch
+	const res = await fetch('https://icanhazdadjoke.com', {
+		headers: { Accept: 'application/json' }
+	})
+	const data = await res.json()
+
+//样式
+.progress-bar {
+  background-color: #fff;
+  height: 4px;
+  width: 100%;
+  animation: grow 10s linear infinite;
+  transform-origin: left;
+}
+
+@keyframes grow {
+  0% {
+    transform: scaleX(0);
+  }
+}
+
+
+
+
+
+
+
+
+
