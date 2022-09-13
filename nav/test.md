@@ -29,10 +29,14 @@ e.target.parentNode.classList
 e.target.nextElementSibling  //后一个兄弟节点
 e.target.previousSibling     //前一个兄弟节点
 
+const notif = document.createElement('div')
+toasts.appendChild(notif)
+notif.remove()
+
+
 //原生form监听
 form.addEventListener('submit/input', (e) => {
     e.preventDefault()
-    addTodo()
 })
 
 //骨架屏实现方案

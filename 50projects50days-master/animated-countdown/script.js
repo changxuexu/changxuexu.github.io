@@ -1,11 +1,11 @@
-const nums = document.querySelectorAll('.nums span')
-const counter = document.querySelector('.counter')
-const finalMessage = document.querySelector('.final')
-const replay = document.querySelector('#replay')
+const nums = document.querySelectorAll('.nums span')  //数字
+const counter = document.querySelector('.counter')    //数字大盒子
+const finalMessage = document.querySelector('.final') //结束
+const replay = document.querySelector('#replay')      //重新开始
 
 runAnimation()
-
 function resetDOM() {
+
   counter.classList.remove('hide')
   finalMessage.classList.remove('show')
 
