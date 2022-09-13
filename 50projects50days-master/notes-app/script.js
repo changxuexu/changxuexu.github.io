@@ -2,7 +2,7 @@ const addBtn = document.getElementById('add')
 
 const notes = JSON.parse(localStorage.getItem('notes'))
 
-if(notes) {
+if (notes) {
     notes.forEach(note => addNewNote(note))
 }
 
@@ -13,13 +13,13 @@ function addNewNote(text = '') {
     note.classList.add('note')
 
     note.innerHTML = `
-    <div class="tools">
-        <button class="edit"><i class="fas fa-edit"></i></button>
-        <button class="delete"><i class="fas fa-trash-alt"></i></button>
-    </div>
+        <div class="tools">
+            <button class="edit"><i class="fas fa-edit"></i></button>
+            <button class="delete"><i class="fas fa-trash-alt"></i></button>
+        </div>
 
-    <div class="main ${text ? "" : "hidden"}"></div>
-    <textarea class="${text ? "hidden" : ""}"></textarea>
+        <div class="main ${text ? "" : "hidden"}"></div>
+        <textarea class="${text ? "hidden" : ""}"></textarea>
     `
 
     const editBtn = note.querySelector('.edit')
