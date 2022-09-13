@@ -20,12 +20,17 @@ CKEditor5
 
 //js样式
 const nav = document.querySelector('.nav')
+nav.classList
 nav.classList.add('active')
 nav.classList.remove('active')
 nav.classList.toggle('active')
 
+e.target.parentNode.classList
+e.target.nextElementSibling  //后一个兄弟节点
+e.target.previousSibling     //前一个兄弟节点
+
 //原生form监听
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit/input', (e) => {
     e.preventDefault()
     addTodo()
 })
