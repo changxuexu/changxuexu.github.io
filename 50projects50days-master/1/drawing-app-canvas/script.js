@@ -29,7 +29,7 @@ document.addEventListener('mouseup', (e) => {
 })
 
 canvas.addEventListener('mousemove', (e) => {
-    if(isPressed) {
+    if (isPressed) {
         const x2 = e.offsetX
         const y2 = e.offsetY
 
@@ -64,7 +64,7 @@ function updateSizeOnScreen() {
 increaseBtn.addEventListener('click', () => {
     size += 5
 
-    if(size > 50) {
+    if (size > 50) {
         size = 50
     }
 
@@ -74,7 +74,7 @@ increaseBtn.addEventListener('click', () => {
 decreaseBtn.addEventListener('click', () => {
     size -= 5
 
-    if(size < 5) {
+    if (size < 5) {
         size = 5
     }
 
@@ -83,4 +83,4 @@ decreaseBtn.addEventListener('click', () => {
 
 colorEl.addEventListener('change', (e) => color = e.target.value)
 
-clearEl.addEventListener('click', () => ctx.clearRect(0,0, canvas.width, canvas.height))
+clearEl.addEventListener('click', () => ctx.clearRect(0, 0, canvas.width, canvas.height))
