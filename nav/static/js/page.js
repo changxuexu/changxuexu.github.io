@@ -45,7 +45,14 @@ const option = {
         tippy('[data-tippy-content]')
 
         // Typed
-        new Typed('#typeitmotto', { strings: ['平平淡淡，随心生活；心无所贪，净土则生'], typeSpeed: 300, startDelay: 300, backSpeed: 300, showCursor: false, loop: true })
+        new Typed('#typeitmotto', {
+          strings: ['平平淡淡，随心生活；心无所贪，净土则生'],
+          typeSpeed: 300, startDelay: 300,
+          backSpeed: 300, showCursor: false, loop: true,
+          onBegin: (self) => {
+            self.el.style.color = this._getRandomColor()
+          }
+        })
 
         // 数字增加
         this._updateCounter()
@@ -127,6 +134,10 @@ const option = {
 
         updateCounter()
       })
+    },
+    _getRandomColor() {
+      const colors = ['#39A4DC', '#00BEE1', '#00D4D0', '#4EE7AF', '#A7F38A']
+      return colors[Math.floor(Math.random() * colors.length)]
     }
   },
   beforeUnmount() {

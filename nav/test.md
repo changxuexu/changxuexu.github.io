@@ -19,6 +19,7 @@ CKEditor5
  
 
 //js样式
+document.querySelectorAll
 const nav = document.querySelector('.nav')
 nav.classList
 nav.classList.add('active')
@@ -50,20 +51,7 @@ form.addEventListener('submit/input', (e) => {
 	})
 	const data = await res.json()
 
-//样式
-.progress-bar {
-  background-color: #fff;
-  height: 4px;
-  width: 100%;
-  animation: grow 10s linear infinite;
-  transform-origin: left;
-}
 
-@keyframes grow {
-  0% {
-    transform: scaleX(0);
-  }
-}
 
 
 //星星
@@ -119,6 +107,26 @@ const createHeart = (e) => {
 
     setTimeout(() => heart.remove(), 1000)
 }
+
+//波浪
+.form-control label span {
+  display: inline-block;
+  font-size: 18px;
+  min-width: 5px;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+  color: lightblue;
+  transform: translateY(-30px);
+}
+labels.forEach(label => {
+    label.innerHTML = label.innerText
+        .split('')
+        .map((letter, idx) => `<span style="transition-delay:${idx * 50}ms">${letter}</span>`)
+        .join('')
+})
 
 
 

@@ -78,9 +78,15 @@ html, body {
   right: 15px;
   left: 15px;
   bottom: 0;
-  border-bottom: 1px solid #ffffff;
-  -webkit-transform: scaleY(0.5);
+  height:1px;
+  background-color:#ffffff;
   transform: scaleY(0.5);
+  animation: grow 2s linear infinite;
+}
+@keyframes grow {
+  0% {
+    transform: scaleX(0);
+  }
 }
 .avtarwrap .avtar{
   display: inline-block;
