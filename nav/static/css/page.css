@@ -25,6 +25,26 @@ html, body {
   line-height: 0;
   clear: both;
 }
+
+.browserhappy{
+  text-align: center;
+}
+
+.browserhappy p{
+  padding-top:100px;
+  padding-bottom:30px;
+  font-size: 24px;
+}
+
+.browserhappy a {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #39A4DC;
+  color:#39A4DC;
+  text-decoration: none;
+  border-radius:5px;
+}
+
 #app{ overflow-x: hidden }
 [v-cloak] { display: none;}
 /* 左边 */
