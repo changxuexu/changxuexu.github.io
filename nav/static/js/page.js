@@ -1,5 +1,6 @@
 
 let { reactive, ref, onMounted, watchEffect, toRaw } = Vue
+
 let favicon = new Favico({ animation: "pop", position: 'down' }); // 动态favico.ico
 
 const offsetY = 36 //滚动y轴偏移量
@@ -137,7 +138,7 @@ const option = {
       })
     },
     _getRandomColor() {
-      const colors = ['#39A4DC', '#00BEE1', '#00D4D0', '#4EE7AF', '#A7F38A']
+      const colors = ['#39A4DC', '#00BEE1', '#00D4D0','#0070A5' ]
       return colors[Math.floor(Math.random() * colors.length)]
     }
   },
@@ -148,6 +149,7 @@ const option = {
 }
 
 const app = Vue.createApp(option)
+// const app = Vue.createSSRApp(option)
 app.use(VueScrollTo, {
   container: "body",
   duration: 500,
@@ -183,7 +185,6 @@ function _active(el) {
 
 function _isIE() {
   var ua = window.navigator.userAgent;
-  console.log('xxxx=', ua);
   var old_ie = ua.indexOf('MSIE ');
   var new_ie = ua.indexOf('Trident/')
   if ((old_ie > -1) || (new_ie > -1)) {

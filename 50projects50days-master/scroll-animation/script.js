@@ -1,3 +1,4 @@
+/* 
 const boxes = document.querySelectorAll('.box')
 
 window.addEventListener('scroll', checkBoxes)
@@ -16,4 +17,9 @@ function checkBoxes() {
             box.classList.remove('show')
         }
     })
-}
+} 
+*/
+
+const boxes = document.querySelector('#box1')
+const boxTop = boxes.getBoundingClientRect().top
+console.log(boxTop);
