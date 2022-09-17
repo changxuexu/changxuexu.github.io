@@ -15,6 +15,9 @@ vue文档
 
 CKEditor5
   https://github.com/ckeditor
+
+Quicker
+  http://getquicker.net/
   
  
 
@@ -35,8 +38,9 @@ toasts.appendChild(notif)
 notif.remove()
 
 
-//原生form监听
-form.addEventListener('submit/input', (e) => {
+//原生form监听 http://www.caotama.com/1844347.html
+form.addEventListener('submit/input/animationend/ transitionend', (e) => {
+    e.animationName //动画名
     e.preventDefault()
 })
 
@@ -140,5 +144,48 @@ const scale = (num, in_min, in_max, out_min, out_max) => {
 
 loadText.style.opacity = scale(load, 0, 100, 1, 0)
 bg.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`
+
+
+//倒计时
+.nums span.in {
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: goIn 0.5s ease-in-out;
+}
+
+.nums span.out {
+  animation: goOut 0.5s ease-in-out;
+}
+
+@keyframes goIn {
+  0% {
+    transform: translate(-50%, -50%) rotate(120deg);
+  }
+
+  30% {
+    transform: translate(-50%, -50%) rotate(-20deg);
+  }
+
+  60% {
+    transform: translate(-50%, -50%) rotate(10deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+@keyframes goOut {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  60% {
+    transform: translate(-50%, -50%) rotate(20deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(-120deg);
+  }
+}
 
  
