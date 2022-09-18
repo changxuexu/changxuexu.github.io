@@ -87,7 +87,7 @@ const option = {
         //方式2：（scrollTop + windowHeight）* windowWidth / pageHeight  px
         this.wscrolline = (Math.max(0, Math.min(1, scrollTop / this.scrollAvail))) * 100
 
-      }, 20)
+      }, 25)
     },
     showsidebarhandle() {
       let showsidebar = this.showsidebar
@@ -110,6 +110,21 @@ const option = {
       if (!this._isMobile()) {
         document.body.style.overflow = 'auto';
       }
+    },
+    navitemhandle(e){
+      // 水波纹效果
+      const x = e.clientX
+      const y = e.clientY
+      const buttonTop = e.target.offsetTop
+      const buttonLeft = e.target.offsetLeft
+      const xInside = x - buttonLeft
+      const yInside = y - buttonTop
+      const circle = document.createElement('span')
+      circle.classList.add('circle')
+      circle.style.top = yInside + 'px'
+      circle.style.left = xInside + 'px'
+      e.target.appendChild(circle)
+      setTimeout(() => circle.remove(), 500)
     },
     _isMobile() {
       const rect = document.body.getBoundingClientRect()

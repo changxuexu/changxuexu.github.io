@@ -1,7 +1,5 @@
 { name: '', href: '', title: '' }
 
-50projects50days基础练习
-https://github.com/bradtraversy/50projects50days
 
 vue文档
   Gridsome 
@@ -33,16 +31,6 @@ e.target.parentNode.classList
 e.target.nextElementSibling  //后一个兄弟节点
 e.target.previousSibling     //前一个兄弟节点
 
-const notif = document.createElement('div')
-toasts.appendChild(notif)
-notif.remove()
-
-
-//原生form监听 http://www.caotama.com/1844347.html
-form.addEventListener('submit/input/animationend/ transitionend', (e) => {
-    e.animationName //动画名
-    e.preventDefault()
-})
 
 //骨架屏实现方案
   https://segmentfault.com/a/1190000038450165
@@ -188,4 +176,3 @@ bg.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`
   }
 }
 
- 

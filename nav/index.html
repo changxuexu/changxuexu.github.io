@@ -11,9 +11,7 @@
   <link rel="stylesheet" href="./static/css/page.css" type="text/css">
 </head>
 <body>
-  <noscript>
-    1111
-  </noscript>
+
 <div id="app" v-cloak>
   
   <div @click.self="showsidebarhandle" class="nav-slide-backdrop" v-if="ismobile && showsidebar"></div>
@@ -28,7 +26,7 @@
     </div>
     <ul class="menu-section-list">
       <template v-for="(super_tit_item,idx) in arr_super_tit" :key="`super_tit_${idx}`">
-        <li v-scroll-to="`#element_super_${idx+1}`" :class="{'active':currentfloor == `element_super_${idx+1}`}" >{{super_tit_item}}</li>
+        <li @click="navitemhandle" v-scroll-to="`#element_super_${idx+1}`" :class="{'active':currentfloor == `element_super_${idx+1}`}" >{{super_tit_item}}</li>
       </template>
     </ul>
   </div>
