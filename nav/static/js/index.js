@@ -4,17 +4,6 @@ _isIE() ? createbrowserhappy() : initprogram()
 function initprogram(){
 
   /* 
-    滚动到具体楼层: vue-scrollto.js
-    favico  : favico.js
-    tooltip : popper.min.js / tippy.js
-    typeit  : typed.js
-  */
-  var arrJs = ['./static/js/vue3.js','./static/js/vue-scrollto.js','./static/js/favico.js','/static/js/popper.min.js','./static/js/tippy.js','./static/js/typed.js','./static/js/data.js','./static/js/page.js']
-  _asyncLoadJs(arrJs,function () {
-    console.log('动态加载js文件完成');
-  })
-
-  /* 
     document.onreadystatechange 页面加载状态改变时的事件
     document.readyState         返回当前文档的状态
       1.uninitialized - 还未开始载入
@@ -31,6 +20,19 @@ function initprogram(){
       loadingdom.remove()
     }
   }
+
+  /* 
+    滚动到具体楼层: vue-scrollto.js
+    favico  : favico.js
+    tooltip : popper.min.js / tippy.js
+    typeit  : typed.js
+  */
+  var arrJs = ['./static/js/vue3.js','./static/js/vue-scrollto.js','./static/js/favico.js','/static/js/popper.min.js','./static/js/tippy.js','./static/js/typed.js','./static/js/data.js','./static/js/page.js']
+  _asyncLoadJs(arrJs,function () {
+    console.log('动态加载js文件完成');
+  })
+
+  
 	
 }
 
