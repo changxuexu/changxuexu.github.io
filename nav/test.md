@@ -9,13 +9,7 @@ vue文档
 
   VuePress
     https://www.vuepress.cn/
-
-
-CKEditor5
-  https://github.com/ckeditor
-
-Quicker
-  http://getquicker.net/
+  
   
 =================================
 //骨架屏实现方案
@@ -29,17 +23,15 @@ Quicker
 	const data = await res.json()
 =================================
 
-//js样式
-document.querySelectorAll
-const nav = document.querySelector('.nav')
-nav.classList
-nav.classList.add('active')
-nav.classList.remove('active')
-nav.classList.toggle('active')
+const dom = document.querySelector('.nav') / document.querySelectorAll('.nav')
+dom.classList
+dom.classList.add('active')
+dom.classList.remove('active')
+dom.classList.toggle('active')
 
-e.target.parentNode.classList
-e.target.nextElementSibling  //后一个兄弟节点
-e.target.previousSibling     //前一个兄弟节点
+dom.parentNode          //父节点
+dom.nextElementSibling  //后一个兄弟节点
+dom.previousSibling     //前一个兄弟节点
 
 =================================
 //波浪

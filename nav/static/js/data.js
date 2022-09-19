@@ -516,7 +516,8 @@ var data_tool = {
         { name: '转转大师', href: 'https://pdftoword.55.la/', title: '办公软件转换' },
         { name: '蛙蛙工具', href: 'https://www.iamwawa.cn', title: '' },
         { name: 'VSCode插件开发教程', href: 'https://www.cnblogs.com/liuxianan/p/vscode-plugin-overview.html', title: '' },
-        { name: 'vscode官网', href: 'https://code.visualstudio.com/', title: '' }
+        { name: 'vscode官网', href: 'https://code.visualstudio.com/', title: '' },
+        { name: 'Quicker', href: 'http://getquicker.net/', title: '快捷启动软件,内置的动作指令，完全可以替代大部分的常用软件' }
       ]
     }
   ]
@@ -690,13 +691,14 @@ var data_jsplug = {
       second_tit: '编辑器',
       second_child: [
         { name: 'wangEditor', href: 'https://github.com/wangeditor-team/wangEditor', title: '' },
+        { name: 'CKEditor5', href: 'https://github.com/ckeditor', title: '功能强大，具有 MVC 架构、自定义数据模型和虚拟 DOM' },
         { name: 'UEditor', href: 'http://fex.baidu.com/ueditor', title: '' },
         { name: 'tinymce', href: 'https://github.com/tinymce/tinymce', title: '' },
         { name: 'ckeditor', href: 'https://github.com/galetahub/ckeditor', title: '老牌富文本' },
         { name: 'squire', href: 'https://github.com/neilj/Squire', title: '轻量富文本' },
         { name: 'slate', href: 'https://github.com/ianstormtaylor/slate', title: '完全可定制富文本' },
         { name: 'medium-editor', href: 'https://github.com/yabwe/medium-editor', title: '' },
-        { name: 'quill', href: 'https://github.com/quilljs/quill', title: '对图片的各种操作不友善' }
+        { name: 'quill', href: 'https://github.com/quilljs/quill', title: '对图片的各种操作不友善' },
       ]
     },
     {
@@ -731,10 +733,11 @@ var data_jsplug = {
     {
       second_tit: '动画',
       second_child: [
+        { name: 'Popmotion', href: 'https://popmotion.io/', cn_href: 'https://jellykaiser.github.io/popmotion.doc/', title: '原生dom支持:CSS、SVG路径、dom属性；支持数字、颜色和复杂字符串的关键帧、弹簧和惯性动画' },
         { name: 'Three.js', href: 'https://threejs.org', title: '3Djs库，canvas、svg、css3d、webgl' },
         { name: 'Anime.js', href: 'https://animejs.com', title: '轻量级,强大API' },
         { name: 'Tweenmax', href: 'https://www.tweenmax.com.cn', title: '' },
-        { name: 'greensock', href: 'https://greensock.com', title: 'https://www.npmjs.com/package/gsap' },
+        { name: 'greensock', href: 'https://greensock.com', git_href: 'https://www.npmjs.com/package/gsap', title: '对html元素进行动画处理，用于创建高性能、零依赖性、跨游览器动画' },
         { name: 'Mo.js', href: 'https://mojs.github.io', title: '模块化,流畅' },
         { name: 'particlesJS', href: 'https://github.com/VincentGarreau/particles.js', title: '粒子背景：粒子的密度、颜色、不透明度、形状和大小' },
         { name: 'Velocity.js', href: 'https://www.npmjs.com/package/velocity-animate', title: '' }

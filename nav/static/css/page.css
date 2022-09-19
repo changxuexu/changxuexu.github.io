@@ -77,26 +77,10 @@ html, body {
 .tippy-box[data-animation=shift-away][data-state=hidden][data-placement^=right] { transform: translateX(-10px) }
 /*  tippy tooltip -end */
 
-/* 返回顶部 */
-.rocket-to-top{
-  display: none;
-  cursor: pointer;
-  position: fixed;
-  right:15px;
-  top:90%;
-  width:32px;
-  height:110px;
-  /* -4px 0px / -55px 0px / -111px 0px / -165px 0px / -217px 0px / -268px 0px */
-  background-position:-4px 0px;
-  background-repeat: no-repeat;
-  background-image:url('../img/rocket_up.png');
-}
-.rocket-to-top:hover{
-  background-position:-55px 0px;
-}
-.rocket-top-none{
-  animation: rocketPos 0.5s ease-in-out;
-}
+/* 返回顶部 -4px 0px / -55px 0px / -111px 0px / -165px 0px / -217px 0px / -268px 0px */
+.rocket-to-top{ display: none; cursor: pointer; position: fixed; right:15px; top:90%; width:32px; height:110px; background-position:-4px 0px; background-repeat: no-repeat; background-image:url('../img/rocket_up.png');}
+.rocket-to-top:hover{ background-position:-55px 0px;}
+.rocket-top-none{ animation: rocketPos 0.5s ease-in-out; }
 @keyframes rocketPos {
   50% { top:45%; opacity:0.5; }
   100% { top:-100%;opacity:0; }
