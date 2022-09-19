@@ -677,14 +677,17 @@ var data_jsplug = {
       second_tit: 'Vue常用',
       second_child: [
         { name: 'Axios', href: 'https://www.kancloud.cn/yunye/axios/234845', title: '' },
-        { name: 'BetterScroll', href: 'https://better-scroll.github.io/docs/zh-CN/guide', title: '' },
+        { name: 'BetterScroll', href: 'https://better-scroll.github.io/docs/zh-CN/guide', title: '类似于Gridster的栅格布局系统,可拖拽、可调整大小' },
         { name: 'vuedraggable', href: 'https://www.npmjs.com/package/vuedraggable', title: '拖拽排序(v2)' },
         { name: 'sortablejs', href: 'https://www.npmjs.com/package/sortablejs', title: '拖拽排序' },
         { name: 'NProgress', href: 'https://www.npmjs.com/package/nprogress', title: '页面顶部加载进度条' },
         { name: '滑动极校验', href: 'https://gitee.com/monoplasty/vue-monoplasty-slide-verify', title: '' },
         { name: 'v-org-tree', href: 'https://github.com/lison16/v-org-tree', title: '组织结构树' },
         { name: 'mhtml-to-word', href: 'https://www.npmjs.com/package/mhtml-to-word', title: '将html模板字符串通过模板引擎转换并导出word文件' },
-        { name: 'v-charts', href: 'https://github.com/ElemeFE/v-charts', title: '基于 Vue2.0 和 echarts 封装的 v-charts 图表组件' }
+        { name: 'Vue Grid Layout', href: 'https://jbaysolutions.github.io/vue-grid-layout/zh/', title: '' },
+        { name: 'vue-easytable', href: 'https://github.com/Happy-Coding-Clans/vue-easytable', title: '表格组件：虚拟滚动、列固定、标题固定、标题分组、过滤器、排序、单元格省略号、行扩展、行复选框等' },
+        { name: 'v-charts', href: 'https://github.com/ElemeFE/v-charts', title: '基于 Vue2.0 和 echarts 封装的 v-charts 图表组件' },
+        { name: 'Trois', href: 'https://github.com/troisjs/trois', title: '基于ThreeJS的Vue3可视化库创建3D效果' }
       ]
     },
     {
@@ -733,6 +736,7 @@ var data_jsplug = {
     {
       second_tit: '动画',
       second_child: [
+        { name: 'vue-kinesis', href: 'https://www.npmjs.com/package/vue-kinesis', title: '支持使用的 Vue.js 组件来创建交互式动画，其支持Vue3' },
         { name: 'Popmotion', href: 'https://popmotion.io/', cn_href: 'https://jellykaiser.github.io/popmotion.doc/', title: '原生dom支持:CSS、SVG路径、dom属性；支持数字、颜色和复杂字符串的关键帧、弹簧和惯性动画' },
         { name: 'Three.js', href: 'https://threejs.org', title: '3Djs库，canvas、svg、css3d、webgl' },
         { name: 'Anime.js', href: 'https://animejs.com', title: '轻量级,强大API' },
@@ -778,6 +782,7 @@ var data_jsplug = {
         { name: 'AlloyFinger', href: 'http://alloyteam.github.io/AlloyFinger', title: '手势插件' },
         { name: 'zTree', href: 'https://treejs.cn', title: '树插件' },
         { name: 'Shepherd', href: 'https://shepherdjs.dev/', title: '为应用创建新手引导' },
+        { name: 'Vue Tour', href: 'https://www.npmjs.com/package/vue-tour', title: '与 Vue.js 一起使用的轻量级、简单且可定制的新手引导插件' },
         { name: 'favico.js', href: 'https://www.npmjs.com/package/favico.js', title: '动态 favicon' },
         { name: 'Keycode', href: 'https://www.npmjs.com/package/keycode-js', title: '获取键盘按键的 JavaScript keycode' },
         { name: 'Slideout.js', href: 'https://slideout.js.org/', title: '移动应用侧滑导航' },
