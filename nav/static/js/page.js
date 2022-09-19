@@ -12,6 +12,7 @@ const option = {
       arr_data,
       scrolltimer: null,
       resizetimer: null,
+      totoptimer: null,
       currentfloor: '',   //当前楼层
       showsidebar: false, //展示侧边栏
       ismobile: false,    //手机端
@@ -74,7 +75,7 @@ const option = {
       if (this.scrolltimer) { clearTimeout(this.scrolltimer) }
       this.scrolltimer = setTimeout(() => {
         //滚动高度
-        let scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+        let scrollTop = this._scrollTop()
         if (!noscroll) {
           //左侧菜单栏闪烁
           let temp = []
@@ -86,11 +87,16 @@ const option = {
             }
           })
         }
-        //方式1：(滚动高度/可滚动区域总高度)*100 %
-        //方式2：（scrollTop + windowHeight）* windowWidth / pageHeight  px
+        /* 进度条
+          方式1：(滚动高度/可滚动区域总高度)*100 %
+          方式2：（scrollTop + windowHeight）* windowWidth / pageHeight  px
+        */
         this.wscrolline = (Math.max(0, Math.min(1, scrollTop / this.scrollAvail))) * 100
 
-      }, 0)
+        // 返回顶部
+        this.totopback()
+
+      }, 20)
     },
     showsidebarhandle() {
       let showsidebar = this.showsidebar
@@ -117,8 +123,63 @@ const option = {
     navitemhandle(e) {
       this._waterripple(e)
     },
+    totophandle() {
+      let totopdom = this.$refs.totop
+      let scrollTop = this._scrollTop()
+      function t() {
+        switch (totopdom.style.backgroundPosition) {
+          case '-111px 0px':
+            totopdom.style.backgroundPosition = '-165px 0px'
+            break;
+          case '-165px 0px':
+            totopdom.style.backgroundPosition = '-217px 0px'
+            break;
+          case '-165px 0px':
+            totopdom.style.backgroundPosition = '-268px 0px'
+            break;
+          default:
+            totopdom.style.backgroundPosition = '-111px 0px'
+            break;
+        }
+      }
+      if (scrollTop == 0) {
+        if (this.totoptimer) { clearInterval(this.totoptimer) }
+        totopdom.style.backgroundPosition = '-4px 0px'
+        return
+      }
+      this.totoptimer = setInterval(t, 17)
+    },
+    totopback() {
+      let totopdom = this.$refs.totop
+      let scrollTop = this._scrollTop()
+      if (scrollTop == 0) {
+        totopdom.classList.add('rocket-top-none')
+        totopdom.style.opacity = '' //解决：style属性opacity对animation中的opacity属性不起作用
+        window.addEventListener("animationend", (e) => {
+          if (e.animationName == 'rocketPos') {
+            if (this.totoptimer) { clearInterval(this.totoptimer) }
+            totopdom.style.display = 'none'
+            totopdom.classList.remove('rocket-top-none')
+            totopdom.style.backgroundPosition = '-4px 0px'
+          }
+        })
+      } else if (scrollTop >= 500) {
+        totopdom.style.display = 'block'
+        let opacitynum = this._scalenum(this.wscrolline, 0, 100, 0, 1)
+        totopdom.style.opacity = opacitynum
+      }
+    },
+    // 滚动顶部
+    _scrollTop() {
+      let scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+      return scrollTop
+    },
+    // 将一个数字范围(in_min,in_max)映射到另一个数字范围(out_min,out_max)
+    _scalenum(num, in_min, in_max, out_min, out_max) {
+      return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
+    },
+    // 水波纹效果
     _waterripple(e) {
-      // 水波纹效果
       const x = e.clientX
       const y = e.clientY
       const buttonTop = e.target.offsetTop
@@ -144,9 +205,7 @@ const option = {
         const updateCounter = () => {
           const target = +counter.getAttribute('data-target')
           const c = +counter.innerText
-
           const increment = target / 200
-
           if (c < target) {
             counter.innerText = `${Math.ceil(c + increment)}`
             setTimeout(updateCounter, 100)
@@ -198,8 +257,6 @@ app.use(VueScrollTo, {
 })
 
 const vm = app.mount('#app')
-
-
 
 /* 工具函数 */
 function _active(el) {
