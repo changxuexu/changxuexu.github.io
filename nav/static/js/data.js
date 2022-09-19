@@ -57,14 +57,18 @@ var data_vue = {
         { name: 'Vue3文档', href: 'https://cn.vuejs.org/guide/introduction.html', title: '' },
         { name: 'Vue Router', href: 'https://router.vuejs.org/zh/index.html', title: '' },
         { name: 'Pinia(状态管理)', href: 'https://pinia.vuejs.org/api/modules/pinia.html', title: '' },
-        { name: 'NuxtJS', href: 'https://v3.nuxtjs.org', title: '' },
         { name: 'vite', href: 'https://cn.vitejs.dev/guide', title: '' },
         { name: 'vue-cli', href: 'https://cli.vuejs.org/zh/guide', title: '' },
         { name: 'Vue3相比vue2新功能', href: 'https://v3-migration.vuejs.org', title: '' },
         { name: 'StackBlitz在线编辑', href: 'https://stackblitz.com', title: '代码在线构建工具' },
         { name: 'Vue2到Vue3项目升级指南', href: 'https://gogocode.io/zh/docs/vue/vue2-to-vue3', title: '' },
         { name: 'petite-vue', href: 'https://github.com/vuejs/petite-vue', title: '非构建工程化,在页面直接使用' },
-        { name: 'VueUse', href: 'https://vueuse.org', title: '工具型组合式函数集合' }
+        { name: 'NuxtJS', href: 'https://v3.nuxtjs.org', title: '' },
+        { name: 'SSR', href: 'http://doc.ssr-fc.com/', title: '面向 Serverless，同时支持 React，Vue2，Vue3的 SSR 框架' },
+        { name: 'VueUse', href: 'https://vueuse.org', title: '工具型组合式函数集合' },
+        { name: 'Gridsome', href: 'https://gridsome.org', title: '构建默认快速的静态生成网站' },
+        { name: 'VitePress', href: 'https://vitepress.vuejs.org', title: '极简静态网站生成器Vite' },
+        { name: 'VuePress', href: 'https://www.vuepress.cn', title: '极简静态网站生成器webpack' }
       ]
     },
     {
@@ -686,6 +690,10 @@ var data_jsplug = {
         { name: 'mhtml-to-word', href: 'https://www.npmjs.com/package/mhtml-to-word', title: '将html模板字符串通过模板引擎转换并导出word文件' },
         { name: 'Vue Grid Layout', href: 'https://jbaysolutions.github.io/vue-grid-layout/zh/', title: '' },
         { name: 'vue-easytable', href: 'https://github.com/Happy-Coding-Clans/vue-easytable', title: '表格组件：虚拟滚动、列固定、标题固定、标题分组、过滤器、排序、单元格省略号、行扩展、行复选框等' },
+        { name: 'FormKit', href: 'https://formkit.com/', title: 'Vue 表单的一站式解决方案:包括您需要的一切——标签、帮助文本、主题支持、验证、从 JSON 生成表单、可访问性、国际化等等！' },
+        { name: 'vee-validate', href: 'https://github.com/logaretm/vee-validate', title: '表单验证库:允许验证输入并以熟悉的声明样式或使用组合函数构建更好的表单UI' },
+        { name: 'vuex-persist', href: 'https://www.npmjs.com/package/vuex-persist', title: '使vuex状态持久存储,解决刷新丢失问题' },
+        { name: 'vue-meta', href: 'https://www.npmjs.com/package/vue-meta', title: '使用 SSR 支持管理 Vue.js 组件中的 HTML 元数据' },
         { name: 'v-charts', href: 'https://github.com/ElemeFE/v-charts', title: '基于 Vue2.0 和 echarts 封装的 v-charts 图表组件' },
         { name: 'Trois', href: 'https://github.com/troisjs/trois', title: '基于ThreeJS的Vue3可视化库创建3D效果' }
       ]

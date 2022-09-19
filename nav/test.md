@@ -1,15 +1,4 @@
 { name: '', href: '', title: '' }
-
-
-vue文档
-  Gridsome 
-    https://gridsome.org/
-  VitePress
-    https://vitepress.vuejs.org/
-
-  VuePress
-    https://www.vuepress.cn/
-  
   
 =================================
 //骨架屏实现方案
