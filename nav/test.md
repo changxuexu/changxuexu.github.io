@@ -1,6 +1,22 @@
 { name: '', href: '', title: '' }
   
 =================================
+
+
+//页面启动提示
+document.onreadystatechange 页面加载状态改变时的事件
+document.readyState         返回当前文档的状态
+  1.uninitialized - 还未开始载入
+  2.loading       - 载入中
+  3.interactive   - 已加载，文档与用户可以开始交互
+  4.complete      - 载入完成
+
+
+
+
+
+//标签栏滚动
+
 //骨架屏实现方案
   https://segmentfault.com/a/1190000038450165
   https://xiaoiver.github.io/coding/2017/07/30/%E4%B8%BAvue%E9%A1%B9%E7%9B%AE%E6%B7%BB%E5%8A%A0%E9%AA%A8%E6%9E%B6%E5%B1%8F.html

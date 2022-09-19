@@ -263,18 +263,7 @@ function _active(el) {
   vm.currentfloor = el['id']
 }
 
-function _isIE() {
-  var ua = window.navigator.userAgent;
-  var old_ie = ua.indexOf('MSIE ');
-  var new_ie = ua.indexOf('Trident/')
-  if ((old_ie > -1) || (new_ie > -1)) {
-    return true //IE
-  } else {
-    return false
-  }
-}
-// const browserhappydom = document.createElement('div')
-// browserhappydom.innerHTML = '<div class="browserhappy"><p>此站点不支持IE浏览器，请升级您的浏览器</p><a href="https://browsehappy.com/" target="_blank">立即更新</a></div>'
-// document.body.appendChild(browserhappydom)
+
+
 
 // https://www.freesion.com/article/21051455961/

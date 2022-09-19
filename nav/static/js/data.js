@@ -42,6 +42,7 @@ var data_daily = {
         { name: '前端导航', href: 'http://uyi2.com/bus', title: '' },
         { name: '开发综合文档', href: 'https://devdocs.io', title: '' },
         { name: '开发语言学习资源', href: 'https://learn-anything.xyz/learn-anything', title: '以思维导图形式提供各种学习资源' },
+        { name: 'roadmap.sh', href: 'https://roadmap.sh/', title: '给初学开发者提供参考的语言学习路径与资料' },
         { name: 'Chrome开发者工具中文文档', href: 'https://www.html.cn/doc/chrome-devtools', title: '' },
       ]
     }
@@ -515,6 +516,16 @@ var data_tool = {
       ]
     },
     {
+      second_tit: '测试',
+      second_child: [
+        { name: '测试教程', href: 'http://lemon.ke.qq.com/#category=15380424295395507&tab=1', title: '' },
+        { name: 'LambdaTest', href: 'https://www.lambdatest.com/', title: '跨浏览器测试平台：提供不同的浏览器、操作系统和设备去测试你的应用' },
+        { name: 'Jest', href: 'https://www.jestjs.cn', title: 'JavaScript测试框架,可使用在Babel、TypeScript、Node、React、Angular、Vue等等!' },
+        { name: 'mocha', href: 'https://mochajs.org/', github_href: 'https://github.com/mochajs/mocha', title: 'JavaScript 测试框架，运行在Node.js和浏览器中，让异步测试变得简单有趣' },
+        { name: 'Vitest', href: 'https://cn.vitest.dev/', title: '由 Vite 提供支持的极速单元测试框架' }
+      ]
+    },
+    {
       second_tit: '其他',
       second_child: [
         { name: '转转大师', href: 'https://pdftoword.55.la/', title: '办公软件转换' },
@@ -558,6 +569,7 @@ var data_study = {
     {
       second_tit: '博客',
       second_child: [
+        { name: 'daily.dev', href: 'https://docs.daily.dev/', title: '汇聚各类平台的优秀技术文章，可安装浏览器插件便于阅读' },
         { name: '掘金', href: 'https://juejin.im', title: '' },
         { name: '慕课网手记', href: 'https://www.imooc.com/article', title: '' },
         { name: '廖雪峰', href: 'https://www.liaoxuefeng.com', title: '' },
@@ -604,15 +616,6 @@ var data_study = {
       second_child: [
         { name: '运维派', href: 'http://www.yunweipai.com', title: '' },
         { name: '阿汤运维', href: 'https://www.amd5.cn', title: '' }
-      ]
-    },
-    {
-      second_tit: '测试',
-      second_child: [
-        { name: '测试教程', href: 'http://lemon.ke.qq.com/#category=15380424295395507&tab=1', title: '' },
-        { name: 'Jest', href: 'https://www.jestjs.cn', title: 'JavaScript测试框架,可使用在Babel、TypeScript、Node、React、Angular、Vue等等!' },
-        { name: 'mocha', href: 'https://mochajs.org/', github_href: 'https://github.com/mochajs/mocha', title: 'JavaScript 测试框架，运行在Node.js和浏览器中，让异步测试变得简单有趣' },
-        { name: 'Vitest', href: 'https://cn.vitest.dev/', title: '由 Vite 提供支持的极速单元测试框架' }
       ]
     },
     {
@@ -831,6 +834,7 @@ var data_css = {
     {
       second_tit: 'css工具',
       second_child: [
+        { name: 'CSS-Tricks', href: 'https://css-tricks.com', title: '学习各类css技巧，开发更加漂亮的web应用' },
         { name: 'CSS3动画生成器', href: 'https://www.w3cways.com/css3-animation-tool', title: '' },
         { name: 'Animista动画生成器', href: 'https://animista.net/', title: '' },
         { name: 'Transition.css', href: 'https://www.transition.style/', title: '' },
