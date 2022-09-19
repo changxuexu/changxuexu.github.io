@@ -3,7 +3,8 @@ let { reactive, ref, onMounted, watchEffect, toRaw } = Vue
 
 let favicon = new Favico({ animation: "pop", position: 'down' }); // 动态favico.ico
 
-const offsetY = 36 //滚动y轴偏移量
+const offsetY = 36   //滚动y轴偏移量
+let noscroll = false //左侧菜单栏闪烁
 
 const option = {
   data() {
@@ -74,20 +75,22 @@ const option = {
       this.scrolltimer = setTimeout(() => {
         //滚动高度
         let scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-        let temp = []
-        let arr_flooritem = this.$refs.flooritem
-        arr_flooritem.length && arr_flooritem.forEach((item, idx) => { temp.push(item.offsetTop - offsetY) });
-        temp.forEach((item, idx, arr) => {
-          if (arr[idx] <= scrollTop && arr[idx + 1] >= scrollTop) {
-            this.currentfloor = `element_super_${idx + 1}`
-          }
-        })
-
+        if (!noscroll) {
+          //左侧菜单栏闪烁
+          let temp = []
+          let arr_flooritem = this.$refs.flooritem
+          arr_flooritem.length && arr_flooritem.forEach((item, idx) => { temp.push(item.offsetTop - offsetY) });
+          temp.forEach((item, idx, arr) => {
+            if (arr[idx] <= scrollTop && arr[idx + 1] >= scrollTop) {
+              this.currentfloor = `element_super_${idx + 1}`
+            }
+          })
+        }
         //方式1：(滚动高度/可滚动区域总高度)*100 %
         //方式2：（scrollTop + windowHeight）* windowWidth / pageHeight  px
         this.wscrolline = (Math.max(0, Math.min(1, scrollTop / this.scrollAvail))) * 100
 
-      }, 25)
+      }, 0)
     },
     showsidebarhandle() {
       let showsidebar = this.showsidebar
@@ -111,7 +114,10 @@ const option = {
         document.body.style.overflow = 'auto';
       }
     },
-    navitemhandle(e){
+    navitemhandle(e) {
+      this._waterripple(e)
+    },
+    _waterripple(e) {
       // 水波纹效果
       const x = e.clientX
       const y = e.clientY
@@ -153,7 +159,7 @@ const option = {
       })
     },
     _getRandomColor() {
-      const colors = ['#39A4DC', '#00BEE1', '#00D4D0','#0070A5' ]
+      const colors = ['#39A4DC', '#00BEE1', '#00D4D0', '#0070A5']
       return colors[Math.floor(Math.random() * colors.length)]
     }
   },
@@ -164,7 +170,6 @@ const option = {
 }
 
 const app = Vue.createApp(option)
-// const app = Vue.createSSRApp(option)
 app.use(VueScrollTo, {
   container: "body",
   duration: 500,
@@ -179,9 +184,12 @@ app.use(VueScrollTo, {
   //是否可以取消滚动
   cancelable: true,
   onStart: (el) => {
+    noscroll = true
     this._active(el)
   },
-  onDone: false,
+  onDone: (el) => {
+    noscroll = false
+  },
   onCancel: false,
   // x轴滚动
   x: false,
