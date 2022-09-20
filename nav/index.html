@@ -25,7 +25,11 @@
     </div>
     <ul class="menu-section-list">
       <template v-for="(super_tit_item,idx) in arr_super_tit" :key="`super_tit_${idx}`">
-        <li @click="navitemhandle" v-scroll-to="`#element_super_${idx+1}`" :class="{'active':currentfloor == `element_super_${idx+1}`}" >{{super_tit_item}}</li>
+        <li 
+          @click="navitemhandle" 
+          v-scroll-to="`#element_super_${idx+1}`"  
+          :ref="`element_supernav_${idx+1}`"
+          :class="{'active':currentfloor == `element_super_${idx+1}`}">{{super_tit_item}}</li>
       </template>
     </ul>
   </div>

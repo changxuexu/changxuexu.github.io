@@ -7,7 +7,7 @@ var data_daily = {
         { name: '百度搜索', href: 'https://www.baidu.com', title: '' },
         { name: '头条搜索', href: 'https://www.toutiao.com', title: '' },
         { name: '搜猫搜索', href: 'https://www.soumao.cc', title: '' },
-        { name: 'libraryMirror', href: 'https://www.library.ac.cn', title: '' },
+        { name: 'libraryMirror', href: 'https://jia110.github.io', other_href: 'https://www.library.ac.cn', title: '' },
         { name: '谷歌搜索', href: 'https://www.google.com', title: '' },
         { name: '百度翻译', href: 'https://fanyi.baidu.com', title: '' },
         { name: '火山翻译', href: 'https://translate.volcengine.com/translate', title: '' },
@@ -697,6 +697,7 @@ var data_jsplug = {
         { name: 'vee-validate', href: 'https://github.com/logaretm/vee-validate', title: '表单验证库:允许验证输入并以熟悉的声明样式或使用组合函数构建更好的表单UI' },
         { name: 'vuex-persist', href: 'https://www.npmjs.com/package/vuex-persist', title: '使vuex状态持久存储,解决刷新丢失问题' },
         { name: 'vue-meta', href: 'https://www.npmjs.com/package/vue-meta', title: '使用 SSR 支持管理 Vue.js 组件中的 HTML 元数据' },
+        { name: 'element-china-area-data', href: 'https://www.npmjs.com/package/element-china-area-data', title: '基于element UI的省市区级联数据' },
         { name: 'v-charts', href: 'https://github.com/ElemeFE/v-charts', title: '基于 Vue2.0 和 echarts 封装的 v-charts 图表组件' },
         { name: 'Trois', href: 'https://github.com/troisjs/trois', title: '基于ThreeJS的Vue3可视化库创建3D效果' }
       ]

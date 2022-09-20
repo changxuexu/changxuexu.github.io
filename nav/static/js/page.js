@@ -38,7 +38,6 @@ const option = {
   },
   methods: {
     init() {
-      // window.scrollTo({ top: 0, behavior: "smooth" })
       this.$nextTick(() => {
         let pageHeight = document.body.scrollHeight || document.documentElement.scrollHeight;
         let windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
@@ -84,6 +83,8 @@ const option = {
           temp.forEach((item, idx, arr) => {
             if (arr[idx] <= scrollTop && arr[idx + 1] >= scrollTop) {
               this.currentfloor = `element_super_${idx + 1}`
+              // let test = `element_supernav_${idx + 1}`
+              // this.$refs[test][0]
             }
           })
         }
