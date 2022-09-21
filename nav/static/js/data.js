@@ -819,6 +819,7 @@ var data_css = {
       second_child: [
         { name: 'CSS菜鸟参考手册', href: 'https://www.runoob.com/cssref/css-reference.html', title: '' },
         { name: 'CSS3菜鸟参考教程', href: 'https://www.runoob.com/css3/css3-tutorial.html', title: '' },
+        { name: 'Flex教程', href: 'https://www.webhek.com/post/flexbox-playground.html', title: '' },
         { name: 'sass文档', href: 'https://sass.bootcss.com', title: '' },
         { name: 'less文档', href: 'https://less.bootcss.com', title: '' }
       ]
