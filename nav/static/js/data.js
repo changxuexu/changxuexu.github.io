@@ -7,8 +7,9 @@ var data_daily = {
         { name: '百度搜索', href: 'https://www.baidu.com', title: '' },
         { name: '头条搜索', href: 'https://www.toutiao.com', title: '' },
         { name: '搜猫搜索', href: 'https://www.soumao.cc', title: '' },
-        { name: 'libraryMirror', href: 'https://jia110.github.io', other_href: 'https://www.library.ac.cn', title: '' },
         { name: '谷歌搜索', href: 'https://www.google.com', title: '' },
+        { name: '开发百度搜索', href: 'https://kaifa.baidu.com', title: '' },
+        { name: 'libraryMirror', href: 'https://jia110.github.io', other_href: 'https://www.library.ac.cn', title: '' },
         { name: '百度翻译', href: 'https://fanyi.baidu.com', title: '' },
         { name: '火山翻译', href: 'https://translate.volcengine.com/translate', title: '' },
         { name: '谷歌翻译', href: 'https://translate.google.cn/?hl=zh-CN&tab=TT', title: '' }
@@ -873,6 +874,7 @@ var data_other = {
       second_child: [
         { name: '合肥开发公司避坑论坛', href: 'https://bbs.diaozong.cn/p.html', title: '' },
         { name: '火车票', href: 'https://www.bypass.cn', title: '' },
+        { name: '电视家', href: 'https://www.tvapk.net/', title: '' },
       ]
     },
     {
