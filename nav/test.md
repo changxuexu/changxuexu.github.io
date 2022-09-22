@@ -2,8 +2,9 @@
   
 
 =================================
-//待整理
 
+Krpano
+	https://github.com/ningbonb/nodeKrpano
 vue组件
 	https://mp.weixin.qq.com/s/u8EP2EaeLiPZfHOSQMPWXw
 
