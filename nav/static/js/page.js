@@ -39,10 +39,8 @@ const option = {
   methods: {
     init() {
       this.$nextTick(() => {
-        let pageHeight = document.body.scrollHeight || document.documentElement.scrollHeight;
-        let windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
-        let scrollAvail = pageHeight - windowHeight; //可滚动区域总高度
-        this.scrollAvail = scrollAvail
+        //可滚动区域总高度
+        this.scrollAvail = this._scrollHeight() - this._clientHeight()
 
         // tooltip
         tippy('[data-tippy-content]')
@@ -83,8 +81,7 @@ const option = {
           temp.forEach((item, idx, arr) => {
             if (arr[idx] <= scrollTop && arr[idx + 1] >= scrollTop) {
               this.currentfloor = `element_super_${idx + 1}`
-              // let test = `element_supernav_${idx + 1}`
-              // this.$refs[test][0]
+              this._navscrollToTop(idx)
             }
           })
         }
@@ -155,7 +152,8 @@ const option = {
       let scrollTop = this._scrollTop()
       if (scrollTop == 0) {
         totopdom.classList.add('rocket-top-none')
-        totopdom.style.opacity = '' //解决：style属性opacity对animation中的opacity属性不起作用
+        //解决：style属性opacity对animation中的opacity属性不起作用
+        totopdom.style.opacity = '' 
         window.addEventListener("animationend", (e) => {
           if (e.animationName == 'rocketPos') {
             if (this.totoptimer) { clearInterval(this.totoptimer) }
@@ -170,10 +168,39 @@ const option = {
         totopdom.style.opacity = opacitynum
       }
     },
-    // 滚动顶部
+    toitemlink(url){
+      //此做法是为了避免a元素href属性链接在浏览器左下角显示
+      let a = document.createElement("a")
+      a.style.display = "none"
+      a.target = "_blank"
+      a.href = url
+      document.body.appendChild(a)
+      a.click()
+      document.body.removeChild(a)
+    },
+    //导航跟随滚动
+    _navscrollToTop(idx){
+      const navitemheight = 35 //单个nav高度
+      let arr_super_tit = this.arr_super_tit
+      let total_navheight = arr_super_tit.length * navitemheight //nav总高度
+      let visible_total_navheight = this._clientHeight() - 130 //nav可视总高度
+      // 可视总高度大于nav总高度
+      if(visible_total_navheight >= total_navheight){ return }
+      let _domMenusectionlist = this.$refs.menusectionlist
+      let scrollToTop = (idx - 3) * navitemheight <= 0 ? 0:(idx - 3) * navitemheight;
+      _domMenusectionlist.scrollTo({ top:scrollToTop, left: 0, behavior: "smooth" });
+    },
     _scrollTop() {
       let scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
       return scrollTop
+    },
+    _scrollHeight(){
+      let scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight
+      return scrollHeight
+    },
+    _clientHeight(){
+      let clientHeight = document.documentElement.clientHeight || document.body.clientHeight
+      return clientHeight
     },
     // 将一个数字范围(in_min,in_max)映射到另一个数字范围(out_min,out_max)
     _scalenum(num, in_min, in_max, out_min, out_max) {

@@ -23,10 +23,10 @@
       <img src="./static/img/avtar.jpg" class="avtar">
       <div class="username">￡AP︶ㄣOL◢◤LO</div>
     </div>
-    <ul class="menu-section-list">
+    <ul class="menu-section-list" ref="menusectionlist">
       <template v-for="(super_tit_item,idx) in arr_super_tit" :key="`super_tit_${idx}`">
         <li 
-          @click="navitemhandle" 
+          @click="navitemhandle"
           v-scroll-to="`#element_super_${idx+1}`"  
           :ref="`element_supernav_${idx+1}`"
           :class="{'active':currentfloor == `element_super_${idx+1}`}">{{super_tit_item}}</li>
@@ -54,13 +54,18 @@
           <div class="second-content">
             <span class="second-tit" v-if="super_child_item.second_tit">{{super_child_item.second_tit}}：</span>
             <template v-for="(second_child_item,secondchildidx) in super_child_item.second_child" :key="`second_child_${secondchildidx}`">
-              <a 
+              <!-- 
+                target="_blank"
                 :href="second_child_item.href" 
+               -->
+              <span 
+                class="second-link"
+                @click="toitemlink(second_child_item.href)"
                 :data-tippy-content="second_child_item.title ? second_child_item.title:null" 
                 :data-tippy-placement="second_child_item.title ? 'top':null"
                 :data-tippy-animation="second_child_item.title ? 'shift-away':null"
                 :data-tippy-delay="second_child_item.title ? '[150, null]':null"
-                target="_blank">{{second_child_item.name}}</a>
+                >{{second_child_item.name}}</span>
             </template>
           </div>
         </template>
@@ -71,6 +76,8 @@
   <!-- 返回顶部 -->
   <div v-scroll-to="`#app`" ref="totop" @click="totophandle" class="rocket-to-top"></div>
   <!-- 返回顶部-end -->
+
+
 </div>
 
 </body>
