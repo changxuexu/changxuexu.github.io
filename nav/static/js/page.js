@@ -94,6 +94,8 @@ const option = {
         // 返回顶部
         this.totopback()
 
+        this._updateCounter()
+
       }, 20)
     },
     showsidebarhandle() {
@@ -228,21 +230,25 @@ const option = {
     },
     _updateCounter() {
       const counters = this.$refs.superidxdom
+      let clientHeight = this._clientHeight()
       counters.forEach(counter => {
-        counter.innerText = 0
-        const updateCounter = () => {
-          const target = +counter.getAttribute('data-target')
-          const c = +counter.innerText
-          const increment = target / 200
-          if (c < target) {
-            counter.innerText = `${Math.ceil(c + increment)}`
-            setTimeout(updateCounter, 100)
-          } else {
-            counter.innerText = target
+        let reactTop = counter.getBoundingClientRect().top
+        if((reactTop <= clientHeight && reactTop>=0) && !counter.getAttribute('data-once')){
+          counter.innerText = 0
+          const updateCounter = () => {
+            const target = +counter.getAttribute('data-target')
+            const c = +counter.innerText
+            const increment = target / 200
+            if (c < target) {
+              counter.innerText = `${Math.ceil(c + increment)}`
+              setTimeout(updateCounter, 80)
+            } else {
+              counter.innerText = target
+            }
           }
+          updateCounter()
+          counter.setAttribute('data-once',true) //限制执行一次
         }
-
-        updateCounter()
       })
     },
     _getRandomColor() {
