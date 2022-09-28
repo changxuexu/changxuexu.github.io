@@ -339,7 +339,8 @@ var data_WeChat = {
         { name: '小程序开发教程', href: 'https://cloud.tencent.com/edu/paths/series/applet', title: '' },
         { name: '微信公众平台接口测试', href: 'https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login', title: '' },
         { name: '调试资料', href: 'https://www.cnblogs.com/yimiyan/p/6594205.html', title: '' },
-        { name: '微信公众平台接口调试工具', href: 'https://mp.weixin.qq.com/debug', title: '' }
+        { name: '微信公众平台接口调试工具', href: 'https://mp.weixin.qq.com/debug', title: '' },
+        { name: '腾讯开放平台', href: 'https://open.tencent.com', title: '' }
       ]
     },
     {
@@ -496,7 +497,8 @@ var data_tool = {
       second_child: [
         { name: 'SVGOMG', href: 'https://jakearchibald.github.io/svgomg', title: '' },
         { name: 'SVG Optimizers', href: 'https://online-converting.com/svg-optimizer', title: '' },
-        { name: 'Snap.svg', href: 'http://snapsvg.io', title: '' }
+        { name: 'Snap.svg', href: 'http://snapsvg.io', title: '' },
+        { name: 'SVG Path Visualizer', href: 'https://svg-path-visualizer.netlify.app', title: '通过输入 SVG 路径数据来快速直观地查看 SVG 图像,方便了解如何创建基本的 SVG 形状，如直线、曲线、三角形...' }
       ]
     },
     {
@@ -716,6 +718,7 @@ var data_jsplug = {
         { name: 'slate', href: 'https://github.com/ianstormtaylor/slate', title: '完全可定制富文本' },
         { name: 'medium-editor', href: 'https://github.com/yabwe/medium-editor', title: '' },
         { name: 'quill', href: 'https://github.com/quilljs/quill', title: '对图片的各种操作不友善' },
+        { name: 'tui.editor', href: 'https://github.com/nhn/tui.editor', title: '在网页中编辑 Markdown 文档的文本或所见即所得' }
       ]
     },
     {
@@ -778,7 +781,8 @@ var data_jsplug = {
         { name: 'Animate on scroll', href: 'https://github.com/michalsnik/aos', title: '滚动时页面元素展现动画' },
         { name: 'Wow.js', href: 'https://github.com/graingert/WOW', title: '滚动时页面元素展现动画' },
         { name: 'Parallax.js', href: 'https://github.com/MobiusHorizons/parallax.js', title: '对智能设备方向变化做出响应的视差引擎' },
-        { name: 'jInvertScroll', href: 'https://github.com/pixxelfactory/jInvertScroll', title: '视差滚动' }
+        { name: 'jInvertScroll', href: 'https://github.com/pixxelfactory/jInvertScroll', title: '视差滚动' },
+        { name: 'simpleParallax.js', href: 'https://simpleparallax.com/', title: '为网站"图像"创建视差动画效果' }
       ]
     },
     {
@@ -787,9 +791,11 @@ var data_jsplug = {
         { name: 'iDangero', href: 'https://idangero.us', title: '轮播' },
         { name: 'swiper', href: 'https://www.swiper.com.cn/', title: '轮播' },
         { name: 'superslide2/TouchSlide', href: 'http://www.superslide2.com/index.html', title: '网站大部分特效展示' },
+        { name: 'Keen-Slider', href: 'https://keen-slider.io', title: '创建触摸滑块组件' },
         { name: 'picker', href: 'http://ustbhuangyi.github.io/picker', title: 'ios风格选择器' },
         { name: 'masonry', href: 'https://masonry.desandro.com', title: '瀑布流' },
         { name: 'momentjs', href: 'http://momentjs.cn', title: '日期时间处理类库' },
+        { name: 'Day.js', href: 'https://dayjs.gitee.io/zh-CN', title: '是一个轻量的处理时间和日期的 JavaScript 库，和 Moment.js 的 API 设计保持完全一样' },
         { name: 'html2canvas', href: 'http://html2canvas.hertzen.com', title: '对网页html屏幕截图,用于生成图片' },
         { name: 'Typeit.js', href: 'https://www.typeitjs.com', title: '打字机效果' },
         { name: 'Typed.js', href: 'https://github.com/mattboldt/typed.js', black_href: 'https://www.cnblogs.com/Aaxuan/p/14146418.html', title: '打字机效果' },
@@ -808,6 +814,18 @@ var data_jsplug = {
         { name: 'Typeahead.js', href: 'http://twitter.github.io/typeahead.js/', title: '自动匹配搜索' },
         { name: 'Handlebars.js', href: 'https://handlebarsjs.com/', title: 'js模板引擎,用于快速渲染数据' },
         { name: 'TwentyTwenty', href: 'https://zurb.com/playground/twentytwenty', title: '展示两个图像之间的视觉差异' },
+        { name: 'Image Compare Viewer', href: 'https://image-compare-viewer.netlify.app', title: '展示两个图像之间的视觉差异' },
+        { name: 'Krpano', href: 'https://github.com/ningbonb/nodeKrpano', title: '可方便快速的构建全景场景或全景视频' },
+        { name: 'ztext.js', href: 'https://bennettfeely.com/ztext/', title: '为文本、 SVG、图像、表情符号等其他元素创建 3D 效果' },
+        { name: 'Rough Notation', href: 'https://roughnotation.com', title: '为网页中的元素创建注释，具有许多漂亮的效果，例如下划线、框、圆圈、突出显示、括号...' },
+        { name: 'Flip', href: 'https://pqina.nl/flip', title: '创建具有翻转效果的计数器,使用场景：创建活动计时器、促销活动或筹款活动' },
+        { name: 'Print.js', href: 'https://printjs.crabbly.com', title: '直接在网页上打印文件，而无需重定向或使用嵌入' }
+      ]
+    },
+    {
+      second_tit: '数学库',
+      second_child: [
+        { name: 'MathJS', href: 'https://mathjs.org', title: 'JavaScript和Node.js的一个扩展数学库,可以灵活地计算和处理许多不同的数据类型，例如数字、大数、复数、分数、单位和矩阵' }
       ]
     }
   ]
@@ -823,7 +841,9 @@ var data_css = {
         { name: 'CSS3菜鸟参考教程', href: 'https://www.runoob.com/css3/css3-tutorial.html', title: '' },
         { name: 'Flex教程', href: 'https://www.webhek.com/post/flexbox-playground.html', title: '' },
         { name: 'sass文档', href: 'https://sass.bootcss.com', title: '' },
-        { name: 'less文档', href: 'https://less.bootcss.com', title: '' }
+        { name: 'less文档', href: 'https://less.bootcss.com', title: '' },
+        { name: 'Css Values', href: 'https://cssvalues.com', title: '快速查找css属性的值' },
+        { name: 'CSSReference.io', href: 'https://cssreference.io', title: '通过说明性示例可视化的方式展示css属性的作用' }
       ]
     },
     {
