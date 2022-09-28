@@ -761,7 +761,9 @@ var data_jsplug = {
         { name: 'greensock', href: 'https://greensock.com', git_href: 'https://www.npmjs.com/package/gsap', title: '对html元素进行动画处理，用于创建高性能、零依赖性、跨游览器动画' },
         { name: 'Mo.js', href: 'https://mojs.github.io', title: '模块化,流畅' },
         { name: 'particlesJS', href: 'https://github.com/VincentGarreau/particles.js', title: '粒子背景：粒子的密度、颜色、不透明度、形状和大小' },
-        { name: 'Velocity.js', href: 'https://www.npmjs.com/package/velocity-animate', title: '' }
+        { name: 'Velocity.js', href: 'https://www.npmjs.com/package/velocity-animate', title: '' },
+        { name: 'Kute.js', href: 'https://github.com/thednp/kute.js', title: '' },
+        { name: 'Lottie', href: 'https://github.com/airbnb/lottie-web', title: 'Lottie for Web, Android, iOS, React Native, and Windows' }
       ]
     },
     {
@@ -782,7 +784,8 @@ var data_jsplug = {
         { name: 'Wow.js', href: 'https://github.com/graingert/WOW', title: '滚动时页面元素展现动画' },
         { name: 'Parallax.js', href: 'https://github.com/MobiusHorizons/parallax.js', title: '对智能设备方向变化做出响应的视差引擎' },
         { name: 'jInvertScroll', href: 'https://github.com/pixxelfactory/jInvertScroll', title: '视差滚动' },
-        { name: 'simpleParallax.js', href: 'https://simpleparallax.com/', title: '为网站"图像"创建视差动画效果' }
+        { name: 'simpleParallax.js', href: 'https://simpleparallax.com/', title: '为网站"图像"创建视差动画效果' },
+        { name:'ScrollReveal' , href:'https://github.com/jlmakes/scrollreveal', title:'在元素滚动到视图中时制作它们的动画' }
       ]
     },
     {
@@ -851,6 +854,8 @@ var data_css = {
       second_child: [
         { name: 'loading动画', href: 'https://loading.io', title: '' },
         { name: 'Animate.css', href: 'https://animate.style/', spare_href: 'https://www.dowebok.com/demo/2014/98/', title: '' },
+        { name: 'Magic Animations', href: 'https://github.com/miniMAC/magic', title: '' },
+        { name: 'CSShake', href: 'https://github.com/elrumordelaluz/csshake', title: '' },
         { name: 'Hover.css', href: 'http://ianlunn.github.io/Hover', title: '按钮悬浮效果' },
         { name: '数学公式css', href: 'https://github.com/parsegon/math-css', title: 'math-css' }
       ]
