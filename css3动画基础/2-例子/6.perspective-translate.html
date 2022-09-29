@@ -6,16 +6,15 @@
         #experiment{
             -webkit-perspective: 800;
             -webkit-perspective-origin: 50% 50%;
+            -webkit-transform-style:-webkit-preserve-3d;
 
             -webkit-transition: -webkit-transform 1s linear;
-            -webkit-transform-style:-webkit-preserve-3d;
         }
         #block{
             width:150px;
             height:150px;
             background-color: #69c;
             margin:170px auto;
-
         }
         #op{
             margin:0 auto;
@@ -42,8 +41,7 @@
 </head>
 <body>
 <div id="experiment">
-    <div id="block">
-    </div>
+    <div id="block"></div>
 </div>
 <div id="op">
     <p>translate x: <span id="translatex-span">0</span> px</p>
