@@ -5,17 +5,8 @@ CSS动画:
 	用CSS制作出绚丽燃烧的火狐狸
 		https://www.webhek.com/post/firefox-animation.html
 	
-	3D翻转效果
-		https://www.webhek.com/post/3d-menu.html
-	
-	3D旋转立方体
-		https://www.webhek.com/post/3d-css-cube.html
-	
 	辛普森一家
 		https://www.webhek.com/post/css-homer-animated.html
-	
-	多重背景CSS动画
-		https://www.webhek.com/post/multiple-background-css-animations.html
 	
 	css动画
 		https://www.webhek.com/post/css-bridge.html
