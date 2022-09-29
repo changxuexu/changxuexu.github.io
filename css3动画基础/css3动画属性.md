@@ -31,7 +31,6 @@ CSS动画:
 		缩放 scale()、scaleX()、scaleY()、scaleZ()
 		移动 translate()、translateX()、translateY()、translateZ()、translate3d()
 		倾斜 skew()、skewX()、skewY()
-		
 		矩阵变形 matrix()、matrix3d()
 		
 		
@@ -180,12 +179,13 @@ CSS动画:
       animation：动画名称 执行时间 延迟时间 执行次数 过渡效果 播放方向 完成状态
 
       简单动画：
-        @-webkit-keyframes demo{
+		.test{ animation: animatedemo 4s linear infinite; }
+        @-webkit-keyframes animatedemo{
           from{left:0;}
           to{left:400px;}
         }
       复杂动画：
-        @-webkit-keyframes demo{
+        @-webkit-keyframes animatedemo{
             0%{left:0;}
             50%{left:200px;}
             100%{left:400px;}
