@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<style>
+.background {
+  height: 373px;
+  width: 244px;
+  background: url(./img/screen-overview.jpg) 0 0 no-repeat;
+  position: relative;
+  padding-bottom:30px;
+}
+#foxtail {
+  background: url(./img/foxtail.png) 0 0 no-repeat;
+  width: 156px;
+  height: 156px;
+  top: 90px;
+  left: 30px;
+  position: absolute;
+  /* 使用CSS step来移动背景图的位置！这个动画可以无限循环下去，只要把背景图位置重置为0，重头运行一遍就行了 */
+  animation: animate-tail 3.75s steps(44) infinite;
+}
+@keyframes animate-tail {  
+  0% {background-position: -6864px 0; }
+  100% {background-position: 0 0;}
+}
+</style>
+<div class="background">
+  <div id="foxtail"></div>
+</div>
+
+<script>
+// Spritely   https://nowjava.com/demo/web1/10492/index.html
+// jQuery("#foxtail").sprite({ fps: 12, no_of_frames: 44, rewind: true });
+</script>
+</body>
+</html>

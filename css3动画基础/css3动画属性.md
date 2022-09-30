@@ -1,16 +1,5 @@
-知识点
-	https://www.webhek.com/post/css3-animation-creating-a-fan-out-with-bounce-effect-using-bezier-curve.html
-
-CSS动画:
-	用CSS制作出绚丽燃烧的火狐狸
-		https://www.webhek.com/post/firefox-animation.html
-	
-	辛普森一家
-		https://www.webhek.com/post/css-homer-animated.html
-	
-	css动画
-		https://www.webhek.com/post/css-bridge.html
-  
+辛普森一家 https://www.webhek.com/post/css-homer-animated.html
+css动画   https://www.webhek.com/post/css-bridge.html
 
 动画css3
 《1》transform:变形
@@ -159,8 +148,16 @@ CSS动画:
         ease-in-out：渐显渐隐效果，等同于cubic-bezier(0.42,0,0.58,1.0)函数。
         step-start：马上转跳到动画结束状态。
         step-end：保持动画开始状态，直到动画执行时间结束，马上转跳到动画结束状态。
-        steps(<number>[, [ start | end ] ]?)：第一个参数number为指定的间隔数，即把动画分为n步阶段性展示，第二个参数默认为end，设置最后一步的状态，start为结束时的状态，end为开始时的状态，若设置与animation-fill-mode的效果冲突，而以animation-fill-mode的设置为动画结束的状态。
-        cubic-bezier(<number>, <number>, <number>, <number>)：特殊的立方贝塞尔曲线效果。
+        steps(<number>[, [ start | end ] ]?)	
+			第一个参数number为指定的间隔数，即把动画分为n步阶段性展示，
+			第二个参数默认为end，设置最后一步的状态，start为结束时的状态，end为开始时的状态，
+			若设置与animation-fill-mode的效果冲突，而以animation-fill-mode的设置为动画结束的状态。
+			
+        cubic-bezier(t1, d1, t2, d2)：特殊的立方贝塞尔曲线效果。
+			d和t分别代表了距离（distance）和时间（time），他们的值通常是0到1之间的数字
+			d1控制的是A点到中间点之间的距离，t1控制的是从A点到中间点所用的时间
+			
+			https://blog.csdn.net/feiying0canglang/article/details/121186124
     
     animation-play-state：检索或设置对象动画的状态。
         running：默认值。运动
