@@ -1,30 +1,3 @@
-3D翻转效果
-  https://www.webhek.com/post/3d-menu.html
-
-
-CSS动画:
-    //CSS动画是否已经完成
-		https://www.webhek.com/post/css-animation-callback.html
-    // requestAnimationFrame
-		https://www.webhek.com/post/requestanimationframe.html
-
-		https://www.webhek.com/post/demo-background-animation-css-cloud.html
-		https://www.webhek.com/post/3d-css-cube.html
-		https://www.webhek.com/post/css-homer-animated.html
-		
-		//多重背景CSS动画
-		https://www.webhek.com/post/multiple-background-css-animations.html
-		//用CSS制作出绚丽燃烧的火狐狸
-		https://www.webhek.com/post/firefox-animation.html
-		https://www.webhek.com/post/sheen-effect.html
-		
-		https://www.webhek.com/post/css-bridge.html
-		
-		//知识点
-		https://www.webhek.com/post/css3-animation-creating-a-fan-out-with-bounce-effect-using-bezier-curve.html
-
-
-
 ======================================
 
 { name: '', href: '', title: '' }

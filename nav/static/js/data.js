@@ -883,6 +883,14 @@ var data_css = {
       ]
     },
     {
+      second_tit: '贝塞尔曲线',
+      second_child: [
+        { name: 'cubic-bezier', href: 'https://cubic-bezier.com', title: '' },
+        { name: 'cubic-bezier', href: 'https://xuanfengge.com/easeing/ceaser', title: '' },
+        { name: '缓存函数速查表', href: 'https://www.xuanfengge.com/easeing/easeing', title: '' }
+      ]
+    },
+    {
       second_tit: 'html',
       second_child: [
         { name: 'head标签', href: 'https://github.com/joshbuchea/HEAD', title: 'head标签的所有内容列表' },

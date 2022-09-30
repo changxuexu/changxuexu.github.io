@@ -12,7 +12,7 @@ css动画   https://www.webhek.com/post/css-bridge.html
 		移动 translate()、translateX()、translateY()、translateZ()、translate3d()
 		倾斜 skew()、skewX()、skewY()
 		矩阵变形 matrix()、matrix3d()
-		
+		透视 perspective
 		
 		矩阵变形：
 			matrix(a,c,e,b,d,f);
@@ -27,7 +27,7 @@ css动画   https://www.webhek.com/post/css-bridge.html
 			  d表示translateX()
 			  f表示translateY()
 			 
-		透视 
+		透视 https://developer.mozilla.org/zh-CN/docs/Web/CSS/perspective
 			// 浏览器离我观察的物体800像素远
 			perspective:800  
 			// 浏览器正中心观察
@@ -68,10 +68,10 @@ css动画   https://www.webhek.com/post/css-bridge.html
 		
       
 《2》transition：过渡属性，过渡时间，过渡效果
-      transition-property：过渡的css属性(all | 多个用“,”隔开)
-      transition-duration：过渡时间（0 | 几秒）
-      transition-delay：延迟时间（0 | s | ms）
-      transition-timing-function：过渡效果
+		transition-property：过渡的css属性(all | 多个用“,”隔开)
+		transition-duration：过渡时间（0 | 几秒）
+		transition-delay：延迟时间（0 | s | ms）
+		transition-timing-function：过渡效果
 			ease：缓解效果，等同于cubic-bezier(0.25,0.1,0.25,1.0)函数，既立方贝塞尔;
 				表现：开始缓慢，中间加速，最后减慢
 			ease-in：渐显效果，等同于cubic-bezier(0.42,0,1.0,1.0)函数。
@@ -84,7 +84,16 @@ css动画   https://www.webhek.com/post/css-bridge.html
 			linear：线性效果，等同于cubic-bezier(0.0,0.0,1.0,1.0)函数。
 				表现：匀速
 
-			cubic-bezier：特殊的立方贝塞尔曲线效果cubic-bezier(n,n,n,n),n可能的值是0至1之间的数值。
+			cubic-bezier：特殊的立方贝塞尔曲线效果cubic-bezier(t1,d1,t2,d2),n可能的值是0至1之间的数值。
+				d和t分别代表了距离（distance）和时间（time），他们的值通常是0到1之间的数字
+				d1控制的是A点到中间点之间的距离，t1控制的是从A点到中间点所用的时间
+				
+				需要关注的是P1和P2两点的取值，而其中x轴的取值范围是0到1。当取值超出范围时cubic-bezier将失效；Y轴的取值没有规定。
+					P0：默认值(0,0)
+					P1：动态取值(x1,y1)
+					P2：动态取值(x2,y2)
+					p3：默认值(1,1)
+
       
       简写顺序： 
 		transition：transition-property transition-duration(必须) transition-timing-function  transition-delay 
@@ -153,11 +162,7 @@ css动画   https://www.webhek.com/post/css-bridge.html
 			第二个参数默认为end，设置最后一步的状态，start为结束时的状态，end为开始时的状态，
 			若设置与animation-fill-mode的效果冲突，而以animation-fill-mode的设置为动画结束的状态。
 			
-        cubic-bezier(t1, d1, t2, d2)：特殊的立方贝塞尔曲线效果。
-			d和t分别代表了距离（distance）和时间（time），他们的值通常是0到1之间的数字
-			d1控制的是A点到中间点之间的距离，t1控制的是从A点到中间点所用的时间
-			
-			https://blog.csdn.net/feiying0canglang/article/details/121186124
+        cubic-bezier(t1, d1, t2, d2)：特殊的立方贝塞尔曲线效果,可以生成速度曲线
     
     animation-play-state：检索或设置对象动画的状态。
         running：默认值。运动
