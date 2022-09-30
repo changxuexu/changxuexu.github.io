@@ -28,7 +28,7 @@ css动画   https://www.webhek.com/post/css-bridge.html
 			  f表示translateY()
 			 
 		透视 https://developer.mozilla.org/zh-CN/docs/Web/CSS/perspective
-			// 浏览器离我观察的物体800像素远
+			// 浏览器离我观察的物体800像素远,要设置在父元素上面
 			perspective:800  
 			// 浏览器正中心观察
 			perspective-origin:50% 50%;
