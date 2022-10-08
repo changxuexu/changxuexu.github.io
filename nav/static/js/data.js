@@ -324,6 +324,18 @@ var data_Docker = {
   ]
 }
 
+var data_Linux = {
+  super_tit: 'Linux',
+  super_child: [
+    {
+      second_tit: '文档资料',
+      second_child: [
+        { name: '命令手册', href: 'https://www.linuxcool.com', title: '' }
+      ]
+    }
+  ]
+}
+
 var data_WeChat = {
   super_tit: '微应用',
   super_child: [
@@ -959,6 +971,7 @@ var arr_data = [
   data_Redis,
   data_Nginx,
   data_Docker,
+  data_Linux,
   data_WeChat,
   data_Alipay,
   data_Tiktok,

@@ -2,13 +2,15 @@
 
 { name: '', href: '', title: '' }
 
-vue3 + node 技术博客
-
-
+计划2022/10 - 2022/11
+  vue3 + node 技术博客
 
 =================================
-linux:
-	https://www.linuxcool.com
+免费书籍
+	https://lorefree.com/
+
+国家终身教育平台
+	https://le.ouchn.cn/
 
 DOCX
   https://docx.js.org/#/
