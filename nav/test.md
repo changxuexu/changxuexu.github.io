@@ -2,29 +2,8 @@
 
 { name: '', href: '', title: '' }
 
-计划2022/10 - 2022/11
-  vue3 + node 技术博客
+计划: vue3 + node 技术博客
 
-=================================
-免费书籍
-	https://lorefree.com/
-
-国家终身教育平台
-	https://le.ouchn.cn/
-
-DOCX
-  https://docx.js.org/#/
-
-Dinero.js  
-  https://dinerojs.com
-  https://blog.csdn.net/womenjiademao/article/details/84067429
-
-
-vue组件
-	https://mp.weixin.qq.com/s/u8EP2EaeLiPZfHOSQMPWXw
-
-二维码vue
-  https://link-to-qr.com/
 =================================
 
 
@@ -126,8 +105,6 @@ labels.forEach(label => {
 
 jquery课程
 	https://study.163.com/course/introduction.htm?courseId=465001#/courseDetail?tab=1
-
-
 
 //简历模板
 		https://www.webhek.com/post/interactive-resume.html

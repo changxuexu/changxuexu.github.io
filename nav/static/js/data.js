@@ -715,7 +715,14 @@ var data_jsplug = {
         { name: 'vue-meta', href: 'https://www.npmjs.com/package/vue-meta', title: '使用 SSR 支持管理 Vue.js 组件中的 HTML 元数据' },
         { name: 'element-china-area-data', href: 'https://www.npmjs.com/package/element-china-area-data', title: '基于element UI的省市区级联数据' },
         { name: 'v-charts', href: 'https://github.com/ElemeFE/v-charts', title: '基于 Vue2.0 和 echarts 封装的 v-charts 图表组件' },
-        { name: 'Trois', href: 'https://github.com/troisjs/trois', title: '基于ThreeJS的Vue3可视化库创建3D效果' }
+        { name: 'Trois', href: 'https://github.com/troisjs/trois', title: '基于ThreeJS的Vue3可视化库创建3D效果' },
+        { name: 'Vue Dropzone', href: 'https://rowanwins.github.io/vue-dropzone/docs/dist/#/demo', title: '拖放文件上传库' },
+        { name: 'VueJS DatePicker', href: 'https://github.com/charliekassel/vuejs-datepicker', title: '' },
+        { name: 'Vue Switches', href: 'https://github.com/drewjbartlett/vue-switches', title: '' },
+        { name: 'Vue Color', href: 'https://github.com/xiaokaike/vue-color', title: '选择颜色添加' },
+        { name: 'vue-circle-slider', href: 'https://github.com/devstark-com/vue-circle-slider', title: '线性滑块输入：支持触摸控制，允许你设置最大值/最小值，甚至你还可以控制滑块的步长' },
+        { name: 'Vue Phone Number', href: 'https://github.com/LouisMazel/vue-phone-number-input', title: '电话号码：有效的国家/地区代码、主题和颜色、电话号码格式' },
+        { name: '二维码vue', href: 'https://link-to-qr.com', title: '' }
       ]
     },
     {
@@ -834,7 +841,9 @@ var data_jsplug = {
         { name: 'ztext.js', href: 'https://bennettfeely.com/ztext/', title: '为文本、 SVG、图像、表情符号等其他元素创建 3D 效果' },
         { name: 'Rough Notation', href: 'https://roughnotation.com', title: '为网页中的元素创建注释，具有许多漂亮的效果，例如下划线、框、圆圈、突出显示、括号...' },
         { name: 'Flip', href: 'https://pqina.nl/flip', title: '创建具有翻转效果的计数器,使用场景：创建活动计时器、促销活动或筹款活动' },
-        { name: 'Print.js', href: 'https://printjs.crabbly.com', title: '直接在网页上打印文件，而无需重定向或使用嵌入' }
+        { name: 'Print.js', href: 'https://printjs.crabbly.com', title: '直接在网页上打印文件，而无需重定向或使用嵌入' },
+        { name: 'Docx.js', href: 'https://github.com/dolanmiu/docx', title: '通过JavaScript生成.docx文件的组件,可以同时被运用于Node端和浏览器端' },
+        { name: 'Dinero.js', href: 'https://dinerojs.com', title: '使用JavaScript处理货币值的库' }
       ]
     },
     {
@@ -949,7 +958,8 @@ var data_other = {
         { name: '清北浙大计算机教程', href: 'https://github.com/lib-pku/libpku', title: '' },
         { name: '国家中小学网络云平台', href: 'https://ykt.eduyun.cn', title: '' },
         { name: '国家教育资源公共服务平台', href: 'https://www.eduyun.cn', title: '' },
-        { name: '皖教云', href: 'http://www.ahedu.cn/#/', title: '' }
+        { name: '皖教云', href: 'http://www.ahedu.cn/#/', title: '' },
+        { name: '国家终身教育平台', href: 'https://le.ouchn.cn', title: '' }
       ]
     }
   ]
