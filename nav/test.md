@@ -4,12 +4,25 @@
 
 计划: vue3 + node 技术博客
 
+===============================
+js原生基础：
+  https://www.webhek.com/post/page-visibility.html
+  https://www.webhek.com/post/vendor-prefix.html
+
+  https://www.webhek.com/post/remove-whitespace-inline-block.html
+  https://www.webhek.com/post/battery-api.html
+
+  兼容：
+    https://www.webhek.com/post/supporting-internet-explorer.html
+  
+  //简历模板
+		https://www.webhek.com/post/interactive-resume.html
+
+  //css三维视差
+		https://www.webhek.com/post/parallax-2.html
+		https://www.webhek.com/post/performant-parallaxing.html
+
 =================================
-
-
-兼容：
-  https://www.webhek.com/post/supporting-internet-explorer.html
-
 
 //骨架屏实现方案
   https://segmentfault.com/a/1190000038450165
@@ -106,13 +119,13 @@ labels.forEach(label => {
 jquery课程
 	https://study.163.com/course/introduction.htm?courseId=465001#/courseDetail?tab=1
 
-//简历模板
-		https://www.webhek.com/post/interactive-resume.html
+
 	
 	canvas时钟：
 		https://www.webhek.com/post/demo-tear-able-cloth.html
 		https://www.webhek.com/demos/clock.html
 		https://www.webhek.com/post/demo-draw-worm.html
+    https://www.webhek.com/post/body-visualizer-female.html
 		//圣诞树及其算法
 		https://www.webhek.com/post/christmas-tree.html
 		
@@ -124,9 +137,7 @@ jquery课程
 		//打字游戏
 		https://www.webhek.com/post/z-type.html
 		
-		//css三维视差
-		https://www.webhek.com/post/parallax-2.html
-		https://www.webhek.com/post/performant-parallaxing.html
+		
 		//书
 		https://www.webhek.com/post/creativeguidebook.html
 		//相册
@@ -134,26 +145,12 @@ jquery课程
 		https://www.webhek.com/post/unitethelovers.html
 
 
-js原生基础：
-  https://www.webhek.com/post/page-visibility.html
-  https://www.webhek.com/post/vendor-prefix.html
-
-  https://www.webhek.com/post/remove-whitespace-inline-block.html
-  https://www.webhek.com/post/battery-api.html
-
 js算法：
   https://www.webhek.com/post/javascript-boids.html
   排序算法 https://www.webhek.com/post/comparison-sort.html
+  
 
-
-
-插件
-  https://www.webhek.com/post/body-visualizer-female.html
-
-=====================================================
-
-
-
+====================================================
 
 vue-cli项目改造为SSR服务端渲染: 
 	https://zhuanlan.zhihu.com/p/51088598
