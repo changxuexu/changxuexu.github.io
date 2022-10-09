@@ -6,12 +6,6 @@
 
 ===============================
 js原生基础：
-  https://www.webhek.com/post/page-visibility.html
-  
-  https://www.webhek.com/post/vendor-prefix.html
-  
-  获取电池状态
-	https://www.webhek.com/post/battery-api.html
 	
   
   //简历模板
@@ -317,38 +311,61 @@ export function objectMerge(target, source) {
 		}
 
 		console.log(withErrorMargin(0.1 + 0.2, 0.3));
-		
+
+
+/* 
+	获取对应浏览器的CSS前缀类型,返回值{ css:"-webkit-", dom:"WebKit", js:"Webkit", lowercase: "webkit" }
+
+	window.getComputedStyle(element, [pseudoElt])
+		作用：获取dom对象的计算样式
+		element: 用于获取计算样式的dom对象
+		pseudoElt: 指定一个要匹配的伪元素(::after,::before,::marker,::line-marker)的字符串,必须对普通元素省略(或null)。如getComputedStyle(h3, '::after')
+
+	Array.prototype.slice.call(arguments)
+		将具有length属性的对象(key值为数字)转成数组,没有length属性的对象返回为空
+		var obj = {0:'hello',1:'world',length:2};
+		console.log(Array.prototype.slice.call(obj,0)); //["hello", "world"]
+
+*/
+function browserprefix(){
+	var styles = window.getComputedStyle(document.documentElement,null)
+	//把这些属性转换成数组对象，搜索已知的前缀类型，如果没有发现，就缺省设置为Opera浏览器
+	var pre = (Array.prototype.slice.call(styles).join('').match(/-(moz|webkit|ms)-/) || (styles.OLink === '' && ['', 'o']))[1]
+	var dom = ('WebKit|Moz|MS|O').match(new RegExp('(' + pre + ')', 'i'))[1];
+	return { dom: dom, lowercase: pre, css: '-' + pre + '-', js: pre[0].toUpperCase() + pre.substr(1) }
+}
+
 
 css盒模型！！
 
-去除inline-Block元素之间的空白
-	在父元素上设置font-size: 0
-		.inline-block-list { 
-			font-size: 0;
-		}
 
-		.inline-block-list li {
-			font-size: 14px; 
-		}
-	各元素间不留任何空白
-		<ul><li>Item content</li><li>Item content</li><li>Item content</li></ul>
-	
-	HTML注释
-		<ul>
-			<li>Item content</li><!--
-		 --><li>Item content</li><!--
-		 --><li>Item content</li>
-		</ul>
-	
-	负边距
-		.inline-block-list li {
-			margin-left: -4px;
-		}
-	
-	首尾接龙 利用HTML标记的方法是将元素的闭合标记和下一个元素的开始标记靠在一起
-		<ul>
-			<li>Item content</li
-			><li>Item content</li
-			><li>Item content</li>
-		</ul>
 
+获取电池状态，火狐浏览器
+	电池对象是存放在window.navigator.battery里，但因为这是火狐浏览器首次实现并提供这个接口，并未普及，你需要使用window.navigator.mozBattery这种写法。这个mozBattery对象有下列属性：
+	
+	charging: 表示当前电池设备是否在充电。如果电池没有充电，这个值为false。如果为true，表明电池正在充电。当前的API实现里不能得到是否充满的信息，也无法判断当前设备是否有电池。
+	chargingTime: 是指距离电池充满还需要多久。
+	dischargingTime: 电池已使用时间。
+	level: 表示电量等级，从0到1.0。当这个值为0时，表示电量耗尽，系统即将关机。如果为1.0，则表示电池满电。
+	
+	// 获取电池对象!
+	var battery = navigator.battery || navigator.webkitBattery || navigator.mozBattery;
+
+	// 显示一些有用属性值
+	console.warn("电池充电状态: ", battery.charging); // true
+	console.warn("电量水平: ", battery.level); // 0.58
+	console.warn("电池使用时间: ", battery.dischargingTime);
+
+	// 设置一些事件监听器
+	battery.addEventListener("chargingchange", function(e) {
+		console.warn("电池充电状态变化: ", battery.charging);
+	}, false);
+	battery.addEventListener("chargingtimechange", function(e) {
+		console.warn("电池充电时间变化: ", battery.chargingTime);
+	}, false);
+	battery.addEventListener("dischargingtimechange", function(e) {
+		console.warn("电池使用时间变化: ", battery.dischargingTime);
+	}, false);
+	battery.addEventListener("levelchange", function(e) {
+		console.warn("电量水平变化: ", battery.level);
+	}, false);
