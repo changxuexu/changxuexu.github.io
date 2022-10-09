@@ -7,13 +7,12 @@
 ===============================
 js原生基础：
   https://www.webhek.com/post/page-visibility.html
+  
   https://www.webhek.com/post/vendor-prefix.html
-
-  https://www.webhek.com/post/remove-whitespace-inline-block.html
-  https://www.webhek.com/post/battery-api.html
-
-  兼容：
-    https://www.webhek.com/post/supporting-internet-explorer.html
+  
+  获取电池状态
+	https://www.webhek.com/post/battery-api.html
+	
   
   //简历模板
 		https://www.webhek.com/post/interactive-resume.html
@@ -27,7 +26,6 @@ js原生基础：
 //骨架屏实现方案
   https://segmentfault.com/a/1190000038450165
   https://xiaoiver.github.io/coding/2017/07/30/%E4%B8%BAvue%E9%A1%B9%E7%9B%AE%E6%B7%BB%E5%8A%A0%E9%AA%A8%E6%9E%B6%E5%B1%8F.html
-
 
 =================================
 
@@ -272,4 +270,83 @@ export function objectMerge(target, source) {
 
 
 
-=====================================================
+如果数组列表太大，以下递归代码将导致堆栈溢出。你如何解决这个问题，仍然保留递归模式？
+    var list = readHugeList();
+    var nextListItem = function() {
+        var item = list.pop();
+        if (item) {
+            // process the list item...
+            nextListItem();
+            //setTimeout( nextListItem, 0);
+        }
+    };
+
+	1.堆栈溢出被消除，因为事件循环处理递归，而不是调用堆栈。
+	2.当nextListItem运行时，如果item不为null，则将超时函数（nextListItem）推送到事件队列，并且函数退出，从而使调用堆栈清零。
+	3.当事件队列运行超时事件时，将处理下一个项目，并设置一个计时器以再次调用nextListItem。
+	4.该方法从头到尾不经过直接递归调用即可处理，因此调用堆栈保持清晰，无论迭代次数如何。
+
+
+创建一个函数，给定页面上的DOM元素，将访问元素本身及其所有后代（不仅仅是它的直接子元素）。
+对于每个访问的元素，函数应该将该元素传递给提供的回调函数。
+该函数的参数应该是：
+    一个 DOM 元素
+    一个回调函数（以DOM元素作为参数）
+    访问树中的所有元素（DOM）是经典的深度优先搜索算法应用程序。以下是一个示例解决方案：
+    function Traverse(p_element,p_callback) {
+        p_callback(p_element);
+        var list = p_element.children;
+        for (var i = 0; i < list.length; i++) {
+            Traverse(list[i],p_callback); // recursive call
+        }
+    }
+
+
+浮点数之间的比较？
+	ES6 在 Number 对象上面，新增了一个极小的常量 Number.EPSILON ，它表示 1 和大于 1 的最小浮点数之间的差，相当于 2 的 -52 次方Math.pow(2,-52)
+	console.log(Number.EPSILON === Math.pow(2,-52))
+	
+	function areTheNumbersAlmostEqual(num1, num2) {
+        return Math.abs( num1 - num2 ) < Number.EPSILON;
+    }
+	console.log(areTheNumbersAlmostEqual(0.1 + 0.2, 0.3));
+	
+	用它来设置能够接受的误差范围，比如，误差范围设为 2 的 -50 次方，如果两个浮点数的差小于这个值，我们就认为这两个浮点数相等
+		function withErrorMargin(left, right) {
+		  return Math.abs(left - right) < Number.EPSILON * Math.pow(2, 2);
+		}
+
+		console.log(withErrorMargin(0.1 + 0.2, 0.3));
+		
+
+去除inline-Block元素之间的空白
+	在父元素上设置font-size: 0
+		.inline-block-list { 
+			font-size: 0;
+		}
+
+		.inline-block-list li {
+			font-size: 14px; 
+		}
+	各元素间不留任何空白
+		<ul><li>Item content</li><li>Item content</li><li>Item content</li></ul>
+	
+	HTML注释
+		<ul>
+			<li>Item content</li><!--
+		 --><li>Item content</li><!--
+		 --><li>Item content</li>
+		</ul>
+	
+	负边距
+		.inline-block-list li {
+			margin-left: -4px;
+		}
+	
+	首尾接龙 利用HTML标记的方法是将元素的闭合标记和下一个元素的开始标记靠在一起
+		<ul>
+			<li>Item content</li
+			><li>Item content</li
+			><li>Item content</li>
+		</ul>
+
