@@ -5,15 +5,16 @@
 计划: vue3 + node 技术博客
 
 ===============================
-js原生基础：
-	
-  
-  //简历模板
-		https://www.webhek.com/post/interactive-resume.html
 
-  //css三维视差
-		https://www.webhek.com/post/parallax-2.html
-		https://www.webhek.com/post/performant-parallaxing.html
+//jinli模板
+	https://www.webhek.com/post/interactive-resume.html
+
+//css三维视差
+	https://www.webhek.com/post/parallax-2.html
+	https://www.webhek.com/post/performant-parallaxing.html
+	
+	https://zhuanlan.zhihu.com/p/66185816
+
 
 =================================
 
@@ -120,7 +121,7 @@ jquery课程
     https://www.webhek.com/post/body-visualizer-female.html
 		//圣诞树及其算法
 		https://www.webhek.com/post/christmas-tree.html
-		
+		https://zhuanlan.zhihu.com/p/66457307
 	
 	模板：
 		//手势控制幻灯片播放
@@ -160,16 +161,9 @@ vue-cli项目改造为SSR服务端渲染:
 滚动公告：
 	https://github.com/Stevenzwzhai/plugs/tree/master/z-vue-swipe
 
-linux
-	https://www.imooc.com/learn/175
-	https://www.runoob.com/linux/linux-tutorial.html
-	http://c.biancheng.net/linux_tutorial/
-	https://study.163.com/course/introduction.htm?courseId=232007#/courseDetail?tab=1
-
 ========================================================
 
-https://zhuanlan.zhihu.com/p/66185816
-https://zhuanlan.zhihu.com/p/66457307
+
 
 Promise总结：https://zhuanlan.zhihu.com/p/66119015
 创建对象：https://zhuanlan.zhihu.com/p/85351052

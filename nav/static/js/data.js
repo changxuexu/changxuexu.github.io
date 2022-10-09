@@ -330,7 +330,11 @@ var data_Linux = {
     {
       second_tit: '文档资料',
       second_child: [
-        { name: '命令手册', href: 'https://www.linuxcool.com', title: '' }
+        { name: '命令手册', href: 'https://www.linuxcool.com', title: '' },
+        { name: '菜鸟教程', href: 'https://www.runoob.com/linux/linux-tutorial.html', title: '' },
+        { name: '在线入门教程', href: 'http://c.biancheng.net/linux_tutorial', title: '' },
+        { name: '慕课网视频教程', href: 'https://www.imooc.com/learn/175', title: '' },
+        { name: '网易云视频教程', href: 'https://study.163.com/course/introduction.htm?courseId=232007#/courseDetail?tab=1', title: '' }
       ]
     }
   ]
