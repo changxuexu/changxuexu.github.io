@@ -1,43 +1,45 @@
-js动画效果
+js动画效果类型：
   1.速度：(改变值left、right、width、height、opacity)
-  2.缓冲动画
-  3.多物体动画
-  4.链式动画
-  5.同时运动
+  2.缓冲运动
+  3.多物体运动：多个dom同时运动
+  4.链式运动：dom一个css属性值执行完变化，紧接着另外一个属性值改变
+  5.同时运动：dom多个css属性值同时改变
 
 
-帧动画:
+javascript帧动画库创建：
   https://www.imooc.com/video/11819
-
   https://github.com/ustbhuangyi/animation
 
-  《1》什么是帧动画？
-        所谓帧动画就是在“连续的关键帧”中分解动画动作，也就是在时间轴的每帧上逐帧绘制不同的内容，使其连续播放而成动画。由于是一帧一帧的画，所以帧动画具有非常大的灵活性，几乎可以表现任何想表现的内容。
+	《1》什么是帧动画？
+        所谓帧动画就是在“连续的关键帧”中分解动画动作，也就是在时间轴的每帧上逐帧绘制不同的内容，使其连续播放而成动画。
+		由于是一帧一帧的画，所以帧动画具有非常大的灵活性，几乎可以表现任何想表现的内容。
 
-  《2》常见的帧动画方式?
+	《2》常见的帧动画方式?
         GIF 
         css3 animation
         javascript
 
-  《3》GIF与css3 animation的缺陷?
+	《3》GIF与css3 animation的缺陷?
         1.不能灵活的控制动画的暂停和播放。（GIF 、css3 animation）
         2.不能捕捉到动画完成的事件（GIF）
         3.不能对帧动画做更加灵活的拓展。（GIF、css3 animation）
 
-
-  《4》js实现帧动画的原理
+	《4》js实现帧动画的原理
         1.如果有多张帧图片，用一个image标签去承载图片，定时改变image的src属性
           （不推荐：http请求次数，性能）
         2.把所有动画关键帧绘制在一张图片里面，把图片作为元素的background-image,
           定时改变元素的background-position属性（推荐）
 
         简单案例
-          
+          见图
 
 
 
-  《1》设计一个通用的动画库
-      （需求分析）
+	《5》设计一个通用的动画库
+	
+		流程：需求分析 -> 编程接口 -> 调用方式 -> 代码设计
+		
+		需求分析:
           1.支持图片【预加载】
           2.支持2中动画播放方式，及【自定义】每帧动画。
           3.支持【单组】动画控制循环次数（可支持无限次） 
@@ -46,36 +48,46 @@ js动画效果
           6.支持动画暂停和继续播放
           7.支持【动画完成】后执行回调函数。
 
-      （编程接口）
-          1.loadimage(imglist) //预加载图片
-          2.changePosition(ele,positions,imagesUrl) //通过改变元素的background-position实现动画
-          3.changeSrc(ele,imglist) //通过改变image元素的src
-          4.enterFrame(callback) //每一帧动画执行的函数，相当于用户可以自定义每一帧动画的callback
-          5.repeat(times) //动画重复执行的次数，times为空时表示无限次
-          6.repeatForever() //无线重复上一次动画，相当于repeat()
-          7.wait(time) //每个动画执行完后等待的时间
-          8.then(callback) //动画执行完后的回调函数
-          9.start(interval) //动画开始执行，interval表示动画执行的间隔
-          10.pause()   //动画暂停
-          11.restart() //动画从上一次暂停处重新执行
-          12.dispose() //释放资源
-      （调用方式）
-          支持链式调用，我们期望【动词的方式】描述接口，调用方式如下：
-          var animation = require("animation")
-          var demoAnimation = animation()
-                              .loadimage(images)
-                              .changePosition(ele,positions)
-                              .repeat(2).then(function(){
-                                //动画执行完成后调用此函数
-                              })
-              demoAnimation.start(80);
+		编程接口：
+          1.预加载图片
+			loadimage(imglist)
+			
+          2.通过改变元素的background-position实现动画
+			changePosition(ele,positions,imagesUrl) 
+			
+          3.通过改变image元素的src
+			changeSrc(ele,imglist)
+          4.每一帧动画执行的函数，相当于用户可以自定义每一帧动画的callback
+			enterFrame(callback)
+          5.动画重复执行的次数，times为空时表示无限次
+			repeat(times)
+          6.无线重复上一次动画，相当于repeat()
+			repeatForever()
+          7.每个动画执行完后等待的时间
+			wait(time)
+          8.动画执行完后的回调函数
+			then(callback)
+          9.动画开始执行，interval表示动画执行的间隔
+			start(interval) 
+          10.动画暂停
+			pause()   
+          11.动画从上一次暂停处重新执行
+			restart() 
+          12.释放资源
+			dispose()
+		
+		调用方式：
+			支持链式调用，我们期望【动词的方式】描述接口，调用方式如下：
+			var animation = require("animation")
+			var demoAnimation = animation().loadimage(images)
+								.changePosition(ele,positions)
+								.repeat(2).then(function(){
+									//动画执行完成后调用此函数 
+								})
+             demoAnimation.start(80);
 
-      （代码设计）
-          图片预加载 -> 动画执行 -> 动画结束 等一些列操作看成一条【任务链，数组】
-          任务链有两种类型的任务：
-            a.同步执行完毕的
-            b.异步定时执行的(同步计时器或者raf)
-
-
-  代码编写：  
-    https://www.imooc.com/video/11813
+		代码设计：
+			图片预加载 -> 动画执行 -> 动画结束 等一些列操作看成一条【任务链，数组】
+			任务链有两种类型的任务：
+				a.同步执行完毕的
+				b.异步定时执行的(同步计时器或者raf)

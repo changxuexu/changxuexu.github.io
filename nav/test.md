@@ -319,6 +319,8 @@ export function objectMerge(target, source) {
 		console.log(withErrorMargin(0.1 + 0.2, 0.3));
 		
 
+css盒模型！！
+
 去除inline-Block元素之间的空白
 	在父元素上设置font-size: 0
 		.inline-block-list { 
