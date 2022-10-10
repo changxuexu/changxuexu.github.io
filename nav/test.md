@@ -1,6 +1,6 @@
 ======================================
-
-{ name: '', href: '', title: '' }
+href_spare 备用
+{ name: '', href: '', title: '' } 
 
 计划: vue3 + node 技术博客
 
@@ -8,13 +8,6 @@
 
 //jinli模板
 	https://www.webhek.com/post/interactive-resume.html
-
-//css三维视差
-	https://www.webhek.com/post/parallax-2.html
-	https://www.webhek.com/post/performant-parallaxing.html
-	
-	https://zhuanlan.zhihu.com/p/66185816
-
 
 =================================
 
@@ -149,12 +142,6 @@ vue-cli项目改造为SSR服务端渲染:
 	https://zhuanlan.zhihu.com/p/51088598
 	https://blog.csdn.net/qq_40323256/article/details/101907326
 	
-
-微信/支付宝支付：
-	https://blog.csdn.net/qq_36710522/article/details/90480914
-	https://www.cnblogs.com/niceyoo/p/12196095.html
-	https://developers.weixin.qq.com/community/develop/doc/0004e21a190dc846683ae235951800
-	
 3d轮播：
 	https://www.cnblogs.com/hanguozhi/p/7473893.html
 
@@ -165,8 +152,8 @@ vue-cli项目改造为SSR服务端渲染:
 
 
 
-Promise总结：https://zhuanlan.zhihu.com/p/66119015
-创建对象：https://zhuanlan.zhihu.com/p/85351052
+
+
 
 日期选择器：https://zhuanlan.zhihu.com/p/57043693
 小游戏：https://zhuanlan.zhihu.com/p/56149820
@@ -329,37 +316,13 @@ function browserprefix(){
 	return { dom: dom, lowercase: pre, css: '-' + pre + '-', js: pre[0].toUpperCase() + pre.substr(1) }
 }
 
+动画
+	https://www.webhek.com/post/performant-parallaxing.html
+	https://zhuanlan.zhihu.com/p/66185816
 
-css盒模型！！
 
 
 
-获取电池状态，火狐浏览器
-	电池对象是存放在window.navigator.battery里，但因为这是火狐浏览器首次实现并提供这个接口，并未普及，你需要使用window.navigator.mozBattery这种写法。这个mozBattery对象有下列属性：
+
 	
-	charging: 表示当前电池设备是否在充电。如果电池没有充电，这个值为false。如果为true，表明电池正在充电。当前的API实现里不能得到是否充满的信息，也无法判断当前设备是否有电池。
-	chargingTime: 是指距离电池充满还需要多久。
-	dischargingTime: 电池已使用时间。
-	level: 表示电量等级，从0到1.0。当这个值为0时，表示电量耗尽，系统即将关机。如果为1.0，则表示电池满电。
 	
-	// 获取电池对象!
-	var battery = navigator.battery || navigator.webkitBattery || navigator.mozBattery;
-
-	// 显示一些有用属性值
-	console.warn("电池充电状态: ", battery.charging); // true
-	console.warn("电量水平: ", battery.level); // 0.58
-	console.warn("电池使用时间: ", battery.dischargingTime);
-
-	// 设置一些事件监听器
-	battery.addEventListener("chargingchange", function(e) {
-		console.warn("电池充电状态变化: ", battery.charging);
-	}, false);
-	battery.addEventListener("chargingtimechange", function(e) {
-		console.warn("电池充电时间变化: ", battery.chargingTime);
-	}, false);
-	battery.addEventListener("dischargingtimechange", function(e) {
-		console.warn("电池使用时间变化: ", battery.dischargingTime);
-	}, false);
-	battery.addEventListener("levelchange", function(e) {
-		console.warn("电量水平变化: ", battery.level);
-	}, false);

@@ -805,7 +805,11 @@ var data_jsplug = {
         { name: 'Multiscroll.js', href: 'https://github.com/alvarotrigo/multiscroll.js', title: '两列垂直滚动面板创建拆分页面,反向滚动' },
         { name: 'Animate on scroll', href: 'https://github.com/michalsnik/aos', title: '滚动时页面元素展现动画' },
         { name: 'Wow.js', href: 'https://github.com/graingert/WOW', title: '滚动时页面元素展现动画' },
-        { name: 'Parallax.js', href: 'https://github.com/MobiusHorizons/parallax.js', title: '对智能设备方向变化做出响应的视差引擎' },
+        { name: 'parallax.js', 
+          href: 'https://github.com/wagerfield/parallax', 
+          href_spare1: 'https://github.com/wagerfield/parallax', 
+          href_spare2: 'https://github.com/MobiusHorizons/parallax.js', 
+          title: '视差引擎，对智能设备的方向作出反应。如果没有陀螺仪或运动检测硬件可用，则使用光标的位置' },
         { name: 'jInvertScroll', href: 'https://github.com/pixxelfactory/jInvertScroll', title: '视差滚动' },
         { name: 'simpleParallax.js', href: 'https://simpleparallax.com/', title: '为网站"图像"创建视差动画效果' },
         { name:'ScrollReveal' , href:'https://github.com/jlmakes/scrollreveal', title:'在元素滚动到视图中时制作它们的动画' }
