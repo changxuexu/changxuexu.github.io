@@ -1,7 +1,6 @@
 'use strict';
 
 var __id = 0;
-
 /**
  * 动态创建id
  * @returns {number}
@@ -19,12 +18,15 @@ function getId() {
 function loadImage(images, callback, timeout) {
 	//加载完成图片的计数器
 	var count = 0;
+	
 	//全部图片成功加载完图片的标志位
 	var success = true;
+
 	//超时timer的id
 	var timeoutId = 0;
 	//是否加载超时的标志位
 	var isTimeout = false;
+
 	//对图片数组（或对象）进行遍历
 	for (var key in images) {
 		//过滤掉prototype的属性
@@ -72,6 +74,10 @@ function loadImage(images, callback, timeout) {
 		item.status = "loading";
 
 		var img = item.img;
+
+		//发起一个http(s)请求加载图片
+		img.src = item.src;
+
 		//定义图片加载成功的回调函数
 		img.onload = function () {
 			//如果每张图片都成功才算成功
@@ -85,9 +91,7 @@ function loadImage(images, callback, timeout) {
 			item.status = "error";
 			done();
 		};
-		//发起一个http(s)请求加载图片
-		img.src = item.src;
-
+		
 		/**
 		 * 每张图片加载完成的回调函数
 		 */
@@ -95,13 +99,14 @@ function loadImage(images, callback, timeout) {
 			//事件清理
 			img.onload = img.onerror = null;
 
+			// 兼容低版本浏览器，有可能产生异常的代码放在try catch中，即使出问题不影响后续代码执行
+			//删除window上注册的属性
 			try {
-				//删除window上注册的属性
 				delete window[item.id];
-			}
-			catch (e) {
+			}catch (e) {
 
 			}
+
 			//每张图片加载完成，计数器减一，当所有图片加载完毕且没有超时的情况下，
 			//清除超时计时器，且执行回调函数
 			if (!--count && !isTimeout) {

@@ -29,10 +29,13 @@ function next(callback) {
  * @constructor
  */
 function Animation() {
-	this.taskQueue = [];
+	//任务链
+	this.taskQueue = [];  
 	this.timeline = new Timeline();
+	//动画状态
 	this.state = STATE_INITIAL;
-	this.index = 0;
+	//索引用于记录当前执行的任务
+	this.index = 0; 	
 }
 
 /**
@@ -42,6 +45,7 @@ function Animation() {
 Animation.prototype.loadImage = function (imglist) {
 
 	var taskFn = function (next) {
+		// imglist.slice()数组深拷贝，不影响原有数据值
 		loadImage(imglist.slice(), next);
 	};
 	var type = TASK_SYNC;
@@ -242,6 +246,8 @@ Animation.prototype.dispose = function () {
 	return this;
 };
 
+
+// 下划线_命名表示类内部使用
 /**
  * 添加一个任务到任务队列中
  * @param taskFn 任务方法
@@ -254,6 +260,7 @@ Animation.prototype._add = function (taskFn, type) {
 		taskFn: taskFn,
 		type: type
 	});
+	// 链式调用
 	return this;
 };
 
