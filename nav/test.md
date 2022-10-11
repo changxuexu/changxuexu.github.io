@@ -6,15 +6,13 @@ href_spare 备用
 
 ===============================
 
-webpack
-	/
-
-{
-      second_tit: 'webpack',
-      second_child: [
-        { name: 'Webpack中文', href: '', title: '' }
-      ]
-    },
+动画
+	https://www.webhek.com/post/performant-parallaxing.html
+	
+	不要使用滚动事件(scroll events)或者背景定位（background-position）来创建视差动画。
+	使用 CSS 3D 变换来创建一个更准确的视差效果。
+	对于iOS移动设备的Safari浏览器使用 position: sticky 来确保视差可以生效。
+	
 
 //jinli模板
 	https://www.webhek.com/post/interactive-resume.html
@@ -121,10 +119,11 @@ jquery课程
 		https://www.webhek.com/post/demo-tear-able-cloth.html
 		https://www.webhek.com/demos/clock.html
 		https://www.webhek.com/post/demo-draw-worm.html
-    https://www.webhek.com/post/body-visualizer-female.html
+		https://www.webhek.com/post/body-visualizer-female.html
 		//圣诞树及其算法
 		https://www.webhek.com/post/christmas-tree.html
 		https://zhuanlan.zhihu.com/p/66457307
+		https://zhuanlan.zhihu.com/p/66185816
 	
 	模板：
 		//手势控制幻灯片播放
@@ -326,9 +325,7 @@ function browserprefix(){
 	return { dom: dom, lowercase: pre, css: '-' + pre + '-', js: pre[0].toUpperCase() + pre.substr(1) }
 }
 
-动画
-	https://www.webhek.com/post/performant-parallaxing.html
-	https://zhuanlan.zhihu.com/p/66185816
+
 
 
 

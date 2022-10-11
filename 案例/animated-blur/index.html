@@ -1,0 +1,77 @@
+<!doctype html>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+</style>
+
+<div id="carousel">
+</div>
+<script src="./scripts/animated_blur.js"></script>
+<script>
+(function() {
+  const m = new Map();;
+  let timeout = null;
+  function onEnter(event) {
+    timeout = setTimeout(_ => {
+      timeout = null;
+      m.forEach((animation, img) => {
+        if(img === event.target) return;
+        animation.play(AnimatedBlur.BLUR_MODE.BLUR);
+      });
+    }, 200);
+  }
+
+  function onLeave(event) {
+    if (timeout) {
+      clearTimeout(timeout);
+      timeout = null;
+    }
+    m.forEach((animation, img) => animation.play(AnimatedBlur.BLUR_MODE.UNBLUR));
+  }
+
+  const imgPaths = [
+    "./images/chrome.png",
+    "./images/search.png",
+    "./images/photos.png",
+    "./images/youtube.png",
+    "./images/gmail.png",
+    "./images/maps.png",
+  ];
+
+  async function init() {
+    const carousel = document.querySelector('#carousel');
+
+    let imgs = imgPaths.map(path => {
+      const img = document.createElement('img');
+      img.src = path;
+      carousel.appendChild(img);
+      return new Promise(resolve => img.onload = _ => resolve(img));
+    });
+    // Wait for all images to load
+    imgs = await Promise.all(imgs);
+    imgs.forEach((img, idx) => {
+      img.onmouseenter = onEnter;
+      img.onmouseleave = onLeave;
+      const animation = new AnimatedBlur(`img-${idx}`, img, {steps: 5, duration: 200});
+      animation.update();
+      m.set(img, animation);
+    });
+
+    window.onresize = _ => {
+      m.forEach(anim => {
+        anim.resize();
+      });
+    };
+  }
+  init();
+})();
+</script>

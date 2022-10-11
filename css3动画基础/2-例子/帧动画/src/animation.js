@@ -147,14 +147,17 @@ Animation.prototype.then = function (callback) {
  * @param interval 异步定时任务执行的间隔
  */
 Animation.prototype.start = function (interval) {
+
 	//如果任务已经开始，则返回
 	if (this.state === STATE_START)
 		return this;
+
 	//如果任务链中没有任务，则返回
 	if (!this.taskQueue.length)
 		return this;
-	this.state = STATE_START;
 
+	// 无上面情况执行下面逻辑
+	this.state = STATE_START;
 	this.interval = interval;
 	this._runTask();
 	return this;
