@@ -7,7 +7,14 @@ href_spare 备用
 ===============================
 
 webpack
-	https://webpack.docschina.org/
+	/
+
+{
+      second_tit: 'webpack',
+      second_child: [
+        { name: 'Webpack中文', href: '', title: '' }
+      ]
+    },
 
 //jinli模板
 	https://www.webhek.com/post/interactive-resume.html

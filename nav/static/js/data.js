@@ -9,7 +9,7 @@ var data_daily = {
         { name: '搜猫搜索', href: 'https://www.soumao.cc', title: '' },
         { name: '谷歌搜索', href: 'https://www.google.com', title: '' },
         { name: '开发百度搜索', href: 'https://kaifa.baidu.com', title: '' },
-        { name: 'libraryMirror', href: 'https://jia110.github.io', other_href: 'https://www.library.ac.cn', title: '' },
+        { name: 'libraryMirror', href: 'https://jia110.github.io', href_spare1: 'https://www.library.ac.cn', title: '' },
         { name: '百度翻译', href: 'https://fanyi.baidu.com', title: '' },
         { name: '火山翻译', href: 'https://translate.volcengine.com/translate', title: '' },
         { name: '谷歌翻译', href: 'https://translate.google.cn/?hl=zh-CN&tab=TT', title: '' }
@@ -503,12 +503,6 @@ var data_tool = {
       ]
     },
     {
-      second_tit: 'webpack',
-      second_child: [
-        { name: 'Webpack中文', href: 'https://www.webpackjs.com/concepts', title: '' }
-      ]
-    },
-    {
       second_tit: 'svg优化器',
       second_child: [
         { name: 'SVGOMG', href: 'https://jakearchibald.github.io/svgomg', title: '' },
@@ -672,14 +666,15 @@ var data_javascript = {
       second_tit: '工具函数',
       second_child: [
         { name: 'Lodash', href: 'https://www.lodashjs.com', title: 'javascript工具库' },
+        { name: 'babel', href: 'https://www.babeljs.cn', title: 'js语法兼容降级处理' },
         { name: 'JavaScript代码片段', href: 'https://www.html.cn/30-seconds-of-code', title: '' }
       ]
     },
     {
-      second_tit: '其他',
+      second_tit: '构建工具',
       second_child: [
-        { name: 'gulpjs构建工具', href: 'https://www.gulpjs.com.cn', title: '' },
-        { name: 'babel', href: 'https://www.babeljs.cn', title: 'js语法兼容降级处理' },
+        { name: 'Webpack', href: 'https://webpack.docschina.org',href_spare1:'https://www.webpackjs.com/concepts', title: '' },
+        { name: 'gulpjs', href: 'https://www.gulpjs.com.cn', title: '' },
       ]
     }
   ]
@@ -777,7 +772,7 @@ var data_jsplug = {
       second_tit: '动画',
       second_child: [
         { name: 'vue-kinesis', href: 'https://www.npmjs.com/package/vue-kinesis', title: '支持使用的 Vue.js 组件来创建交互式动画，其支持Vue3' },
-        { name: 'Popmotion', href: 'https://popmotion.io/', cn_href: 'https://jellykaiser.github.io/popmotion.doc/', title: '原生dom支持:CSS、SVG路径、dom属性；支持数字、颜色和复杂字符串的关键帧、弹簧和惯性动画' },
+        { name: 'Popmotion', href: 'https://popmotion.io/', href_spare1: 'https://jellykaiser.github.io/popmotion.doc/', title: '原生dom支持:CSS、SVG路径、dom属性；支持数字、颜色和复杂字符串的关键帧、弹簧和惯性动画' },
         { name: 'Three.js', href: 'https://threejs.org', title: '3Djs库，canvas、svg、css3d、webgl' },
         { name: 'Anime.js', href: 'https://animejs.com', title: '轻量级,强大API' },
         { name: 'Tweenmax', href: 'https://www.tweenmax.com.cn', title: '' },
@@ -828,7 +823,7 @@ var data_jsplug = {
         { name: 'Day.js', href: 'https://dayjs.gitee.io/zh-CN', title: '是一个轻量的处理时间和日期的 JavaScript 库，和 Moment.js 的 API 设计保持完全一样' },
         { name: 'html2canvas', href: 'http://html2canvas.hertzen.com', title: '对网页html屏幕截图,用于生成图片' },
         { name: 'Typeit.js', href: 'https://www.typeitjs.com', title: '打字机效果' },
-        { name: 'Typed.js', href: 'https://github.com/mattboldt/typed.js', black_href: 'https://www.cnblogs.com/Aaxuan/p/14146418.html', title: '打字机效果' },
+        { name: 'Typed.js', href: 'https://github.com/mattboldt/typed.js', href_spare1: 'https://www.cnblogs.com/Aaxuan/p/14146418.html', title: '打字机效果' },
         { name: 'AlloyFinger', href: 'http://alloyteam.github.io/AlloyFinger', title: '手势插件' },
         { name: 'zTree', href: 'https://treejs.cn', title: '树插件' },
         { name: 'Shepherd', href: 'https://shepherdjs.dev/', title: '为应用创建新手引导' },
@@ -836,7 +831,7 @@ var data_jsplug = {
         { name: 'favico.js', href: 'https://www.npmjs.com/package/favico.js', title: '动态 favicon' },
         { name: 'Keycode', href: 'https://www.npmjs.com/package/keycode-js', title: '获取键盘按键的 JavaScript keycode' },
         { name: 'Slideout.js', href: 'https://slideout.js.org/', title: '移动应用侧滑导航' },
-        { name: 'highlight.js', href: 'https://highlightjs.org/', black_href: 'https://www.cnblogs.com/mmzuo-798/p/11325187.html', title: '自动检测代码类似编辑器内高亮展示' },
+        { name: 'highlight.js', href: 'https://highlightjs.org/', href_spare1: 'https://www.cnblogs.com/mmzuo-798/p/11325187.html', title: '自动检测代码类似编辑器内高亮展示' },
         { name: 'Dragdealer.js', href: 'http://skidding.github.io/dragdealer/', title: '炫酷拖拽' },
         { name: 'Barba.js', href: 'https://github.com/barbajs/barba', title: '在网站页面之间创建流畅流畅的过渡' },
         { name: 'Tippy.js', href: 'https://atomiks.github.io/tippyjs/', title: 'Tooltip提示插件' },
