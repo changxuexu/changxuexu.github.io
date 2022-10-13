@@ -1,7 +1,8 @@
 辛普森一家 https://www.webhek.com/post/css-homer-animated.html
 css动画   https://www.webhek.com/post/css-bridge.html
+小游戏   https://www.imooc.com/learn/515
 
-动画css3
+动画css3 ( transition/animation )
 《1》transform:变形
 	浏览器分X轴（指向右）、Y轴（指向下）、Z轴（指向自己）
 	
@@ -69,8 +70,9 @@ css动画   https://www.webhek.com/post/css-bridge.html
       
 《2》transition：过渡属性，过渡时间，过渡效果
 		transition-property：过渡的css属性(all | 多个用“,”隔开)
+		
 		transition-duration：过渡时间（0 | 几秒）
-		transition-delay：延迟时间（0 | s | ms）
+		
 		transition-timing-function：过渡效果
 			ease：缓解效果，等同于cubic-bezier(0.25,0.1,0.25,1.0)函数，既立方贝塞尔;
 				表现：开始缓慢，中间加速，最后减慢
@@ -93,45 +95,67 @@ css动画   https://www.webhek.com/post/css-bridge.html
 					P1：动态取值(x1,y1)
 					P2：动态取值(x2,y2)
 					p3：默认值(1,1)
+		
+		transition-delay：延迟时间（0 | s | ms）
 
-      
-      简写顺序： 
-		transition：transition-property transition-duration(必须) transition-timing-function  transition-delay 
-	    
-		案例1:transition: 1s;
-			transition-property:all(默认)
-			transition-duration:1s
-			transition-timing-function:ease(默认)
-			transition-delay:0s (默认)
 		
-		案例2:transition: 1s linear;
-			transition-property:all(默认)
-			transition-duration:1s
-			transition-timing-function:linear
-			transition-delay:0s(默认)
-		
-		案例3:transition: background 1s linear;
-			transition-property:background
-			transition-duration:1s
-			transition-timing-function:linear
-			transition-delay:0s(默认)
-		
-		案例4:transition: background 1s linear 500ms;
-			transition-property:background
-			transition-duration:1s
-			transition-timing-function:linear
-			transition-delay:500ms
-	  
-        案例5:多个属性的过渡逗号隔开
-			transition: width 2s ease, height 2s, transform 2s
+		简写顺序： 
+			transition：：过渡属性 过渡时间 过渡效果 延迟时间
+			transition：transition-property transition-duration(必须) transition-timing-function  transition-delay 
 			
+			案例1:transition: 1s;
+				transition-property:all(默认)
+				transition-duration:1s
+				transition-timing-function:ease(默认)
+				transition-delay:0s (默认)
+			
+			案例2:transition: 1s linear;
+				transition-property:all(默认)
+				transition-duration:1s
+				transition-timing-function:linear
+				transition-delay:0s(默认)
+			
+			案例3:transition: background 1s linear;
+				transition-property:background
+				transition-duration:1s
+				transition-timing-function:linear
+				transition-delay:0s(默认)
+			
+			案例4:transition: background 1s linear 500ms;
+				transition-property:background
+				transition-duration:1s
+				transition-timing-function:linear
+				transition-delay:500ms
+		  
+			案例5:多个属性的过渡逗号隔开
+				transition: width 2s ease, height 2s, transform 2s
+		
+		注意：
+			1.display不能和transition一起使用
+			2.transition后面尽量不要跟all,造成浏览器大量的计算资源,影响性能
+			3.常见闪动可以perspective和backface-visibility
   
 《3》animation 动画
     animation-name：动画名称 ，多个用","隔开
 	
     animation-duration：动画执行时间（0：不动画）
 	
-    animation-delay: 动画延迟（默认0：不延迟，立即执行）
+	animation-timing-function：播放方式
+        ease：缓解效果，等同于cubic-bezier(0.25,0.1,0.25,1.0)函数，既立方贝塞尔。
+        linear：线性效果，等同于cubic-bezier(0.0,0.0,1.0,1.0)函数。
+        ease-in：渐显效果，等同于cubic-bezier(0.42,0,1.0,1.0)函数。
+        ease-out：渐隐效果，等同于cubic-bezier(0,0,0.58,1.0)函数。
+        ease-in-out：渐显渐隐效果，等同于cubic-bezier(0.42,0,0.58,1.0)函数。
+        step-start：马上转跳到动画结束状态。
+        step-end：保持动画开始状态，直到动画执行时间结束，马上转跳到动画结束状态。
+        steps(<number>[, [ start | end ] ]?)	
+			第一个参数number为指定的间隔数，即把动画分为n步阶段性展示，
+			第二个参数默认为end，设置最后一步的状态，start为结束时的状态，end为开始时的状态，
+			若设置与animation-fill-mode的效果冲突，而以animation-fill-mode的设置为动画结束的状态。
+			
+        cubic-bezier(t1, d1, t2, d2)：特殊的立方贝塞尔曲线效果,可以生成速度曲线
+	
+    animation-delay: 动画延迟时间（默认0：不延迟，立即执行）
 	
     animation-iteration-count：播放次数
 		number：自定义动画执行次数，设置值可为0或正整数。
@@ -148,28 +172,13 @@ css动画   https://www.webhek.com/post/css-bridge.html
 		forwards：结束后保持动画结束时的状态，但当animation-direction为0，则动画不执行，持续保持动画开始时的状态
 		backwards：结束后返回动画开始时的状态
 		both：结束后可遵循forwards和backwards两个规则。
-
-    animation-timing-function：播放方式
-        ease：缓解效果，等同于cubic-bezier(0.25,0.1,0.25,1.0)函数，既立方贝塞尔。
-        linear：线性效果，等同于cubic-bezier(0.0,0.0,1.0,1.0)函数。
-        ease-in：渐显效果，等同于cubic-bezier(0.42,0,1.0,1.0)函数。
-        ease-out：渐隐效果，等同于cubic-bezier(0,0,0.58,1.0)函数。
-        ease-in-out：渐显渐隐效果，等同于cubic-bezier(0.42,0,0.58,1.0)函数。
-        step-start：马上转跳到动画结束状态。
-        step-end：保持动画开始状态，直到动画执行时间结束，马上转跳到动画结束状态。
-        steps(<number>[, [ start | end ] ]?)	
-			第一个参数number为指定的间隔数，即把动画分为n步阶段性展示，
-			第二个参数默认为end，设置最后一步的状态，start为结束时的状态，end为开始时的状态，
-			若设置与animation-fill-mode的效果冲突，而以animation-fill-mode的设置为动画结束的状态。
-			
-        cubic-bezier(t1, d1, t2, d2)：特殊的立方贝塞尔曲线效果,可以生成速度曲线
     
     animation-play-state：检索或设置对象动画的状态。
         running：默认值。运动
         paused：暂停
 
     animation简写顺序：
-      animation：动画名称 执行时间 延迟时间 执行次数 过渡效果 播放方向 完成状态
+      animation：动画名称 执行时间 播放方式 延迟时间 执行次数 过渡效果 播放方向 完成状态
 
       简单动画：
 		.test{ animation: animatedemo 4s linear infinite; }
