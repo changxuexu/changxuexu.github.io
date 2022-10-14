@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+<style>
+*{margin:0;padding:0;}
+.divTwo{
+  width: 60px;
+  height: 60px;
+  background-color:red;
+  margin: 40px auto;
+  border-radius:50%;
+  animation: jump 1s cubic-bezier(0.41,-0.04,0.93,0.29) infinite ;
+}
+@keyframes jump{
+  0%{
+    transform: translateY(0px);
+  }
+  90%{
+    transform: translateY(200px);
+    clip-path: ellipse(50% 50% at 50% 50%);
+  }
+  100%{
+    transform: translateY(210px);
+    clip-path: ellipse(50% 45% at 50% 48%);
+  }
+}
+</style>
+<div class="divTwo"></div>
+</body>
+</html>

@@ -3,7 +3,8 @@ css动画   https://www.webhek.com/post/css-bridge.html
 小游戏   https://www.imooc.com/learn/515
 
 动画css3 ( transition/animation )
-《1》transform:变形
+# transform:变形,非动画属性
+```html
 	浏览器分X轴（指向右）、Y轴（指向下）、Z轴（指向自己）
 	
     1.变换函数：
@@ -66,76 +67,95 @@ css动画   https://www.webhek.com/post/css-bridge.html
 		backface-visibility：隐藏内容的背面
 			visible：默认值，旋转的时候背景可见。
 			hidden：旋转的时候背景不可见。
-		
+
+```		
       
-《2》transition：过渡属性，过渡时间，过渡效果
-		transition-property：过渡的css属性(all | 多个用“,”隔开)
-		
-		transition-duration：过渡时间（0 | 几秒）
-		
-		transition-timing-function：过渡效果
-			ease：缓解效果，等同于cubic-bezier(0.25,0.1,0.25,1.0)函数，既立方贝塞尔;
-				表现：开始缓慢，中间加速，最后减慢
-			ease-in：渐显效果，等同于cubic-bezier(0.42,0,1.0,1.0)函数。
-				表现：开始缓慢，并逐渐加速直至结束
-			ease-out：渐隐效果，等同于cubic-bezier(0,0,0.58,1.0)函数。
-				表现：开始得很快，并逐渐减速，直到结束
-			ease-in-out：渐显渐隐效果，等同于cubic-bezier(0.42,0,0.58,1.0)函数。
-				表现：开始得很快，并逐渐减速，直到结束
+# transition：过渡属性，过渡时间，过渡效果
+```html
+	transition-property：过渡的css属性(all | 多个用","隔开)
+	
+	transition-duration：过渡时间（0 | 几秒）
+	
+	transition-timing-function：过渡效果
+		ease：缓解效果，等同于cubic-bezier(0.25,0.1,0.25,1.0)函数，既立方贝塞尔;
+			表现：开始缓慢，中间加速，最后减慢
+		ease-in：渐显效果，等同于cubic-bezier(0.42,0,1.0,1.0)函数。
+			表现：开始缓慢，并逐渐加速直至结束
+		ease-out：渐隐效果，等同于cubic-bezier(0,0,0.58,1.0)函数。
+			表现：开始得很快，并逐渐减速，直到结束
+		ease-in-out：渐显渐隐效果，等同于cubic-bezier(0.42,0,0.58,1.0)函数。
+			表现：开始得很快，并逐渐减速，直到结束
 
-			linear：线性效果，等同于cubic-bezier(0.0,0.0,1.0,1.0)函数。
-				表现：匀速
+		linear：线性效果，等同于cubic-bezier(0.0,0.0,1.0,1.0)函数。
+			表现：匀速
 
-			cubic-bezier：特殊的立方贝塞尔曲线效果cubic-bezier(t1,d1,t2,d2),n可能的值是0至1之间的数值。
-				d和t分别代表了距离（distance）和时间（time），他们的值通常是0到1之间的数字
-				d1控制的是A点到中间点之间的距离，t1控制的是从A点到中间点所用的时间
-				
-				需要关注的是P1和P2两点的取值，而其中x轴的取值范围是0到1。当取值超出范围时cubic-bezier将失效；Y轴的取值没有规定。
-					P0：默认值(0,0)
-					P1：动态取值(x1,y1)
-					P2：动态取值(x2,y2)
-					p3：默认值(1,1)
+		cubic-bezier：
+			1.事件函数，管理着动画在单位帧内播放的速度曲线
+			2.预设值：ease 、 ease-in 、 ease-out 、 ease-in-out 、 linear 线性效果
+			2.特殊的立方贝塞尔曲线效果cubic-bezier(t1,d1,t2,d2),n可能的值是0至1之间的数值。
+			
+			d和t分别代表了距离（distance）和时间（time），他们的值通常是0到1之间的数字
+			d1控制的是A点到中间点之间的距离，t1控制的是从A点到中间点所用的时间
+			
+			需要关注的是P1和P2两点的取值，而其中x轴的取值范围是0到1。当取值超出范围时cubic-bezier将失效；Y轴的取值没有规定。
+				P0：默认值(0,0)
+				P1：动态取值(x1,y1)
+				P2：动态取值(x2,y2)
+				p3：默认值(1,1)
 		
-		transition-delay：延迟时间（0 | s | ms）
+		step-start：马上转跳到动画结束状态。
+        step-end：保持动画开始状态，直到动画执行时间结束，马上转跳到动画结束状态。
+		steps(<number>[, [ start | end ] ]?)	
+			能够实现动画的阶跃式变化，不是线性的过渡
+			第一个参数number为指定的间隔数，即把动画分为n步关键帧阶段性展示，而不是整个事件
+			第二个参数默认为end，设置最后一步的状态，start为结束时的状态，end为开始时的状态，
+			若设置与animation-fill-mode的效果冲突，而以animation-fill-mode的设置为动画结束的状态。
+			
+			
+	
+	transition-delay：延迟时间（0 | s | ms）
 
 		
-		简写顺序： 
-			transition：：过渡属性 过渡时间 过渡效果 延迟时间
-			transition：transition-property transition-duration(必须) transition-timing-function  transition-delay 
-			
-			案例1:transition: 1s;
-				transition-property:all(默认)
-				transition-duration:1s
-				transition-timing-function:ease(默认)
-				transition-delay:0s (默认)
-			
-			案例2:transition: 1s linear;
-				transition-property:all(默认)
-				transition-duration:1s
-				transition-timing-function:linear
-				transition-delay:0s(默认)
-			
-			案例3:transition: background 1s linear;
-				transition-property:background
-				transition-duration:1s
-				transition-timing-function:linear
-				transition-delay:0s(默认)
-			
-			案例4:transition: background 1s linear 500ms;
-				transition-property:background
-				transition-duration:1s
-				transition-timing-function:linear
-				transition-delay:500ms
-		  
-			案例5:多个属性的过渡逗号隔开
-				transition: width 2s ease, height 2s, transform 2s
+	简写顺序： 
+		transition：：过渡属性 过渡时间 过渡效果 延迟时间
+		transition：transition-property transition-duration(必须) transition-timing-function  transition-delay 
 		
-		注意：
-			1.display不能和transition一起使用
-			2.transition后面尽量不要跟all,造成浏览器大量的计算资源,影响性能
-			3.常见闪动可以perspective和backface-visibility
-  
-《3》animation 动画
+		案例1:transition: 1s;
+			transition-property:all(默认)
+			transition-duration:1s
+			transition-timing-function:ease(默认)
+			transition-delay:0s (默认)
+		
+		案例2:transition: 1s linear;
+			transition-property:all(默认)
+			transition-duration:1s
+			transition-timing-function:linear
+			transition-delay:0s(默认)
+		
+		案例3:transition: background 1s linear;
+			transition-property:background
+			transition-duration:1s
+			transition-timing-function:linear
+			transition-delay:0s(默认)
+		
+		案例4:transition: background 1s linear 500ms;
+			transition-property:background
+			transition-duration:1s
+			transition-timing-function:linear
+			transition-delay:500ms
+	  
+		案例5:多个属性的过渡逗号隔开
+			transition: width 2s ease, height 2s, transform 2s
+	
+	注意：
+		1.display不能和transition一起使用
+		2.transition后面尽量不要跟all,造成浏览器大量的计算资源,影响性能
+		3.常见闪动可以perspective和backface-visibility
+ 
+```
+
+# animation 帧动画
+```html
     animation-name：动画名称 ，多个用","隔开
 	
     animation-duration：动画执行时间（0：不动画）
@@ -146,14 +166,16 @@ css动画   https://www.webhek.com/post/css-bridge.html
         ease-in：渐显效果，等同于cubic-bezier(0.42,0,1.0,1.0)函数。
         ease-out：渐隐效果，等同于cubic-bezier(0,0,0.58,1.0)函数。
         ease-in-out：渐显渐隐效果，等同于cubic-bezier(0.42,0,0.58,1.0)函数。
+		
+		cubic-bezier(t1, d1, t2, d2)：特殊的立方贝塞尔曲线效果,可以生成速度曲线
+		
         step-start：马上转跳到动画结束状态。
         step-end：保持动画开始状态，直到动画执行时间结束，马上转跳到动画结束状态。
-        steps(<number>[, [ start | end ] ]?)	
-			第一个参数number为指定的间隔数，即把动画分为n步阶段性展示，
+		steps(<number>[, [ start | end ] ]?)	
+			能够实现动画的阶跃式变化，不是线性的过渡
+			第一个参数number为指定的间隔数，即把动画分为n步关键帧阶段性展示，而不是整个事件
 			第二个参数默认为end，设置最后一步的状态，start为结束时的状态，end为开始时的状态，
 			若设置与animation-fill-mode的效果冲突，而以animation-fill-mode的设置为动画结束的状态。
-			
-        cubic-bezier(t1, d1, t2, d2)：特殊的立方贝塞尔曲线效果,可以生成速度曲线
 	
     animation-delay: 动画延迟时间（默认0：不延迟，立即执行）
 	
@@ -179,6 +201,7 @@ css动画   https://www.webhek.com/post/css-bridge.html
 
     animation简写顺序：
       animation：动画名称 执行时间 播放方式 延迟时间 执行次数 过渡效果 播放方向 完成状态
+	  animation：name duration timing-function delay iteration-count direction fill-mode
 
       简单动画：
 		.test{ animation: animatedemo 4s linear infinite; }
@@ -192,5 +215,35 @@ css动画   https://www.webhek.com/post/css-bridge.html
             50%{left:200px;}
             100%{left:400px;}
         }
+		
+```
 
+# 其他
+
+## clip-path
+```html
+	
+	创建一个只有元素的部分区域可以显示的"剪切区域"。区域内的部分显示，区域外的隐藏。
+	
+	属性值的几种情况：
+		1.clip-path: inset(<距离元素上面的距离>, <距离元素右面的距离> ,<距离元素下面的距离>, <距离元素左面的距离>, <圆角边框>)
+			效果：将元素剪裁为一个 "矩形"
+			eg: clip-path: inset(20px 20px 20px 20px round 5px)
+		
+		2.clip-path: circle(圆的半径 at 圆心)
+			效果：将元素剪裁成一个 "圆"
+			eg: clip-path: circle(30px at 50% 50%)
+		
+		3.clip-path: ellipse(圆的水平半径 圆的垂直半径 at 圆心)
+			效果：将元素剪裁成一个 "椭圆"
+			eg: clip-path: ellipse(20px 40px at 50% 50%)
+		
+		4.clip-path: polygon(<距离左上角的X轴长度  距离左上角Y轴的长度>，<距离左上角的X轴长度  距离左上角Y轴的长度>，<距离左上角的X轴长度  距离左上角Y轴的长度>)
+			效果：将元素剪裁成一个多边形，这里其实就是描点，多点连线，最少三个点，以距离左上角的长度为单位
+			eg: 
+				//三角形
+				clip-path: polygon(40px 0px, 0px  80px, 80px 80px, 20px 20px , 20px 10px)
+				//五角星
+				clip-path: polygon(35px 40px,50px 0,65px 40px,100px 40px,70px 60px,80px 100px,50px 80px,20px 100px,30px 60px,0px 40px)
+```	
 

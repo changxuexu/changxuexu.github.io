@@ -9,6 +9,11 @@ js过渡效果类型？
   3.多物体运动：多个dom同时运动
   4.链式运动：dom一个css属性值执行完变化，紧接着另外一个属性值改变
   5.同时运动：dom多个css属性值同时改变
+  
+  
+css3动画监听事件？
+	dom.addEventListener("transitionend", fn)
+	dom.addEventListener("animationstart/animationiteration/animationend", fn)
 
 
 javascript帧动画库创建：
