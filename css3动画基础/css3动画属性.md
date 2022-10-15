@@ -90,7 +90,7 @@ css动画   https://www.webhek.com/post/css-bridge.html
 			表现：匀速
 
 		cubic-bezier：
-			1.事件函数，管理着动画在单位帧内播放的速度曲线
+			1.时间函数，管理着动画在单位帧内播放的速度曲线
 			2.预设值：ease 、 ease-in 、 ease-out 、 ease-in-out 、 linear 线性效果
 			2.特殊的立方贝塞尔曲线效果cubic-bezier(t1,d1,t2,d2),n可能的值是0至1之间的数值。
 			
@@ -183,19 +183,19 @@ css动画   https://www.webhek.com/post/css-bridge.html
 		number：自定义动画执行次数，设置值可为0或正整数。
 		infinite：无限循环。
 
-    animation-direction：播放方向
+    animation-direction：播放方向（是否轮流播放和反向播放）
 		normal：正常方向(默认)
 		reverse：动画反向运行,方向始终与normal相反。（FF14.0.1以下不支持）
 		alternate：动画会循环正反方向交替运动，奇数次（1、3、5……）会正常运动，偶数次（2、4、6……）会反向运动，即所有相关联的值都会反向。
 		alternate-reverse：动画从反向开始，再正反方向交替运动，运动方向始终与alternate定义的相反。（FF14.0.1以下不支持）
 
-    animation-fill-mode：播放后的状态
+    animation-fill-mode：停止播放的状态。
 		none：默认值。不设置对象动画之外的状态
 		forwards：结束后保持动画结束时的状态，但当animation-direction为0，则动画不执行，持续保持动画开始时的状态
 		backwards：结束后返回动画开始时的状态
 		both：结束后可遵循forwards和backwards两个规则。
     
-    animation-play-state：检索或设置对象动画的状态。
+    animation-play-state：是否暂停，检索或设置对象动画的状态。
         running：默认值。运动
         paused：暂停
 
