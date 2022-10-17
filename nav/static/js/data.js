@@ -122,7 +122,8 @@ var data_vue = {
         { name: 'iview-admin', href: 'https://github.com/iview/iview-admin', title: '' },
         { name: 'iview-admin文档', href: 'https://lison16.github.io/iview-admin-doc', title: '' },
         { name: 'xboot', href: 'http://xboot.exrick.cn/home', title: '' },
-        { name: 'Vue Bulma', href: 'https://github.com/vue-bulma/vue-admin', title: '基于Vue和Bulma的控制面板' }
+        { name: 'Vue Bulma', href: 'https://github.com/vue-bulma/vue-admin', title: '基于Vue和Bulma的控制面板' },
+        { name: 'likeadmin', href: 'https://www.likeadmin.cn', title: '基于Vue3、elementPlus' } 
       ]
     }
   ]
@@ -703,6 +704,7 @@ var data_jsplug = {
         { name: 'vuedraggable', href: 'https://www.npmjs.com/package/vuedraggable', title: '拖拽排序(v2)' },
         { name: 'sortablejs', href: 'https://www.npmjs.com/package/sortablejs', title: '拖拽排序' },
         { name: 'NProgress', href: 'https://www.npmjs.com/package/nprogress', title: '页面顶部加载进度条' },
+        { name: 'mescroll.js', href: 'https://github.com/mescroll/mescroll', title: 'h5端运行的下拉刷新和上拉加载插件,主要用于列表分页、刷新等场景' },
         { name: '滑动极校验', href: 'https://gitee.com/monoplasty/vue-monoplasty-slide-verify', title: '' },
         { name: 'v-org-tree', href: 'https://github.com/lison16/v-org-tree', title: '组织结构树' },
         { name: 'mhtml-to-word', href: 'https://www.npmjs.com/package/mhtml-to-word', title: '将html模板字符串通过模板引擎转换并导出word文件' },
@@ -765,7 +767,8 @@ var data_jsplug = {
         { name: 'Aliplayer', href: 'https://helpcdn.aliyun.com/document_detail/57314.html', title: '' },
         { name: 'TCPlayer', href: 'https://cloud.tencent.com/document/product/266/58772', title: '' },
         { name: 'H5同层播放器接入规范', href: 'https://x5.tencent.com/docs/video.html', title: '' },
-        { name: 'super-tcplayer', href: 'https://www.npmjs.com/package/super-tcplayer', title: '基于腾讯web超级播放器封装的vue播放器组件' }
+        { name: 'super-tcplayer', href: 'https://www.npmjs.com/package/super-tcplayer', title: '基于腾讯web超级播放器封装的vue播放器组件' },
+        { name: 'flv.js', href: 'https://github.com/Bilibili/flv.js', title: '用纯JavaScript编写的HTML5 Flash视频（FLV）播放器，无Flash' }
       ]
     },
     {
@@ -821,6 +824,7 @@ var data_jsplug = {
         { name: 'masonry', href: 'https://masonry.desandro.com', title: '瀑布流' },
         { name: 'momentjs', href: 'http://momentjs.cn', title: '日期时间处理类库' },
         { name: 'Day.js', href: 'https://dayjs.gitee.io/zh-CN', title: '是一个轻量的处理时间和日期的 JavaScript 库，和 Moment.js 的 API 设计保持完全一样' },
+        { name: 'js-cookie', href: 'https://github.com/js-cookie/js-cookie', title: '轻量处理cookies的js API' },
         { name: 'html2canvas', href: 'http://html2canvas.hertzen.com', title: '对网页html屏幕截图,用于生成图片' },
         { name: 'Typeit.js', href: 'https://www.typeitjs.com', title: '打字机效果' },
         { name: 'Typed.js', href: 'https://github.com/mattboldt/typed.js', href_spare1: 'https://www.cnblogs.com/Aaxuan/p/14146418.html', title: '打字机效果' },
@@ -903,7 +907,8 @@ var data_css = {
         { name: 'fancy-border-radius', href: 'https://9elements.github.io/fancy-border-radius/', title: '个性化的圆角生成' },
         { name: '波浪效果生成器', href: 'https://getwaves.io/', title: '在线生成编辑波浪效果的SVG格式' },
         { name: 'CSS Grid Generator', href: 'https://cssgrid-generator.netlify.app/', title: '可以设置行和列的数字还有单位，生成一个 CSS Grid 网格布局' },
-        { name: '零代码工具箱', href: 'https://www.lingdaima.com/', title: '' }
+        { name: '零代码工具箱', href: 'https://www.lingdaima.com/', title: '' },
+        { name: 'loading', href: 'https://cssload.net', title: 'CSS 3D加载效果' } 
       ]
     },
     {
