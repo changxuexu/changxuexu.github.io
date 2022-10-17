@@ -1,22 +1,27 @@
-什么是动画？
+# 什么是动画？
+```html
 	1.动画片、漫画、视频、falsh等等会动的画面都是动画
 	2.颜色高度等属性的变化(过渡)也是动画
 	3.动画分为过渡和帧动画
+```
 
-js过渡效果类型？
+# js过渡效果类型？
+```html
   1.速度：(改变值left、right、width、height、opacity)
   2.缓冲运动
   3.多物体运动：多个dom同时运动
   4.链式运动：dom一个css属性值执行完变化，紧接着另外一个属性值改变
   5.同时运动：dom多个css属性值同时改变
+```
   
-  
-css3动画监听事件？
+# css3动画监听事件？
+```html
 	dom.addEventListener("transitionend", fn)
 	dom.addEventListener("animationstart/animationiteration/animationend", fn)
+```
 
-
-javascript帧动画库创建：
+# javascript帧动画库创建：
+```html
   https://www.imooc.com/video/11819
   https://github.com/ustbhuangyi/animation
 
@@ -105,3 +110,4 @@ javascript帧动画库创建：
 				3.记录当前任务链的索引
 				4.每个任务执行完毕后，通过调用next方法,执行下一个任务，同时更新任务链索引值。
 				
+```

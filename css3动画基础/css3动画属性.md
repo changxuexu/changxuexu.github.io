@@ -99,8 +99,8 @@ css动画   https://www.webhek.com/post/css-bridge.html
 			
 			需要关注的是P1和P2两点的取值，而其中x轴的取值范围是0到1。当取值超出范围时cubic-bezier将失效；Y轴的取值没有规定。
 				P0：默认值(0,0)
-				P1：动态取值(x1,y1)
-				P2：动态取值(x2,y2)
+				P1：动态取值(t1,d1)
+				P2：动态取值(t2,d2)
 				p3：默认值(1,1)
 		
 		step-start：马上转跳到动画结束状态。
