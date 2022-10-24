@@ -255,6 +255,51 @@ export function objectMerge(target, source) {
 }
 
 
+#如何实现深拷贝
+  深拷贝，是拷贝对象【各个】层级的属性
+  简单实现：
+    1.递归去复制所有层级属性
+      <!--
+        function deepCopy(source){
+					 if(!source || typeof source !== 'object'){
+						 throw new Error('error');
+					 }
+					 var targetObj = source.constructor === Array ? [] : {};
+					 for(var keys in source){
+							if(source.hasOwnProperty(keys)){
+								 if(source[keys] && typeof source[keys] === 'object'){
+									 targetObj[keys] = source[keys].constructor === Array ? [] : {};
+									 targetObj[keys] = deepCopy(source[keys]);
+								 }else{
+									 targetObj[keys] = source[keys];
+								 }
+							} 
+					 }
+					 return targetObj;
+				}
+				var obj1 = {
+						arr: [1, 2, 3],
+						key: {
+								id: 22
+						},
+						func: function() {
+								console.log(123)
+						}
+				}
+
+				var obj2 = deepCopy(obj1);
+
+				obj1.arr.push(4);
+
+				obj1.arr // [1, 2, 3, 4]
+				obj2.arr // [1, 2, 3]
+				obj1.key === obj2.key // false
+				obj1.func === obj2.func // true
+      -->
+
+
+=======================
+
 
 如果数组列表太大，以下递归代码将导致堆栈溢出。你如何解决这个问题，仍然保留递归模式？
     var list = readHugeList();
