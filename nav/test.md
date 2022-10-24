@@ -288,50 +288,5 @@ export function objectMerge(target, source) {
     }
 
 
-浮点数之间的比较？
-	ES6 在 Number 对象上面，新增了一个极小的常量 Number.EPSILON ，它表示 1 和大于 1 的最小浮点数之间的差，相当于 2 的 -52 次方Math.pow(2,-52)
-	console.log(Number.EPSILON === Math.pow(2,-52))
-	
-	function areTheNumbersAlmostEqual(num1, num2) {
-        return Math.abs( num1 - num2 ) < Number.EPSILON;
-    }
-	console.log(areTheNumbersAlmostEqual(0.1 + 0.2, 0.3));
-	
-	用它来设置能够接受的误差范围，比如，误差范围设为 2 的 -50 次方，如果两个浮点数的差小于这个值，我们就认为这两个浮点数相等
-		function withErrorMargin(left, right) {
-		  return Math.abs(left - right) < Number.EPSILON * Math.pow(2, 2);
-		}
-
-		console.log(withErrorMargin(0.1 + 0.2, 0.3));
-
-
-/* 
-	获取对应浏览器的CSS前缀类型,返回值{ css:"-webkit-", dom:"WebKit", js:"Webkit", lowercase: "webkit" }
-
-	window.getComputedStyle(element, [pseudoElt])
-		作用：获取dom对象的计算样式
-		element: 用于获取计算样式的dom对象
-		pseudoElt: 指定一个要匹配的伪元素(::after,::before,::marker,::line-marker)的字符串,必须对普通元素省略(或null)。如getComputedStyle(h3, '::after')
-
-	Array.prototype.slice.call(arguments)
-		将具有length属性的对象(key值为数字)转成数组,没有length属性的对象返回为空
-		var obj = {0:'hello',1:'world',length:2};
-		console.log(Array.prototype.slice.call(obj,0)); //["hello", "world"]
-
-*/
-function browserprefix(){
-	var styles = window.getComputedStyle(document.documentElement,null)
-	//把这些属性转换成数组对象，搜索已知的前缀类型，如果没有发现，就缺省设置为Opera浏览器
-	var pre = (Array.prototype.slice.call(styles).join('').match(/-(moz|webkit|ms)-/) || (styles.OLink === '' && ['', 'o']))[1]
-	var dom = ('WebKit|Moz|MS|O').match(new RegExp('(' + pre + ')', 'i'))[1];
-	return { dom: dom, lowercase: pre, css: '-' + pre + '-', js: pre[0].toUpperCase() + pre.substr(1) }
-}
-
-
-
-
-
-
-
 	
 	
