@@ -824,6 +824,11 @@ var data_jsplug = {
         { name: 'masonry', href: 'https://masonry.desandro.com', title: '瀑布流' },
         { name: 'momentjs', href: 'http://momentjs.cn', title: '日期时间处理类库' },
         { name: 'Day.js', href: 'https://dayjs.gitee.io/zh-CN', title: '是一个轻量的处理时间和日期的 JavaScript 库，和 Moment.js 的 API 设计保持完全一样' },
+        { name: 'DHTMLX Scheduler', 
+          href: 'https://www.npmjs.com/package/@ryancavanaugh/dhtmlxscheduler',
+          href_spare:'https://dhtmlx.com', 
+          href_spare:'https://www.jianshu.com/p/db8025f21ea5?utm_campaign=maleskine...&utm_content=note&utm_medium=seo_notes', 
+          title: '日程安排控件，日历事件通过Ajax动态加载，支持通过拖放功能调整事件日期和时间，事件可以按天，周，月三个种视图显示' },
         { name: 'js-cookie', href: 'https://github.com/js-cookie/js-cookie', title: '轻量处理cookies的js API' },
         { name: 'html2canvas', href: 'http://html2canvas.hertzen.com', title: '对网页html屏幕截图,用于生成图片' },
         { name: 'Typeit.js', href: 'https://www.typeitjs.com', title: '打字机效果' },
@@ -858,7 +863,14 @@ var data_jsplug = {
       second_child: [
         { name: 'MathJS', href: 'https://mathjs.org', title: 'JavaScript和Node.js的一个扩展数学库,可以灵活地计算和处理许多不同的数据类型，例如数字、大数、复数、分数、单位和矩阵' }
       ]
-    }
+    },
+    {
+      second_tit: 'uni-app',
+      second_child: [
+        { name: 'mp-html', href: 'https://github.com/jin-yufeng/mp-html', href_spare:'', title: '一个强大的小程序富文本组件' },
+        { name: 'parser-audio', href: 'https://github.com/woxiaoyao81/parser-audio', title: '完善jyf-parser的audio插件' }
+      ]
+    },
   ]
 }
 
