@@ -863,7 +863,14 @@ var data_jsplug = {
       second_child: [
         { name: 'MathJS', href: 'https://mathjs.org', title: 'JavaScript和Node.js的一个扩展数学库,可以灵活地计算和处理许多不同的数据类型，例如数字、大数、复数、分数、单位和矩阵' }
       ]
-    }
+    },
+    {
+      second_tit: 'uni-app',
+      second_child: [
+        { name: 'mp-html', href: 'https://github.com/jin-yufeng/mp-html', href_spare:'', title: '一个强大的小程序富文本组件' },
+        { name: 'parser-audio', href: 'https://github.com/woxiaoyao81/parser-audio', title: '完善jyf-parser的audio插件' }
+      ]
+    },
   ]
 }
 
