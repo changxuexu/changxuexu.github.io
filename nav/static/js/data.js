@@ -855,7 +855,8 @@ var data_jsplug = {
         { name: 'Flip', href: 'https://pqina.nl/flip', title: '创建具有翻转效果的计数器,使用场景：创建活动计时器、促销活动或筹款活动' },
         { name: 'Print.js', href: 'https://printjs.crabbly.com', title: '直接在网页上打印文件，而无需重定向或使用嵌入' },
         { name: 'Docx.js', href: 'https://github.com/dolanmiu/docx', title: '通过JavaScript生成.docx文件的组件,可以同时被运用于Node端和浏览器端' },
-        { name: 'Dinero.js', href: 'https://dinerojs.com', title: '使用JavaScript处理货币值的库' }
+        { name: 'Dinero.js', href: 'https://dinerojs.com', title: '使用JavaScript处理货币值的库' },
+        { name: 'Tesseract.js', href: 'https://github.com/naptha/tesseract.js', title: 'OCR图片文字识别,在浏览器或使用NodeJS的服务器上运行' }
       ]
     },
     {
@@ -868,7 +869,8 @@ var data_jsplug = {
       second_tit: 'uni-app',
       second_child: [
         { name: 'mp-html', href: 'https://github.com/jin-yufeng/mp-html', href_spare:'', title: '一个强大的小程序富文本组件' },
-        { name: 'parser-audio', href: 'https://github.com/woxiaoyao81/parser-audio', title: '完善jyf-parser的audio插件' }
+        { name: 'parser-audio', href: 'https://github.com/woxiaoyao81/parser-audio', title: '完善jyf-parser的audio插件' },
+        { name: 'uView', href: 'https://www.uviewui.com', href_spare:'', title: '全面兼容nvue的uni-app生态框架' }
       ]
     },
   ]
