@@ -51,6 +51,7 @@ function _asyncLoadJs(urlArr, callback) {
 	for (var i = 0, len = urlArr.length; i < len; i++) {
 		var createScript = document.createElement("script");
 		createScript.type = 'text/javascript';
+		// 在script标签中添加defer或async属性，脚本就会异步加载，引擎遇到这个命令，就会加载外部脚本，但是不会等它下载和执行，而是直接执行后面的命令。
 		// 使用document.createElement('script')来动态的创建脚本,它的属性async为true,默认为异步加载；若需按顺序加载，设置为false
 		createScript.async = false;
 		// 判断最后一个文件加载
