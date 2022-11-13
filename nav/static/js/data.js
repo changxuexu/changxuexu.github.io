@@ -378,12 +378,13 @@ var data_WeChat = {
 }
 
 var data_Alipay = {
-  super_tit: '支付宝',
+  super_tit: '支付宝/钉钉',
   super_child: [
     {
       second_tit: '文档资料',
       second_child: [
-        { name: '小程序/生活号', href: 'https://opendocs.alipay.com/mini/', title: '' }
+        { name: '支付宝小程序/生活号', href: 'https://opendocs.alipay.com/mini/', title: '' },
+		{ name: '钉钉', href: 'https://open.dingtalk.com', title: '' }
       ]
     }
   ]
