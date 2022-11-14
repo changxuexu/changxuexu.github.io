@@ -498,7 +498,7 @@ var data_tool = {
     {
       second_tit: 'Git',
       second_child: [
-        { name: 'git文档', href: 'https://backlog.com/git-tutorial/cn/contents', title: '' },
+        { name: 'git入门文档', href: 'https://backlog.com/git-tutorial/cn', title: '' },
         { name: 'git视屏教程', href: 'https://m.php.cn/code/7947.html', title: '' },
         { name: 'SourceTree教程', href: 'https://jingyan.baidu.com/article/dca1fa6f19c0abf1a5405246.html', title: '' },
         { name: '从零做一个前端开源项目', href: 'https://www.imooc.com/article/28240', title: '' }
