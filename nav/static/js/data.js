@@ -467,7 +467,8 @@ var data_tool = {
         { name: '墨刀', href: 'https://modao.cc', title: '' },
         { name: 'chainco', href: 'http://www.chainco.cn', title: 'UI设计交互演示' },
         { name: '犸良', href: 'https://design.alipay.com/emotion', title: '素材动效制作' },
-        { name: '鹿班', href: 'https://luban.taobao.com', title: '海报/商品图文/直播间背景' }
+        { name: '鹿班', href: 'https://luban.taobao.com', title: '海报/商品图文/直播间背景' },
+        { name: '花瓣', href: 'https://huaban.com', title: '设计参考' },
       ]
     },
     {
