@@ -12,7 +12,8 @@ var data_daily = {
         { name: 'libraryMirror', href: 'https://jia110.github.io', href_spare1: 'https://www.library.ac.cn', title: '' },
         { name: '百度翻译', href: 'https://fanyi.baidu.com', title: '' },
         { name: '火山翻译', href: 'https://translate.volcengine.com/translate', title: '' },
-        { name: '谷歌翻译', href: 'https://translate.google.cn/?hl=zh-CN&tab=TT', title: '' }
+        { name: '谷歌翻译', href: 'https://translate.google.cn/?hl=zh-CN&tab=TT', title: '' },
+        { name: 'CopyTranslator', href: 'https://github.com/CopyTranslator/CopyTranslator', title: '翻译软件' }
       ]
     },
     {
