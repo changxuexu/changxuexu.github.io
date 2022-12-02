@@ -21,6 +21,19 @@ html, body {
 
 #app{ overflow-x: hidden }
 [v-cloak] { display: none;}
+/* 置灰：放在html元素上就行 
+  https://www.runoob.com/cssref/css3-pr-filter.html
+*/
+.grayscale{
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+  filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+  -webkit-filter: grayscale(1);
+}
 /* 左边 */
 .nav-slide-wrap{position: fixed;left:0;top: 0;bottom: 0;width:150px;z-index: 3;background-color: #1D1F20;background-image: linear-gradient(145deg, #1D1F20, #404348);transition: all 0.5s ease-in;box-shadow: rgba(0, 0, 0, .05) 1px 0 3px, rgba(0, 0, 0, .12) 1px 0 1px;}
 .nav-slide-closewrap{ left:-200px; transition: all 0.9s ease-out; }
