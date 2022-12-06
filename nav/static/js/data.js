@@ -373,7 +373,8 @@ var data_WeChat = {
       second_tit: '插件库',
       second_child: [
         { name: '腾讯视频小程序播放器SDK', href: 'https://github.com/tvfe/txv-miniprogram-plugin', title: '' },
-        { name: '智能对话', href: 'https://developers.weixin.qq.com/doc/aispeech/platform/INTRODUCTION.html', title: '' }
+        { name: '智能对话', href: 'https://developers.weixin.qq.com/doc/aispeech/platform/INTRODUCTION.html', title: '' },
+        { name: 'calendar日历', href: 'https://treadpit.github.io/wx_calendar/v2/guide.html', title: '' }
       ]
     }
   ]
@@ -386,7 +387,13 @@ var data_Alipay = {
       second_tit: '文档资料',
       second_child: [
         { name: '支付宝小程序/生活号', href: 'https://opendocs.alipay.com/mini/', title: '' },
-		{ name: '钉钉', href: 'https://open.dingtalk.com', title: '' }
+		    { name: '钉钉', href: 'https://open.dingtalk.com', title: '' }
+      ]
+    },
+    {
+      second_tit: '插件库',
+      second_child: [
+        { name: 'date-time', href: 'https://blog.csdn.net/weixin_43930421/article/details/125215085', title: '' }
       ]
     }
   ]
@@ -875,7 +882,8 @@ var data_jsplug = {
       second_child: [
         { name: 'mp-html', href: 'https://github.com/jin-yufeng/mp-html', href_spare:'', title: '一个强大的小程序富文本组件' },
         { name: 'parser-audio', href: 'https://github.com/woxiaoyao81/parser-audio', title: '完善jyf-parser的audio插件' },
-        { name: 'uView', href: 'https://www.uviewui.com', href_spare:'', title: '全面兼容nvue的uni-app生态框架' }
+        { name: 'uView', href: 'https://www.uviewui.com', href_spare:'', title: '全面兼容nvue的uni-app生态框架' },
+        { name: 'uni-calendar', href: 'https://ext.dcloud.net.cn/plugin?id=56', href_spare:'', title: '日历组件可以查看日期，选择任意范围内的日期，打点操作。常用场景如：酒店日期预订、火车机票选择购买日期、上下班打卡等。' },
       ]
     },
   ]
