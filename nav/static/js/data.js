@@ -878,6 +878,12 @@ var data_jsplug = {
       ]
     },
     {
+      second_tit: '正则',
+      second_child: [
+        { name: 'any-rule', href: 'https://gitee.com/mirrors/any-rule',title:'' }
+      ]
+    },
+    {
       second_tit: 'uni-app',
       second_child: [
         { name: 'mp-html', href: 'https://github.com/jin-yufeng/mp-html', href_spare:'', title: '一个强大的小程序富文本组件' },
