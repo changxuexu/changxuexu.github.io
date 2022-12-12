@@ -34,6 +34,18 @@ html, body {
   filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
   -webkit-filter: grayscale(1);
 }
+/* 文字渐变色 */
+.textGradient{
+  display:inline-block;
+  font-size:40px;
+  /* 渐变色 */
+  background-image: linear-gradient( to right, rgb(236, 72, 153),rgb(239, 68, 68),rgb(234, 179, 8) );
+  /* 取消文字颜色 */
+  color:transparent;
+  /* 根据文字轮廓裁切 */
+  -webkit-background-clip:text;
+  background-clip:text;
+}
 /* 左边 */
 .nav-slide-wrap{position: fixed;left:0;top: 0;bottom: 0;width:150px;z-index: 3;background-color: #1D1F20;background-image: linear-gradient(145deg, #1D1F20, #404348);transition: all 0.5s ease-in;box-shadow: rgba(0, 0, 0, .05) 1px 0 3px, rgba(0, 0, 0, .12) 1px 0 1px;}
 .nav-slide-closewrap{ left:-200px; transition: all 0.9s ease-out; }
