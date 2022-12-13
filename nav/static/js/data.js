@@ -778,7 +778,8 @@ var data_jsplug = {
         { name: 'ECharts', href: 'https://echarts.apache.org/zh/index.html', title: '' },
         { name: 'Antv', href: 'http://antv.antfin.com/zh-cn/index.html', title: '蚂蚁数据可视化' },
         { name: 'FusionCharts', href: 'https://www.fusioncharts.com/', title: '' },
-        { name: '图扑软件', href: 'https://www.hightopo.com/index.html', title: '' }
+        { name: '图扑软件', href: 'https://www.hightopo.com/index.html', title: '3D可视化场景' },
+        { name: 'ThingJS', href: 'http://www.thingjs.com/guide', title: '3D可视化场景' }
       ]
     },
     {
