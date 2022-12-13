@@ -555,7 +555,7 @@ var data_tool = {
     {
       second_tit: 'AI编程',
       second_child: [
-        { name: 'ChatGPT', href: '', title: '' },
+        { name: 'ChatGPT', href: 'https://chat.openai.com/chat', title: '' },
         { name: 'Copilot', href: '', title: '' },
         { name: 'Pitchfork', href: '', title: '' },
         { name: 'AlphaCode', href: '', title: '' }
