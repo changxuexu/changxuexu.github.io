@@ -22,7 +22,7 @@ var data_daily = {
         { name: 'npm插件搜索', href: 'https://www.npmjs.com', title: '' },
         { name: 'MDN-developer', href: 'https://developer.mozilla.org/zh-CN', title: '' },
         { name: 'Can I use', href: 'https://www.caniuse.com', title: '' },
-        { name: 'Stack Overflow', href: 'https://stackoverflow.com', title: '' },
+        { name: 'Stack Overflow', href: 'https://stackoverflow.com', title: '编程棘手bug' },
         { name: 'segmentfault', href: 'https://segmentfault.com/', title: '' },
         { name: 'node_modules包大小查询', href: 'https://bundlephobia.com', title: '查询node_modules安装包大小' }
       ]
@@ -40,6 +40,7 @@ var data_daily = {
       second_tit: '便利工具',
       second_child: [
         { name: '菜鸟工具', href: 'https://c.runoob.com', title: '' },
+        { name: 'cxy521', href: 'http://www.cxy521.com', title: '' },
         { name: '程序猿在线工具', href: 'http://www.ofmonkey.com/format/css', title: '' },
         { name: '前端导航', href: 'http://uyi2.com/bus', title: '' },
         { name: '开发综合文档', href: 'https://devdocs.io', title: '' },
@@ -552,6 +553,16 @@ var data_tool = {
       ]
     },
     {
+      second_tit: 'AI编程',
+      second_child: [
+        { name: 'ChatGPT', href: '', title: '' },
+        { name: 'Copilot', href: '', title: '' },
+        { name: 'Pitchfork', href: '', title: '' },
+        { name: 'AlphaCode', href: '', title: '' }
+        
+      ]
+    },
+    {
       second_tit: '其他',
       second_child: [
         { name: '转转大师', href: 'https://pdftoword.55.la/', title: '办公软件转换' },
@@ -658,6 +669,14 @@ var data_study = {
         { name: '意象商城系统', href: 'https://gitee.com/guchengwuyue', title: '' },
         { name: 'likeshop', href: 'https://www.likeshop.cn', title: '' },
         { name: '鲁班H5', href: 'https://github.com/ly525/luban-h5', title: '类似易企秀Maka百度 H5等平台,通过拖拽快速生成页面的平台' }
+      ]
+    },
+    {
+      second_tit: '其他',
+      second_child: [
+        { name: 'acwing算法', href: 'https://www.acwing.com', title: '算法相关' },
+        { name: '牛客', href: 'https://www.nowcoder.com', title: '编程练习刷题' },
+        { name: 'kaggle', href: 'https://www.kaggle.com', title: '数据挖掘、机器学习、深度学习' }
       ]
     }
   ]
@@ -925,6 +944,7 @@ var data_css = {
       second_tit: 'css工具',
       second_child: [
         { name: 'CSS-Tricks', href: 'https://css-tricks.com', title: '学习各类css技巧，开发更加漂亮的web应用' },
+        { name: 'NavNav+', href: 'https://navnav.co', title: 'UI界面交互模板' },
         { name: 'CSS3动画生成器', href: 'https://www.w3cways.com/css3-animation-tool', title: '' },
         { name: 'Animista动画生成器', href: 'https://animista.net/', title: '' },
         { name: 'Transition.css', href: 'https://www.transition.style/', title: '' },
@@ -941,7 +961,7 @@ var data_css = {
         { name: '波浪效果生成器', href: 'https://getwaves.io/', title: '在线生成编辑波浪效果的SVG格式' },
         { name: 'CSS Grid Generator', href: 'https://cssgrid-generator.netlify.app/', title: '可以设置行和列的数字还有单位，生成一个 CSS Grid 网格布局' },
         { name: '零代码工具箱', href: 'https://www.lingdaima.com/', title: '' },
-        { name: 'loading', href: 'https://cssload.net', title: 'CSS 3D加载效果' } 
+        { name: 'loading', href: 'https://cssload.net', title: 'CSS 3D加载效果' }
       ]
     },
     {
@@ -969,6 +989,12 @@ var data_other = {
       second_tit: '生活日常',
       second_child: [
         { name: '合肥开发公司避坑论坛', href: 'https://bbs.diaozong.cn/p.html', title: '' },
+        { name: '合同示范文本库', href: 'https://cont.12315.cn', title: '' },
+        { name: '中国裁判文书网', href: 'https://wenshu.court.gov.cn', title: '' },
+        { name: '国家企业信用信息公示系统', href: 'https://www.gsxt.gov.cn/index.html', title: '' },
+        { name: '国家统计局官网', href: 'http://www.stats.gov.cn', title: '' },
+        { name: '工信部申诉受理中心', href: 'https://yhssglxt.miit.gov.cn', title: '电信、移动、联通问题申诉' },
+        { name: '国家邮政局申诉网站', href: 'https://sswz.spb.gov.cn', title: '快递相关问题投诉' },
         { name: '火车票', href: 'https://www.bypass.cn', title: '' },
         { name: '电视家', href: 'https://www.tvapk.net/', title: '' },
       ]
@@ -992,9 +1018,10 @@ var data_other = {
       ]
     },
     {
-      second_tit: '在线书籍',
+      second_tit: '在线教育',
       second_child: [
         { name: '微信读书', href: 'https://weread.qq.com/web/category/700002', title: '' },
+        { name: '国家数字图书馆', href: 'http://www.nlc.cn', title: '电子书资源' },
         { name: '清华大学开放书籍', href: 'https://lib-nuanxin.wqxuetang.com/#/', title: '' },
         { name: '清北浙大计算机教程', href: 'https://github.com/lib-pku/libpku', title: '' },
         { name: '国家中小学网络云平台', href: 'https://ykt.eduyun.cn', title: '' },
