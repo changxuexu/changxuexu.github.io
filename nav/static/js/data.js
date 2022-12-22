@@ -309,7 +309,8 @@ var data_Nginx = {
       second_tit: '文档资料',
       second_child: [
         { name: 'nginx官网', href: 'http://nginx.org/', title: '' },
-        { name: 'nginx下载', href: 'http://nginx.org/en/download.html', title: '' }
+        { name: 'nginx下载', href: 'http://nginx.org/en/download.html', title: '' },
+        { name: 'NginxConfig', href: 'https://github.com/digitalocean/nginxconfig.io', title: '可视化配置网站' }
       ]
     }
   ]
