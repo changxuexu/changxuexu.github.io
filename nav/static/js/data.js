@@ -675,6 +675,7 @@ var data_study = {
       second_tit: '其他',
       second_child: [
         { name: 'acwing算法', href: 'https://www.acwing.com', title: '算法相关' },
+        { name: 'visualgo算法', href: 'https://visualgo.net/en', title: '常见算法可视化' },
         { name: '牛客', href: 'https://www.nowcoder.com', title: '编程练习刷题' },
         { name: 'kaggle', href: 'https://www.kaggle.com', title: '数据挖掘、机器学习、深度学习' }
       ]
@@ -754,7 +755,8 @@ var data_jsplug = {
         { name: 'Vue Color', href: 'https://github.com/xiaokaike/vue-color', title: '选择颜色添加' },
         { name: 'vue-circle-slider', href: 'https://github.com/devstark-com/vue-circle-slider', title: '线性滑块输入：支持触摸控制，允许你设置最大值/最小值，甚至你还可以控制滑块的步长' },
         { name: 'Vue Phone Number', href: 'https://github.com/LouisMazel/vue-phone-number-input', title: '电话号码：有效的国家/地区代码、主题和颜色、电话号码格式' },
-        { name: '二维码vue', href: 'https://link-to-qr.com', title: '' }
+        { name: '二维码vue', href: 'https://link-to-qr.com', title: '' },
+        { name: '跨路由动画vue-starport', href: 'https://github.com/antfu/vue-starport', title: '仅支持Vue3，实现跨路由的共享组件动画效果' }
       ]
     },
     {
@@ -835,6 +837,10 @@ var data_jsplug = {
         { name: 'Multiscroll.js', href: 'https://github.com/alvarotrigo/multiscroll.js', title: '两列垂直滚动面板创建拆分页面,反向滚动' },
         { name: 'Animate on scroll', href: 'https://github.com/michalsnik/aos', title: '滚动时页面元素展现动画' },
         { name: 'Wow.js', href: 'https://github.com/graingert/WOW', title: '滚动时页面元素展现动画' },
+        { name: 'Sal.js', href: 'https://github.com/mciastek/sal', title: '滚动时页面元素展现动画' },
+        { name: 'AOS', href: 'https://github.com/michalsnik/aos', title: '滚动时页面元素展现动画' },
+        { name: 'locomotive-scroll', href: 'https://github.com/locomotivemtl/locomotive-scroll', title: '滚动时页面元素展现动画' },
+        { name: 'react-reveal', href: 'https://github.com/rnosov/react-reveal', title: '滚动时页面元素展现动画' },
         { name: 'parallax.js', 
           href: 'https://github.com/wagerfield/parallax', 
           href_spare1: 'https://github.com/wagerfield/parallax', 

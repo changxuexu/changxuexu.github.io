@@ -2,8 +2,9 @@
 { name: '', href: '', href_spare:'', title: '' } 
 
 计划: 
-	技术胖博客
 	vue3 + node 技术博客
+		https://xiaoman.blog.csdn.net/category_11618172_2.html
+
 	uni-app app制作与上架
 
 ===============================
@@ -163,11 +164,6 @@ vue-cli项目改造为SSR服务端渲染:
 
 ========================================================
 
-
-
-
-
-
 日期选择器：https://zhuanlan.zhihu.com/p/57043693
 小游戏：https://zhuanlan.zhihu.com/p/56149820
 图片懒加载：
@@ -176,6 +172,11 @@ vue-cli项目改造为SSR服务端渲染:
 	https://www.cnblogs.com/wind-lanyan/p/9173755.html
 
 =======================
+手机软件
+	洛雪音乐助手
+	布丁扫描
+	轻启动
+	手机性能排行
 
 
 
