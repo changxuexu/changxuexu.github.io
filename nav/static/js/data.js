@@ -910,6 +910,7 @@ var data_jsplug = {
         { name: 'parser-audio', href: 'https://github.com/woxiaoyao81/parser-audio', title: '完善jyf-parser的audio插件' },
         { name: 'uView', href: 'https://www.uviewui.com', href_spare:'', title: '全面兼容nvue的uni-app生态框架' },
         { name: 'uni-calendar', href: 'https://ext.dcloud.net.cn/plugin?id=56', href_spare:'', title: '日历组件可以查看日期，选择任意范围内的日期，打点操作。常用场景如：酒店日期预订、火车机票选择购买日期、上下班打卡等。' },
+        { name: 'simple-address省市区', href: 'https://ext.dcloud.net.cn/plugin?id=1084', href_spare:'', title: '三级地址联动，支持（app）nvue、小程序、H5 ' },
       ]
     },
   ]
