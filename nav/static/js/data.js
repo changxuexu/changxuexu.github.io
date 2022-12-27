@@ -474,6 +474,7 @@ var data_tool = {
         { name: '在线PS', href: 'https://ps.gaoding.com/#/', title: '' },
         { name: 'tinypng图片压缩', href: 'https://tinypng.com', title: '' },
         { name: '阿里矢量图标库', href: 'https://www.iconfont.cn', title: '' },
+        { name: 'iconPark', href: 'http://iconpark.oceanengine.com', title: '' },
         { name: '蓝湖', href: 'https://lanhuapp.com', title: '' },
         { name: '墨刀', href: 'https://modao.cc', title: '' },
         { name: 'chainco', href: 'http://www.chainco.cn', title: 'UI设计交互演示' },
@@ -557,6 +558,7 @@ var data_tool = {
       second_tit: 'AI编程',
       second_child: [
         { name: 'ChatGPT', href: 'https://chat.openai.com/chat', title: '' },
+        { name: 'chatgpt', href: 'https://chatgpt.sbaliyun.com', title: '无需账号' },
         { name: 'Copilot', href: '', title: '' },
         { name: 'Pitchfork', href: '', title: '' },
         { name: 'AlphaCode', href: '', title: '' }
@@ -954,6 +956,7 @@ var data_css = {
       second_child: [
         { name: 'CSS-Tricks', href: 'https://css-tricks.com', title: '学习各类css技巧，开发更加漂亮的web应用' },
         { name: 'NavNav+', href: 'https://navnav.co', title: 'UI界面交互模板' },
+        { name: 'headless', href: 'https://headlessui.com', title: 'vue/reactUI界面' },
         { name: 'CSS3动画生成器', href: 'https://www.w3cways.com/css3-animation-tool', title: '' },
         { name: 'Animista动画生成器', href: 'https://animista.net/', title: '' },
         { name: 'Transition.css', href: 'https://www.transition.style/', title: '' },
