@@ -6,7 +6,9 @@
 		https://xiaoman.blog.csdn.net/category_11618172_2.html
 
 	uni-app app制作与上架
-
+	
+	https://www.runoob.com/w3cnote/html5-canvas-intro.html
+	
 ===============================
 
 动画
