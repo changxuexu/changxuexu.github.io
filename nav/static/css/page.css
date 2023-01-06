@@ -141,6 +141,17 @@ html, body {
 
 /* 置灰：放在html元素上就行 
   https://www.runoob.com/cssref/css3-pr-filter.html
+  filter：十种特效
+    grayscale     灰度 0 ~ 1
+    sepia褐色     黄棕色 0 ~ 1
+    saturate      饱和度 >1
+    hue-rotate    色相旋转   90deg 角度
+    invert        反色 0 ~ 1
+    opacity       透明度
+    brightness    亮度 0 ~ 1
+    contrast      对比度 >1 
+    blur          模糊 1px
+    drop-shadow   阴影 10px 10px 2px #aaa
 */
 .grayscale{
   -webkit-filter: grayscale(100%);
