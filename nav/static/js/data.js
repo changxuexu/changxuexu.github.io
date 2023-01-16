@@ -41,8 +41,7 @@ var data_daily = {
       second_child: [
         { name: '菜鸟工具', href: 'https://c.runoob.com', title: '' },
         { name: 'cxy521', href: 'http://www.cxy521.com', title: '' },
-        { name: '程序猿在线工具', href: 'http://www.ofmonkey.com/format/css', title: '' },
-        { name: '前端导航', href: 'http://uyi2.com/bus', title: '' },
+        { name: '书栈网', href: 'https://www.bookstack.cn', title: '' },
         { name: '开发综合文档', href: 'https://devdocs.io', title: '' },
         { name: '开发语言学习资源', href: 'https://learn-anything.xyz/learn-anything', title: '以思维导图形式提供各种学习资源' },
         { name: 'roadmap.sh', href: 'https://roadmap.sh/', title: '给初学开发者提供参考的语言学习路径与资料' },
