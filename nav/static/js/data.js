@@ -1007,7 +1007,9 @@ var data_other = {
         { name: '工信部申诉受理中心', href: 'https://yhssglxt.miit.gov.cn', title: '电信、移动、联通问题申诉' },
         { name: '国家邮政局申诉网站', href: 'https://sswz.spb.gov.cn', title: '快递相关问题投诉' },
         { name: '火车票', href: 'https://www.bypass.cn', title: '' },
-        { name: '电视家', href: 'https://www.tvapk.net/', title: '' },
+        { name: '电视家TV', href: 'https://www.tvapk.net', title: '免费电视直播软件' },
+        { name: '破解软件', href: 'http://zzzzzz.me', title: '峰哥博客' },
+        { name: '吾爱破解', href: 'https://www.52pojie.cn', title: '' }
       ]
     },
     {
