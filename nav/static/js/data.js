@@ -637,7 +637,8 @@ var data_study = {
         { name: '爱码网', href: 'https://www.likecs.com', title: '' },
         { name: '芋道源码', href: 'http://www.iocoder.cn', title: '' },
         { name: 'w3cplus', href: 'http://caibaojian.com/w3cplus', title: '' },
-        { name: 'fly63', href: 'http://www.fly63.com', title: '' }
+        { name: 'fly63', href: 'http://www.fly63.com', title: '' },
+        { name: '后盾人', href: 'https://doc.houdunren.com', title: '' }
       ]
     },
     {
@@ -654,7 +655,10 @@ var data_study = {
       second_tit: '运维',
       second_child: [
         { name: '运维派', href: 'http://www.yunweipai.com', title: '' },
-        { name: '阿汤运维', href: 'https://www.amd5.cn', title: '' }
+        { name: '阿汤运维', href: 'https://www.amd5.cn', title: '' },
+        { name: '峰哥博客', href: 'http://zzzzzz.me', title: '破解软件' },
+        { name: '吾爱破解', href: 'https://www.52pojie.cn', title: '安卓破解、病毒分析' },
+        { name: 't00ls', href: 'https://www.t00ls.com', title: '网络漏洞检测' }
       ]
     },
     {
@@ -1007,9 +1011,7 @@ var data_other = {
         { name: '工信部申诉受理中心', href: 'https://yhssglxt.miit.gov.cn', title: '电信、移动、联通问题申诉' },
         { name: '国家邮政局申诉网站', href: 'https://sswz.spb.gov.cn', title: '快递相关问题投诉' },
         { name: '火车票', href: 'https://www.bypass.cn', title: '' },
-        { name: '电视家TV', href: 'https://www.tvapk.net', title: '免费电视直播软件' },
-        { name: '破解软件', href: 'http://zzzzzz.me', title: '峰哥博客' },
-        { name: '吾爱破解', href: 'https://www.52pojie.cn', title: '' }
+        { name: '电视家TV', href: 'https://www.tvapk.net', title: '免费电视直播软件' }
       ]
     },
     {
