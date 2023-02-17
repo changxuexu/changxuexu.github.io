@@ -602,7 +602,8 @@ var data_study = {
         { name: '腾讯Alloyteam', href: 'http://www.alloyteam.com', title: '' },
         { name: '腾讯IMWeb', href: 'https://www.imweb.io', title: '' },
         { name: '百度FEX', href: 'http://fex.baidu.com', title: '' },
-        { name: '百度EFE', href: 'https://efe.baidu.com', title: '' }
+        { name: '百度EFE', href: 'https://efe.baidu.com', title: '' },
+        { name: '美团', href: 'https://tech.meituan.com', title: '' }
       ]
     },
     {
