@@ -225,6 +225,7 @@ var data_jquery = {
       second_child: [
         { name: 'MZUI', href: 'http://zui.sexy/m/index.html', title: 'mobile端' },
         { name: 'WeUI', href: 'https://weui.io/', title: 'mobile端' },
+        { name: 'WeUI-github', href: 'https://github.com/Tencent/weui', title: 'mobile端' },
         { name: 'Bootstrap', href: 'https://www.bootcss.com', title: '' },
         { name: 'Bootstrap IE6 兼容库', href: 'http://www.bootcss.com/p/bsie', title: '' },
         { name: 'LuLu', href: 'https://www.zhangxinxu.com/sp/lulu/mockup/content/about/design.php', title: 'pc端' },
@@ -639,7 +640,8 @@ var data_study = {
         { name: '芋道源码', href: 'http://www.iocoder.cn', title: '' },
         { name: 'w3cplus', href: 'http://caibaojian.com/w3cplus', title: '' },
         { name: 'fly63', href: 'http://www.fly63.com', title: '' },
-        { name: '后盾人', href: 'https://doc.houdunren.com', title: '' }
+        { name: '后盾人', href: 'https://doc.houdunren.com', title: '' },
+        { name: '愧怍', href: 'https://kuizuo.cn/docs/skill', title: '' }
       ]
     },
     {
