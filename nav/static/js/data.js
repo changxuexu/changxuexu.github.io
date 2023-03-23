@@ -559,7 +559,7 @@ var data_tool = {
       second_child: [
         { name: 'ChatGPT', href: 'https://chat.openai.com/chat', title: '' },
         { name: 'chatgpt_1', href: 'https://chat.forchange.cn', title: '无需账号' },
-        { name: 'chatgpt_2', href: 'https://chat.geekr.cool', title: '无需账号' },
+        { name: 'chatgpt_2', href: 'https://chat2.geekr.dev', title: '无需账号' },
         { name: 'Copilot', href: '', title: '' },
         { name: 'Pitchfork', href: '', title: '' },
         { name: 'AlphaCode', href: '', title: '' }
