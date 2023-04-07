@@ -4,10 +4,14 @@
 计划: 
 	vue3 + node 技术博客
 		https://xiaoman.blog.csdn.net/category_11618172_2.html
+		
+	管理平台权限功能 vue3-fantastic-admin
+	
+	前台内容展示 nuxt
+	
+	微信公众号
 
 	uni-app app制作与上架
-	
-	https://www.runoob.com/w3cnote/html5-canvas-intro.html
 	
 ===============================
 
