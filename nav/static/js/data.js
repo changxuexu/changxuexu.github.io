@@ -323,7 +323,9 @@ var data_Docker = {
       second_tit: '文档资料',
       second_child: [
         { name: 'Docker菜鸟教程', href: 'https://www.runoob.com/docker/ubuntu-docker-install.html', title: '' },
-        { name: 'YAML/YML在线编辑(校验)器', href: 'https://www.bejson.com/validators/yaml_editor', title: '' }
+        { name: 'Docker实战教程', href: 'https://docker.easydoc.net', title: '' },
+        { name: 'YAML/YML在线编辑(校验)器', href: 'https://www.bejson.com/validators/yaml_editor', title: '' },
+        { name: 'K8S(_Kubernetes_)', href: 'https://k8s.easydoc.net', title: '' },
       ]
     }
   ]
@@ -473,14 +475,16 @@ var data_tool = {
       second_child: [
         { name: '在线PS', href: 'https://ps.gaoding.com/#/', title: '' },
         { name: 'tinypng图片压缩', href: 'https://tinypng.com', title: '' },
-        { name: '阿里矢量图标库', href: 'https://www.iconfont.cn', title: '' },
-        { name: 'iconPark', href: 'http://iconpark.oceanengine.com', title: '' },
-        { name: '蓝湖', href: 'https://lanhuapp.com', title: '' },
-        { name: '墨刀', href: 'https://modao.cc', title: '' },
+        { name: '蓝湖', href: 'https://lanhuapp.com', title: 'UI设计交互演示' },
+        { name: '墨刀', href: 'https://modao.cc', title: 'UI设计交互演示' },
         { name: 'chainco', href: 'http://www.chainco.cn', title: 'UI设计交互演示' },
-        { name: '犸良', href: 'https://design.alipay.com/emotion', title: '素材动效制作' },
+        { name: '阿里矢量图标库', href: 'https://www.iconfont.cn', title: '图标' },
+        { name: 'iconPark', href: 'http://iconpark.oceanengine.com', title: '图标' },
+        { name: '犸良', href: 'https://design.alipay.com/emotion', title: 'gif素材动效制作' },
         { name: '鹿班', href: 'https://luban.taobao.com', title: '海报/商品图文/直播间背景' },
         { name: '花瓣', href: 'https://huaban.com', title: '设计参考' },
+        { name: '站酷', href: ' https://www.zcool.com.cn', title: '设计参考' },
+        { name: '68design', href: 'https://www.68design.net', title: '设计参考' }
       ]
     },
     {
