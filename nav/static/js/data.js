@@ -814,7 +814,7 @@ var data_jsplug = {
         { name: 'ckplayer', href: 'http://www.ckplayer.com', title: '' },
         { name: 'DPlayer', href: 'https://github.com/MoePlayer/DPlayer', title: '' },
         { name: 'chimee-player', href: 'https://www.npmjs.com/package/chimee-player', title: '' },
-        { name: 'Aliplayer', href: 'https://helpcdn.aliyun.com/document_detail/57314.html', title: '' },
+        { name: 'Aliplayer', href: 'https://help.aliyun.com/document_detail/125548.html', title: '' },
         { name: 'TCPlayer', href: 'https://cloud.tencent.com/document/product/266/58772', title: '' },
         { name: 'H5同层播放器接入规范', href: 'https://x5.tencent.com/docs/video.html', title: '' },
         { name: 'super-tcplayer', href: 'https://www.npmjs.com/package/super-tcplayer', title: '基于腾讯web超级播放器封装的vue播放器组件' },
