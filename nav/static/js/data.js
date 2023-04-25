@@ -345,14 +345,14 @@ var data_Linux = {
         { name: '慕课网视频教程', href: 'https://www.imooc.com/learn/175', title: '' },
         { name: '网易云视频教程', href: 'https://study.163.com/course/introduction.htm?courseId=232007#/courseDetail?tab=1', title: '' },
         { name: 'linux内核', href: 'https://www.kernel.org', title: '' },
-        { name: 'vmware', href: 'https://www.vmware.com/cn.html', title: '产品->VMware Workstation Pro->下载试用版' },
+        { name: '包依赖软件查询', href: 'http://rpmfind.net', title: '软件安装过程所需依赖包查询' }
       ]
     },
     {
       second_tit: '',
       second_child: [
         { name: 'vmware', href: 'https://www.vmware.com/cn.html', title: '产品->VMware Workstation Pro->下载试用版' },
-        { name: 'finalShell', href: 'http://www.hostbuf.com', title: '' },
+        { name: 'finalShell', href: 'http://www.hostbuf.com', title: '' }
       ]
     }
   ]
