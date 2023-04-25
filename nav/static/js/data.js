@@ -343,7 +343,16 @@ var data_Linux = {
         { name: '菜鸟教程', href: 'https://www.runoob.com/linux/linux-tutorial.html', title: '' },
         { name: '在线入门教程', href: 'http://c.biancheng.net/linux_tutorial', title: '' },
         { name: '慕课网视频教程', href: 'https://www.imooc.com/learn/175', title: '' },
-        { name: '网易云视频教程', href: 'https://study.163.com/course/introduction.htm?courseId=232007#/courseDetail?tab=1', title: '' }
+        { name: '网易云视频教程', href: 'https://study.163.com/course/introduction.htm?courseId=232007#/courseDetail?tab=1', title: '' },
+        { name: 'linux内核', href: 'https://www.kernel.org', title: '' },
+        { name: 'vmware', href: 'https://www.vmware.com/cn.html', title: '产品->VMware Workstation Pro->下载试用版' },
+      ]
+    },
+    {
+      second_tit: '',
+      second_child: [
+        { name: 'vmware', href: 'https://www.vmware.com/cn.html', title: '产品->VMware Workstation Pro->下载试用版' },
+        { name: 'finalShell', href: 'http://www.hostbuf.com', title: '' },
       ]
     }
   ]
@@ -507,6 +516,7 @@ var data_tool = {
     {
       second_tit: '接口管理',
       second_child: [
+        { name: 'Apipost', href: 'https://apifox.com', title: 'Apifox = Postman + Swagger + Mock + JMeter' },
         { name: 'Apipost', href: 'https://www.apipost.cn', title: '' },
         { name: 'apizza', href: 'https://www.apizza.net', title: '' },
         { name: 'yapi', href: 'https://hellosean1025.github.io/yapi', title: '' },
