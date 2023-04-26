@@ -107,6 +107,7 @@ var data_vue = {
       second_child: [
         { name: 'Element2', href: 'https://element.eleme.cn/#/zh-CN/component/installation', title: '' },
         { name: 'Element3', href: 'https://element-plus.gitee.io/zh-CN/', title: '' },
+        { name: 'layui-vue', href: 'http://www.layui-vue.com/zh-CN/index', title: ' 一套Vue 3.0的桌面端组件库.' },
         { name: 'iview2', href: 'http://v4.iviewui.com/docs/introduce', title: '' },
         { name: 'iview3', href: 'https://www.iviewui.com/view-ui-plus/guide/introduce', title: '' },
         { name: 'Ant Design Vue', href: 'https://www.antdv.com/docs/vue/introduce-cn', title: '' },
@@ -229,7 +230,7 @@ var data_jquery = {
         { name: 'Bootstrap', href: 'https://www.bootcss.com', title: '' },
         { name: 'Bootstrap IE6 兼容库', href: 'http://www.bootcss.com/p/bsie', title: '' },
         { name: 'LuLu', href: 'https://www.zhangxinxu.com/sp/lulu/mockup/content/about/design.php', title: 'pc端' },
-        { name: 'layui文档', href: 'https://www.layuion.com', title: '' },
+        { name: 'layui文档', href: 'https://layui.dev', title: '' },
         { name: 'layui仓库', href: 'https://gitee.com/layui', title: '' },
         { name: 'layui教程', href: 'https://www.php.cn/code/30323.html', title: '' }
       ]
@@ -420,8 +421,8 @@ var data_Tiktok = {
     {
       second_tit: '文档资料',
       second_child: [
-        { name: '字节小程序', href: 'https://microapp.bytedance.com/', title: '' },
-        { name: '抖音开放平台', href: 'https://open.douyin.com/platform', title: '' }
+        { name: '开发者文档', href: 'https://developer.open-douyin.com/docs-page', title: '' },
+        { name: '抖音开放平台', href: 'https://developer.open-douyin.com/', title: '' }
       ]
     }
   ]
