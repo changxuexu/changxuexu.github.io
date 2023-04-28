@@ -41,6 +41,7 @@ var data_daily = {
       second_child: [
         { name: '菜鸟工具', href: 'https://c.runoob.com', title: '' },
         { name: 'cxy521', href: 'http://www.cxy521.com', title: '' },
+        { name: 'LearnKu论坛', href: 'https://learnku.com/', title: '' },
         { name: '书栈网', href: 'https://www.bookstack.cn', title: '' },
         { name: '开发综合文档', href: 'https://devdocs.io', title: '' },
         { name: '开发语言学习资源', href: 'https://learn-anything.xyz/learn-anything', title: '以思维导图形式提供各种学习资源' },
