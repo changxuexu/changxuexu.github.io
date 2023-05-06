@@ -269,6 +269,14 @@ var data_Node = {
       ]
     },
     {
+      second_tit: '包管理器',
+      second_child: [
+        { name: 'npm', href: 'https://docs.npmjs.com', title: '' },
+        { name: 'yarn', href: 'https://www.yarnpkg.cn', title: '' },
+        { name: 'pnpm', href: 'https://pnpm.io', title: '' },
+      ]
+    },
+    {
       second_tit: '开发框架',
       second_child: [
         { name: 'express', href: 'https://www.expressjs.com.cn', title: '' },
