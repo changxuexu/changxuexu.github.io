@@ -27,7 +27,7 @@ function initprogram() {
 		tooltip : popper.js / tippy.js
 		typeit  : typed.js
 	*/
-	var arrJs = ['./static/js/vue3.js', './static/js/vue-scrollto.js', './static/js/favico.js', './static/js/popper.js', './static/js/tippy.js', './static/js/typed.js', './static/js/data.js', './static/js/page.js']
+	var arrJs = ['./static/js/vue3.js', './static/js/requestAnimationFrame.js', './static/js/vue-scrollto.js', './static/js/favico.js', './static/js/popper.js', './static/js/tippy.js', './static/js/typed.js', './static/js/data.js', './static/js/page.js']
 	_asyncLoadJs(arrJs, function () {
 		console.log('动态加载js文件完成');
 	})

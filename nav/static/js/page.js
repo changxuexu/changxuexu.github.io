@@ -126,6 +126,7 @@ const option = {
     totophandle() {
       let totopdom = this.$refs.totop
       let scrollTop = this._scrollTop()
+      let _this = this
       function t() {
         switch (totopdom.style.backgroundPosition) {
           case '-111px 0px':
@@ -141,13 +142,23 @@ const option = {
             totopdom.style.backgroundPosition = '-111px 0px'
             break;
         }
+        _this.totoptimer = requestAnimationFrame(t)
       }
+      
       if (scrollTop == 0) {
-        if (this.totoptimer) { clearInterval(this.totoptimer) }
+        if (this.totoptimer) { 
+          // clearInterval(this.totoptimer)
+          cancelAnimationFrame(this.totoptimer)
+        }
         totopdom.style.backgroundPosition = '-4px 0px'
         return
       }
-      this.totoptimer = setInterval(t, 17)
+
+      // 初始化执行
+      t()
+      // this.totoptimer = setInterval(t, 17)
+
+      console.log(this.totoptimer);
     },
     totopback() {
       let totopdom = this.$refs.totop
@@ -158,7 +169,10 @@ const option = {
         totopdom.style.opacity = '' 
         window.addEventListener("animationend", (e) => {
           if (e.animationName == 'rocketPos') {
-            if (this.totoptimer) { clearInterval(this.totoptimer) }
+            if (this.totoptimer) { 
+              // clearInterval(this.totoptimer)
+              cancelAnimationFrame(this.totoptimer) 
+            }
             totopdom.style.display = 'none'
             totopdom.classList.remove('rocket-top-none')
             totopdom.style.backgroundPosition = '-4px 0px'
