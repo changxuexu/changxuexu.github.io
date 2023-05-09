@@ -431,7 +431,8 @@ var data_Tiktok = {
       second_tit: '文档资料',
       second_child: [
         { name: '开发者文档', href: 'https://developer.open-douyin.com/docs-page', title: '' },
-        { name: '抖音开放平台', href: 'https://developer.open-douyin.com/', title: '' }
+        { name: '抖音开放平台', href: 'https://developer.open-douyin.com', title: '' },
+        { name: '抖音生活服务', href: 'https://life.douyin.com/partner', title: '' }
       ]
     }
   ]
