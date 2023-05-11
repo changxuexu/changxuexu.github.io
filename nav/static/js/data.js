@@ -539,6 +539,7 @@ var data_tool = {
       second_tit: 'Git',
       second_child: [
         { name: 'git入门文档', href: 'https://backlog.com/git-tutorial/cn', title: '' },
+        { name: 'git可视化教程', href: 'https://learngitbranching.js.org', title: '' },
         { name: 'git视屏教程', href: 'https://m.php.cn/code/7947.html', title: '' },
         { name: 'SourceTree教程', href: 'https://jingyan.baidu.com/article/dca1fa6f19c0abf1a5405246.html', title: '' },
         { name: '从零做一个前端开源项目', href: 'https://www.imooc.com/article/28240', title: '' }
@@ -728,7 +729,8 @@ var data_javascript = {
       second_child: [
         { name: 'es6入门教程', href: 'http://es6.ruanyifeng.com', title: '' },
         { name: 'es5入门手册', href: 'https://wangdoc.com', title: '' },
-        { name: 'js知识体系', href: 'https://github.com/yzsunlei/awesome-web-tutorial', title: '' }
+        { name: 'js知识体系', href: 'https://github.com/yzsunlei/awesome-web-tutorial', title: '' },
+        { name: '思维逻辑小游戏', href: 'https://lab.reaal.me', title: '' },
       ]
     },
     {
@@ -1024,7 +1026,16 @@ var data_css = {
         { name: 'head标签', href: 'https://github.com/joshbuchea/HEAD', title: 'head标签的所有内容列表' },
         { name: '50projects50days', href: 'https://github.com/bradtraversy/50projects50days', title: '入门练习案例' }
       ]
-    }
+    },
+    {
+      second_tit: '学习关卡',
+      second_child: [
+        { name: '动画', href: 'https://css-animations.io', title: '' },
+        { name: '弹性盒子', href: 'http://flexboxfroggy.com', title: '' },
+        { name: '网格布局', href: 'http://cssgridgarden.com', title: '' },
+        { name: 'css选择器', href: 'https://flukeout.github.io', title: '' },
+      ]
+    },
   ]
 }
 
