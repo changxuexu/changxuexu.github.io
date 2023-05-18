@@ -933,7 +933,8 @@ var data_jsplug = {
         { name: 'Print.js', href: 'https://printjs.crabbly.com', title: '直接在网页上打印文件，而无需重定向或使用嵌入' },
         { name: 'Docx.js', href: 'https://github.com/dolanmiu/docx', title: '通过JavaScript生成.docx文件的组件,可以同时被运用于Node端和浏览器端' },
         { name: 'Dinero.js', href: 'https://dinerojs.com', title: '使用JavaScript处理货币值的库' },
-        { name: 'Tesseract.js', href: 'https://github.com/naptha/tesseract.js', title: 'OCR图片文字识别,在浏览器或使用NodeJS的服务器上运行' }
+        { name: 'Tesseract.js', href: 'https://github.com/naptha/tesseract.js', title: 'OCR图片文字识别,在浏览器或使用NodeJS的服务器上运行' },
+        { name: 'Color Thief', href: 'https://www.npmjs.com/package/color-thief', title: '从图像中获取颜色值，使用Javascript和canvas标记来实现这一点' }
       ]
     },
     {
