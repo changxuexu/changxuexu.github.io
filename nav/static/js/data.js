@@ -486,6 +486,12 @@ var data_Crossplatform = {
         { name: 'IOS开放平台', href: 'https://developer.apple.com', title: '' },
       ]
     },
+    {
+      second_tit: '其他',
+      second_child: [
+        { name: 'AutoJS', href: 'https://gitee.com/ran_yong/auto.js', title: '基于JavaScript语言运行在Android平台上的自动化脚本框架' },
+      ]
+    }
   ]
 }
 
@@ -587,7 +593,6 @@ var data_tool = {
       second_child: [
         { name: 'ChatGPT', href: 'https://chat.openai.com/chat', title: '' },
         { name: 'chatgpt_1', href: 'https://chat.forchange.cn', title: '无需账号' },
-        { name: 'chatgpt_2', href: 'https://chat2.geekr.dev', title: '无需账号' },
         { name: 'Copilot', href: '', title: '' },
         { name: 'Pitchfork', href: '', title: '' },
         { name: 'AlphaCode', href: '', title: '' }
@@ -887,7 +892,8 @@ var data_jsplug = {
           title: '视差引擎，对智能设备的方向作出反应。如果没有陀螺仪或运动检测硬件可用，则使用光标的位置' },
         { name: 'jInvertScroll', href: 'https://github.com/pixxelfactory/jInvertScroll', title: '视差滚动' },
         { name: 'simpleParallax.js', href: 'https://simpleparallax.com/', title: '为网站"图像"创建视差动画效果' },
-        { name:'ScrollReveal' , href:'https://github.com/jlmakes/scrollreveal', title:'在元素滚动到视图中时制作它们的动画' }
+        { name:'ScrollReveal' , href:'https://github.com/jlmakes/scrollreveal', title:'在元素滚动到视图中时制作它们的动画' },
+        { name:'smoothscroll-polyfill' , href:'https://www.npmjs.com/package/smoothscroll-polyfill', title:'平滑滚动behavior:smooth' }
       ]
     },
     {
