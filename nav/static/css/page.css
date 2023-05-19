@@ -72,9 +72,9 @@ html, body {
 .nav-content-wrap{ margin-left:150px; min-height:100vh; box-sizing: border-box; transition:  all 0.9s ease-in-out; }
 .nav-content-closewrap{ margin-left:0;width:100%;transition:  all 0.5s ease-in-out;}
 .nav-content-ltME{ margin-left:0; }
-.nav-content-wrap .floor-item{ padding:15px 20px;border-bottom:8px solid #E9EBEC;}
-.nav-content-wrap .super-tit{display: inline-block;font-size: 20px;font-weight: bold;color: var(--main-color);line-height:70px;}
-.nav-content-wrap .super-idx{color: #ccc;font-family:Arial;font-style: italic;font-size:25px;}
+.nav-content-wrap .floor-item{ padding:15px 20px;border-top:4px solid #E9EBEC;border-bottom:4px solid #E9EBEC;}
+.nav-content-wrap .super-tit{display: inline-block;font-size: 20px;font-style: italic;font-weight: bold;color: var(--main-color); padding-top:10px; padding-bottom:20px; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1)}
+.nav-content-wrap .super-idx{color: #ccc;font-family:Arial;font-size:25px;}
 .nav-content-wrap .second-content{}
 .nav-content-wrap .second-tit{font-size:16px;margin-right:5px;font-weight:bold;color:#000000;display: inline-block;min-width:90px;
   text-align: justify;
