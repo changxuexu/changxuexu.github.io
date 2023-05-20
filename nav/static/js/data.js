@@ -749,6 +749,9 @@ var data_javascript = {
     {
       second_tit: '构建工具',
       second_child: [
+        { name: 'esbuild官网', href: 'https://esbuild.github.io', title: '' },
+        { name: 'rollup_官网', href: 'https://cn.rollupjs.org', title: '' },
+        { name: 'rollup_github', href: 'https://github.com/rollup', title: '' },
         { name: 'Webpack', href: 'https://webpack.docschina.org',href_spare1:'https://www.webpackjs.com/concepts', title: '' },
         { name: 'gulpjs', href: 'https://www.gulpjs.com.cn', title: '' },
       ]
