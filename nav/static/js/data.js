@@ -121,6 +121,7 @@ var data_vue = {
       second_tit: '管理框架',
       second_child: [
         { name: 'fantastic-admin', href: 'https://hooray.gitee.io/fantastic-admin/', title: 'Vite + Vue3 + Vue-router + Pinia + Element Plus' },
+        { name: 'vue-vben-admin', href: 'https://github.com/vbenjs', title: 'Vue3' },
         { name: 'BuildAdmin', href: 'https://wonderful-code.gitee.io/', title: 'Vue3+Element Plus' },
         { name: 'vue-element-admin', href: 'https://panjiachen.github.io/vue-element-admin-site/zh', title: '' },
         { name: 'iview-admin', href: 'https://github.com/iview/iview-admin', title: '' },
