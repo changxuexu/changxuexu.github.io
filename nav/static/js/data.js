@@ -40,6 +40,7 @@ var data_daily = {
       second_tit: '便利工具',
       second_child: [
         { name: '菜鸟工具', href: 'https://c.runoob.com', title: '' },
+        { name: 'AI工具集', href: 'https://ai-bot.cn', title: '' },
         { name: 'cxy521', href: 'http://www.cxy521.com', title: '' },
         { name: 'LearnKu论坛', href: 'https://learnku.com/', title: '' },
         { name: '书栈网', href: 'https://www.bookstack.cn', title: '' },
@@ -855,10 +856,12 @@ var data_jsplug = {
     {
       second_tit: '动画',
       second_child: [
+        { name: 'Three.js', href: 'https://threejs.org', title: '3Djs库，canvas、svg、css3d、webgl' },
+        { name: 'Three.js_入门书籍', href: 'https://discoverthreejs.com', title: '' },
+        { name: 'Three.js_案例', href: 'https://github.com/dragonir/3d', title: '' },
+        { name: 'Anime.js', href: 'https://animejs.com', title: '轻量级,强大API' },
         { name: 'vue-kinesis', href: 'https://www.npmjs.com/package/vue-kinesis', title: '支持使用的 Vue.js 组件来创建交互式动画，其支持Vue3' },
         { name: 'Popmotion', href: 'https://popmotion.io/', href_spare1: 'https://jellykaiser.github.io/popmotion.doc/', title: '原生dom支持:CSS、SVG路径、dom属性；支持数字、颜色和复杂字符串的关键帧、弹簧和惯性动画' },
-        { name: 'Three.js', href: 'https://threejs.org', title: '3Djs库，canvas、svg、css3d、webgl' },
-        { name: 'Anime.js', href: 'https://animejs.com', title: '轻量级,强大API' },
         { name: 'Tweenmax', href: 'https://www.tweenmax.com.cn', title: '' },
         { name: 'greensock', href: 'https://greensock.com', git_href: 'https://www.npmjs.com/package/gsap', title: '对html元素进行动画处理，用于创建高性能、零依赖性、跨游览器动画' },
         { name: 'Mo.js', href: 'https://mojs.github.io', title: '模块化,流畅' },
