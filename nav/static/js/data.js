@@ -22,6 +22,7 @@ var data_daily = {
         { name: 'npm插件搜索', href: 'https://www.npmjs.com', title: '' },
         { name: 'MDN-developer', href: 'https://developer.mozilla.org/zh-CN', title: '' },
         { name: 'Can I use', href: 'https://www.caniuse.com', title: '' },
+        { name: 'w3c', href: 'https://www.w3.org', title: '' },
         { name: 'Stack Overflow', href: 'https://stackoverflow.com', title: '编程棘手bug' },
         { name: 'segmentfault', href: 'https://segmentfault.com/', title: '' },
         { name: 'node_modules包大小查询', href: 'https://bundlephobia.com', title: '查询node_modules安装包大小' }
@@ -628,7 +629,8 @@ var data_study = {
         { name: '网易云课堂', href: 'https://study.163.com', title: '' },
         { name: '尚硅谷', href: 'https://www.gulixueyuan.com/', title: '' },
         { name: 'php中文网', href: 'https://www.php.cn/', title: '' },
-        { name: 'html中文网', href: 'https://www.html.cn', title: '' }
+        { name: 'html中文网', href: 'https://www.html.cn', title: '' },
+        { name: '虎课网', href: 'https://huke88.com', title: '' }
       ]
     },
     {
@@ -1060,15 +1062,13 @@ var data_other = {
     {
       second_tit: '生活日常',
       second_child: [
-        { name: '合肥开发公司避坑论坛', href: 'https://bbs.diaozong.cn/p.html', title: '' },
         { name: '合同示范文本库', href: 'https://cont.12315.cn', title: '' },
         { name: '中国裁判文书网', href: 'https://wenshu.court.gov.cn', title: '' },
         { name: '国家企业信用信息公示系统', href: 'https://www.gsxt.gov.cn/index.html', title: '' },
         { name: '国家统计局官网', href: 'http://www.stats.gov.cn', title: '' },
         { name: '工信部申诉受理中心', href: 'https://yhssglxt.miit.gov.cn', title: '电信、移动、联通问题申诉' },
         { name: '国家邮政局申诉网站', href: 'https://sswz.spb.gov.cn', title: '快递相关问题投诉' },
-        { name: '火车票', href: 'https://www.bypass.cn', title: '' },
-        { name: '电视家TV', href: 'https://www.tvapk.net', title: '免费电视直播软件' }
+        { name: '火车票', href: 'https://www.bypass.cn', title: '' }
       ]
     },
     {
@@ -1082,11 +1082,14 @@ var data_other = {
       ]
     },
     {
-      second_tit: '电脑维护',
+      second_tit: '电脑维护/软件',
       second_child: [
         { name: '电脑店', href: 'https://u.diannaodian.com', title: '重装系统' },
         { name: '大白菜', href: 'http://dbc.trmfb.com/win10.html', title: '重装系统' },
-        { name: '小熊', href: 'https://www.xiaoxiongxitong.com', title: '小熊一键重装系统' }
+        { name: '小熊', href: 'https://www.xiaoxiongxitong.com', title: '小熊一键重装系统' },
+        { name: '电视家TV', href: 'https://www.tvapk.net', title: '免费电视直播软件' },
+        { name: '芯象', href: 'https://www.sinsam.com', title: '直播推流工具' },
+        { name: '无他相机', href: 'https://www.wuta-cam.com', title: '直播推流工具' }
       ]
     },
     {
