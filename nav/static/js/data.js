@@ -841,7 +841,8 @@ var data_jsplug = {
       second_child: [
         { name: '百度地图', href: 'https://lbsyun.baidu.com/', title: '' },
         { name: '高德地图', href: 'https://lbs.amap.com/', title: '' },
-        { name: '腾讯地图', href: 'https://lbs.qq.com/', title: '' }
+        { name: '腾讯地图', href: 'https://lbs.qq.com/', title: '' },
+        { name: '2345天气王', href: 'https://tianqi.2345.com', title: '天气插件' }
       ]
     },
     {
