@@ -25,6 +25,7 @@ var data_daily = {
         { name: 'w3c', href: 'https://www.w3.org', title: '' },
         { name: 'Stack Overflow', href: 'https://stackoverflow.com', title: '编程棘手bug' },
         { name: 'segmentfault', href: 'https://segmentfault.com/', title: '' },
+        { name: '稀土掘金', href: 'https://juejin.cn', title: '' },
         { name: 'node_modules包大小查询', href: 'https://bundlephobia.com', title: '查询node_modules安装包大小' }
       ]
     },
@@ -38,10 +39,19 @@ var data_daily = {
       ]
     },
     {
+      second_tit: 'AI工具',
+      second_child: [
+        { name: 'AI工具集', href: 'https://ai-bot.cn', title: '' },
+        { name: '通义千问_阿里', href: 'https://qianwen.aliyun.com', title: '' },
+        { name: '豆包_阿里', href: 'https://www.doubao.com', title: '' },
+        { name: 'ChatMoss', href: 'https://chatmoss.aihao123.cn/', title: '' },
+        { name: 'ChatGPT集合', href: 'https://ziyuantan.com/t/topic/516', title: '' }
+      ]
+    },
+    {
       second_tit: '便利工具',
       second_child: [
         { name: '菜鸟工具', href: 'https://c.runoob.com', title: '' },
-        { name: 'AI工具集', href: 'https://ai-bot.cn', title: '' },
         { name: 'cxy521', href: 'http://www.cxy521.com', title: '' },
         { name: 'LearnKu论坛', href: 'https://learnku.com/', title: '' },
         { name: '书栈网', href: 'https://www.bookstack.cn', title: '' },
