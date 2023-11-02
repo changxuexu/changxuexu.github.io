@@ -365,7 +365,8 @@ var data_Linux = {
       second_tit: '',
       second_child: [
         { name: 'vmware', href: 'https://www.vmware.com/cn.html', title: '产品->VMware Workstation Pro->下载试用版' },
-        { name: 'finalShell', href: 'http://www.hostbuf.com', title: '' }
+        { name: 'finalShell', href: 'http://www.hostbuf.com', title: '' },
+        { name: '宝塔', href: 'https://www.bt.cn/new/index.html', title: 'linux可视化操作' }
       ]
     }
   ]
@@ -828,8 +829,14 @@ var data_jsplug = {
     {
       second_tit: '图表',
       second_child: [
-        { name: 'ECharts', href: 'https://echarts.apache.org/zh/index.html', title: '' },
-        { name: 'ECharts_案例', href: 'https://www.isqqw.com', title: '' },
+        { name: 'ECharts', href: 'https://echarts.apache.org/zh/index.html', title: '官网' },
+        { name: 'echarts v4文档', href: 'https://echarts.apache.org/v4/zh/option.html', title: '旧版文档' },
+        { name: 'ECharts_isqqw', href: 'https://www.isqqw.com', title: '国内文档，收费' },
+        { name: 'ECharts_chartsdev.com', href: 'http://192.144.199.210/forum-2-1.html', title: 'ECharts论坛分享' },
+        { name: 'ECharts_makeapie', href: 'https://www.makeapie.cn/echarts', title: 'ECharts社区案例' },
+        { name: 'ECharts_ppchart', href: 'https://ppchart.com', title: '' },
+        { name: 'ECharts_majh.top', href: 'http://chart.majh.top', title: '' },
+        { name: 'ECharts_example', href: 'http://my.xuan.news.cn/cloudapi/echarts/doc/example.html', title: 'echarts 案例' },
         { name: 'Antv', href: 'http://antv.antfin.com/zh-cn/index.html', title: '蚂蚁数据可视化' },
         { name: 'FusionCharts', href: 'https://www.fusioncharts.com/', title: '' },
         { name: '图扑软件', href: 'https://www.hightopo.com/index.html', title: '3D可视化场景' },
@@ -969,9 +976,10 @@ var data_jsplug = {
     {
       second_tit: 'uni-app',
       second_child: [
+        { name: 'uView vue2', href: 'https://www.uviewui.com', href_spare:'', title: '全面兼容nvue的uni-app生态框架' },
+        { name: 'uview-plus vue3', href: 'https://uiadmin.net/uview-plus', href_spare:'', title: '全面兼容nvue的uni-app生态框架' },
         { name: 'mp-html', href: 'https://github.com/jin-yufeng/mp-html', href_spare:'', title: '一个强大的小程序富文本组件' },
         { name: 'parser-audio', href: 'https://github.com/woxiaoyao81/parser-audio', title: '完善jyf-parser的audio插件' },
-        { name: 'uView', href: 'https://www.uviewui.com', href_spare:'', title: '全面兼容nvue的uni-app生态框架' },
         { name: 'uni-calendar', href: 'https://ext.dcloud.net.cn/plugin?id=56', href_spare:'', title: '日历组件可以查看日期，选择任意范围内的日期，打点操作。常用场景如：酒店日期预订、火车机票选择购买日期、上下班打卡等。' },
         { name: 'simple-address省市区', href: 'https://ext.dcloud.net.cn/plugin?id=1084', href_spare:'', title: '三级地址联动，支持（app）nvue、小程序、H5 ' },
       ]
