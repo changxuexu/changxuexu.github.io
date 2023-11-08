@@ -43,7 +43,9 @@ var data_daily = {
       second_child: [
         { name: 'AI工具集', href: 'https://ai-bot.cn', title: '' },
         { name: '通义千问_阿里', href: 'https://qianwen.aliyun.com', title: '' },
-        { name: '豆包_阿里', href: 'https://www.doubao.com', title: '' },
+        { name: '混元_腾讯', href: 'https://hunyuan.tencent.com', title: '' },
+        { name: '豆包_抖音', href: 'https://www.doubao.com', title: '' },
+        { name: '文心一言_百度', href: 'https://yiyan.baidu.com', title: '' },
         { name: 'ChatMoss', href: 'https://chatmoss.aihao123.cn/', title: '' },
         { name: 'ChatGPT集合', href: 'https://ziyuantan.com/t/topic/516', title: '' }
       ]
@@ -140,7 +142,8 @@ var data_vue = {
         { name: 'iview-admin文档', href: 'https://lison16.github.io/iview-admin-doc', title: '' },
         { name: 'xboot', href: 'http://xboot.exrick.cn/home', title: '' },
         { name: 'Vue Bulma', href: 'https://github.com/vue-bulma/vue-admin', title: '基于Vue和Bulma的控制面板' },
-        { name: 'likeadmin', href: 'https://www.likeadmin.cn', title: '基于Vue3、elementPlus' } 
+        { name: 'likeadmin', href: 'https://www.likeadmin.cn', title: '基于Vue3、elementPlus' },
+        { name: '若依admin', href: 'http://www.ruoyi.vip', title: '基于java SpringBoot' }
       ]
     }
   ]
