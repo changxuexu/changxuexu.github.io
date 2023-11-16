@@ -711,6 +711,7 @@ var data_study = {
       second_child: [
         { name: '运维派', href: 'http://www.yunweipai.com', title: '' },
         { name: '阿汤运维', href: 'https://www.amd5.cn', title: '' },
+        { name: '朱双印个人日志', href: 'http://www.yunweipai.com', title: '比较基础，易入门' },
         { name: '峰哥博客', href: 'http://zzzzzz.me', title: '破解软件' },
         { name: '吾爱破解', href: 'https://www.52pojie.cn', title: '安卓破解、病毒分析' },
         { name: 't00ls', href: 'https://www.t00ls.com', title: '网络漏洞检测' }
