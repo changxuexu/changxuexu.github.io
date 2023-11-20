@@ -35,7 +35,9 @@ var data_daily = {
         { name: '博客', href: 'https://www.cnblogs.com/changxue', title: 'self' },
         { name: 'github', href: 'https://github.com/changxuexu?tab=repositories', title: 'git仓库' },
         { name: 'gitee', href: 'https://gitee.com/changxuexu/projects', title: '码云' },
-        { name: 'coding', href: 'https://coding.net', title: 'git仓库' }
+        { name: 'coding', href: 'https://coding.net', title: 'git仓库' },
+        { name: '腾讯工蜂', href: 'https://code.tencent.com', title: '' },
+        { name: '微信小程序git', href: 'https://git.weixin.qq.com', title: '' }
       ]
     },
     {
