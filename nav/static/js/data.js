@@ -307,7 +307,8 @@ var data_Node = {
     {
       second_tit: '其他',
       second_child: [
-        { name: 'jwt', href: 'https://jwt.io', title: 'json网络令牌,进行解码,显示有效负载' }
+        { name: 'jwt', href: 'https://jwt.io', title: 'json网络令牌,进行解码,显示有效负载' },
+        { name: 'knexjs', href: 'https://www.knexjs.cn', title: 'SQL查询构造器,最终生成sql语句' }
       ]
     }
   ]
