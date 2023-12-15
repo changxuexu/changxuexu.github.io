@@ -49,7 +49,8 @@ var data_daily = {
         { name: '豆包_抖音', href: 'https://www.doubao.com', title: '' },
         { name: '文心一言_百度', href: 'https://yiyan.baidu.com', title: '' },
         { name: 'ChatMoss', href: 'https://chatmoss.aihao123.cn/', title: '' },
-        { name: 'ChatGPT集合', href: 'https://ziyuantan.com/t/topic/516', title: '' }
+        { name: 'ChatGPT集合', href: 'https://ziyuantan.com/t/topic/516', title: '' },
+        { name: '36krai', href: 'https://36krai.com', title: 'AI工具集' }
       ]
     },
     {
@@ -157,8 +158,10 @@ var data_React = {
     {
       second_tit: '文档资料',
       second_child: [
-        { name: 'React', href: 'https://zh-hans.reactjs.org/', title: 'react_reactjs' },
-        { name: 'React', href: 'https://reactjs.bootcss.com/', title: 'react_bootcss' },
+        { name: 'React官网', href: 'https://react.dev/', title: '' },
+        { name: 'React中文', href: 'https://zh-hans.reactjs.org/', title: 'react_reactjs' },
+        { name: 'React中文', href: 'https://reactjs.bootcss.com/', title: 'react_bootcss' },
+        { name: 'Redux', href: 'https://cn.redux.js.org', title: '状态管理' },
         { name: 'React-native', href: 'https://www.react-native.cn/', title: '' },
         { name: 'React菜鸟教程', href: 'https://www.runoob.com/react/react-tutorial.html', title: '' },
         { name: 'Preact', href: 'https://preactjs.com/', title: 'React 的轻量级替代方案，体积仅有 3kB，并且拥有与 React 相同的 API' }
@@ -526,13 +529,18 @@ var data_tool = {
         { name: '蓝湖', href: 'https://lanhuapp.com', title: 'UI设计交互演示' },
         { name: '墨刀', href: 'https://modao.cc', title: 'UI设计交互演示' },
         { name: 'chainco', href: 'http://www.chainco.cn', title: 'UI设计交互演示' },
-        { name: '阿里矢量图标库', href: 'https://www.iconfont.cn', title: '图标' },
-        { name: 'iconPark', href: 'http://iconpark.oceanengine.com', title: '图标' },
         { name: '犸良', href: 'https://design.alipay.com/emotion', title: 'gif素材动效制作' },
         { name: '鹿班', href: 'https://luban.taobao.com', title: '海报/商品图文/直播间背景' },
         { name: '花瓣', href: 'https://huaban.com', title: '设计参考' },
         { name: '站酷', href: ' https://www.zcool.com.cn', title: '设计参考' },
-        { name: '68design', href: 'https://www.68design.net', title: '设计参考' }
+        { name: '68design', href: 'https://www.68design.net', title: '设计参考' },
+        { name: '图标_阿里矢量图标库', href: 'https://www.iconfont.cn', title: '图标' },
+        { name: '图标_iconPark', href: 'http://iconpark.oceanengine.com', title: '图标' },
+        { name: '图标_streamline', href: 'https://www.streamlinehq.com', title: '各种物体的图标' },
+        { name: '图标_Photos For Everything', href: 'https://thenounproject.com', title: '' },
+        { name: '图标_emojixd', href: 'https://emojixd.com', title: '表情图标资源' },
+        { name: '资源_Lorem Picsum', href: 'https://picsum.photos', title: '随机图片资源获取' },
+        { name: '资源_unsplash', href: 'https://picsum.photos', title: '随机背景图片资源获取' }
       ]
     },
     {
@@ -679,6 +687,7 @@ var data_study = {
       second_tit: '个人',
       second_child: [
         { name: '尤雨溪', href: 'https://github.com/yyx990803', title: '' },
+        { name: '后盾人', href: 'https://doc.houdunren.com', title: '' },
         { name: 'Nicholas C.Zakas', href: 'https://humanwhocodes.com', title: 'ESLint开源项目' },
         { name: 'Addy Osmani', href: 'https://github.com/addyosmani', title: '' },
         { name: 'Lea Verou', href: 'https://github.com/LeaVerou', title: '' },
@@ -695,8 +704,9 @@ var data_study = {
         { name: '芋道源码', href: 'http://www.iocoder.cn', title: '' },
         { name: 'w3cplus', href: 'http://caibaojian.com/w3cplus', title: '' },
         { name: 'fly63', href: 'http://www.fly63.com', title: '' },
-        { name: '后盾人', href: 'https://doc.houdunren.com', title: '' },
-        { name: '愧怍', href: 'https://kuizuo.cn/docs/skill', title: '' }
+        { name: '愧怍', href: 'https://kuizuo.cn/docs/skill', title: '' },
+        { name: '坤嬷嬷', href: 'https://www.cnblogs.com/kunmomo', title: '比较基础' },
+        { name: 'ddlowell', href: 'https://www.zhihu.com/people/ddlowell', title: 'js提升' }
       ]
     },
     {
@@ -732,6 +742,7 @@ var data_study = {
       second_tit: '业务参考',
       second_child: [
         { name: '意象商城系统', href: 'https://gitee.com/guchengwuyue', title: '' },
+        { name: 'crmeb', href: 'https://www.crmeb.com', title: 'https://gitee.com/ZhongBangKeJi/CRMEB' },
         { name: 'likeshop', href: 'https://www.likeshop.cn', title: '' },
         { name: '鲁班H5', href: 'https://github.com/ly525/luban-h5', title: '类似易企秀Maka百度 H5等平台,通过拖拽快速生成页面的平台' }
       ]
@@ -741,6 +752,7 @@ var data_study = {
       second_child: [
         { name: 'acwing算法', href: 'https://www.acwing.com', title: '算法相关' },
         { name: 'visualgo算法', href: 'https://visualgo.net/en', title: '常见算法可视化' },
+        { name: 'leetcode力扣', href: 'https://leetcode.cn', title: '算法、面试题' },
         { name: '牛客', href: 'https://www.nowcoder.com', title: '编程练习刷题' },
         { name: 'kaggle', href: 'https://www.kaggle.com', title: '数据挖掘、机器学习、深度学习' }
       ]
@@ -833,14 +845,15 @@ var data_jsplug = {
       second_child: [
         { name: 'wangEditor', href: 'https://github.com/wangeditor-team/wangEditor', title: '' },
         { name: 'CKEditor5', href: 'https://github.com/ckeditor', title: '功能强大，具有 MVC 架构、自定义数据模型和虚拟 DOM' },
-        { name: 'UEditor', href: 'http://fex.baidu.com/ueditor', title: '' },
         { name: 'tinymce', href: 'https://github.com/tinymce/tinymce', title: '' },
         { name: 'ckeditor', href: 'https://github.com/galetahub/ckeditor', title: '老牌富文本' },
         { name: 'squire', href: 'https://github.com/neilj/Squire', title: '轻量富文本' },
         { name: 'slate', href: 'https://github.com/ianstormtaylor/slate', title: '完全可定制富文本' },
         { name: 'medium-editor', href: 'https://github.com/yabwe/medium-editor', title: '' },
         { name: 'quill', href: 'https://github.com/quilljs/quill', title: '对图片的各种操作不友善' },
-        { name: 'tui.editor', href: 'https://github.com/nhn/tui.editor', title: '在网页中编辑 Markdown 文档的文本或所见即所得' }
+        { name: 'tui.editor', href: 'https://github.com/nhn/tui.editor', title: '在网页中编辑 Markdown 文档的文本或所见即所得' },
+        { name: 'UEditor', href: 'http://fex.baidu.com/ueditor', title: '百度' },
+        { name: 'KindEditor', href: 'http://kindeditor.net/demo.php', title: '' }
       ]
     },
     {
@@ -975,7 +988,8 @@ var data_jsplug = {
         { name: 'Docx.js', href: 'https://github.com/dolanmiu/docx', title: '通过JavaScript生成.docx文件的组件,可以同时被运用于Node端和浏览器端' },
         { name: 'Dinero.js', href: 'https://dinerojs.com', title: '使用JavaScript处理货币值的库' },
         { name: 'Tesseract.js', href: 'https://github.com/naptha/tesseract.js', title: 'OCR图片文字识别,在浏览器或使用NodeJS的服务器上运行' },
-        { name: 'Color Thief', href: 'https://www.npmjs.com/package/color-thief', title: '从图像中获取颜色值，使用Javascript和canvas标记来实现这一点' }
+        { name: 'Color Thief', href: 'https://www.npmjs.com/package/color-thief', title: '从图像中获取颜色值，使用Javascript和canvas标记来实现这一点' },
+        { name: '@imgly/background-removal', href: 'https://www.npmjs.com/package/@imgly/background-removal',title:'AI自动抠图库' }
       ]
     },
     {
@@ -1089,6 +1103,7 @@ var data_other = {
       second_tit: '生活日常',
       second_child: [
         { name: '合同示范文本库', href: 'https://cont.12315.cn', title: '' },
+        { name: '房贷利息', href: 'https://www.fangdailixi.com', title: '' },
         { name: '中国裁判文书网', href: 'https://wenshu.court.gov.cn', title: '' },
         { name: '国家企业信用信息公示系统', href: 'https://www.gsxt.gov.cn/index.html', title: '' },
         { name: '国家统计局官网', href: 'http://www.stats.gov.cn', title: '' },
@@ -1115,7 +1130,8 @@ var data_other = {
         { name: '小熊', href: 'https://www.xiaoxiongxitong.com', title: '小熊一键重装系统' },
         { name: '电视家TV', href: 'https://www.tvapk.net', title: '免费电视直播软件' },
         { name: '芯象', href: 'https://www.sinsam.com', title: '直播推流工具' },
-        { name: '无他相机', href: 'https://www.wuta-cam.com', title: '直播推流工具' }
+        { name: '无他相机', href: 'https://www.wuta-cam.com', title: '直播推流工具' },
+        { name: 'EV录屏', href: 'http://dbxz.xwaynb.cn/tianji/child/f470.html', title: '集视频录制与直播于一身的录屏软件' },
       ]
     },
     {
@@ -1129,6 +1145,12 @@ var data_other = {
         { name: '国家教育资源公共服务平台', href: 'https://www.eduyun.cn', title: '' },
         { name: '皖教云', href: 'http://www.ahedu.cn/#/', title: '' },
         { name: '国家终身教育平台', href: 'https://le.ouchn.cn', title: '' }
+      ]
+    },
+    {
+      second_tit: '购物批发',
+      second_child: [
+        { name: '慧聪网', href: 'https://www.hc360.com', title: '' },
       ]
     }
   ]
