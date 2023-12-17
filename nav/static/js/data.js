@@ -164,7 +164,8 @@ var data_React = {
         { name: 'Redux', href: 'https://cn.redux.js.org', title: '状态管理' },
         { name: 'React-native', href: 'https://www.react-native.cn/', title: '' },
         { name: 'React菜鸟教程', href: 'https://www.runoob.com/react/react-tutorial.html', title: '' },
-        { name: 'Preact', href: 'https://preactjs.com/', title: 'React 的轻量级替代方案，体积仅有 3kB，并且拥有与 React 相同的 API' }
+        { name: 'Preact', href: 'https://preactjs.com/', title: 'React 的轻量级替代方案，体积仅有 3kB，并且拥有与 React 相同的 API' },
+        { name: 'react中文社区', href: 'http://react-china.org/', title: '' }
       ]
     },
     {
