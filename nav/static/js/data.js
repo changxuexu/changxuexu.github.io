@@ -866,6 +866,7 @@ var data_jsplug = {
         { name: 'ECharts_isqqw', href: 'https://www.isqqw.com', title: '国内文档，收费' },
         { name: 'ECharts_chartsdev.com', href: 'http://192.144.199.210/forum-2-1.html', title: 'ECharts论坛分享' },
         { name: 'ECharts_makeapie', href: 'https://www.makeapie.cn/echarts', title: 'ECharts社区案例' },
+        { name: 'ECharts_MadeAPie', href: 'https://madeapie.com', title: 'ECharts案例' },
         { name: 'ECharts_ppchart', href: 'https://ppchart.com', title: '' },
         { name: 'ECharts_majh.top', href: 'http://chart.majh.top', title: '' },
         { name: 'ECharts_example', href: 'http://my.xuan.news.cn/cloudapi/echarts/doc/example.html', title: 'echarts 案例' },
