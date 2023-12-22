@@ -870,6 +870,7 @@ var data_jsplug = {
         { name: 'ECharts_ppchart', href: 'https://ppchart.com', title: '' },
         { name: 'ECharts_majh.top', href: 'http://chart.majh.top', title: '' },
         { name: 'ECharts_example', href: 'http://my.xuan.news.cn/cloudapi/echarts/doc/example.html', title: 'echarts 案例' },
+        { name: 'uCharts', href: 'https://www.ucharts.cn', title: '高性能跨平台图表库：PC、H5、APP、小程序、Vue、Taro' },
         { name: 'Antv', href: 'http://antv.antfin.com/zh-cn/index.html', title: '蚂蚁数据可视化' },
         { name: 'FusionCharts', href: 'https://www.fusioncharts.com/', title: '' },
         { name: '图扑软件', href: 'https://www.hightopo.com/index.html', title: '3D可视化场景' },
