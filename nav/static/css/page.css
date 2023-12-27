@@ -140,7 +140,7 @@ html, body {
 /* 返回顶部-end */
 
 /* 圆点跟随 */
-.dotfollow{ width: 30px; height: 30px; left: -15px; top: -15px; pointer-events:none; background-color: pink; border-radius: 50%; position:fixed; }
+.dotfollow{ width: 18px; height: 18px; left: -9px; top: -9px; z-index:4; pointer-events:none; background-color: pink; border-radius: 50%; position:fixed; }
 /* 圆点跟随-end */
 
 /* 置灰：放在html元素上就行 
