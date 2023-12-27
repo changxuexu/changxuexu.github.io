@@ -61,12 +61,35 @@ const option = {
         // favicon.js
         favicon.badge(' ');
 
-        // 
+        // 事件
         window.addEventListener("scroll", this.scroll)
+        window.addEventListener('pointermove', this.pointermovehandle);
         window.addEventListener('resize', this.resizehandle)
-
       })
-
+    },
+    pointermovehandle(e){
+      const pos1 = { x: e.clientX, y: e.clientY }
+      this.$refs.dotfollow1.style.transform = `translate(${pos1.x}px, ${pos1.y}px)`
+      this.delayedpositionValue(pos1,100).then(pos2 => {
+        this.$refs.dotfollow2.style.transform = `translate(${pos2.x}px, ${pos2.y}px)`
+        this.delayedpositionValue(pos2,200).then(pos3 => {
+          this.$refs.dotfollow3.style.transform = `translate(${pos3.x}px, ${pos3.y}px)`
+          this.delayedpositionValue(pos3,100).then(pos4 => {
+            this.$refs.dotfollow4.style.transform = `translate(${pos4.x}px, ${pos4.y}px)`
+          })
+          this.delayedpositionValue(pos3,50).then(pos5 => {
+            this.$refs.dotfollow4.style.transform = `translate(${pos5.x}px, ${pos5.y}px)`
+          })
+        })
+      })
+    },
+    // 相当于存储历史数据，历史dom复现
+    delayedpositionValue(value, delay){
+      return new Promise(resolve => {
+        setTimeout(() => {
+          resolve(value)
+        }, delay);
+      })
     },
     scroll() {
       if (this.scrolltimer) { clearTimeout(this.scrolltimer) }
@@ -272,6 +295,7 @@ const option = {
   },
   beforeUnmount() {
     window.removeEventListener('scroll', this.scroll)
+    window.removeEventListener('pointermove', this.pointermovehandle)
     window.removeEventListener('resize', this.resizehandle)
   }
 }
