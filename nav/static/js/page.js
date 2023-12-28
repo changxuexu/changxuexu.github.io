@@ -78,7 +78,7 @@ const option = {
             this.$refs.dotfollow4.style.transform = `translate(${pos4.x}px, ${pos4.y}px)`
           })
           this.delayedpositionValue(pos3,50).then(pos5 => {
-            this.$refs.dotfollow4.style.transform = `translate(${pos5.x}px, ${pos5.y}px)`
+            this.$refs.dotfollow5.style.transform = `translate(${pos5.x}px, ${pos5.y}px)`
           })
         })
       })
