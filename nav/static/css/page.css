@@ -95,7 +95,7 @@ html, body {
   transition: background 0.3s ease-in-out;
   cursor: pointer;
 }
-.nav-content-wrap .second-link:hover {background-position: 0;}
+.nav-content-wrap .second-link:hover {background-position: 0; text-shadow: 2px 2px 2px rgba(0,0,0,.2);}
 .nav-content-wrap .second-link:before {content: ''; background: var(--main-color);display: block;position: absolute;bottom: -2px;left: 0;width: 0;height: 2px;transition: width 0.3s ease-in-out; }
 .nav-content-wrap .second-link:hover::before { width:100%; }
 .headertopwrap{height:36px;}
@@ -670,3 +670,28 @@ html, body {
   scroll-behavior: smooth;
 }
 /* 平滑滚动 */
+
+/* 
+  touch-action: 用来取消浏览器默认的手势行为
+  属性值：
+    auto：
+      默认值。完全由浏览器自己决定。
+    none：
+      禁止默认的拖拽行为。
+    manipulation：
+      只允许进行滚动和持续缩放，禁止双击缩放。
+      这个设置可以完美解决移动端 click 事件 300ms 延时的问题。
+    pan-x：
+      仅支持横向的默认拖拽行为（禁止纵向的默认拖拽行为）。
+    pan-y：
+      仅支持纵向的默认拖拽行为（禁止横向的默认拖拽行为）。
+    pan-up：
+      仅支持从上往下的默认拖拽行为（禁止从下往上、横向的默认拖拽行为）。
+
+    pan-down：
+      仅支持从下往上的默认拖拽行为（禁止从上往下、横向的默认拖拽行为）。
+    pan-left：
+      仅支持从左往右的默认拖拽行为（禁止从右往左、纵向的默认拖拽行为）。
+    pan-right：
+      仅支持从右往左的默认拖拽行为（禁止从左往右、纵向的默认拖拽行为）。
+*/
