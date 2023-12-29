@@ -70,15 +70,15 @@ const option = {
     pointermovehandle(e){
       const pos1 = { x: e.clientX, y: e.clientY }
       this.$refs.dotfollow1.style.transform = `translate(${pos1.x}px, ${pos1.y}px)`
-      this.delayedpositionValue(pos1,100).then(pos2 => {
+      this.delayedpositionValue(pos1,150).then(pos2 => {
         this.$refs.dotfollow2.style.transform = `translate(${pos2.x}px, ${pos2.y}px)`
-        this.delayedpositionValue(pos2,200).then(pos3 => {
+        this.delayedpositionValue(pos2,150).then(pos3 => {
           this.$refs.dotfollow3.style.transform = `translate(${pos3.x}px, ${pos3.y}px)`
-          this.delayedpositionValue(pos3,100).then(pos4 => {
+          this.delayedpositionValue(pos3,150).then(pos4 => {
             this.$refs.dotfollow4.style.transform = `translate(${pos4.x}px, ${pos4.y}px)`
-          })
-          this.delayedpositionValue(pos3,50).then(pos5 => {
-            this.$refs.dotfollow5.style.transform = `translate(${pos5.x}px, ${pos5.y}px)`
+            this.delayedpositionValue(pos4,150).then(pos5 => {
+              this.$refs.dotfollow5.style.transform = `translate(${pos5.x}px, ${pos5.y}px)`
+            })
           })
         })
       })
