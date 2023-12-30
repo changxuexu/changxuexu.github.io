@@ -3,8 +3,11 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+//获取执行命令参数env： "build": "webpack --env.production"
 module.exports = env => {
   if (!env) {
+    // 防止没env参数报错
     env = {}
   }
   let plugins=[
@@ -15,6 +18,7 @@ module.exports = env => {
   ];
   if(env.production){
     plugins.push(
+      // 修改node的全局变量
       new webpack.DefinePlugin({
         'process.env': {
           NODE_ENV: '"production"'
@@ -44,13 +48,16 @@ module.exports = env => {
           test: /\.vue$/,
           loader: 'vue-loader',
           options: {
+            // css类名
             cssModules: {
               localIdentName: '[path][name]---[local]---[hash:base64:5]',
               camelCase: true
             },
             extractCSS: true,
-            loaders: env.production?{
-              //minimize表示压缩： css-loader?minimize!px2rem-loader 
+            // minimize表示压缩： css-loader?minimize!px2rem-loader 
+            // px2rem-loader：px自动转化为rem ,remUnit 转化单位(1rem*remUnit)，remPrecision 精度
+            // ExtractTextPlugin.extract 所有已处理的css提取为单个css文件配置示例
+            loaders: env.production ? {
               css: ExtractTextPlugin.extract({use: 'css-loader!px2rem-loader?remUnit=40&remPrecision=8', fallback: 'vue-style-loader'}),
               scss: ExtractTextPlugin.extract({use: 'css-loader!px2rem-loader?remUnit=40&remPrecision=8!sass-loader', fallback: 'vue-style-loader'})
             }:{
