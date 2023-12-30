@@ -25,6 +25,7 @@ module.exports = env => {
   }
   return {
     entry: ['./app/js/viewport.js','./app/js/main.js'],
+    // devtool: 'source-map',
     devServer: {
       contentBase: './dist',
       hot: true,
@@ -38,7 +39,8 @@ module.exports = env => {
         {
           test: /\.html$/,
           loader: 'html-loader'
-        }, {
+        }, 
+        {
           test: /\.vue$/,
           loader: 'vue-loader',
           options: {
@@ -48,6 +50,7 @@ module.exports = env => {
             },
             extractCSS: true,
             loaders: env.production?{
+              //minimize表示压缩： css-loader?minimize!px2rem-loader 
               css: ExtractTextPlugin.extract({use: 'css-loader!px2rem-loader?remUnit=40&remPrecision=8', fallback: 'vue-style-loader'}),
               scss: ExtractTextPlugin.extract({use: 'css-loader!px2rem-loader?remUnit=40&remPrecision=8!sass-loader', fallback: 'vue-style-loader'})
             }:{
@@ -55,7 +58,8 @@ module.exports = env => {
               scss: 'vue-style-loader!css-loader!px2rem-loader?remUnit=40&remPrecision=8!sass-loader'
             }
           }
-        }, {
+        }, 
+        {
           test: /\.scss$/,
           loader: 'style-loader!css-loader!sass-loader'
         }
