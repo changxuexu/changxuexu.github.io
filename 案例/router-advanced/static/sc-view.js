@@ -21,25 +21,24 @@ class SCView extends HTMLElement {
   }
 
   _loadView (data) {
-    // Wait for half a second then show the spinner.
+    // 等待半秒后显示加载指示器
     const spinnerTimeout = setTimeout(_ => this._showSpinner(), 500);
-
+    
     this._view = new DocumentFragment();
+
     const xhr = new XMLHttpRequest();
 
     xhr.onload = evt => {
       const newDoc = evt.target.response;
+
       const newView = newDoc.querySelector('sc-view.visible');
-
-      // Copy in the child nodes from the parent.
+      // 从父节点中复制子节点
       while(newView.firstChild) {
-         this._view.appendChild(newView.firstChild);
+        this._view.appendChild(newView.firstChild);
       }
-
-      // Add the fragment to the page.
+      // 将片段添加到页面上
       this.appendChild(this._view);
-
-      // Clear the timeout and remove the spinner if needed.
+      // 移除指示器
       clearTimeout(spinnerTimeout);
       this._hideSpinner();
     };

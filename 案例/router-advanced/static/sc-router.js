@@ -35,11 +35,11 @@ class SCRouter extends HTMLElement {
       return;
     }
 
-    // 存储当前页面 view
+    // _newView 存储当前前往的新页面
     this._newView = this._routes.get(route);
 
     // 我们不想在离场视图动画中创建更多的Promise对象，因为这样一来会导致很多Promise挂起无法及时解决。
-    // 因此，我们在這裡添加了一个布尔标志，以便在已有过渡动画正在进行时停止创建新的Promise。
+    // 因此，我们在这里添加了一个布尔标志，以便在已有过渡动画正在进行时停止创建新的Promise。
     if (this._isTransitioningBetweenViews) {
       return Promise.resolve();
     }
@@ -48,24 +48,20 @@ class SCRouter extends HTMLElement {
     // 假设不需要进行离场动画。
     let outViewPromise = Promise.resolve();
 
-    // If there is a current view...
+    // _currentView 当前页面
     if (this._currentView) {
-      // ...and it's the one we already have, just update it.
       if (this._currentView === this._newView) {
-        // No transitions, so remove the boolean gate.
+        // 当前页面与前往的新页面相同，无需过渡效果，因此移除布尔标志。
         this._isTransitioningBetweenViews = false;
 
         return this._currentView.update(data);
       }
 
-      // Otherwise animate it out, and take the Promise made by the view as an
-      // indicator that the view is done.
+      // 否则进行动画淡出，并以视图生成的Promise作为视图已完成的指示。
       outViewPromise = this._currentView.out(data);
     }
 
-    // Whenever the outgoing animation is done (which may be immediately if
-    // there isn't one), update the references to the current view, allow
-    // outgoing animations to proceed.
+    // 每当离场动画完成（如果没有离场动画，则可能立即完成时），更新对当前视图的引用，并允许离场动画继续进行。
     return outViewPromise.then(_ => {
         this._currentView = this._newView;
         this._isTransitioningBetweenViews = false;
@@ -78,7 +74,10 @@ class SCRouter extends HTMLElement {
     return this._onChanged();
   }
 
-  // route: "^/misc/(.*)"
+  /* 
+    route: "^/misc/(.*)" , 
+    view: <sc-view remote="" class="view-contact" route="^/contact/(.*)"></sc-view> 
+  */
   addRoute (route, view) {
     if (this._routes.has(route))
       return console.warn(`Route already exists: ${route}`);
