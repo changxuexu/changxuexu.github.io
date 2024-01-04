@@ -66,8 +66,7 @@ class SCRouter extends HTMLElement {
     // Whenever the outgoing animation is done (which may be immediately if
     // there isn't one), update the references to the current view, allow
     // outgoing animations to proceed.
-    return outViewPromise
-      .then(_ => {
+    return outViewPromise.then(_ => {
         this._currentView = this._newView;
         this._isTransitioningBetweenViews = false;
         return this._newView.in(data);
