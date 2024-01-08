@@ -1164,6 +1164,31 @@ var data_other = {
   ]
 }
 
+var data_canvas = {
+  super_tit: 'canvas/webgl/svg',
+  super_child: [
+    {
+      second_tit: 'canvas',
+      second_child: [
+        
+      ]
+    },
+    {
+      second_tit: 'webgl',
+      second_child: [
+        // https://github.com/gfxfundamentals/webgl-fundamentals
+        { name: 'WebGL 理论基础', href: 'https://webglfundamentals.org/webgl/lessons/zh_cn', title: 'webgl基础理论' },
+      ]
+    },
+    {
+      second_tit: 'svg',
+      second_child: [
+        
+      ]
+    }
+  ]
+}
+
 var arr_data = [
   data_daily,
   data_vue,
@@ -1176,6 +1201,7 @@ var arr_data = [
   data_javascript,
   data_typeScript,
   data_css,
+  data_canvas,
   data_Node,
   data_Redis,
   data_Nginx,
