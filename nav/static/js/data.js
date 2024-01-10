@@ -1176,8 +1176,10 @@ var data_canvas = {
     {
       second_tit: 'webgl',
       second_child: [
+        { name: '基础', href: 'https://codeboy.blog.csdn.net/category_10144828_2.html', title: '' },
         // https://github.com/gfxfundamentals/webgl-fundamentals
-        { name: 'WebGL 理论基础', href: 'https://webglfundamentals.org/webgl/lessons/zh_cn', title: 'webgl基础理论' },
+        { name: 'WebGL理论基础', href: 'https://webglfundamentals.org/webgl/lessons/zh_cn', title: 'webgl基础理论' },
+        { name: 'WebGL基础', href: 'http://www.yanhuangxueyuan.com', title: '个人博客入门' },
       ]
     },
     {
