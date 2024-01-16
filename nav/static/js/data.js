@@ -820,6 +820,7 @@ var data_jsplug = {
       second_child: [
         { name: 'Axios', href: 'https://www.kancloud.cn/yunye/axios/234845', title: '' },
         { name: 'BetterScroll', href: 'https://better-scroll.github.io/docs/zh-CN/guide', title: '类似于Gridster的栅格布局系统,可拖拽、可调整大小' },
+        { name: 'vue-infinite-scroll', href: 'https://github.com/ElemeFE/vue-infinite-scroll', title: '上拉加载,v2.0' },
         { name: 'vuedraggable', href: 'https://www.npmjs.com/package/vuedraggable', title: '拖拽排序(v2)' },
         { name: 'sortablejs', href: 'https://www.npmjs.com/package/sortablejs', title: '拖拽排序' },
         { name: 'NProgress', href: 'https://www.npmjs.com/package/nprogress', title: '页面顶部加载进度条' },
