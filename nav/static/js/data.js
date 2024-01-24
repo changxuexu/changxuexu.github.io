@@ -521,6 +521,26 @@ var data_Crossplatform = {
   ]
 }
 
+var data_MicroFrontEnd = {
+  super_tit: '微前端',
+  super_child: [
+    {
+      second_tit: '方案',
+      second_child: [
+        { name: '微前端优势', href: 'javascript:;', title: '技术栈无关：在同一页面上使用多个前端框架 而不用刷新页面 (Vue，React, Angular 等)；\n强独立性：不同业务应用独立开发、独立部署、增量更新；\n运行时隔离共享：不同业务子应用之间可以共享数据以及进行通信，但又能做到 js 和 css 互不影响；\n 体验优势：具有单页面应用流程操作连贯性，页面切换无需刷新；' },
+        { name: 'single-spa', href: 'https://zh-hans.single-spa.js.org', title: '将多个单页面应用聚合为一个整体应用的 javascript 微前端框架' },
+        { name: 'qiankun', href: 'https://qiankun.umijs.org/zh', title: '基于 single-spa 的微前端实现库' }
+      ]
+    },
+    {
+      second_tit: '参考',
+      second_child: [
+        { name: 'qiankun实践', href: 'https://juejin.cn/post/6875462470593904653', title: '' }
+      ]
+    }
+  ]
+}
+
 var data_tool = {
   super_tit: '辅助工具',
   super_child: [
@@ -1200,6 +1220,7 @@ var arr_data = [
   data_svelte,
   data_ember,
   data_Crossplatform,
+  data_MicroFrontEnd,
   data_jquery,
   data_javascript,
   data_typeScript,

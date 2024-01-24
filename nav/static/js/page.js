@@ -208,6 +208,9 @@ const option = {
       }
     },
     toitemlink(url){
+      if(url=='javascript:;' || !url){
+        return
+      }
       //此做法是为了避免a元素href属性链接在浏览器左下角显示
       let a = document.createElement("a")
       a.style.display = "none"
