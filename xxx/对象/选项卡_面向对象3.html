@@ -26,8 +26,12 @@ function TabSwitch(id)
 	for(i=0;i<this.aBtn.length;i++)
 	{
 		this.aBtn[i].index=i;
+		
 		this.aBtn[i].onclick=function ()
 		{
+			// 利用了闭包
+			// 注意this的理解 this -> this.aBtn[i] ; _this -> oTab
+			// 场景：dom事件、定时器
 			_this.tab(this);
 		};
 	}

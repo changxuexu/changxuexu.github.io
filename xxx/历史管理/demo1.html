@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+/* 
+HTML5中的历史管理：onhashchange、history
+
+什么是历史管理
+HTML5中的历史管理
+彩票球实例
+选择随机数(从35中随机选出7个数)
+HTML5中的onhashchange事件含义
+添加onhashchange事件：window.onhashchange
+去掉地址栏网址中的逗号及及消除未定义的影响
+HTML5中的history
+history.pushState()方法的参数
+window.onpopstate事件
+网址的注意事项
+
+*/
+window.onload = function(){
+	var oInput = document.getElementById('input1');
+	var oDiv = document.getElementById('div1');
+	
+	oInput.onclick = function(){
+	
+		var number = randomNum(35,7);
+		
+		oDiv.innerHTML = number;
+	
+	};
+	
+	
+	function randomNum(alls,now){
+	
+		var arr = [];
+		var newArr = [];
+		
+		for(var i=1;i<=alls;i++){
+			arr.push(i);
+		}
+		// 从1-35选7个数
+		for(var i=0;i<now;i++){
+			newArr.push( arr.splice(Math.floor(Math.random()*arr.length),1) );
+		}
+		
+		return newArr;
+	
+	}
+	
+};
+
+</script>
+</head>
+
+<body>
+<input type="button" value="35选7" id="input1" />
+<div id="div1"></div>
+</body>
+</html>
