@@ -3,11 +3,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>无标题文档</title>
+</head>
+
+<body>
+<div id="div1"></div>
 <script>
 window.onload = function(){
 	var oDiv = document.getElementById('div1');
 	var str = '';
-	
 	/*
 		console.time('hello');
 		for(var i=0;i<5000;i++){
@@ -15,21 +18,14 @@ window.onload = function(){
 		}
 		console.timeEnd('hello');
 	*/
-	
 	console.time('hello');
 	for(var i=0;i<5000;i++){
 		str += 'a';
 	}
-	
 	oDiv.innerHTML = str;
-	
 	console.timeEnd('hello');
-	
 };
 </script>
-</head>
-
-<body>
-<div id="div1"></div>
 </body>
+
 </html>

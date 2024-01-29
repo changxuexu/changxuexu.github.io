@@ -3,13 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>无标题文档</title>
+
+</head>
+
+<body>
+<ul id="ul1"></ul>
 <script>
-
 //chrome : dom方法要比innerHTML 性能要好
-
 window.onload = function(){	
 	var oUl = document.getElementById('ul1');
-	
 	var str = '';
 	
 	console.time('hello');
@@ -28,13 +30,8 @@ window.onload = function(){
 		oUl.appendChild(newLi);
 	}
 	console.timeEnd('hello');
-	
 };
 </script>
-</head>
-
-<body>
-<ul id="ul1">
-</ul>
 </body>
+
 </html>

@@ -3,15 +3,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>无标题文档</title>
+</head>
+
+<body>
+<ul id="ul1"></ul>
 <script>
-
 //chrome : dom方法要比innerHTML 性能要好
-
 window.onload = function(){	
 	var oUl = document.getElementById('ul1');
-	
 	var str = '';
-	
+
 	console.time('hello');
 	for(var i=0;i<5000;i++){
 		var oLi = document.createElement('li');
@@ -19,23 +20,15 @@ window.onload = function(){
 	}
 	console.timeEnd('hello');
 	
-	
-	
 	console.time('hello');
 	for(var i=0;i<5000;i++){
 		str += '<li></li>';
 	}
-	
 	oUl.innerHTML = str;
 	console.timeEnd('hello');
-	
-	
 };
 </script>
-</head>
-
-<body>
-<ul id="ul1">
-</ul>
 </body>
+
+
 </html>
