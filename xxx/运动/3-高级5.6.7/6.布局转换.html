@@ -30,10 +30,15 @@ window.onload=function(){
 	var oUl=document.getElementById('ul1');
 	var aLi=oUl.getElementsByTagName('li');
 	var i=0;
+	// float 和 position 结合布局
 	for(i=0;i<aLi.length;i++){
-		//aLi[i].innerHTML='left:'+aLi[i].offsetLeft+', top:'+aLi[i].offsetTop;
+		// 值自动计算了 
+		// aLi[i].innerHTML='left:'+aLi[i].offsetLeft+', top:'+aLi[i].offsetTop;
 		aLi[i].style.left=aLi[i].offsetLeft+'px';
 		aLi[i].style.top=aLi[i].offsetTop+'px';
+
+		// 如果此时写,那么立马改变了文档流,li都位于开始位置了
+		// aLi[i].style.position='absolute';
 	}
 	for(i=0;i<aLi.length;i++){
 		aLi[i].style.position='absolute';
