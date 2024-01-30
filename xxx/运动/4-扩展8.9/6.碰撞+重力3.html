@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>无标题文档</title>
 <script>
-var iSpeedX=6;
+var iSpeedX=12;
 var iSpeedY=8;
 
 function startMove()
@@ -44,8 +44,21 @@ function startMove()
 			l=0;
 		}
 		
+		// 解决避免小数引发的问题
+		if(Math.abs(iSpeedX)<1)
+		{
+			iSpeedX=0;
+		}
+		
+		if(Math.abs(iSpeedY)<1)
+		{
+			iSpeedY=0;
+		}
+		
 		oDiv.style.left=l+'px';
 		oDiv.style.top=t+'px';
+		//...
+		document.title=iSpeedX;
 	}, 30);
 }
 </script>

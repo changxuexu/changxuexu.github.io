@@ -39,12 +39,13 @@ function startMove(obj, iTarget)
 		iSpeed+=(iTarget-obj.offsetLeft)/5;
 		iSpeed*=0.7;
 		
-		//?
+		//? iSpeed取整能不能解决问题？导致不停的抖动新问题
 		iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
 		
 		obj.style.left=obj.offsetLeft+iSpeed+'px';
 		
-		document.title=obj.offsetLeft+' | '+iTarget;
+		// obj.offsetLeft与iTarget不一致？
+		// document.title=obj.offsetLeft+' | '+iTarget;
 	}, 30);
 }
 </script>

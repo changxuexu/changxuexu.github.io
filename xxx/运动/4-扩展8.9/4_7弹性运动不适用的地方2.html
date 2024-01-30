@@ -43,6 +43,7 @@ function startMove(obj, iTarget)
 		{
 			height+=iSpeed;
 			
+			// 样式不能过界面，高度变为负数，IE报错
 			document.getElementById('txt1').value+=height+'\n';
 			
 			obj.style.height=height+'px';

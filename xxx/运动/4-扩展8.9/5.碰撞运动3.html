@@ -20,11 +20,13 @@ function startMove()
 		if(t>=document.documentElement.clientHeight-oDiv.offsetHeight)
 		{
 			iSpeedY*=-1;
+			//问题： 解决擦边出现的滚动条
 			t=document.documentElement.clientHeight-oDiv.offsetHeight;
 		}
 		else if(t<=0)
 		{
 			iSpeedY*=-1;
+			//问题： 解决擦边出现的滚动条
 			t=0;
 		}
 		

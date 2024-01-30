@@ -14,6 +14,7 @@ function startMove()
 	var oDiv=document.getElementById('div1');
 	
 	setInterval(function (){
+		// 取值5，0.7比较可以
 		iSpeed+=(300-oDiv.offsetLeft)/5;
 		iSpeed*=0.7;
 		

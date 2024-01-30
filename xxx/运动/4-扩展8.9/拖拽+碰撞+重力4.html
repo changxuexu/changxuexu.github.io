@@ -48,7 +48,7 @@ window.onload=function ()
 			
 			startMove();
 		};
-		
+		// 防止按下的时候运动
 		clearInterval(timer);
 	};
 };
@@ -104,6 +104,7 @@ function startMove()
 			iSpeedY=0;
 		}
 		
+		// 解决卡顿问题 t==document.documentElement.clientHeight-oDiv.offsetHeight
 		if(iSpeedX==0 && iSpeedY==0 && t==document.documentElement.clientHeight-oDiv.offsetHeight)
 		{
 			clearInterval(timer);

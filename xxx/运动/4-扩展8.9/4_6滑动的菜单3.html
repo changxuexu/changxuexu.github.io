@@ -40,14 +40,14 @@ function startMove(obj, iTarget)
 		iSpeed+=(iTarget-obj.offsetLeft)/5;
 		iSpeed*=0.7;
 		
+		// 速度往变量上加，解决误差 ？？需要在理解！！
 		left+=iSpeed;
 		
 		if(Math.abs(iSpeed)<1 && Math.abs(left-iTarget)<1)
 		{
+			// 清除定时器，不让定时器一直运动下去
 			clearInterval(obj.timer);
-			
 			obj.style.left=iTarget+'px';
-			
 			//alert('关了');
 		}
 		else
