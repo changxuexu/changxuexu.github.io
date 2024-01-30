@@ -13,8 +13,10 @@ window.onload=function ()
 	
 	var i=0;
 	
+	// 调用：多物体运动
 	for(i=0;i<aDiv.length;i++)
 	{
+		// 给每个物体运动添加各自的定时器，不然共用一个功能卡顿异常
 		aDiv[i].timer=null;
 		aDiv[i].onmouseover=function ()
 		{

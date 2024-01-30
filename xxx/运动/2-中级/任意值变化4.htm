@@ -40,8 +40,10 @@ function startMove(obj, attr, iTarget)
 	obj.timer=setInterval(function (){
 		var iCur=0;
 		
+		//parseInt(parseFloat(getStyle(obj, attr))*100);
 		if(attr=='opacity')
 		{
+			// 解决小数问题引起的bug
 			iCur=parseInt(parseFloat(getStyle(obj, attr))*100);
 		}
 		else
