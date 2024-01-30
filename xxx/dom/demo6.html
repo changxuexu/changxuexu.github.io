@@ -3,26 +3,29 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>无标题文档</title>
-<script>
-window.onload = function(){
-	// 文档碎片
-	var oUl = document.getElementById('ul1');
-	
-	var oFrag = document.createDocumentFragment();
-	
-	console.time('hello');
-	for(var i=0;i<5000;i++){
-		var oLi = document.createElement('li');
-		oFrag.appendChild(oLi);
-	}
-	oUl.appendChild(oFrag);
-	console.timeEnd('hello');
-};
-</script>
+
 </head>
 
 <body>
-<ul id="ul1">
-</ul>
+<ul id="ul1"></ul>
+<script>
+window.onload = function(){
+	var oUl = document.getElementById('ul1');
+	console.time('hello');
+	for(var i=0;i<5000;i++){
+		var oLi = document.createElement('li');
+		
+		/*oLi.style.width = '100px';
+		oLi.style.height = '100px';
+		oLi.style.background = 'red';*/
+		
+		// 合并dom操作
+		oLi.style.cssText = 'width:100px;height:100px;background:red';
+		oUl.appendChild(oLi);
+	}
+	console.timeEnd('hello');
+};
+</script>
 </body>
+
 </html>
