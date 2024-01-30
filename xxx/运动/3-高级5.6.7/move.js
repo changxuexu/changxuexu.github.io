@@ -17,7 +17,7 @@ function startMove(obj, attr, iTarget, fn)
 {
 	clearInterval(obj.timer);
 	obj.timer=setInterval(function (){
-		//1.È¡µ±Ç°µÄÖµ
+		//1.å–å½“å‰çš„å€¼
 		var iCur=0;
 		
 		if(attr=='opacity')
@@ -29,11 +29,11 @@ function startMove(obj, attr, iTarget, fn)
 			iCur=parseInt(getStyle(obj, attr));
 		}
 		
-		//2.ËãËÙ¶È
+		//2.ç®—é€Ÿåº¦
 		var iSpeed=(iTarget-iCur)/8;
 		iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
 		
-		//3.¼ì²âÍ£Ö¹
+		//3.æ£€æµ‹åœæ­¢
 		if(iCur==iTarget)
 		{
 			clearInterval(obj.timer);

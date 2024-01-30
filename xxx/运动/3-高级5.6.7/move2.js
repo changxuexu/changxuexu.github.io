@@ -17,10 +17,10 @@ function startMove(obj, json, fn)
 {
 	clearInterval(obj.timer);
 	obj.timer=setInterval(function (){
-		var bStop=true;		//ÕâÒ»´ÎÔË¶¯¾Í½áÊøÁË¡ª¡ªËùÓĞµÄÖµ¶¼µ½´ïÁË
+		var bStop=true;		//è¿™ä¸€æ¬¡è¿åŠ¨å°±ç»“æŸäº†â€”â€”æ‰€æœ‰çš„å€¼éƒ½åˆ°è¾¾äº†
 		for(var attr in json)
 		{
-			//1.È¡µ±Ç°µÄÖµ
+			//1.å–å½“å‰çš„å€¼
 			var iCur=0;
 			
 			if(attr=='opacity')
@@ -32,11 +32,11 @@ function startMove(obj, json, fn)
 				iCur=parseInt(getStyle(obj, attr));
 			}
 			
-			//2.ËãËÙ¶È
+			//2.ç®—é€Ÿåº¦
 			var iSpeed=(json[attr]-iCur)/8;
 			iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
 			
-			//3.¼ì²âÍ£Ö¹
+			//3.æ£€æµ‹åœæ­¢
 			if(iCur!=json[attr])
 			{
 				bStop=false;
