@@ -1,64 +1,46 @@
-/**
- * @author miaov
- */
-function getStyle(obj, attr)
-{
-	if(obj.currentStyle)
-	{
+function getStyle(obj, attr){
+	if(obj.currentStyle){
 		return obj.currentStyle[attr];
-	}
-	else
-	{
+	}else{
 		return getComputedStyle(obj, false)[attr];
 	}
 }
 
-function startMove(obj, json, fn)
-{
+function startMove(obj, json, fn){
 	clearInterval(obj.timer);
 	obj.timer=setInterval(function (){
-		var bStop=true;		//这一次运动就结束了——所有的值都到达了
-		for(var attr in json)
-		{
+		//这一次运动就结束了——所有的值都到达了
+		var bStop=true;
+
+		for(var attr in json){
 			//1.取当前的值
 			var iCur=0;
-			
-			if(attr=='opacity')
-			{
+			if(attr=='opacity'){
 				iCur=parseInt(parseFloat(getStyle(obj, attr))*100);
-			}
-			else
-			{
+			}else{
 				iCur=parseInt(getStyle(obj, attr));
 			}
-			
+
 			//2.算速度
 			var iSpeed=(json[attr]-iCur)/8;
 			iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
-			
-			//3.检测停止
-			if(iCur!=json[attr])
-			{
+
+			//3.检测停止,所有属性改变完成才停止动画
+			if(iCur!=json[attr]){
 				bStop=false;
 			}
-			
-			if(attr=='opacity')
-			{
+
+			if(attr=='opacity'){
 				obj.style.filter='alpha(opacity:'+(iCur+iSpeed)+')';
 				obj.style.opacity=(iCur+iSpeed)/100;
-			}
-			else
-			{
+			}else{
 				obj.style[attr]=iCur+iSpeed+'px';
 			}
 		}
 		
-		if(bStop)
-		{
+		if(bStop){
 			clearInterval(obj.timer);
-			
-			if(fn)
-			{
+			if(fn){
 				fn();
 			}
 		}

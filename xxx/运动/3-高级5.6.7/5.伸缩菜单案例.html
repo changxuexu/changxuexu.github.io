@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="move2.js"></script>
+
+</head>
+
+<body>
+<style>
+* {margin:0; padding:0;}
+#ul1 li {width:100px; height:20px; line-height:20px; text-align:center; position:relative; float:left; list-style:none; background:#9F3; border:1px solid #660;}
+#ul1 li div {background:#CCC; overflow:hidden; position:absolute; top:20px; width:100%; height:0; filter:alpha(opacity:0); opacity:0;}
+</style>
+<ul id="ul1">
+	<li>
+		首页
+		<div>
+			首页-111<br />
+			首页-222<br />
+			首页-333<br />
+		</div>
+  </li>
+	<li>
+		产品
+		<div>
+			产品-111<br />
+			产品-222<br />
+			产品-333<br />
+		</div>
+  </li>
+	<li>
+		关于
+		<div>
+			关于-111<br />
+			关于-222<br />
+			关于-333<br />
+		</div>
+	</li>
+</ul>
+<script>
+	window.onload=function (){
+		var oUl=document.getElementById('ul1');
+		var aLi=oUl.getElementsByTagName('li');
+		var i=0;
+		
+		for(i=0;i<aLi.length;i++){
+			aLi[i].onmouseover=function (){
+				var oDiv=this.getElementsByTagName('div')[0];
+				
+				oDiv.style.height='auto';
+				var iHeight=oDiv.offsetHeight;
+				oDiv.style.height=0;
+	
+				startMove(oDiv, {opacity: 100, height:iHeight});
+			};
+			
+			// 问题:无法选中子元素
+			aLi[i].onmouseout=function (event){
+				var oDiv=this.getElementsByTagName('div')[0];
+				startMove(oDiv, {opacity: 0, height: 0});
+			};
+		}
+	};
+</script>
+</body>
+</html>
