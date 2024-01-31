@@ -1,13 +1,12 @@
 function getStyle(obj, attr){
 	if(obj.currentStyle){
 		return obj.currentStyle[attr];
-	}else{
-		return getComputedStyle(obj, false)[attr];
 	}
+	return getComputedStyle(obj, false)[attr];
 }
-
+// startMove(运动dom对象,运动属性attr,目标值iTarget,回调函数fn)
 function startMove(obj, attr, iTarget, fn){
-	clearInterval(obj.timer);
+	obj.timer && clearInterval(obj.timer);
 	obj.timer=setInterval(function (){
 		//1.取当前的值
 		var iCur=0;
@@ -16,18 +15,13 @@ function startMove(obj, attr, iTarget, fn){
 		}else{
 			iCur=parseInt(getStyle(obj, attr));
 		}
-		
 		//2.算速度
 		var iSpeed=(iTarget-iCur)/8;
 		iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
-		
 		//3.检测停止
 		if(iCur==iTarget){
 			clearInterval(obj.timer);
-			// 回调函数
-			if(fn){
-				fn();
-			}
+			fn && fn();
 		}else{
 			if(attr=='opacity'){
 				obj.style.filter='alpha(opacity:'+(iCur+iSpeed)+')';
