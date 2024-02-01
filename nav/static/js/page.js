@@ -181,7 +181,7 @@ const option = {
       t()
       // this.totoptimer = setInterval(t, 17)
 
-      console.log(this.totoptimer);
+      // console.log(this.totoptimer);
     },
     totopback() {
       let totopdom = this.$refs.totop
