@@ -24,6 +24,7 @@ li { float: left; width: 98px; height: 28px; line-height: 28px; border: 1px soli
 window.onload=function (){
 	var oUl=document.getElementById('ul1');
 	var aLi=oUl.getElementsByTagName('li');
+	// 排除最后一个li
 	var oBg=aLi[aLi.length-1];
 	for(var i=0;i<aLi.length-1;i++){
 		aLi[i].onmouseover=function (){
@@ -41,7 +42,7 @@ function startMove(obj, iTarget){
 		iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
 		obj.style.left=obj.offsetLeft+iSpeed+'px';
 		// obj.offsetLeft与iTarget不一致？
-		// document.title=obj.offsetLeft+' | '+iTarget;
+		document.title=obj.offsetLeft+' | '+iTarget;
 	}, 30);
 }
 </script>

@@ -24,12 +24,11 @@ function startMove(){
 		var motionY=document.documentElement.clientHeight-oDiv.offsetHeight
 		var motionX=document.documentElement.clientWidth-oDiv.offsetWidth
 		if(t>=motionY){
-			iSpeedY*=-1;
+			iSpeedY*=-1; //反方向运动动
 			//问题： 解决擦边出现的滚动条
 			t=motionY;
 		}else if(t<=0){
 			iSpeedY*=-1;
-			//问题： 解决擦边出现的滚动条
 			t=0;
 		}
 		if(l>=motionX){
