@@ -24,14 +24,12 @@ window.onload=function (){
 	var oUl=document.getElementById('ul1');
 	var aLi=oUl.getElementsByTagName('li');
 	var oBg=aLi[aLi.length-1];
-	var i=0;
-	for(i=0;i<aLi.length-1;i++){
+	for(var i=0;i<aLi.length-1;i++){
 		aLi[i].onmouseover=function (){
 			startMove(oBg, this.offsetLeft);
 		};
 	}
 };
-
 var iSpeed=0;
 function startMove(obj, iTarget){
 	obj.timer && clearInterval(obj.timer);
