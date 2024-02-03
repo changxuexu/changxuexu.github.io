@@ -36,6 +36,7 @@ var data_daily = {
         { name: 'github', href: 'https://github.com/changxuexu?tab=repositories', title: 'git仓库' },
         { name: 'gitee', href: 'https://gitee.com/changxuexu/projects', title: '码云' },
         { name: 'coding', href: 'https://coding.net', title: 'git仓库' },
+        { name: 'gitcode', href: 'https://gitcode.net', title: 'git仓库_CSDN' },
         { name: '腾讯工蜂', href: 'https://code.tencent.com', title: '' },
         { name: '微信小程序git', href: 'https://git.weixin.qq.com', title: '' }
       ]
@@ -423,6 +424,7 @@ var data_WeChat = {
     {
       second_tit: '插件库',
       second_child: [
+        { name: 'EasyWeChat', href: 'https://easywechat.com', title: '微信公众号非官方拓展SDK,PHP版本' },
         { name: '腾讯视频小程序播放器SDK', href: 'https://github.com/tvfe/txv-miniprogram-plugin', title: '' },
         { name: '智能对话', href: 'https://developers.weixin.qq.com/doc/aispeech/platform/INTRODUCTION.html', title: '' },
         { name: 'calendar日历', href: 'https://treadpit.github.io/wx_calendar/v2/guide.html', title: '' }
@@ -470,7 +472,9 @@ var data_Crossplatform = {
     {
       second_tit: 'Flutter',
       second_child: [
-        { name: 'Flutter中文网', href: 'https://flutterchina.club', title: '' },
+        { name: 'Flutter官网', href: 'https://docs.flutter.dev', title: '' },
+        { name: 'Flutter中文', href: 'https://flutter.cn', title: '' },
+        { name: 'Flutter中文社区', href: 'https://flutterchina.club', title: '' },
         { name: 'Dart库搜索', href: 'https://pub.flutter-io.cn/packages', title: '' },
         { name: 'Flutter掘金社区', href: 'https://juejin.im/tag/Flutter?utm_source=flutterchina&utm_medium=word&utm_content=btn&utm_campaign=q3_website', title: '' }
       ]
