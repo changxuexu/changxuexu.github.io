@@ -14,12 +14,14 @@ window.onload = function(){
 	console.time('hello');
 	for(var i=0;i<5000;i++){
 		var oLi = document.createElement('li');
-		oLi.innerHTML = 'li';
-		oUl.appendChild(oLi);
+		// hello: 7.5908203125 ms
+		// oLi.innerHTML = 'li';
+		// oUl.appendChild(oLi);
 		
 		// 减少重排重绘
-		// oUl.appendChild(oLi);
-		// oLi.innerHTML = 'li';
+		// hello: 7.81396484375 ms
+		oUl.appendChild(oLi);
+		oLi.innerHTML = 'li';
 	}
 	console.timeEnd('hello');
 };

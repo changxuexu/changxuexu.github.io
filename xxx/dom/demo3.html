@@ -14,22 +14,22 @@ window.onload = function(){
 	var oUl = document.getElementById('ul1');
 	var str = '';
 	
-	console.time('hello');
+	console.time('hello1');
 	for(var i=0;i<5000;i++){
 		var oLi = document.createElement('li');
 		oLi.innerHTML = 'li';
 		oUl.appendChild(oLi);
 	}
-	console.timeEnd('hello');
+	console.timeEnd('hello1');
 	
-	console.time('hello');
+	console.time('hello2');
 	var oLi = document.createElement('li');
 	oLi.innerHTML = 'li';
 	for(var i=0;i<5000;i++){
 		var newLi = oLi.cloneNode(true);
 		oUl.appendChild(newLi);
 	}
-	console.timeEnd('hello');
+	console.timeEnd('hello2');
 };
 </script>
 </body>
