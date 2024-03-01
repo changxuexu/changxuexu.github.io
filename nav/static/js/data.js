@@ -258,7 +258,8 @@ var data_jquery = {
         { name: 'Bootstrap IE6 兼容库', href: 'http://www.bootcss.com/p/bsie', title: '' },
         { name: 'layui文档', href: 'https://layui.dev', title: '' },
         { name: 'layui仓库', href: 'https://gitee.com/layui', title: '' },
-        { name: 'layui教程', href: 'https://www.php.cn/code/30323.html', title: '' }
+        { name: 'layui教程', href: 'https://www.php.cn/code/30323.html', title: '' },
+        { name: 'jQuery MiniUl', href: 'http://www.miniui.com', title: 'Extjs' }
       ]
     },
     {
