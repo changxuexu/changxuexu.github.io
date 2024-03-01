@@ -259,6 +259,7 @@ var data_jquery = {
         { name: 'layui文档', href: 'https://layui.dev', title: '' },
         { name: 'layui仓库', href: 'https://gitee.com/layui', title: '' },
         { name: 'layui教程', href: 'https://www.php.cn/code/30323.html', title: '' },
+        { name: 'EasyUI', href: 'https://www.jeasyui.net', title: 'easyui是一种基于jQuery、Angular.、Vue和React的用户界面插件集合。' },
         { name: 'jQuery MiniUl', href: 'http://www.miniui.com', title: 'Extjs' }
       ]
     },
