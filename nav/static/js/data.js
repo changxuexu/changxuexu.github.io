@@ -46,6 +46,7 @@ var data_daily = {
       second_child: [
         { name: 'AI工具集', href: 'https://ai-bot.cn', title: '' },
         { name: '通义千问_阿里', href: 'https://qianwen.aliyun.com', title: '' },
+		    { name: '通义官网', href: 'https://tongyi.aliyun.com', title: '通义灵码、通义听悟、通义点金、通义法睿、通义星尘、通义仁心、通义晓蜜、通义智文' },
         { name: '混元_腾讯', href: 'https://hunyuan.tencent.com', title: '' },
         { name: '豆包_抖音', href: 'https://www.doubao.com', title: '' },
         { name: '文心一言_百度', href: 'https://yiyan.baidu.com', title: '' },
