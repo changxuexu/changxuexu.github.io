@@ -52,7 +52,8 @@ var data_daily = {
         { name: '文心一言_百度', href: 'https://yiyan.baidu.com', title: '' },
         { name: 'ChatMoss', href: 'https://chatmoss.aihao123.cn/', title: '' },
         { name: 'ChatGPT集合', href: 'https://ziyuantan.com/t/topic/516', title: '' },
-        { name: '36krai', href: 'https://36krai.com', title: 'AI工具集' }
+        { name: '36krai', href: 'https://36krai.com', title: 'AI工具集' },
+        { name: 'AIGC', href: 'https://www.aigc.cn', title: 'AI工具集' }
       ]
     },
     {
