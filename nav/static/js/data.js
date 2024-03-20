@@ -846,6 +846,7 @@ var data_jsplug = {
     {
       second_tit: 'Vue常用',
       second_child: [
+        { name: 'snabbdom_vdom', href: 'https://github.com/snabbdom/snabbdom', title: '虚拟DOM库,可用于学习、理解虚拟dom' },
         { name: 'Axios', href: 'https://www.kancloud.cn/yunye/axios/234845', title: '' },
         { name: 'BetterScroll', href: 'https://better-scroll.github.io/docs/zh-CN/guide', title: '类似于Gridster的栅格布局系统,可拖拽、可调整大小' },
         { name: 'vue-infinite-scroll', href: 'https://github.com/ElemeFE/vue-infinite-scroll', title: '上拉加载,v2.0' },
