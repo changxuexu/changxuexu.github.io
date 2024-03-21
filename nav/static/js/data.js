@@ -82,18 +82,19 @@ var data_vue = {
         { name: 'Vue3文档', href: 'https://cn.vuejs.org/guide/introduction.html', title: '' },
         { name: 'Vue Router', href: 'https://router.vuejs.org/zh/index.html', title: '' },
         { name: 'Pinia(状态管理)', href: 'https://pinia.vuejs.org/api/modules/pinia.html', title: '' },
-        { name: 'vite', href: 'https://cn.vitejs.dev/guide', title: '' },
-        { name: 'vue-cli', href: 'https://cli.vuejs.org/zh/guide', title: '' },
         { name: 'Vue3相比vue2新功能', href: 'https://v3-migration.vuejs.org', title: '' },
-        { name: 'StackBlitz在线编辑', href: 'https://stackblitz.com', title: '代码在线构建工具' },
         { name: 'Vue2到Vue3项目升级指南', href: 'https://gogocode.io/zh/docs/vue/vue2-to-vue3', title: '' },
+        { name: 'vite', href: 'https://cn.vitejs.dev/guide', title: 'spa脚手架工具' },
+        { name: 'vue-cli', href: 'https://cli.vuejs.org/zh/guide', title: 'spa脚手架工具' },
+        { name: 'webpack + vue-loader', href: 'https://vue-loader.vuejs.org/zh', title: 'spa脚手架工具' },
         { name: 'petite-vue', href: 'https://github.com/vuejs/petite-vue', title: '非构建工程化,在页面直接使用' },
         { name: 'NuxtJS', href: 'https://v3.nuxtjs.org', title: '' },
         { name: 'SSR', href: 'http://doc.ssr-fc.com/', title: '面向 Serverless，同时支持 React，Vue2，Vue3的 SSR 框架' },
         { name: 'VueUse', href: 'https://vueuse.org', title: '工具型组合式函数集合' },
         { name: 'Gridsome', href: 'https://gridsome.org', title: '构建默认快速的静态生成网站' },
         { name: 'VitePress', href: 'https://vitepress.vuejs.org', title: '极简静态网站生成器Vite' },
-        { name: 'VuePress', href: 'https://www.vuepress.cn', title: '极简静态网站生成器webpack' }
+        { name: 'VuePress', href: 'https://www.vuepress.cn', title: '极简静态网站生成器webpack' },
+        { name: 'StackBlitz在线编辑', href: 'https://stackblitz.com', title: '代码在线构建工具' }
       ]
     },
     {
