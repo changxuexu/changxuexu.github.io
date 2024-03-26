@@ -19,14 +19,14 @@ var data_daily = {
     {
       second_tit: 'js搜索',
       second_child: [
-        { name: 'npm插件搜索', href: 'https://www.npmjs.com', title: '' },
+        { name: 'npm依赖搜索', href: 'https://www.npmjs.com', title: '' },
+        { name: 'node_modules依赖大小', href: 'https://bundlejs.com', title: '快速查询依赖构建后最小化和压缩的包大小' },
         { name: 'MDN-developer', href: 'https://developer.mozilla.org/zh-CN', title: '' },
         { name: 'Can I use', href: 'https://www.caniuse.com', title: '' },
         { name: 'w3c', href: 'https://www.w3.org', title: '' },
         { name: 'Stack Overflow', href: 'https://stackoverflow.com', title: '编程棘手bug' },
         { name: 'segmentfault', href: 'https://segmentfault.com/', title: '' },
-        { name: '稀土掘金', href: 'https://juejin.cn', title: '' },
-        { name: 'node_modules包大小查询', href: 'https://bundlephobia.com', title: '查询node_modules安装包大小' }
+        { name: '稀土掘金', href: 'https://juejin.cn', title: '' }
       ]
     },
     {
