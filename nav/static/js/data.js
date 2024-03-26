@@ -83,6 +83,7 @@ var data_vue = {
         { name: 'Vue3 github', href: 'https://github.com/vuejs', title: '' },
         { name: 'Vue Router', href: 'https://router.vuejs.org/zh/index.html', title: '' },
         { name: 'Pinia(状态管理)', href: 'https://pinia.vuejs.org/api/modules/pinia.html', title: '' },
+        { name: 'devtools', href: 'https://devtools.vuejs.org', title: '浏览器中Vue调试插件' },
         { name: 'Vue编译工具', href: 'https://template-explorer.vuejs.org', title: '编译工具，辅助理解' },
         { name: 'Vue3相比vue2新功能', href: 'https://v3-migration.vuejs.org', title: '' },
         { name: 'Vue2到Vue3项目升级指南', href: 'https://gogocode.io/zh/docs/vue/vue2-to-vue3', title: '' },
