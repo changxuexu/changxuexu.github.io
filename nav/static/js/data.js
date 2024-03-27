@@ -87,17 +87,26 @@ var data_vue = {
         { name: 'Vue编译工具', href: 'https://template-explorer.vuejs.org', title: '编译工具，辅助理解' },
         { name: 'Vue3相比vue2新功能', href: 'https://v3-migration.vuejs.org', title: '' },
         { name: 'Vue2到Vue3项目升级指南', href: 'https://gogocode.io/zh/docs/vue/vue2-to-vue3', title: '' },
-        { name: 'vite', href: 'https://cn.vitejs.dev/guide', title: 'spa脚手架工具' },
-        { name: 'vue-cli', href: 'https://cli.vuejs.org/zh/guide', title: 'spa脚手架工具' },
-        { name: 'webpack + vue-loader', href: 'https://vue-loader.vuejs.org/zh', title: 'spa脚手架工具' },
-        { name: 'petite-vue', href: 'https://github.com/vuejs/petite-vue', title: '非构建工程化,在页面直接使用' },
-        { name: 'NuxtJS', href: 'https://v3.nuxtjs.org', title: '' },
-        { name: 'SSR', href: 'http://doc.ssr-fc.com/', title: '面向 Serverless，同时支持 React，Vue2，Vue3的 SSR 框架' },
+        { name: 'petite-vue', href: 'https://github.com/vuejs/petite-vue', title: '非构建工程化,在页面轻量化直接使用，类似jquery' },
         { name: 'VueUse', href: 'https://vueuse.org', title: '工具型组合式函数集合' },
-        { name: 'Gridsome', href: 'https://gridsome.org', title: '构建默认快速的静态生成网站' },
-        { name: 'VitePress', href: 'https://vitepress.vuejs.org', title: '极简静态网站生成器Vite' },
-        { name: 'VuePress', href: 'https://www.vuepress.cn', title: '极简静态网站生成器webpack' },
         { name: 'StackBlitz在线编辑', href: 'https://stackblitz.com', title: '代码在线构建工具' }
+      ]
+    },
+    {
+      second_tit: '脚手架',
+      second_child: [
+        { name: 'vite', href: 'https://cn.vitejs.dev/guide', title: '项目工程化构建脚手架工具,官方推荐' },
+        { name: 'vue-cli', href: 'https://cli.vuejs.org/zh/guide', title: '项目工程化构建脚手架工具' },
+        { name: 'webpack + vue-loader', href: 'https://vue-loader.vuejs.org/zh', title: '项目工程化构建脚手架工具' },
+        { name: 'ionicframework', href: 'https://ionicframework.com', title: '构建移动端应用' },
+        { name: 'TresJS', href: 'https://tresjs.org', title: '构建 3D WebGL 体验' },
+        { name: 'NuxtJS', href: 'https://nuxt.com', title: 'SSR' },
+        { name: 'Quasar', href: 'https://quasar.dev', title: '同一套代码库构建不同目标的应用,如SPA、SSR、PWA、移动端应用、桌面端应用以及浏览器插件' },
+        { name: 'vite-plugin-ssr', href: 'https://vite-plugin-ssr.com', title: 'SSR' },
+        { name: 'SSR', href: 'http://doc.ssr-fc.com', title: '面向 Serverless，同时支持 React，Vue2，Vue3的 SSR 框架' },
+        { name: 'Gridsome', href: 'https://gridsome.org', title: 'SSG_构建默认快速的静态生成网站' },
+        { name: 'VuePress', href: 'https://www.vuepress.cn', title: 'SSG_webpack极简静态网站生成器' },
+        { name: 'VitePress', href: 'https://vitepress.vuejs.org', title:'SSG_Vite极简静态网站生成器' }
       ]
     },
     {
