@@ -19,7 +19,8 @@ var data_daily = {
     {
       second_tit: 'js搜索',
       second_child: [
-        { name: 'npm依赖搜索', href: 'https://www.npmjs.com', title: '' },
+        { name: 'npm包搜索', href: 'https://www.npmjs.com', title: '' },
+        { name: 'Skypack', href: 'https://www.skypack.dev', title: '类似CDN,无需安装和构建工具即可加载针对浏览器优化的npm包' },
         { name: 'node_modules依赖大小', href: 'https://bundlejs.com', title: '快速查询依赖构建后最小化和压缩的包大小' },
         { name: 'MDN-developer', href: 'https://developer.mozilla.org/zh-CN', title: '' },
         { name: 'Can I use', href: 'https://www.caniuse.com', title: '' },
@@ -961,7 +962,8 @@ var data_jsplug = {
         { name: 'particlesJS', href: 'https://github.com/VincentGarreau/particles.js', title: '粒子背景：粒子的密度、颜色、不透明度、形状和大小' },
         { name: 'Velocity.js', href: 'https://www.npmjs.com/package/velocity-animate', title: '' },
         { name: 'Kute.js', href: 'https://github.com/thednp/kute.js', title: '' },
-        { name: 'Lottie', href: 'https://github.com/airbnb/lottie-web', title: 'Lottie for Web, Android, iOS, React Native, and Windows' }
+        { name: 'Lottie', href: 'https://github.com/airbnb/lottie-web', title: 'Lottie for Web, Android, iOS, React Native, and Windows' },
+        { name: 'dynamics.js', href: 'http://dynamicsjs.com', title: '用于创建基于物理的动画;为任何DOM元素的CSS属性设置动画;可以设置SVG属性的动画' },
       ]
     },
     {
