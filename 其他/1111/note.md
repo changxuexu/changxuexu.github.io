@@ -1,17 +1,203 @@
-# 零高容器宽度自适应版
-
-## 特点
+# (1)svg零高容器实战
 ```
-<section style="font-size: 0;line-height: 0;overflow: hidden;">
-  <section style="height: 0;">
-    // 零高容器部分
-    // 内容....
+大纲介绍
+```
+
+# (2)视窗与视野回顾
+```
+概念：
+  视窗（viewport）：
+    浏览器上可视区域，由width和height控制；即SVG元素在浏览器中所占据的实际渲染区域大小。这个区域大小,就是视窗。
+
+  视野（viewbox）：
+    是SVG内容的虚拟空间，可以被看作是一个自定义的坐标系统，包含了SVG图形的所有内容，并且允许您定义一个相对于这个坐标系统的裁剪区域。
+    viewBox属性以四个数值的形式定义：viewBox="x y width height"，分别表示虚拟坐标系的左上角横坐标、纵坐标以及宽高。当设置了viewBox后，SVG引擎会根据这个坐标区域内的内容按比例缩放，以便适应视窗的大小。同时属性preserveAspectRatio用来在视窗中如何显示viewBox的内容，如viewBox如何缩放适应视窗的大小，同时viewBox在视窗中的位置如何对齐
+
+视窗与视野关系：
+  1.如果没有设置viewBox，那么SVG的内容会直接按照视窗的大小进行绘制，所有图形将填满整个视窗。
+
+  2.当设置了viewBox时，SVG内容会被映射到视窗内，不论视窗大小如何变化，viewBox内的内容始终保持其相对比例。
+    此外，还可以通过preserveAspectRatio属性来控制视野内容在视窗内如何对齐和填充。若svg标签未设置preserveAspectRatio，则其默认值preserveAspectRatio="xMidYMid meet"。其中xMidYMid表示如何对齐；meet是如何填充，表示保持“宽高比”并将视野viewBox缩放为适合视窗viewport的大小；
+    preserveAspectRatio具体说明见以前笔记！！！
+
+案例：视窗与视野关系
+<!--
+没有设置viewBox,视野上的内容会直接按照视窗的大小进行绘制，所有图形将填满整个视窗。
+-->
+<svg width="100" height="200" style="background:red;"></svg>
+
+<!-- 
+表现：浏览器控制台查看svg的height为100，视野的内容相对视窗是“缩小”展示的，以适应视窗
+原因：设置viewBox，视窗与视野保持宽高比，因此height为100 
+-->
+<svg width="50"  viewBox="0 0 100 200" style="background:red;"></svg>
+
+<!-- 
+表现：浏览器控制台查看svg的height为200，视野的内容相对视窗是“正常”展示的，以适应视窗
+原因：设置viewBox，视窗与视野保持宽高比，因此height为200
+-->
+<svg width="100" viewBox="0 0 100 200" style="background:red;"></svg>
+
+<!-- 
+表现：浏览器控制台查看svg的height为400，视野的内容相对视窗是“放大”展示的，以适应视窗
+原因：设置viewBox，视窗与视野保持宽高比，因此height为400
+-->
+<svg width="200" viewBox="0 0 100 200" style="background:red;"></svg>
+
+<!-- 
+表现：浏览器控制台查看 svg若没设置width、height, 仅设置了viewBox="0 0 100 200", svg的宽高比始终是1/2
+原因：设置viewBox，视窗与视野保持宽高比
+-->
+<svg viewBox="0 0 100 200" style="background:red;"></svg>
+```
+
+# (3)零高容器
+
+## 零高容器基本结构
+```html
+<section style="overflow: hidden;">
+  <!-- 
+    1.零高容器部分 
+    特点：style="height:0px;"
+  -->
+  <section id="dom1" style="height:0px;">
+    <section style="height:300px;background-color:rgba(0,0,0,0.3);font-size:20px;font-weight:bold;">
+      零高容器内容...
+    </section>
   </section>
-  <svg viewBox="0 0 880 1000" style="display: block;max-width: none!important;margin-top: -1px;pointer-events: visible;user-select: none;-webkit-tap-highlight-color: transparent;">
-    // 展开部分
-    <set attributeName="width" from="100%" to="830%" restart="never" fill="freeze" begin="click"></set>
+  <!-- 
+    2.展开部分
+    特点：
+      // transform会触发BFC;BFC一块独立的渲染区域，可以将BFC看成是元素的一种属性，拥有了这种属性的元素就会使他的子元素与世隔绝，不会影响到外部其他元素;
+      若是svg、img等标签元素撑开也可以不设置transform css属性
+      transform:scale(1);
+      // 零高容器部分内容多高就可设置多高
+      height: 500px; 
+  -->
+  <div id="dom2" style="transform:scale(1); height: 500px;background-color:rgba(255,0,0,0.7);">
+    <div style="position: absolute;bottom:0;left:0;right:0;font-size:14px">
+      <p>表现：通过背景颜色可以看到,dom2是在dom1层级之上的，dom1盒子内容是由dom2盒子撑开</p>
+    </div>
+  </div>
+
+  <!-- 若是svg、img等标签元素撑开也可以不设置transform css属性 -->
+  <!-- <img src="./1.gif" style="height:500px;margin:0 auto;display:block;"> -->
+</section>
+```
+
+## 零高容器与svg动画结合
+```html
+<section style="width: 345px;margin: 0px auto;">
+  <section style="overflow: hidden;">
+    <!-- 1.零高容器部分 -->
+    <section style="height: 0px;">
+      <section style="width:100%;height:500px;border-top: 1px solid red;">
+        1.零高容器内容部分...
+      </section>
+      <section style="width:100%;height:500px;border-top: 1px solid red;">
+        2.零高容器内容部分...
+      </section>
+    </section>
+    <!-- 2.展开部分 -->
+    <svg 
+      style="background:red;cursor:pointer;"
+      viewBox="0 0 345 40" 
+      xmlns="http://www.w3.org/2000/svg">
+      <!-- 将svg背景色去除,零高容器便于查看内容 -->
+      <animate attributeName="opacity" from="1" to="0" fill="freeze" dur="0.01s" begin="click"></animate>
+      <!-- 方式一动画：瞬间展开 -->
+      <!-- <set attributeName="height" from="40" to="1000" restart="never" fill="freeze" begin="click+0.1s"></set> -->
+
+      <!--  方式二动画：线性展开 -->
+      <!-- 
+        参数说明：
+          1.values="参数1; 参数2; 参数3; ..."
+            定义动画的多个关键帧，而from 和to来只能定义参数的起始和结束。
+          2.keyTimes="参数1; 参数2; 参数3; ..."
+            keytimes 在默认的状态下，第一个时间值为0，最后一个时间值为1；是values对应区间的时间分配比。
+          3.dur="5s"
+            动画的持续时间5s
+          
+        案例说明：
+          svg高度从 40 到 150 动画分配时间为   3*0.15 = 0.45s；
+                从 150 到 450 动画分配时间为   3*(0.4-0.15) = 3*0.25 = 0.75s;
+                从 450 到 1000 动画分配时间为  3*(1-0.4) = 3*0.6 = 1.8s;
+                验证：dur = 0.45s + 0.75s + 1.8s = 3s
+      -->
+      
+      <animate attributeName="height" 
+        values="40;150;450;1000" keyTimes="0;0.15;0.4;1" dur="3s"
+        fill="freeze" restart="never" begin="click+0.1s">
+      </animate> 
+
+      <!-- 
+      拓展
+        其实上面就是匀速动画calcMode="linear"；相当于
+          <animate attributeName="height" 
+            calcMode="linear"
+            values="40;150;450;1000" keyTimes="0;0.15;0.4;1" dur="3s"
+            fill="freeze" restart="never" begin="click+0.1s">
+          </animate>
+        
+        calcMode指的时keyTimes对应values值之间动画运行时的速度控制属性；
+        有时候我们我们看到animate元素上设置calcMode="spline"，表示自定义(手动)设置keyTimes对应values值之间的动画速度；
+        calcMode="spline"属性值需要和keySplines 属性搭配使用；
+        keySplines 属性用于定义各个动画过渡效果的easing函数，其属性值时一组和keyTimes列表值对应的三次贝兹曲线控制点。
+
+        keySplines设置参考：https://cubic-bezier.com
+        
+        <animate attributeName="height" 
+          values="40;150;450;1000" keyTimes="0;0.15;0.4;1" dur="3s"
+          calcMode="spline" keySplines=".42,0,1,1; .56,.12,.84,.36; .25,.1,.25,1"
+          fill="freeze" restart="never" begin="click+0.1s">
+        </animate>
+      -->
+    </svg>
   </section>
 </section>
+```
+
+## 零高容器_宽度自适应(重点！!)
+```html
+<style type="text/css">
+*{margin:0;padding:0;}
+.rich_media_content{overflow:hidden;color:#333;font-size:17px;word-wrap:break-word;-webkit-hyphens:auto;-ms-hyphens:auto;hyphens:auto;text-align:justify;position:relative;z-index:0;}
+.rich_media_content *{max-width:100%!important;box-sizing:border-box!important;-webkit-box-sizing:border-box!important;word-wrap:break-word!important;}
+</style>
+
+<div class="rich_media_content" style="visibility: visible;">
+  <section style="font-size: 0;line-height: 0;">
+    <!-- 1.零高容器部分 -->
+    <section style="height: 0;">
+      <svg viewBox="0 0 880 800" style="display: block;margin-top: -1px;background: url(./1.gif) 0 0 / 100% auto no-repeat;pointer-events: none;user-select: none;-webkit-tap-highlight-color: transparent;"></svg>
+      <svg viewBox="0 0 880 800" style="display: block;margin-top: -1px;background: url(./1.gif) 0 0 / 100% auto no-repeat;pointer-events: none;user-select: none;-webkit-tap-highlight-color: transparent;"></svg>
+      <svg viewBox="0 0 880 800" style="display: block;margin-top: -1px;background: url(./1.gif) 0 0 / 100% auto no-repeat;pointer-events: none;user-select: none;-webkit-tap-highlight-color: transparent;"></svg>
+      <svg viewBox="0 0 880 800" style="display: block;margin-top: -1px;background: url(./1.gif) 0 0 / 100% auto no-repeat;pointer-events: none;user-select: none;-webkit-tap-highlight-color: transparent;"></svg>
+      <svg viewBox="0 0 880 800" style="display: block;margin-top: -1px;background: url(./1.gif) 0 0 / 100% auto no-repeat;pointer-events: none;user-select: none;-webkit-tap-highlight-color: transparent;"></svg>
+    </section>
+    <!-- 2.展开部分 -->
+    <svg 
+      viewBox="0 0 880 800" 
+      style="pointer-events: visible; display: block;
+      max-width: none!important;margin-top: -1px;user-select: none;-webkit-tap-highlight-color: transparent;">
+      <!-- 
+        线性动画
+        特征：attributeName="width" values="100%;50%;500%;500%"
+      -->
+      <animate attributeName="width" values="100%;50%;500%;500%" keyTimes="0;0.15;0.4;1" dur="5s" calcMode="spline" keySplines=".42,0,1,1;.42,0,1,1;.42,0,1,1" begin="click" fill="freeze"></animate>
+      <!-- 让svg隐藏,可给svg设置background-color: red;然后查看去除set元素或设置set元素的效果 -->
+      <set attributeName="visibility" from="visible" to="hidden" restart="never" fill="freeze" begin="click"></set>
+    </svg>
+  </section>
+</div>
+```
+### 案例原理
+```
+
+```
+### pointer-events样式
+```
+
 ```
 
 ## 通过宽高比适配原理：
@@ -19,13 +205,6 @@
 视窗宽度一致(由于移动设备的宽度是有限值)，高度成比例，则零高容器所占高度空间和展开部分物理空间是一样的；
 
 由于SVG遵循viewBox的宽高比，高度也会相应增加以保持比例，从而实现了宽度一致且高度成比例的效果。
-```
-
-## 具体实现：
-```
-1.svg标签若没设置width、height;仅设置了viewBox，那么svg的视口和视野宽高比一致
-  <svg viewBox="0 0 100 100" style="background:red;"></svg>
-  <svg viewBox="0 0 100 100" width="100" style="background:red;"></svg>
 
 2.解除最大宽度限制（微信环境设置）max-width: none!important; 
   <svg viewBox="0 0 100 100" style="background:red;max-width: none!important;"></svg>
@@ -36,4 +215,9 @@
     由于零高容器的内容“视野”宽度都相等是1125，总高度是22375；视野高度比就是22375/1360=16.45倍数;
     那么“视窗”的宽度就是
       <set attributeName="width" from="100%" to="1645%" restart="never" fill="freeze" begin="click"></set>
-``` 
+```
+
+# (4)实战案例
+```
+
+```

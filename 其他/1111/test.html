@@ -1,13 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover" />
+    <title>零高容器(宽度自适应版)</title>
+    <style type="text/css">*{margin:0;padding:0;}.rich_media_content{overflow:hidden;color:#333;font-size:17px;word-wrap:break-word;-webkit-hyphens:auto;-ms-hyphens:auto;hyphens:auto;text-align:justify;position:relative;z-index:0;}.rich_media_content *{max-width:100%!important;box-sizing:border-box!important;-webkit-box-sizing:border-box!important;word-wrap:break-word!important;}</style>
 </head>
 <body>
 
-  <svg viewBox="0 0 100 100" width="100" style="background:red;"></svg>
+<!-- 
+  通过宽高比适配原理：宽度一致，高度成比例则零高容器所占高度空间和展开部分物理空间是一样的
+  实现：
+      max-width: none!important; 用于解除最大宽度限制（微信环境设置）
+      宽度自适应版的前提 viewBox="0 0 880 y" 中的宽度都相等，高度成比例就ok
+      无缝长图总高度800*5=4000 ；4000/800=5倍数
+    
+  pointer-events: visible; 便于事件穿透
+-->
+
+<style type="text/css">
+*{margin:0;padding:0;}
+.rich_media_content{overflow:hidden;color:#333;font-size:17px;word-wrap:break-word;-webkit-hyphens:auto;-ms-hyphens:auto;hyphens:auto;text-align:justify;position:relative;z-index:0;}
+.rich_media_content *{max-width:100%!important;box-sizing:border-box!important;-webkit-box-sizing:border-box!important;word-wrap:break-word!important;}
+</style>
+
+<div class="rich_media_content" style="visibility: visible;">
+  <section style="font-size: 0;line-height: 0;">
+    <!-- 1.零高容器部分 -->
+    <section style="height: 0;">
+      <svg viewBox="0 0 880 800" style="display: block;margin-top: -1px;background: url(./1.gif) 0 0 / 100% auto no-repeat;pointer-events: none;user-select: none;-webkit-tap-highlight-color: transparent;"></svg>
+      <svg viewBox="0 0 880 800" style="display: block;margin-top: -1px;background: url(./1.gif) 0 0 / 100% auto no-repeat;pointer-events: none;user-select: none;-webkit-tap-highlight-color: transparent;"></svg>
+      <svg viewBox="0 0 880 800" style="display: block;margin-top: -1px;background: url(./1.gif) 0 0 / 100% auto no-repeat;pointer-events: none;user-select: none;-webkit-tap-highlight-color: transparent;"></svg>
+      <svg viewBox="0 0 880 800" style="display: block;margin-top: -1px;background: url(./1.gif) 0 0 / 100% auto no-repeat;pointer-events: none;user-select: none;-webkit-tap-highlight-color: transparent;"></svg>
+      <svg viewBox="0 0 880 800" style="display: block;margin-top: -1px;background: url(./1.gif) 0 0 / 100% auto no-repeat;pointer-events: none;user-select: none;-webkit-tap-highlight-color: transparent;"></svg>
+    </section>
+    <!-- 2.展开部分 -->
+    <svg 
+      viewBox="0 0 880 800" 
+      style="pointer-events: visible; display: block;
+      max-width: none!important;margin-top: -1px;user-select: none;-webkit-tap-highlight-color: transparent;">
+      <!-- 
+        线性动画
+        特征：attributeName="width" values="100%;50%;500%;500%"
+      -->
+      <animate attributeName="width" values="100%;50%;500%;500%" keyTimes="0;0.15;0.4;1" dur="5s" calcMode="spline" keySplines=".42,0,1,1;.42,0,1,1;.42,0,1,1" begin="click" fill="freeze"></animate>
+      <!-- 让svg隐藏,可给svg设置background-color: red;然后查看去除set元素或设置set元素的效果 -->
+      <set attributeName="visibility" from="visible" to="hidden" restart="never" fill="freeze" begin="click"></set>
+    </svg>
+  </section>
+</div>
 
 </body>
 </html>
