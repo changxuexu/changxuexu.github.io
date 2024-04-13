@@ -1,9 +1,12 @@
-# (1)svg零高容器实战
+# svg零高容器实战
 ```
 大纲介绍
+	视窗与视野回顾
+	零高容器
+	实战
 ```
 
-# (2)视窗与视野回顾
+# (1)视窗与视野回顾
 ```
 概念：
   视窗（viewport）：
@@ -45,13 +48,14 @@
 <svg width="200" viewBox="0 0 100 200" style="background:red;"></svg>
 
 <!-- 
+【重点】
 表现：浏览器控制台查看 svg若没设置width、height, 仅设置了viewBox="0 0 100 200", svg的宽高比始终是1/2
 原因：设置viewBox，视窗与视野保持宽高比
 -->
 <svg viewBox="0 0 100 200" style="background:red;"></svg>
 ```
 
-# (3)零高容器
+# (2)零高容器
 
 ## 零高容器基本结构
 ```html
@@ -157,7 +161,9 @@
 </section>
 ```
 
-## 零高容器_宽度自适应(重点！!)
+## 零高容器_宽度自适应【重点】
+
+###  基本案例
 ```html
 <style type="text/css">
 *{margin:0;padding:0;}
@@ -193,31 +199,130 @@
 ```
 ### 案例原理
 ```
+特征：attributeName="width" values="100%;50%;500%;500%"
 
+解释为什么改变的是svg的width属性，且最终值为500%？
+	1.对于“零高容器”的视野(viewBox="0 0 880 800")内容viewBox-height为 5*800=4000; viewBox-width=880；
+
+	2.对于“展开部分”的视野(viewBox="0 0 880 800")内容viewBox-height为 800; viewBox-width=880；
+
+    3.由于最终达到的目的是将零高容器内容完全显示出来，那么就需要“展开部分” 视窗高度height和宽度width与“零高容器”视窗高度一致
+      现在“零高容器”与“展开部分”的viewBox-width都为880，“零高容器”的viewBox-height=4000，而“展开部分” viewBox-height=800；
+      “零高容器”的viewBox-height是“展开部分”viewBox-height 的5倍；
+      那么相当于“展开部分”视窗的高度height需要增加5倍；
+
+    4.由于“展开部分”的svg视窗与视野的宽高比一致（提示:若不理解，见视窗与视野回顾章节！）；
+      当“展开部分”视窗的高度height需要增加5倍；那么视窗的宽度width也需要增加5倍；
+
+      由于“展开部分”的svg元素没有显式设置宽度，则浏览器会根据上下文来决定这个百分比的实际大小。即移动设备的宽度；为100%；
+      当“展开部分”视窗的宽度增加了5倍,那么最终值就为500%
+
+
+注意：微信公众号环境下，需要解除最大宽度限制。即max-width: none!important
+  	<svg viewBox="0 0 100 100" style="max-width: none!important;background:red"></svg>
 ```
-### pointer-events样式
+### 拓展：pointer-events
+```
+pointer-events是一个css属性，用于事件穿透场景。常见值如下：
+    (1)auto
+      默认值，效果和没有定义pointer-events属性相同，鼠标不会穿透当前层。
+
+    (2)none
+      元素不再是鼠标事件的目标，鼠标不再监听当前层而去监听下面的层中的元素(即有穿透功能能力)。
+    
+    (3)visiblePainted
+      只适用于 SVG。元素只有在以下情况才会成为鼠标事件的目标：
+      visibility属性值为visible，且鼠标指针在元素内部，且fill属性指定了none之外的值
+      visibility属性值为visible，鼠标指针在元素边界上，且stroke属性指定了none之外的值
+
+    (4)visibleFill
+      只适用于 SVG。只有在元素visibility属性值为visible，且鼠标指针在元素内部时，元素才会成为鼠标事件的目标，fill属性的值不影响事件处理。
+
+    (5)visibleStroke
+      只适用于 SVG。只有在元素visibility属性值为visible，且鼠标指针在元素边界时，元素才会成为鼠标事件的目标，stroke属性的值不影响事件处理。
+
+    (6)visible
+      只适用于 SVG。只有在元素visibility属性值为visible，且鼠标指针在元素内部或边界时，元素才会成为鼠标事件的目标，fill和stroke属性的值不影响事件处理。
+
+    (7)painted
+      只适用于 SVG。元素只有在以下情况才会成为鼠标事件的目标：
+
+      鼠标指针在元素内部，且fill属性指定了none之外的值
+      鼠标指针在元素边界上，且stroke属性指定了none之外的值
+      visibility属性的值不影响事件处理。
+
+    (8)fill
+      只适用于 SVG。只有鼠标指针在元素内部时，元素才会成为鼠标事件的目标，fill和visibility属性的值不影响事件处理。
+
+    (9)stroke
+      只适用于 SVG。只有鼠标指针在元素边界上时，元素才会成为鼠标事件的目标，stroke和visibility属性的值不影响事件处理。
+
+    (10)all
+      只适用于 SVG。只有鼠标指针在元素内部或边界时，元素才会成为鼠标事件的目标，fill、stroke和visibility属性的值不影响事件处理。
 ```
 
+**案例一：元素不再是鼠标事件的目标**
+```
+<ul>
+	<li><a href="http://www.baidu.com">可以点击的链接</a></li>
+	<li><a href="http://www.baidu.com" style="pointer-events:none">不能点击的链接,且不展示点击手形</a></li>
+</ul>
 ```
 
-## 通过宽高比适配原理：
+**案例二：鼠标不再监听当前层而去监听下面的层中的元素**
 ```
-视窗宽度一致(由于移动设备的宽度是有限值)，高度成比例，则零高容器所占高度空间和展开部分物理空间是一样的；
+<style>
+  .top { width: 200px;height: 90px;position: absolute;top: 0;left: 0px;background: yellow;opacity: 0.5;}
+</style>
+<!-- style="pointer-events:none;"增加或删除查看效果 -->
+<div style="pointer-events:none;" data-top="上方黄色div" class="top"></div>
+<ul>
+  <li style="pointer-events:none;"><a href="http://www.baidu.com">百度</a></li>
+  <li><a href="http://www.baidu.com">www.baidu.com</a></li>
+</ul>
+```
 
-由于SVG遵循viewBox的宽高比，高度也会相应增加以保持比例，从而实现了宽度一致且高度成比例的效果。
+**案例三：pointer-events在svg中应用**
+```
+<style type="text/css">
+*{margin:0;padding:0;}
+.rich_media_content{overflow:hidden;color:#333;font-size:17px;word-wrap:break-word;-webkit-hyphens:auto;-ms-hyphens:auto;hyphens:auto;text-align:justify;position:relative;z-index:0;}
+.rich_media_content *{max-width:100%!important;box-sizing:border-box!important;-webkit-box-sizing:border-box!important;word-wrap:break-word!important;}
+</style>
 
-2.解除最大宽度限制（微信环境设置）max-width: none!important; 
-  <svg viewBox="0 0 100 100" style="background:red;max-width: none!important;"></svg>
+<div class="rich_media_content" style="visibility: visible;">
+  <section style="font-size: 0;line-height: 0;">
+    <section style="height: 0;">
+      <!-- 
+        设置 pointer-events: visible; 或 pointer-events: none; 查看效果
+      -->
+      <svg viewBox="0 0 880 800" style="display: block;margin-top: -1px;background: url(./1.gif) 0 0 / 100% auto no-repeat;
+        pointer-events: visible;user-select: none;-webkit-tap-highlight-color: transparent;">
+        <rect x="10" y="10" rx="5" ry="5" width="150" height="100" fill="red" stroke="red">
+          <set attributeName="visibility" from="visible" to="hidden" restart="never" fill="freeze" begin="click"></set>
+        </rect>
+      </svg>
+      <svg viewBox="0 0 880 800" style="display: block;margin-top: -1px;background: url(./1.gif) 0 0 / 100% auto no-repeat;pointer-events: none;user-select: none;-webkit-tap-highlight-color: transparent;"></svg>
+      <svg viewBox="0 0 880 800" style="display: block;margin-top: -1px;background: url(./1.gif) 0 0 / 100% auto no-repeat;pointer-events: none;user-select: none;-webkit-tap-highlight-color: transparent;"></svg>
+      <svg viewBox="0 0 880 800" style="display: block;margin-top: -1px;background: url(./1.gif) 0 0 / 100% auto no-repeat;pointer-events: none;user-select: none;-webkit-tap-highlight-color: transparent;"></svg>
+      <svg viewBox="0 0 880 800" style="display: block;margin-top: -1px;background: url(./1.gif) 0 0 / 100% auto no-repeat;pointer-events: none;user-select: none;-webkit-tap-highlight-color: transparent;"></svg>
+    </section>
+    <svg 
+      viewBox="0 0 880 800" 
+      style="pointer-events: visible; display: block;
+      max-width: none!important;margin-top: -1px;user-select: none;-webkit-tap-highlight-color: transparent;">
+      <animate attributeName="width" values="100%;50%;500%;500%" keyTimes="0;0.15;0.4;1" dur="5s" calcMode="spline" keySplines=".42,0,1,1;.42,0,1,1;.42,0,1,1" begin="click" fill="freeze"></animate>
+      <set attributeName="visibility" from="visible" to="hidden" restart="never" fill="freeze" begin="click"></set>
+    </svg>
+  </section>
+</div>
+```
 
-3.解释说明
-  展开部分
-    <svg viewBox="0 0 1125 1360"></svg> “视野”默认展开高度是1360；
+## 通过宽高比适配原理
+# (3)实战案例
+```
+<svg viewBox="0 0 1125 1360"></svg> “视野”默认展开高度是1360；
     由于零高容器的内容“视野”宽度都相等是1125，总高度是22375；视野高度比就是22375/1360=16.45倍数;
     那么“视窗”的宽度就是
       <set attributeName="width" from="100%" to="1645%" restart="never" fill="freeze" begin="click"></set>
-```
-
-# (4)实战案例
-```
-
 ```
