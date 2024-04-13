@@ -51,6 +51,8 @@
 【重点】
 表现：浏览器控制台查看 svg若没设置width、height, 仅设置了viewBox="0 0 100 200", svg的宽高比始终是1/2
 原因：设置viewBox，视窗与视野保持宽高比
+
+在移动端由于设备宽度是有限值的，因此svg在这种场景下相当于【默认】设置了svg的width=100%，可省略不写
 -->
 <svg viewBox="0 0 100 200" style="background:red;"></svg>
 ```
