@@ -491,48 +491,62 @@ pointer-events是一个css属性，用于事件穿透场景。常见值如下：
 
 ### C/c
 ```
-作用：
+作用：用于绘制“三次”贝塞尔曲线
 
-格式: 
-
+格式: C x1 y1, x2 y2, x y
+	x1 y1 表示三次贝塞尔曲线的第一个控制点
+	x2 y2 表示三次贝塞尔曲线的第二个控制点
+	x y	  表示三次贝塞尔曲线的结束点
+	
 案例：
 	<svg width="300px" height="150px">
-    	
+    	<path d="M0 0 C40 40,60 40,100,0" stroke="red" fill="none"/>
     </svg>
 ```
+<img src="./imgnote/C指令.png">
+
 ### S/s
 ```
-作用：
+作用：S可以在原本的点后方建立一个带有贝塞尔曲线控制点的点，然后原本的点会以同样的曲线斜率镜射一个贝塞尔曲线控制点。
 
-格式: 
+格式: S x2 y2, x y
+	x2 y2 表示贝塞尔曲线的第二个控制点；控制点x1 y1就是图中的镜射点
+	x y	  表示贝塞尔曲线的结束点
 
 案例：
 	<svg width="300px" height="150px">
-    	
+    	<path d="M0 0 C40 40,60 40,100,0 S150 -40, 200 0" stroke="red" fill="none"/>
     </svg>
 ```
+<img src="./imgnote/S指令.png">
+
 ### Q/q
 ```
-作用：
+作用：用于绘制“二次”贝塞尔曲线，起点和终点的贝塞尔曲线共用同一个控制点，只需要有贝塞尔曲线控制点的坐标和终点坐标就可以。
 
-格式: 
-
+格式: Q x1 y1, x y
+	x1 y1 表示贝塞尔曲线的第一个控制点
+	x y	  表示贝塞尔曲线的结束点
+	
 案例：
 	<svg width="300px" height="150px">
-    	
+    	<path d="M0 0 Q50 50, 100 0" stroke="red" fill="none"/>
     </svg>
 ```
+<img src="./imgnote/Q指令.png">
+
 ### T/t
 ```
-作用：
+作用：T只有一组参数x,y，表示终点的坐标，所以T的前方要接上Q才能画出对应的坐标线。
 
-格式: 
+格式: T x y
 
 案例：
 	<svg width="300px" height="150px">
-    	
+    	<path d="M0 0 Q50 50, 100 0 T200 0" stroke="red" fill="none"/>
     </svg>
 ```
+<img src="./imgnote/T指令.png">
 
 ### A/a
 ```
@@ -560,7 +574,7 @@ pointer-events是一个css属性，用于事件穿透场景。常见值如下：
 三次贝塞尔曲线
 	若起点是0,0; 终点是1, 1;那么SVG、 Canvas、CSS3动画分别表示为:
         SVG:
-            <path d="M0 0 C x1 y1, x2, y2, 1 1"/>
+            <path d="M0 0 C x1 y1, x2 y2, 1 1"/>
             
         Canvas:
             ctx.moveTo(0,0);
