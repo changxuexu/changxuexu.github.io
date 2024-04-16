@@ -187,6 +187,12 @@ var data_React = {
       ]
     },
     {
+      second_tit: 'Next',
+      second_child: [
+        { name: 'Next.js', href: 'https://qufei1993.github.io/nextjs-learn-cn', title: '' }
+      ]
+    },
+    {
       second_tit: '应用框架',
       second_child: [
         { name: 'Next.js', href: 'https://www.nextjs.cn', title: '轻量级的 React 服务端渲染应用框架' },
