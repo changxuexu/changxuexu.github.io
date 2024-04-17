@@ -418,7 +418,7 @@ pointer-events是一个css属性，用于事件穿透场景。常见值如下：
 格式: Mx y
 
 案例：
-	<svg width="300px" height="150px">
+	<svg width="300" height="150">
     	<path d="M0 0" stroke="red"/>
     </svg>
 ```
@@ -429,7 +429,7 @@ pointer-events是一个css属性，用于事件穿透场景。常见值如下：
 格式: Hx
 
 案例：画了一条(0,10)到(100,10)平行于x轴的直线。
-	<svg width="300px" height="150px">
+	<svg width="300" height="150">
     	<path d="M0 10 H100" stroke="red"/>
     </svg>
 ```
@@ -440,7 +440,7 @@ pointer-events是一个css属性，用于事件穿透场景。常见值如下：
 格式: Vy
 
 案例：画了一条(10,0)到(10,100)平行于y轴的直线。
-	<svg width="300px" height="150px">
+	<svg width="300" height="150">
     	<path d="M10 0 V100" stroke="red"/>
     </svg>
 ```
@@ -451,7 +451,7 @@ pointer-events是一个css属性，用于事件穿透场景。常见值如下：
 格式: Lx y
 
 案例：
-	<svg width="300px" height="150px">
+	<svg width="300" height="150">
     	<path d="M0 10 L100 10" stroke="red"/>
 		<path d="M10 0 L10 100" stroke="red"/>
 		<path d="M10 10 L100 100" stroke="red"/>
@@ -465,7 +465,7 @@ pointer-events是一个css属性，用于事件穿透场景。常见值如下：
 格式: Z  无参数
 
 案例：
-	<svg width="300px" height="150px">
+	<svg width="300" height="150">
     	<path d="M10 10 L10 100 L100 100 Z" stroke="red"/>
     </svg>
 ```
@@ -473,7 +473,7 @@ pointer-events是一个css属性，用于事件穿透场景。常见值如下：
 ### 案例：直线命令综合运用
 ```
 案例：绘制一个正方形边框
-<svg width="100px" height="100px"> 
+<svg width="100" height="100"> 
     <path d="M10 10 H 90 V 90 H 10 L 10 10" stroke="red"/>
     
     <!-- 使用指令Z简化 -->
@@ -499,7 +499,7 @@ pointer-events是一个css属性，用于事件穿透场景。常见值如下：
 	x y	  表示三次贝塞尔曲线的结束点
 	
 案例：
-	<svg width="300px" height="150px">
+	<svg width="300" height="150">
     	<path d="M0 0 C40 40,60 40,100,0" stroke="red" fill="none"/>
     </svg>
 ```
@@ -514,7 +514,7 @@ pointer-events是一个css属性，用于事件穿透场景。常见值如下：
 	x y	  表示贝塞尔曲线的结束点
 
 案例：
-	<svg width="300px" height="150px">
+	<svg width="300" height="150">
     	<path d="M0 0 C40 40,60 40,100,0 S150 -40, 200 0" stroke="red" fill="none"/>
     </svg>
 ```
@@ -529,7 +529,7 @@ pointer-events是一个css属性，用于事件穿透场景。常见值如下：
 	x y	  表示贝塞尔曲线的结束点
 	
 案例：
-	<svg width="300px" height="150px">
+	<svg width="300" height="150">
     	<path d="M0 0 Q50 50, 100 0" stroke="red" fill="none"/>
     </svg>
 ```
@@ -543,7 +543,7 @@ pointer-events是一个css属性，用于事件穿透场景。常见值如下：
 	x y	  表示贝塞尔曲线的结束点
 	
 案例：
-	<svg width="300px" height="150px">
+	<svg width="300" height="150">
     	<path d="M0 0 Q50 50, 100 0 T200 0" stroke="red" fill="none"/>
     </svg>
 ```
@@ -551,21 +551,35 @@ pointer-events是一个css属性，用于事件穿透场景。常见值如下：
 
 ### A/a
 ```
-作用：
+作用：用于绘制椭圆圆弧(Arcs)
 
-格式: 
+格式: Arx ry, x-axis-rotation large-arc-flag sweep-flag x y
+    rx：椭圆在x轴的半径（根据不同的终点换算成比例）
+    ry：椭圆在y轴的半径（根据不同的终点换算成比例）
+    x-axis-rotation：弧线与x轴的旋转夹角
+    large-arc-flag：
+		1表示大角度弧线，0表示小角度弧线（必须有三个点）
+    	如果设为 1，则会选择大于180度的那个弧线；若设为 0，则会选择小于等于180度的那个弧线。
+    sweep-flag：1为顺时针方向，0为逆时针方向
+    x：终点x坐标点
+    y：终点y坐标点
 
 案例：
-	<svg width="300px" height="150px">
-    	
+	<svg width="300" height="300">
+    	<!-- 1.弧形:起点(260,100) x,y轴半径比例:rx/ry=260/200=13/10、小角度弧线、逆时针 -->
+        <path d="M260 100 A100 20 0 0 0 260 200" stroke="red" fill="none"/>
+        <!-- 2.弧形:起点(260,100) x,y轴半径比例:rx/ry=260/200=13/10、小角度弧线、顺时针 -->
+        <!-- <path d="M10 100 A100 20 0 0 1 10 200" stroke="red" fill="none"/> -->
+        <!-- 3.弧形:起点(260,100) x,y轴半径比例:rx/ry=260/200=13/10、大角度弧线、顺时针 -->
+        <!-- <path d="M10 100 A100 20 0 1 1 10 200" stroke="red" fill="none"/> -->
     </svg>
-```
-
-
-
-## animateMotion标签
-```
-
+    
+    <svg width="300" height="300">
+        <!-- 大角度 ( 黑色线 ) -->
+        <path d="M0 0 L50 50 A50 50 0 1 0 100 0" stroke="#000" fill="none"/>
+        <!-- 小角度 ( 红色线 ) -->
+    	<path d="M0 0 L50 50 A50 50 0 0 0 100 0" stroke="#f00" fill="none"/>
+    </svg>
 ```
 
 ## 贝塞尔曲线
@@ -587,12 +601,49 @@ pointer-events是一个css属性，用于事件穿透场景。常见值如下：
      其中x1,y1就是(0,0)头上插的天线的端点坐标，x2,y2就是(1,1)头上插的天线的端点坐标。
 ```
 
-## 曲线动画
+## animateMotion标签
+```
+animateMotion 大致的属性和 animate 差不多，不过，它还拥有自己特有的属性，比如 keyPoints、rotate、path 等。不过，calcMode 在 AM(animateMotion) 中的默认属性由，linear 变为 paced。
+
+rotate属性：
+	auto：让物体垂直于路径的切线方向运动。不过，如果你的路径是闭合曲线的话，需要注意起始点的位置。
+	auto-reverse：让物体垂直于路径的切线方向并 +180°。也就是和 auto 运动关于切线对称。
+	Number：让物体以固定的旋转角度运动。这个就相当于使用 transform:rotate(deg) 进行控制。
+
+案例1：简单路径： 路径由 from、to 属性指定起点和终点
+<svg width="300" height="300" style="border:1px solid black">
+  <rect x="0" y="0" width="30" height="30" fill="red">
+    <animateMotion from="0,0" to="60,30" dur="4s" fill="freeze"/>
+  </rect>
+</svg>
+
+案例2：复杂路径： 路径由 path 属性指定，用法和 path 标签中 d 属性是一样的
+<svg width="300" height="300" style="border:1px solid black">
+  <rect x="0" y="0" width="30" height="30" fill="red">
+    <animateMotion path="M50,125 C 100,25 150,225, 200, 125" dur="4s" fill="freeze"/>
+  </rect>
+</svg>
+
+案例3：使用 mpath 标签,引用外部的path
+<svg width="300" height="300" style="border:1px solid black">
+  <path d="M10,110 A120,120 -45 0,1 110 10 A120,120 -45 0,1 10,110" stroke="lightgrey" stroke-width="2" fill="none" id="theMotionPath"/>
+  <circle cx="10" cy="110" r="3" fill="lightgrey" />
+  <circle cx="110" cy="10" r="3" fill="lightgrey" />
+  <circle cx="" cy="" r="5" fill="red">
+    <animateMotion dur="6s" repeatCount="indefinite">
+      <mpath xlink:href="#theMotionPath"/>
+    </animateMotion>
+  </circle>
+</svg>
+注意：一般而言我们在定义 animateMotion动画 的路径的时候，只用一种方式定义即可，否则会发生相应的覆盖：mpath>path>values>from/to
+```
+
+## 1
 ```
 
 ```
 
-## 4
+## 2
 ```
 
 ```
