@@ -976,7 +976,10 @@ var data_jsplug = {
       second_tit: 'svg动画',
       second_child: [
         { name: 'SVGA动画', href: 'http://svga.io/index.html', title: '跨平台的开源动画方案' },
-        { name: 'Vivus.js', href: 'https://github.com/maxwellito/vivus', title: '在 SVG 上绘制动画' }
+        { name: 'Vivus.js', href: 'https://github.com/maxwellito/vivus', title: '在 SVG 上绘制动画,https://maxwellito.github.io/vivus' },
+        { name: 'Snap.svg', href: 'http://snapsvg.io', title: '在 SVG 上绘制动画' },
+        { name: 'anime.js', href: 'https://www.npmjs.com/package/animejs', title: '在 SVG 上绘制动画' },
+        { name: 'dynamics.js', href: 'http://dynamicsjs.com', title: '用于创建基于物理的动画;为任何DOM元素的CSS属性设置动画;可以设置SVG属性的动画' },
       ]
     },
     {

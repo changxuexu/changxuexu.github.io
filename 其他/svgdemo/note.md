@@ -637,13 +637,37 @@ rotate属性：
 </svg>
 注意：一般而言我们在定义 animateMotion动画 的路径的时候，只用一种方式定义即可，否则会发生相应的覆盖：mpath>path>values>from/to
 ```
-
-## 1
+## 案例：物体沿svg路径的动画
 ```
 
 ```
 
-## 2
+```html
+利用css进行改写：
+	offset-path：offset-path 是一个 CSS 属性，它表示元素的“运动路径”；
+	offset-distance：同样是一个 CSS 属性，定义了元素在路径上运动的距离，单位是数值或百分比；
+	
+<style>
+svg {width: 300px;display: block; position: absolute;/*BFC*/}
+.ball {
+  width: 10px; height: 10px; background-color: red; border-radius: 50%;
+  offset-path: path('M10 80 Q 77.5 10, 145 80 T 280 80');
+  offset-distance: 0%;
+  animation: red-ball 2s linear alternate infinite;
+}
+@keyframes red-ball {
+  from { offset-distance: 0%; }
+  to { offset-distance: 100%; }
+}
+</style>
+<svg width="300px" height="175px">
+  <path d="M10 80 Q 77.5 10, 145 80 T 280 80"
+    stroke="#888888" stroke-width="1" fill="transparent"></path>
+</svg>
+<div class="ball"></div>
+```
+
+## 案例：svg路径动画
 ```
 
 ```
