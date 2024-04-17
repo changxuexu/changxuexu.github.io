@@ -639,7 +639,27 @@ rotate属性：
 ```
 ## 案例：物体沿svg路径的动画
 ```
+黄色圆形不按path路径运动是为什么会这样呢？
+这是因为当元素运动时，path中的M起点是相对于动画元素位置的，重新转化成了一条新路径。
+注意路径的开始位置是M10 80，而不是(0,0)。一个解决的办法是将圆形放置在(0,0)坐标位置。即<circle>元素的cx和cy属性都为0。
 
+<svg width="300" height="200" style="border:1px solid red">
+  <path id="motionPath" fill="none" stroke="#000000"
+    d="M10 80 Q 77.5 10, 145 80 T 280 80">
+  </path>
+  <!-- 黄色小球 -->
+  <circle r="15" cx="10" cy="80" fill="yellow">
+    <animateMotion dur="1s" begin="click" fill="freeze">
+      <mpath xlink:href="#motionPath"></mpath>
+    </animateMotion>
+  </circle>
+  <!-- 红色小球 -->
+  <circle r="15" cx="0" cy="0" fill="red">
+    <animateMotion dur="1s" begin="click" fill="freeze">
+      <mpath xlink:href="#motionPath"></mpath>
+    </animateMotion>
+  </circle>
+</svg>
 ```
 
 ```html
