@@ -767,14 +767,87 @@ animateMotion元素的rotate属性运用
 ```
 
 ## 案例：svg路径动画
+**stroke-dasharray、stroke-dashoffset属性**
+
 ```
-路径动画 
-	https://www.w3cplus.com/svg/svg-animation-guide.html
-路径动画：
-    https://www.cnblogs.com/daisygogogo/p/11044353.html
+
     https://www.w3cplus.com/svg/svg-line-animation-works.html
 
+(1)stroke-dasharray
+作用：用于创建虚线,值表示虚线长度和每段虚线之间的间距
+举例：
+    // 表示: 虚线长10，间距10，然后重复 虚线长10，间距10
+    stroke-dasharray = '10'
+    // 表示：虚线长10，间距5，然后重复 虚线长10，间距5
+    stroke-dasharray = '10, 5'
+    // 表示：虚线长20，间距10，虚线长5，接着是间距20，虚线10，间距5，之后开始如此循环
+    stroke-dasharray = '20, 10, 5'
 
+(2)stroke-dashoffset
+作用：【相对于起始点的偏移】，"正数"偏移x值的时候，相当于"往左移动"了x个长度单位，"负数"偏移x的时候，相当于"往右移动"了x个长度单位。
+举例：
+	// 偏移正数，虚线整体左移了3个单位
+	stroke-dashoffset="3"
+	// 偏移负数，虚线整体右移动了3个单位
+	stroke-dashoffset="3"
+	
+案例：stroke-dasharray和stroke-dashoffset作用理解
+    <style>
+    svg:hover #line{ stroke-dashoffset: 0; transition: all 2s;}
+    </style>
+    <svg width="300" height="100" style="border:1px solid red">
+      <line
+        id="line" x1="30" y1="30" x2="300" y2="30"
+        stroke="red" stroke-width="20"
+        stroke-dasharray="300,320" stroke-dashoffset="200"/>
+        <!--stroke-dashoffset:相对于起始点的偏移,因此长度只显示100-->
+    </svg>
+   
+案例2：
+	<style>
+    #circle{
+      transition: all 2s;
+      /* 设置stroke-dasharray虚线长度等于当前圆的周长，间隔大于或者等于圆的周长 */
+      stroke-dasharray:314,314;
+      stroke-dashoffset:314;
+    }
+    svg:hover #circle{
+      stroke-dashoffset:0;
+    }
+    </style>
+    <svg  width="200" height="200" viewBox="0 0 200 200">
+      <circle id="circle" cx="100" cy="80" r="50"  fill="gray" stroke-width="5" stroke="green" />
+    </svg>
+```
+
+**案例**
+
+```
+<svg width="300" height="150">
+  <path id="theMotionPath" fill="none"
+    stroke="#000000" stroke-width="4"
+    stroke-dasharray="320" stroke-dashoffset="0"
+    d="M10 80 Q 77.5 10, 145 80 T 280 80">
+    <animate attributeName="stroke-dashoffset" from="320" to="0" dur="5s"></animate>
+  </path>
+</svg>
+```
+
+**案例**
+```
+<style>
+svg { width: 300px; display: block; position: absolute; }
+svg .line1 { stroke-dasharray: 340; stroke-dashoffset: 40; animation: dash 1.5s linear alternate infinite; }
+svg .line2 { stroke-dasharray: 320; stroke-dashoffset: 320; animation: dash2 1.5s linear alternate infinite; }
+@keyframes dash { from { stroke-dashoffset: 360; } to { stroke-dashoffset: 40; } }
+@keyframes dash2 { from { stroke-dashoffset: 280; } to { stroke-dashoffset: -40; } }
+</style>
+
+<svg width="300px" height="175px" version="1.1">
+  <path fill="transparent" stroke="#000000" stroke-width="4" d="M10 80 Q 77.5 10, 145 80 T 280 80" class="path"></path>
+  <path fill="transparent" stroke="#FF2851" stroke-width="4" d="M10 80 Q 77.5 10, 145 80 T 280 80" class="line2"></path>
+  <path fill="transparent" stroke="#000000" stroke-width="4" d="M10 80 Q 77.5 10, 145 80 T 280 80" class="line1"></path>
+</svg>
 ```
 
 ## 案例：svg路径变换(矩阵)动画
