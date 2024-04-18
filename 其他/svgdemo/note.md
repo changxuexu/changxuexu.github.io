@@ -638,6 +638,41 @@ rotate属性：
 </svg>
 注意：一般而言我们在定义 animateMotion动画 的路径的时候，只用一种方式定义即可，否则会发生相应的覆盖：mpath>path>values>from/to
 ```
+
+## 案例：svg路径变换(矩阵)动画
+```
+<svg viewBox="0 0 100 100" width="500" height="150">
+  <path fill="#1EB287" d="M 0 0 C 50 0 50 0 100 0 C 100 50 100 50 100 100 C 50 100 50 100 0 100 C 0 50 0 50 0 0 Z">
+  	<!-- 改变动画的路径 -->
+    <animate 
+      attributeName="d"
+      repeatCount="indefinite"
+      keyTimes="0; .0625; .208333333; .3125; .395833333; .645833333; .833333333; 1"
+      values="M 0,0 C 50,0 50,0 100,0 100,50 100,50 100,100 50,100 50,100 0,100 0,50 0,50 0,0 Z;
+              M 0,0 C 50,0 50,0 100,0 100,50 100,50 100,100 50,100 50,100 0,100 0,50 0,50 0,0 Z;
+              M 50,0 C 75,25 75,25 100,50 75,75 75,75 50,100 25,75 25,75 0,50 25,25 25,25 50,0 Z;
+              M 25,50 C 37.5,25 37.5,25 50,0 75,50 75,50 100,100 50,100 50,100 0,100 12.5,75 12.5,75 25,50 Z;
+              M 25,50 C 37.5,25 37.5,25 50,0 75,50 75,50 100,100 50,100 50,100 0,100 12.5,75 12.5,75 25,50 Z;
+              M 50,0 C 77.6,0 100,22.4 100,50 100,77.6 77.6,100 50,100 22.4,100, 0,77.6, 0,50 0,22.4, 22.4,0, 50,0 Z;
+              M 50,0 C 77.6,0 100,22.4 100,50 100,77.6 77.6,100 50,100 22.4,100, 0,77.6, 0,50 0,22.4, 22.4,0, 50,0 Z;
+              M 100,0 C 100,50 100,50 100,100 50,100 50,100 0,100 0,50 0,50 0,0 50,0 50,0 100,0 Z;"
+      dur="1440ms"
+      calcMode="spline" 
+      keySplines="0,0,1,1; .42,0,.58,1; .42,0,1,1; 0,0,.58,1; .42,0,.58,1; .42,0,.58,1;.42,0,.58,1">
+    </animate>
+    <animate 
+      attributeName="fill" 
+      repeatCount="indefinite" 
+      keyTimes="0; .0625; .208333333; .3125; .395833333; .645833333; .833333333; 1" 
+      values="#1eb287; #1eb287; #1ca69e; #188fc2; #188fc2; #bb625e; #ca5f52; #1eb287;"
+      dur="1440ms"
+      calcMode="spline" 
+      keySplines="0,0,1,1; .42,0,.58,1; .42,0,1,1; 0,0,.58,1; .42,0,.58,1; .42,0,.58,1; .42,0,.58,1" >
+    </animate>
+  </path>
+</svg>
+```
+
 ## 案例：物体沿svg路径的动画
 ```
 <svg width="300" height="300" style="border:1px solid red">
@@ -766,15 +801,12 @@ animateMotion元素的rotate属性运用
       要制作文字的路径动画，我们使用<animate>元素的startOffset来制作动画。
 ```
 
-## 案例：svg路径动画
-**stroke-dasharray、stroke-dashoffset属性**
+## 案例：svg路径线条动画
 
+### stroke-dasharray、stroke-dashoffset属性
 ```
-
-    https://www.w3cplus.com/svg/svg-line-animation-works.html
-
 (1)stroke-dasharray
-作用：用于创建虚线,值表示虚线长度和每段虚线之间的间距
+作用：用于创建"虚线",值表示虚线长度和每段虚线之间的间距
 举例：
     // 表示: 虚线长10，间距10，然后重复 虚线长10，间距10
     stroke-dasharray = '10'
@@ -784,43 +816,48 @@ animateMotion元素的rotate属性运用
     stroke-dasharray = '20, 10, 5'
 
 (2)stroke-dashoffset
-作用：【相对于起始点的偏移】，"正数"偏移x值的时候，相当于"往左移动"了x个长度单位，"负数"偏移x的时候，相当于"往右移动"了x个长度单位。
+作用：设置【相对于起始点】的偏移量，"正数"偏移x值的时候，相当于"往左移动"了x个长度单位，"负数"偏移x的时候，相当于"往右移动"了x个长度单位。
 举例：
 	// 偏移正数，虚线整体左移了3个单位
 	stroke-dashoffset="3"
 	// 偏移负数，虚线整体右移动了3个单位
 	stroke-dashoffset="3"
-	
-案例：stroke-dasharray和stroke-dashoffset作用理解
-    <style>
-    svg:hover #line{ stroke-dashoffset: 0; transition: all 2s;}
-    </style>
-    <svg width="300" height="100" style="border:1px solid red">
-      <line
-        id="line" x1="30" y1="30" x2="300" y2="30"
-        stroke="red" stroke-width="20"
-        stroke-dasharray="300,320" stroke-dashoffset="200"/>
-        <!--stroke-dashoffset:相对于起始点的偏移,因此长度只显示100-->
-    </svg>
-   
-案例2：
-	<style>
-    #circle{
-      transition: all 2s;
-      /* 设置stroke-dasharray虚线长度等于当前圆的周长，间隔大于或者等于圆的周长 */
-      stroke-dasharray:314,314;
-      stroke-dashoffset:314;
-    }
-    svg:hover #circle{
-      stroke-dashoffset:0;
-    }
-    </style>
-    <svg  width="200" height="200" viewBox="0 0 200 200">
-      <circle id="circle" cx="100" cy="80" r="50"  fill="gray" stroke-width="5" stroke="green" />
-    </svg>
 ```
 
-**案例**
+```
+案例：stroke-dasharray和stroke-dashoffset作用理解
+
+<style>
+	svg:hover #line{ stroke-dashoffset: 0; transition: all 2s;}
+</style>
+<!--stroke-dashoffset:相对于起始点的偏移,偏移部分被隐藏，因此长度只显示100-->
+<svg width="300" height="100" style="border:1px solid red">
+    <line
+    id="line" x1="30" y1="30" x2="300" y2="30"
+    stroke="red" stroke-width="20"
+    stroke-dasharray="300,320" stroke-dashoffset="200"/>
+</svg>
+```
+
+```
+案例2：运动的圆环
+<style>
+    #circle{ stroke-dasharray:314,314; stroke-dashoffset:314; transition: all 2s;}
+    svg:hover #circle{ stroke-dashoffset:0; }
+</style>
+<svg  width="200" height="200" viewBox="0 0 200 200">
+	<circle id="circle" fill="gray"
+		cx="100" cy="80" r="50"  
+		stroke-width="5" stroke="green" />
+</svg>
+ 
+ 说明：
+ 	设置stroke-dasharray虚线长度等于当前圆的周长，间隔大于或者等于圆的周长；
+ 	可以使用document.querySelector('.path').getTotalLength() 获取线条的总长度；
+ 	一般情况下stroke-dashoffset的值应该小于等于线条的总长度，否则线条就不显示了。
+```
+
+### 案例：单路径线条运动
 
 ```
 <svg width="300" height="150">
@@ -833,54 +870,105 @@ animateMotion元素的rotate属性运用
 </svg>
 ```
 
-**案例**
+###  案例：多路径线条运动
 ```
-<style>
-svg { width: 300px; display: block; position: absolute; }
-svg .line1 { stroke-dasharray: 340; stroke-dashoffset: 40; animation: dash 1.5s linear alternate infinite; }
-svg .line2 { stroke-dasharray: 320; stroke-dashoffset: 320; animation: dash2 1.5s linear alternate infinite; }
-@keyframes dash { from { stroke-dashoffset: 360; } to { stroke-dashoffset: 40; } }
-@keyframes dash2 { from { stroke-dashoffset: 280; } to { stroke-dashoffset: -40; } }
-</style>
-
-<svg width="300px" height="175px" version="1.1">
-  <path fill="transparent" stroke="#000000" stroke-width="4" d="M10 80 Q 77.5 10, 145 80 T 280 80" class="path"></path>
-  <path fill="transparent" stroke="#FF2851" stroke-width="4" d="M10 80 Q 77.5 10, 145 80 T 280 80" class="line2"></path>
-  <path fill="transparent" stroke="#000000" stroke-width="4" d="M10 80 Q 77.5 10, 145 80 T 280 80" class="line1"></path>
+<svg width="300" height="150" style="border:1px solid red">
+  <path fill="transparent" stroke="#000000" stroke-width="4" 
+    d="M10 80 Q 77.5 10, 145 80 T 280 80" 
+    class="path">
+  </path>
+  <path fill="transparent" 
+    stroke="red" stroke-width="4" 
+    stroke-dasharray="320" stroke-dashoffset="320"
+    d="M10 80 Q 77.5 10, 145 80 T 280 80">
+    <animate 
+      attributeName="stroke-dashoffset" repeatCount="indefinite"
+      values="280; -40; 280" dur="3s">
+    </animate>
+  </path>
+  <path fill="transparent" 
+    stroke="#000000" stroke-width="4"
+    stroke-dasharray="340" stroke-dashoffset="40" 
+    d="M10 80 Q 77.5 10, 145 80 T 280 80">
+    <animate 
+      attributeName="stroke-dashoffset" repeatCount="indefinite"
+      values="360; 40; 360" dur="3s">
+    </animate>
+  </path>
 </svg>
 ```
 
-## 案例：svg路径变换(矩阵)动画
+###  案例：文字线条动画
+
 ```
-<svg viewBox="0 0 100 100" width="500" height="150">
-  <path fill="#1EB287" d="M 0 0 C 50 0 50 0 100 0 C 100 50 100 50 100 100 C 50 100 50 100 0 100 C 0 50 0 50 0 0 Z">
-  	<!-- 改变动画的路径 -->
-    <animate 
-      attributeName="d"
-      repeatCount="indefinite"
-      keyTimes="0; .0625; .208333333; .3125; .395833333; .645833333; .833333333; 1"
-      values="M 0,0 C 50,0 50,0 100,0 100,50 100,50 100,100 50,100 50,100 0,100 0,50 0,50 0,0 Z;
-              M 0,0 C 50,0 50,0 100,0 100,50 100,50 100,100 50,100 50,100 0,100 0,50 0,50 0,0 Z;
-              M 50,0 C 75,25 75,25 100,50 75,75 75,75 50,100 25,75 25,75 0,50 25,25 25,25 50,0 Z;
-              M 25,50 C 37.5,25 37.5,25 50,0 75,50 75,50 100,100 50,100 50,100 0,100 12.5,75 12.5,75 25,50 Z;
-              M 25,50 C 37.5,25 37.5,25 50,0 75,50 75,50 100,100 50,100 50,100 0,100 12.5,75 12.5,75 25,50 Z;
-              M 50,0 C 77.6,0 100,22.4 100,50 100,77.6 77.6,100 50,100 22.4,100, 0,77.6, 0,50 0,22.4, 22.4,0, 50,0 Z;
-              M 50,0 C 77.6,0 100,22.4 100,50 100,77.6 77.6,100 50,100 22.4,100, 0,77.6, 0,50 0,22.4, 22.4,0, 50,0 Z;
-              M 100,0 C 100,50 100,50 100,100 50,100 50,100 0,100 0,50 0,50 0,0 50,0 50,0 100,0 Z;"
-      dur="1440ms"
-      calcMode="spline" 
-      keySplines="0,0,1,1; .42,0,.58,1; .42,0,1,1; 0,0,.58,1; .42,0,.58,1; .42,0,.58,1;.42,0,.58,1">
-    </animate>
-    <animate 
-      attributeName="fill" 
-      repeatCount="indefinite" 
-      keyTimes="0; .0625; .208333333; .3125; .395833333; .645833333; .833333333; 1" 
-      values="#1eb287; #1eb287; #1ca69e; #188fc2; #188fc2; #bb625e; #ca5f52; #1eb287;"
-      dur="1440ms"
-      calcMode="spline" 
-      keySplines="0,0,1,1; .42,0,.58,1; .42,0,1,1; 0,0,.58,1; .42,0,.58,1; .42,0,.58,1; .42,0,.58,1" >
-    </animate>
-  </path>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:800);
+html, body { height: 100%; }
+body {background: #212121;background-size: .2em 100%; font: 14.5em/1 Open Sans, Impact;text-transform: uppercase;margin: 0;}
+svg { position: absolute; width: 100%; height: 100%;}
+</style>
+
+<svg viewBox="0 0 1320 300">
+  <symbol id="s-text">
+    <text text-anchor="middle" x="50%" y="50%" dy=".35em">
+      线条动画
+    </text>
+  </symbol> 
+  <use 
+    xlink:href="#s-text" stroke="#F60A0A" stroke-width="5" 
+    stroke-dasharray="0 300" stroke-dashoffset="0";
+    fill="none">
+    <animate attributeName="stroke-dashoffset" from="0" to="1000" dur="5s" fill="freeze"></animate>
+    <animate attributeName="stroke-dasharray" from="0 300" to="80 160" dur="5s" fill="freeze"></animate>
+  </use>
+  <use 
+    xlink:href="#s-text" stroke="#F2FF14" stroke-width="5" 
+    stroke-dasharray="0 300" stroke-dashoffset="0";
+    fill="none">
+    <animate attributeName="stroke-dashoffset" from="0" to="1080" dur="5s" fill="freeze"></animate>
+    <animate attributeName="stroke-dasharray" from="0 300" to="80 160" dur="5s" fill="freeze"></animate>
+  </use>
+  <use xlink:href="#s-text" stroke="#FB9505" stroke-width="5" 
+    stroke-dasharray="0 300" stroke-dashoffset="0";
+    fill="none">
+    <animate attributeName="stroke-dashoffset" from="0" to="1160" dur="5s" fill="freeze"></animate>
+    <animate attributeName="stroke-dasharray" from="0 300" to="80 160" dur="5s" fill="freeze"></animate>
+  </use>
+</svg>
+```
+
+```
+css3动画改写：
+<style>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:800);
+html, body { height: 100%; }
+body {background: #212121;background-size: .2em 100%; font: 14.5em/1 Open Sans, Impact;text-transform: uppercase;margin: 0;}
+svg { position: absolute; width: 100%; height: 100%;}
+.text { fill: none; stroke-width: 5; stroke-dasharray: 0 300; stroke-dashoffset: 0; }
+.text:nth-child(3n + 1) { stroke: #F60A0A; animation: stroke 6s  ease-in-out forwards; }
+.text:nth-child(3n + 2) { stroke: #F2FF14; animation: stroke1 6s  ease-in-out forwards; }
+.text:nth-child(3n + 3) { stroke: #FB9505; animation: stroke2 6s  ease-in-out forwards; }
+@keyframes stroke {
+  100% { stroke-dashoffset: 1000; stroke-dasharray: 80 160; }
+}
+@keyframes stroke1 {
+  100% { stroke-dashoffset: 1080; stroke-dasharray: 80 160; }
+}
+@keyframes stroke2 {
+  100% { stroke-dashoffset: 1160; stroke-dasharray: 80 160; }
+}
+</style>
+
+<svg viewBox="0 0 1320 300">
+  <!-- Symbol -->
+  <symbol id="s-text">
+    <text text-anchor="middle" x="50%" y="50%" dy=".35em">
+      线条动画
+    </text>
+  </symbol> 
+  <use xlink:href="#s-text" class="text"></use>
+  <use xlink:href="#s-text" class="text"></use>
+  <use xlink:href="#s-text" class="text"></use>
 </svg>
 ```
 
