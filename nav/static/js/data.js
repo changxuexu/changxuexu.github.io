@@ -909,7 +909,8 @@ var data_jsplug = {
         { name: 'quill', href: 'https://github.com/quilljs/quill', title: '对图片的各种操作不友善' },
         { name: 'tui.editor', href: 'https://github.com/nhn/tui.editor', title: '在网页中编辑 Markdown 文档的文本或所见即所得' },
         { name: 'UEditor', href: 'http://fex.baidu.com/ueditor', title: '百度' },
-        { name: 'KindEditor', href: 'http://kindeditor.net/demo.php', title: '' }
+        { name: 'KindEditor', href: 'http://kindeditor.net/demo.php', title: '' },
+		{ name: 'canvas-editor', href: 'https://github.com/Hufe921/canvas-editor', title: '类word可分页在线编辑器' },
       ]
     },
     {
