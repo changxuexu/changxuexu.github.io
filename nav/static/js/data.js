@@ -420,7 +420,7 @@ var data_Linux = {
 }
 
 var data_WeChat = {
-  super_tit: '微应用',
+  super_tit: '微信',
   super_child: [
     {
       second_tit: '文档资料',
@@ -441,6 +441,7 @@ var data_WeChat = {
     {
       second_tit: '组件库',
       second_child: [
+        { name: 'Donut', href: 'https://dev.weixin.qq.com/', title: '编译为小程序和 Android 以及 iOS 应用，实现多端开发' },
         { name: 'Vant Weapp', href: 'https://youzan.github.io/vant-weapp/#/intro', title: '' },
         { name: 'wepy', href: 'https://wepyjs.github.io/wepy-docs', title: '' }
       ]
