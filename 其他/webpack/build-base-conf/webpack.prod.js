@@ -5,9 +5,10 @@ const webpackCommonConf = require('./webpack.common.js')
 const { smart } = require('webpack-merge')
 const { srcPath, distPath } = require('./paths')
 module.exports = smart(webpackCommonConf, {
-    mode:'production',
+    mode:'production', //production下代码会压缩
     output:{
-        filename:'bundle.[contentHash:8].js', //打包代码时，加上
+        // 打包代码时，加上。若文件有所改动contentHash就会变，生成的文件名也会变化
+        filename:'bundle.[contentHash:8].js', 
         path:distPath,
         // publicPath:'http://cdn.abc.com' //修改所有静态文件url
     },

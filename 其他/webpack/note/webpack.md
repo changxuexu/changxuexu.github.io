@@ -1,5 +1,9 @@
 # webpack
+# 待处理
+```
+https://www.cnblogs.com/sirpho/articles/17508431.html
 
+```
 # 概述
 ```
 webpack 已是前端打包构建的不二选择；
@@ -70,7 +74,7 @@ webpack4 升级 webpack5 以及周边插件后，代码需要做出的调整:
 # 基本配置
 
 ```
-拆分配置 和 merge
+拆分配置 和 merge：相对于开发环境和生产环境中的有些配置不一样
 启动本地服务
 处理 ES6
 处理样式

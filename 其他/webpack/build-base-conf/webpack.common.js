@@ -5,6 +5,7 @@ module.exports = {
     entry:path.join(srcPath,'index'), // 文件入口
     module:{
         rules:[
+            // babel-loader 将es6以上语法向下兼容
             {
                 test:/\.js$/,
                 loader:['babel-loader'],
