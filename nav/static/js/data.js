@@ -263,7 +263,7 @@ var data_jquery = {
     {
       second_tit: '文档资料',
       second_child: [
-        { name: 'jquery文档', href: 'http://jquery.cuishifeng.cn', title: '' },
+        { name: 'jquery文档', href: 'https://www.sunpop.cn/documentation/jq/index.html', title: '' },
         { name: 'jquery官网', href: 'https://jquery.com', title: '' },
         { name: 'zepto文档', href: 'https://www.html.cn/doc/zeptojs_api', title: '' }
       ]

@@ -2,7 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { srcPath, distPath } = require('./paths')
 module.exports = {
-    entry:path.join(srcPath,'index'),
+    entry:path.join(srcPath,'index'), // 文件入口
     module:{
         rules:[
             {
@@ -29,9 +29,10 @@ module.exports = {
         ]
     },
     plugins:[
+        // html-webpack-plugin 解析html插件，将打包后的js自动引入模板文件
         new HtmlWebpackPlugin({
-            template:path.join(srcPath, 'index.html'),
-            filename:'index.html'
+            template:path.join(srcPath, 'index.html'), // 使用的模板
+            filename:'index.html' //产出的文件名
         })
     ]
 }

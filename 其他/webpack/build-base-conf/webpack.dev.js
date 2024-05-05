@@ -4,7 +4,7 @@ const webpackCommonConf = require('./webpack.common.js')
 const { smart } = require('webpack-merge')
 const { srcPath, distPath } = require('./paths')
 module.exports = smart(webpackCommonConf, {
-    mode:'development',
+    mode:'development', //模式(development/production)，development模式下代码不会压缩
     module:{
         rules:[
             // 表现：直接引入图片url
@@ -23,7 +23,7 @@ module.exports = smart(webpackCommonConf, {
     devServer:{
         port:8080,
         progress:true, //显示打包的进度条
-        contentBase:distPath, //根目录
+        contentBase:distPath, //当前启动服务的根目录
         open:true, //自动打开浏览器
         compress:true, //启动gzip压缩
         // 设置代理

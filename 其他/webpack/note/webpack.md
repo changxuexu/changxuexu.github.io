@@ -47,6 +47,11 @@ webpack大纲
 		runtime
 	
 常见问题：	
+	为何需要webpack和babel?
+		ES6 模块化，浏览器暂不支持
+    	ES6 语法，浏览器并不完全支持
+    	压缩代码，整合代码，以让网页加载更快
+    	
     前端代码为何要进行构建和打包 ?
     module chunk bundle 分别什么意思，有何区别?
     loader 和 plugin 的区别 ?
