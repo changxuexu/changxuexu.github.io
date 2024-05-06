@@ -3,6 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { srcPath, distPath } = require('./paths')
 module.exports = {
     entry:path.join(srcPath,'index'), // 文件入口
+    /* entry:{
+        index:path.join(srcPath,'index.js'),
+        other:path.join(srcPath,'other.js')
+    }, */
     module:{
         rules:[
             // babel-loader 将es6以上语法向下兼容
@@ -22,13 +26,13 @@ module.exports = {
                 test:/\.css$/,
                 // loader的执行顺序事：从后往前
                 // loader:['style-loader', 'css-loader', 'postcss-loader'] //webpack4
-                use:['style-loader', 'css-loader', 'postcss-loader'] //webpack5
+                use:['style-loader', 'css-loader' , 'postcss-loader'] //webpack5
             },
             {
                 test:/\.less$/,
                 // 增加 'less-loader' 注意顺序
                 // loader:['style-loader', 'css-loader', 'less-loader'] //webpack4
-                use:['style-loader', 'css-loader', 'less-loader'] //webpack5
+                use:['style-loader', 'css-loader' , 'postcss-loader', 'less-loader'] //webpack5
             }
         ]
     },
@@ -38,5 +42,22 @@ module.exports = {
             template:path.join(srcPath, 'index.html'), // 使用的模板
             filename:'index.html' //产出的文件名
         })
+
+        /* 
+        // 多入口-生成 index.html-访问()
+        new HtmlWebpackPlugin({
+            template:path.join(srcPath, 'index.html'), // 使用的模板
+            filename:'index.html', //产出的文件名
+            // chunks 表示该页面要引用哪些 chunk(即entry入口中的index、other)
+            chunks:['index'] //只引用entry入口的index.js
+        }),
+        // 多入口-生成 other.html-访问()
+        new HtmlWebpackPlugin({
+            template:path.join(srcPath, 'other.html'), // 使用的模板
+            filename:'other.html', //产出的文件名
+            // chunks 表示该页面要引用哪些 chunk(即entry入口中的index、other)
+            chunks:['other'] //只引用entry入口的other.js
+        }) 
+        */
     ]
 }

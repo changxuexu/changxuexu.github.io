@@ -13,7 +13,10 @@ css分离与压缩
 TerserWebpackPlugin
 	https://blog.csdn.net/lbPro0412/article/details/135968231
 	https://blog.csdn.net/weixin_49428989/article/details/137139130
-	
+
+参考
+	https://blog.csdn.net/Maui1027/article/details/126350281
+		options: { importLoaders: 1, esModule: true,},
 ```
 # 概述
 ```
@@ -167,15 +170,44 @@ webpack4 升级 webpack5 以及周边插件后，代码需要做出的调整:
 ```
 
 # 基本配置
-
 ```
 1.拆分配置 和 merge：相对于开发环境和生产环境中的有些配置不一样
+
 2.启动本地服务
+	参考webpack-dev-server依赖
+	https://webpack.js.org/configuration/dev-server/#devserverproxy
+
 3.处理 ES6
+	参照babel章节
+
 4.处理样式
-	postcss-loader 样式兼容
-	autoprefixer 前缀
+	关于样式兼容
+		npm install --save-dev postcss-loader postcss
+		postcss的配置文件postcss.config.js
+			webpack4:
+				module.exports = {
+					plugins: [
+						// 前缀自动补全依赖autoprefixer需下载
+						// https://github.com/postcss/autoprefixer
+						require('autoprefixer') 
+					]
+				}
+			
+			webpack5:
+				module.exports = {
+					plugins:[
+							[
+								'postcss-preset-env',
+								{
+									// 其他选项
+									browsers: 'last 2 versions'   
+								}
+							]
+					]
+				}
+
 5.处理图片
+
 6.模块化: webpack包含这个功能
 ```
 
@@ -184,7 +216,50 @@ webpack4 升级 webpack5 以及周边插件后，代码需要做出的调整:
 
 ## 多入口
 ```
+(1)单页面应用(SPA-Single-page Application) 
+	特点：功能较多，一个页面展示不完；以操作为主，非展示为主；适合一个综合 Web 应用
+	场景：大型后台管理系统(如阿里云的 console)，知识库(如语雀、石墨文档),复杂的 WebApp(如外卖H5)
 
+(2)多页面应用(MPA-Multi-page Application) 
+	特点：功能较少，一个页面展示的完；以展示为主，操作较少；适合一个孤立的页面
+	场景：如分享页面
+
+(3)默认情况下，Vue React 都是 SPA
+
+(4)实现：多页面应用对应webpack的多入口配置
+./webpack.common.js 
+	module.exports = {
+		entry:{
+			index:path.join(srcPath,'index.js'),
+			other:path.join(srcPath,'other.js')
+    },
+		// ...
+		plugins:[
+			// 多入口-生成 index.html-访问()
+			new HtmlWebpackPlugin({
+				template:path.join(srcPath, 'index.html'), // 使用的模板
+				filename:'index.html', //产出的文件名
+				// chunks 表示该页面要引用哪些 chunk(即entry入口中的index、other)
+				chunks:['index'] //只引用entry入口的index.js
+			}),
+			// 多入口-生成 other.html-访问()
+			new HtmlWebpackPlugin({
+				template:path.join(srcPath, 'other.html'), // 使用的模板
+				filename:'other.html', //产出的文件名
+				// chunks 表示该页面要引用哪些 chunk(即entry入口中的index、other)
+				chunks:['other'] //只引用entry入口的other.js
+			})
+    ]
+	}
+
+./webpack.prod.js
+	module.exports = merge(webpackCommonConf, {
+    mode:'production', //production下代码会压缩
+    output:{
+			filename:'[name].[contenthash:8].js', // 多入口,name表示entry入口中的index、other
+    }
+		// ...
+	})
 ```
 
 ## 抽离和压缩 css
