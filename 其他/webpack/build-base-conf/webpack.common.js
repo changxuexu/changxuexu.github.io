@@ -8,7 +8,8 @@ module.exports = {
             // babel-loader 将es6以上语法向下兼容
             {
                 test:/\.js$/,
-                loader:['babel-loader'],
+                // loader:['babel-loader'], //webpack4
+                use:['babel-loader'], //webpack5
                 include:srcPath,
                 exclude:/node_modules/
             },
@@ -20,12 +21,14 @@ module.exports = {
             {
                 test:/\.css$/,
                 // loader的执行顺序事：从后往前
-                loader:['style-loader', 'css-loader', 'postcss-loader']
+                // loader:['style-loader', 'css-loader', 'postcss-loader'] //webpack4
+                use:['style-loader', 'css-loader', 'postcss-loader'] //webpack5
             },
             {
                 test:/\.less$/,
                 // 增加 'less-loader' 注意顺序
-                loader:['style-loader', 'css-loader', 'less-loader']
+                // loader:['style-loader', 'css-loader', 'less-loader'] //webpack4
+                use:['style-loader', 'css-loader', 'less-loader'] //webpack4
             }
         ]
     },

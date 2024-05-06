@@ -1,9 +1,10 @@
 const path = require('path')
 const webpack = require('webpack')
 const webpackCommonConf = require('./webpack.common.js')
-const { smart } = require('webpack-merge')
+// const { smart } = require('webpack-merge') //webpack4
+const { merge } = require('webpack-merge') //webpack5
 const { srcPath, distPath } = require('./paths')
-module.exports = smart(webpackCommonConf, {
+module.exports = merge(webpackCommonConf, {
     mode:'development', //模式(development/production)，development模式下代码不会压缩
     module:{
         rules:[

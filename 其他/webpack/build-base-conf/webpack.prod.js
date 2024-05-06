@@ -2,13 +2,15 @@ const path = require('path')
 const webpack = require('webpack')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const webpackCommonConf = require('./webpack.common.js')
-const { smart } = require('webpack-merge')
+// const { smart } = require('webpack-merge') //webpack4
+const { merge } = require('webpack-merge') //webpack5
 const { srcPath, distPath } = require('./paths')
-module.exports = smart(webpackCommonConf, {
+module.exports = merge(webpackCommonConf, {
     mode:'production', //production下代码会压缩
     output:{
         // 打包代码时，加上。若文件有所改动contentHash就会变，生成的文件名也会变化
-        filename:'bundle.[contentHash:8].js', 
+        // filename:'bundle.[contentHash:8].js', // webpack4-H大小写
+        filename:'bundle.[contenthash:8].js', // webpack5
         path:distPath,
         // publicPath:'http://cdn.abc.com' //修改所有静态文件url
     },

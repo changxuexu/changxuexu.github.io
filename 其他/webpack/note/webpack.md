@@ -1,8 +1,19 @@
 # webpack
 # 待处理
 ```
-https://www.cnblogs.com/sirpho/articles/17508431.html
+vite babel
+	https://www.cnblogs.com/sirpho/articles/17508431.html
 
+css分离与压缩
+	https://www.cnblogs.com/mengfangui/p/10131303.html
+	
+	webpack5 optimize-css-assets-webpack-plugin:
+	https://www.jianshu.com/p/e79b8581eaae
+
+TerserWebpackPlugin
+	https://blog.csdn.net/lbPro0412/article/details/135968231
+	https://blog.csdn.net/weixin_49428989/article/details/137139130
+	
 ```
 # 概述
 ```
@@ -62,34 +73,72 @@ webpack大纲
     webpack 如何实现懒加载 ?
     webpack 常见性能优化?
     babel-runtime和babel-polyfill 的区别?
+```
 
+# webpack4与webpack5对比
+```
 webpack4 升级 webpack5 以及周边插件后，代码需要做出的调整:
-    1.package.json 的dev-server 命令改了"dev":"webpack serve --config build/webpack.dev.js"
-    2.升级新版本 const { merge } = require('webpack-merge')
-    3.升级新版本 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-    4.module.rules 中 loader:['xxx-loader'] 换成 use:['xxx-loader']
-    5.filename :'bundle.[contenthash:8].js' 其中 h 小写，不能大写
+	1.package.json 的dev-server 命令改了"dev":"webpack serve --config build/webpack.dev.js"
+		webpack5："dev": "webpack serve --config build/webpack.dev.js"
+		webpack4："dev": "webpack-dev-server --config build/webpack.dev.js"
+
+	2.升级新版本 const { merge } = require('webpack-merge')
+		webpack5：const { merge } = require('webpack-merge')
+		webpack4：const { smart } = require('webpack-merge')
+
+	3.升级新版本 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+		webpack5：const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+		webpack4：const CleanWebpackPlugin = require('clean-webpack-plugin')
+
+	4.module.rules 中 loader:['xxx-loader'] 换成 use:['xxx-loader']
+		webpack5：use: ['xxx-loader']
+		webpack4：loader: ['xxx-loader']
+		
+	5.filename :'bundle.[contenthash:8].js' 其中 h 小写，不能大写
+		webpack5：filename: 'bundle.[contenthash:8].js'
+		webpack4：filename: 'bundle.[contentHash:8].js'
 ```
 
 # 基本配置
 
 ```
-拆分配置 和 merge：相对于开发环境和生产环境中的有些配置不一样
-启动本地服务
-处理 ES6
-处理样式
+1.拆分配置 和 merge：相对于开发环境和生产环境中的有些配置不一样
+2.启动本地服务
+3.处理 ES6
+4.处理样式
 	postcss-loader 样式兼容
 	autoprefixer 前缀
-处理图片
-模块化
+5.处理图片
+6.模块化: webpack包含这个功能
 ```
 
 
-#
+# 高级配置
+
+## 多入口
 ```
 
 ```
 
+## 抽离和压缩 css
+```
+
+```
+
+## 抽离公共代码
+```
+
+```
+
+## 懒加载
+```
+
+```
+
+## 处理 React 和 vue
+```
+
+```
 
 #
 ```
