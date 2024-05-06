@@ -4,12 +4,6 @@
 vite babel
 	https://www.cnblogs.com/sirpho/articles/17508431.html
 
-css分离与压缩
-	https://www.cnblogs.com/mengfangui/p/10131303.html
-	
-	webpack5 optimize-css-assets-webpack-plugin:
-	https://www.jianshu.com/p/e79b8581eaae
-
 TerserWebpackPlugin
 	https://blog.csdn.net/lbPro0412/article/details/135968231
 	https://blog.csdn.net/weixin_49428989/article/details/137139130
@@ -160,13 +154,6 @@ webpack4 升级 webpack5 以及周边插件后，代码需要做出的调整:
 	
 	6.压缩css依赖optimize-css-assets-webpack-plugin 调整为 css-minimizer-webpack-plugin
 
-		css-minimizer-webpack-plugin配置
-			optimization: {
-				minimize: true,
-				minimizer: [
-					new CssMinimizerPlugin(),
-				]
-			}
 ```
 
 # 基本配置
@@ -264,7 +251,22 @@ webpack4 升级 webpack5 以及周边插件后，代码需要做出的调整:
 
 ## 抽离和压缩 css
 ```
+场景：
+	生产环境下抽离和压缩 css
 
+依赖：
+	css抽离
+		mini-css-extract-plugin
+		extract-text-webpack-plugin(webpack < 4)
+
+	css压缩
+		css-minimizer-webpack-plugin (webpack = 5)
+		optimize-css-assets-webpack-plugin (webpack = 4)
+	
+	js压缩
+		terser-webpack-plugin
+
+	具体配置见配置文件
 ```
 
 ## 抽离公共代码
@@ -274,6 +276,25 @@ webpack4 升级 webpack5 以及周边插件后，代码需要做出的调整:
 
 ## 懒加载
 ```
+异步加载js，用到的时候才去加载；
+webpack自身支持这个功能，无需配置
+
+案例：
+	./dynamic-data.js
+		export default {
+			message:'this is dynamic data'
+		}
+
+	./index.js
+		setTimeout(()=>{
+			import('./dynamic-data.js').then(res=>{
+				console.log(res.default.message);
+			})
+		},1000)
+
+	表现：
+		开发环境：用到的时候才去加载
+		生产环境：单独打包出一个chunk文件
 
 ```
 

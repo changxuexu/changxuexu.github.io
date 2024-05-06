@@ -16,23 +16,6 @@ module.exports = {
                 use:['babel-loader'], //webpack5
                 include:srcPath,
                 exclude:/node_modules/
-            },
-            // {
-            //     test:/\.css$/,
-            //     // loader的执行顺序事：从后往前
-            //     loader:['style-loader','css-loader']
-            // },
-            {
-                test:/\.css$/,
-                // loader的执行顺序事：从后往前
-                // loader:['style-loader', 'css-loader', 'postcss-loader'] //webpack4
-                use:['style-loader', 'css-loader' , 'postcss-loader'] //webpack5
-            },
-            {
-                test:/\.less$/,
-                // 增加 'less-loader' 注意顺序
-                // loader:['style-loader', 'css-loader', 'less-loader'] //webpack4
-                use:['style-loader', 'css-loader' , 'postcss-loader', 'less-loader'] //webpack5
             }
         ]
     },

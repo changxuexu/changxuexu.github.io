@@ -1,9 +1,12 @@
 const path = require('path')
 const webpack = require('webpack')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const webpackCommonConf = require('./webpack.common.js')
 // const { smart } = require('webpack-merge') //webpack4
 const { merge } = require('webpack-merge') //webpack5
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const TerserJSPlugin = require('terser-webpack-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const webpackCommonConf = require('./webpack.common.js')
 const { srcPath, distPath } = require('./paths')
 module.exports = merge(webpackCommonConf, {
     mode:'production', //production下代码会压缩
@@ -32,6 +35,20 @@ module.exports = merge(webpackCommonConf, {
                         // publicPath:'http://cdn.abc.com'
                     }
                 }
+            },
+            // 抽离css
+            {
+                test:/\.css$/,
+                // loader的执行顺序事：从后往前
+                // 注意这里不再是style-loader在页面中通过style标签加载形式，而目的是抽离css
+                use:[MiniCssExtractPlugin.loader, 'css-loader' , 'postcss-loader']
+            },
+            // 抽离less
+            {
+                test:/\.less$/,
+                // 注意这里不再是style-loader在页面中通过style标签加载形式，而目的是抽离css
+                // 增加 'less-loader' 注意顺序
+                use:[MiniCssExtractPlugin.loader, 'css-loader',  'postcss-loader' , 'less-loader'] //webpack5
             }
         ]
     },
@@ -40,6 +57,19 @@ module.exports = merge(webpackCommonConf, {
         new webpack.DefinePlugin({
             // 使用 window.ENV = 'production'
             ENV:JSON.stringify('production')
+        }),
+
+        // 抽离css文件
+        new MiniCssExtractPlugin({
+            filename:'css/main.[contenthash:8].css'
         })
-    ]
+    ],
+    optimization:{
+        minimizer:[
+            // 压缩js
+            new TerserJSPlugin({}),
+            // 压缩css
+            new CssMinimizerPlugin()
+        ]
+    }
 })

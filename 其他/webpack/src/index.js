@@ -1,3 +1,9 @@
+setTimeout(()=>{
+    console.log(1111);
+},1000)
+
+
+
 /* 
 // 引入js, 处理es6
 import { sum } from './math'
@@ -35,7 +41,7 @@ if(module.hot){
     })
 }
 
-// 引入动态数据
+// 引入动态数据 - 懒加载
 setTimeout(()=>{
     import('./dynamic-data.js').then(res=>{
         console.log(res.default.message);
