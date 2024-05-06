@@ -21,6 +21,37 @@ module.exports = merge(webpackCommonConf, {
             ENV:JSON.stringify('development')
         })
     ],
+    // webpack 5 (https://webpack.js.org/configuration/dev-server/#devserverproxy)
+    devServer:{
+        port:3000,
+        // open:true, //自动打开浏览器
+        compress:true, //启动gzip压缩
+        client: {
+            progress:true, //显示打包的进度条
+        },
+        static:{
+            directory:distPath //当前启动服务的根目录
+        },
+        proxy:[
+            //将本地/api/xxx代理到 localhost:3000/api/xxx
+            {
+                context: ['/api'],
+                target:'http://localhost:3000',
+                secure: false,
+                changeOrigin: true
+            },
+            // 将本地 /api2/xxx代理到 localhost:3000/xxx
+            {
+                context: ['/api2'],
+                target:'http://localhost:3000',
+                secure: false,
+                changeOrigin: true,
+                pathRewrite: { '^/api2': '' },
+            }
+        ]
+    }
+    /* 
+    // webpack 4
     devServer:{
         port:8080,
         progress:true, //显示打包的进度条
@@ -40,5 +71,6 @@ module.exports = merge(webpackCommonConf, {
                 }
             }
         }
-    }
+    } 
+    */
 })

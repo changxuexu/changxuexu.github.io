@@ -79,8 +79,65 @@ webpack大纲
 ```
 webpack4 升级 webpack5 以及周边插件后，代码需要做出的调整:
 	1.package.json 的dev-server 命令改了"dev":"webpack serve --config build/webpack.dev.js"
-		webpack5："dev": "webpack serve --config build/webpack.dev.js"
-		webpack4："dev": "webpack-dev-server --config build/webpack.dev.js"
+		webpack5：
+			package.json 
+				"dev": "webpack serve --config build/webpack.dev.js"
+
+			配置
+				// webpack 5 (https://webpack.js.org/configuration/dev-server/#devserverproxy)
+				devServer:{
+						port:3000,
+						// open:true, //自动打开浏览器
+						compress:true, //启动gzip压缩
+						client: {
+								progress:true, //显示打包的进度条
+						},
+						static:{
+								directory:distPath //当前启动服务的根目录
+						},
+						proxy:[
+								//将本地/api/xxx代理到 localhost:3000/api/xxx
+								{
+										context: ['/api'],
+										target:'http://localhost:3000',
+										secure: false,
+										changeOrigin: true
+								},
+								// 将本地 /api2/xxx代理到 localhost:3000/xxx
+								{
+										context: ['/api2'],
+										target:'http://localhost:3000',
+										secure: false,
+										changeOrigin: true,
+										pathRewrite: { '^/api2': '' },
+								}
+						]
+				}
+				
+		webpack4：
+			package.json 
+				"dev": "webpack-dev-server --config build/webpack.dev.js"
+			配置：
+				devServer:{
+					port:8080,
+					progress:true, //显示打包的进度条
+					contentBase:distPath, //当前启动服务的根目录
+					open:true, //自动打开浏览器
+					compress:true, //启动gzip压缩
+					// 设置代理
+					proxy:{
+							//将本地 /api/xxx代理到 localhost:3000/ api/xxx
+							'/api':'http://localhost:3000',
+
+							//将本地 /api2/xxx代理到 localhost:3000/ xxx
+							'/api2':{
+									target:'http://localhost:3000',
+									pathRewrite:{
+											'/api2':''
+									}
+							}
+					}
+				}
 
 	2.升级新版本 const { merge } = require('webpack-merge')
 		webpack5：const { merge } = require('webpack-merge')
@@ -97,6 +154,16 @@ webpack4 升级 webpack5 以及周边插件后，代码需要做出的调整:
 	5.filename :'bundle.[contenthash:8].js' 其中 h 小写，不能大写
 		webpack5：filename: 'bundle.[contenthash:8].js'
 		webpack4：filename: 'bundle.[contentHash:8].js'
+	
+	6.压缩css依赖optimize-css-assets-webpack-plugin 调整为 css-minimizer-webpack-plugin
+
+		css-minimizer-webpack-plugin配置
+			optimization: {
+				minimize: true,
+				minimizer: [
+					new CssMinimizerPlugin(),
+				]
+			}
 ```
 
 # 基本配置
@@ -277,9 +344,9 @@ webpack4 升级 webpack5 以及周边插件后，代码需要做出的调整:
 					[
 					  "@babel/preset-env",
 					  {
-						// @babel/preset-env 的参数
-						"useBuiltIns":"usage", //按需引入
-						"corejs":3 // 版本
+							// @babel/preset-env 的参数
+							"useBuiltIns":"usage", //按需引入
+							"corejs":3 // 版本
 					  }
 					]
 				  ],

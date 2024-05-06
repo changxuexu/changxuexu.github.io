@@ -28,7 +28,7 @@ module.exports = {
                 test:/\.less$/,
                 // 增加 'less-loader' 注意顺序
                 // loader:['style-loader', 'css-loader', 'less-loader'] //webpack4
-                use:['style-loader', 'css-loader', 'less-loader'] //webpack4
+                use:['style-loader', 'css-loader', 'less-loader'] //webpack5
             }
         ]
     },
