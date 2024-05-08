@@ -366,6 +366,36 @@ webpack自身支持这个功能，无需配置
 		}
 	}
 	
+	说明：
+		@babel/cli 
+			从终端运行 Babel，命令行对 js 文件进行换码的工具
+
+		@babel/core
+			Babel 的核心，包含各个核心的 API，供 Babel 插件和打包工具使用
+			
+		@babel/preset-env 
+			包含的插件支持所有最新的JS特性(ES2015,ES2016等,不包含stage阶段);
+			用于处理语法层：
+				let、const、class、箭头函数等，这些需要在构建时进行转译，是指在语法层面上的转译，比如class...将来会被转译成var function...；
+			配置：
+				建立.babelrc文件或者babelconfig.js文件，添加以下代码，babel会自动寻找这个文件；
+				只对我们所使用的并且目标浏览器中缺失的功能进行代码转换和加载 polyfill。
+			其他：
+				如果你用 Vue ，presets 一般是 @vue/app，这个是把 在@babel/preset-env 包含的 plugins 上又加了很多自己定义的 plugins。
+				所有的 Vue CLI 应用都使用 @vue/babel-preset-app，它包含了 babel-preset-env、JSX 支持以及为最小化包体积优化过的配置。
+				@vue/babel-preset-app已经默认配置了@babel/plugin-transform-runtime。
+			
+		@babel/polyfill 
+			来模拟所有新的 JavaScript 功能;
+			用于处理Api层：Promise、includes、map等，这些是在全局或者Object、Array等的原型上新增的方法，它们可以由相应es5的方式重新定义babel对这两个分类的转译的做法肯定是不一样的，我们也需要给出相应的配置
+			通俗理解：垫平不同浏览器或者不同环境下的差异，让新的内置函数、实例方法等在低版本浏览器中也可以使用。
+			
+		@babel/plugin-transform-runtime
+			该插件会开启对 Babel 注入的辅助函数，同时解决全局污染
+
+		@babel/runtime
+			@babel/runtime中含有辅助函数
+	
 
 2.新建.babelrc文件及配置
 	babel其实就是创建流程的一个工具，实际上语法转换工作还是由presets、plugins来完成的；
@@ -411,12 +441,12 @@ webpack自身支持这个功能，无需配置
 	https://github.com/zloirock/core-js
 4.regenerator
 	core-js 不支持 es6 generator 函数语法，因此还需要regenerator库
-5.babel-polyfill 就是core-js和regenerator 两者功能的集合
+5.babel-polyfill 就是core-js和regenerator 两者功能的集合。如果安装了 @babel/polyfill 不用在额外安装 core-js@2
 
 
 基础案例：
 	./index.js
-		import '@babel/polyfill'
+		import '@babel/polyfill'    //全部引入
 		const sum = (a,b) => a + b;
 		Promise.resolve(100).then(data=> data);
 		[10, 20, 30].includes(20)
@@ -438,14 +468,35 @@ webpack自身支持这个功能，无需配置
 			(1).babelrc配置
 				{
 				  "presets": [
-					[
-					  "@babel/preset-env",
-					  {
-							// @babel/preset-env 的参数
-							"useBuiltIns":"usage", //按需引入
-							"corejs":3 // 版本
-					  }
-					]
+						[
+							"@babel/preset-env",
+							{
+								// @babel/preset-env 的参数
+								// 按需引入
+								/*
+									useBuiltIns取值: 
+										false:不对polyfills做任何操作；
+										entry: 根据target中浏览器版本的支持，将polyfills拆分引入，仅引入有浏览器不支持的polyfill；
+										usage(新)：检测代码中ES6/7/8等的使用情况，仅仅加载代码中用到的polyfills(按需引入)
+								*/
+								"useBuiltIns":"usage", 
+								
+								/*
+									版本: 取值为2(默认)和3，只在useBuiltIns: "entry | usage"时有效。
+									注意：需要安装对应的 core-js 依赖版本；
+									问题：
+										Can't resolve 'core-js/modules/es.promise.js'Can't resolve 'core-js/modules/es.promise.js'
+										解决：pnpm install core-js@3
+								*/
+								"corejs":3,
+								
+								// 支持的浏览器
+								//"targets": ">0.2%, not dead, Firefox >= 52, IE >= 8",
+								
+								//"amd"、"umd"、 "systemjs"、 "commonjs" 、"cjs" 、"auto" (默认)、false。
+								 modules:auto
+							}
+						]
 				  ],
 				  "plugins": [
 
@@ -471,6 +522,7 @@ webpack自身支持这个功能，无需配置
 					});
 					[10, 20, 30].includes(20);
 				
+				虽然看起来Promise还是没有转译，但是我们引入的 polyfill 中已经包含了对Promise的定义，所以这时候代码便可以在低版本浏览器中运行了。
 				此时可以看到@babel/polyfill中兼容的api按需引入
 			
 注意：
@@ -482,6 +534,9 @@ webpack自身支持这个功能，无需配置
 ## babel-runtime
 ```
 以上案例存在问题：
+	可以看出preset-env在处理例如Promise这种的api时，只是引入了core-js中的相关的js库，这些库重新定义了Promise，然后将其挂载到了全局。
+	这里的问题就是：必然会造成全局变量污染，同理其他的例如Array.from等会修改这些全局对象的原型prototype，这也会造成全局对象的污染。
+	
 	会污染全局环境
 		window.Promise = function(){  }
 		Array.prototype.includes = function(){  }
@@ -499,19 +554,54 @@ webpack自身支持这个功能，无需配置
 				[
 					"@babel/preset-env",
 					{
-					"useBuiltIns":"usage",
-					"corejs":3
+						"useBuiltIns":"usage",
+						"corejs":3
 					}
 				]
 		  ],
 		  "plugins": [
 				[
+					// 将core-js交给transform-runtime处理
+					// transform-runtime是利用plugin自动识别并替换代码中的新特性，检测到需要哪个就用哪个
 					"@babel/plugin-transform-runtime",
 					{
+						/*
+							取值：true| false(默认) 
+							当 absoluteRuntime 设置为 false（默认值）时，Babel 会生成【相对路径】来导入 @babel/runtime 中的辅助函数。
+							当将其设置为 true 时，Babel 会生成【绝对路径】来导入 @babel/runtime。
+						*/
 						"absoluteRuntime": false,
+						
+						/*
+							取值：2 | 3 | false(默认)。
+							指向选项的值为数字，即选择哪个版本的@babel-runtime-corejs:
+							配置corejs为3，需要预先安装@babel/runtime-corejs3
+							配置corejs为2，需要预先安装@babel/runtime-corejs2
+							配置corejs为false，需要预先安装@babel/runtime
+							
+							注意：根据配置需要安装对应的依赖；
+								不然报错Can't resolve '@babel/runtime-corejs3/core-js-stable/set-timeout'；、
+								解决 pnpm install @babel/runtime-corejs3
+						*/
 						"corejs":3,
+						
+						/*
+							取值：true(默认) | false
+							从 @babel/runtime-corejs/helpers 模块中引入 helper。代替内联 helper。
+						*/
 						"helpers":true,
+						
+						/*
+							取值：true(默认) | false
+							切换是否将generator函数转换为使用不污染全局作用的regenerator运行时。
+						*/
 						"regenerator": true,
+						
+						/*
+							取值：true| false(默认) 
+							当 useESModules 设置为 true 时，Babel 将会生成 import 语句来导入 @babel/runtime 中的模块，这适用于那些支持 ES 模块的环境，比如在现代浏览器或配置为使用 ES 模块的打包工具（如 Webpack 通过 type: 'module' 配置）中。
+							如果设置为 false（默认值），Babel 则会生成 CommonJS 风格的 require 语句来导入这些功能。这适用于 Node.js 环境或其他不完全支持 ES 模块的环境。
+						*/
 						"useESModules": false
 					}
 				]
@@ -539,6 +629,7 @@ webpack自身支持这个功能，无需配置
 			  return data;
 			});
 			(0, _includes["default"])(_context = [10, 20, 30]).call(_context, 20);
-
+		
+		
 		可以看出新的api转化为了 _promise、_includes ；不会与原生api冲突
 ```

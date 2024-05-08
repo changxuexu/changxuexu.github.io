@@ -1,7 +1,8 @@
 setTimeout(()=>{
-    console.log(1111);
+    import('./dynamic-data.js').then(res=>{
+        console.log(res.default.message);
+    })
 },1000)
-
 
 
 /* 

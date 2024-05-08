@@ -15,7 +15,7 @@ module.exports = {
                 // loader:['babel-loader'], //webpack4
                 use:['babel-loader'], //webpack5
                 include:srcPath,
-                exclude:/node_modules/
+                exclude:/node_modules/  // 不处理该文件夹下的js文件
             }
         ]
     },
