@@ -2,7 +2,7 @@ setTimeout(()=>{
     import('./dynamic-data.js').then(res=>{
         console.log(res.default.message);
     })
-},1000)
+},5000)
 
 
 /* 

@@ -32,14 +32,16 @@ module.exports = {
             template:path.join(srcPath, 'index.html'), // 使用的模板
             filename:'index.html', //产出的文件名
             // chunks 表示该页面要引用哪些 chunk(即entry入口中的index、other)
-            chunks:['index'] //只引用entry入口的index.js
+            // chunks:['index'] //只引用entry入口的index.js
+            chunks:['index', 'vendor', 'common'] // 要考虑代码分割
         }),
         // 多入口-生成 other.html-访问()
         new HtmlWebpackPlugin({
             template:path.join(srcPath, 'other.html'), // 使用的模板
             filename:'other.html', //产出的文件名
             // chunks 表示该页面要引用哪些 chunk(即entry入口中的index、other)
-            chunks:['other'] //只引用entry入口的other.js
+            // chunks:['other'] //只引用entry入口的other.js
+            chunks:['other', 'vendor', 'common'] // 要考虑代码分割
         }) 
         */
     ]
