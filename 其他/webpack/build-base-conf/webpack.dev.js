@@ -6,6 +6,7 @@ const { merge } = require('webpack-merge') //webpack5
 const { srcPath, distPath } = require('./paths')
 module.exports = merge(webpackCommonConf, {
     mode:'development', //模式(development/production)，development模式下代码不会压缩
+    devtool: 'cheap-module-source-map',  // 或者 'eval-source-map' 对于更快的源码映射体验
     module:{
         rules:[
             // 表现：直接引入图片url
