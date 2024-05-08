@@ -365,6 +365,7 @@ webpack自身支持这个功能，无需配置
 			"@babel/plugin-transform-runtime": "7.7.5"
 		}
 	}
+	
 
 2.新建.babelrc文件及配置
 	babel其实就是创建流程的一个工具，实际上语法转换工作还是由presets、plugins来完成的；
