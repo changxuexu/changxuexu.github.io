@@ -456,12 +456,14 @@ webpack自身支持这个功能，无需配置
 	新代码生效，网页不刷新，状态不丢失；
 	一个模块发生变化，只会重新打包这一个模块，而不是打包所有模块，极大的提升了构建速度。
 
-自动刷新、热更新 都是用于开发环境下
+注意：
+	1.可以在控制台定义变量或者模版中(<input type="text" placeholder="输入值测试是刷新还是热更新">)，刷新后是否能获取变量值；如果能不能获取，状态就丢失了
+	2.自动刷新、热更新 都是用于开发环境下
 
 【自动刷新】配置
+	注意：一般情况下配置了devServer:{ hot: true }，webpack-dev-server 会自动开启刷新浏览器，因此通常自动刷新不需要配置！！！
 	module.exports = {
     // 开启监听，默认为false
-    // 注意：开启监听之后(true)，webpack-dev-server 会自动开启刷新浏览器！！！
     watch:true,
     // 监听配置
     watchOptions:{
@@ -490,10 +492,21 @@ webpack自身支持这个功能，无需配置
 				保留在完全重新加载页面期间丢失的应用程序状态
 				只更新变更内容，以节省主贵的开发时间
 				在源代码中 css/js 产生修改时，会立刻在浏览器中进行更新，这几平相当于在浏览器 devtools 直接更改样式:
-					样式文件可以直接使用HMR功能，因为style-loader内部实现了module.hot.accept的支持;
-					js文件不可以，需要配置module.hot.accept  配置请看入口js文件;
-					html模板文件默认也不支持HMR，直接在入口文件将html文件引入就可以了
-	
+					a.html模板文件默认也不支持HMR，直接在入口文件将html文件引入就可以了。
+					b.样式文件可以直接使用HMR功能，因为style-loader内部实现了module.hot.accept的支持;
+					c.js文件不可以，需要使用module.hot.accept()函数指定热更新监听模块范围，不在此范围的修改都是自动刷新；
+						// 开启热更新之后的代码逻辑
+						// module.hot 是否开启热更新
+						if(module.hot){
+								// 使用module.hot.accept()函数指定热更新监听模块，不在此范围的修改都是自动刷新
+								module.hot.accept(['./math'], () => {
+										const sumRes = sum(10, 20)
+										console.log('sumRes in hot', sumRes)
+								})
+						}
+						// 关闭指定子模块的HMR
+						// module.hot.decline('./replace.js')
+						
 		缺点：
 			要在代码里注册热更新的范围，增加代码量。所以除非代码太庞大，更新速度很慢，一般开启热更新反而会增加开发开销。
 

@@ -1,4 +1,13 @@
-
+// 开启热更新之后的代码逻辑
+if(module.hot){
+    // 使用module.hot.accept()函数指定热更新监听范围
+    module.hot.accept(['./math'], () => {
+        const sumRes = sum(10, 20)
+        console.log('sumRes in hot', sumRes)
+    })
+}
+// 关闭指定子模块的HMR
+// module.hot.decline('./replace.js')
 
 /* 
 // 引入js, 处理es6
@@ -44,8 +53,9 @@ console.log('locale=',moment.locale());
 console.log('date=',moment().format('ll'));
 
 // 开启热更新之后的代码逻辑
+// module.hot 是否开启热更新
 if(module.hot){
-    // 使用module.hot.accept()函数指定热更新监听范围
+    // 使用module.hot.accept()函数指定热更新监听模块，不在此范围的修改都是自动刷新
     module.hot.accept(['./math'], () => {
         const sumRes = sum(10, 20)
         console.log('sumRes in hot', sumRes)
