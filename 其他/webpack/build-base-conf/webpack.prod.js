@@ -53,7 +53,9 @@ module.exports = merge(webpackCommonConf, {
         ]
     },
     plugins:[
-        new CleanWebpackPlugin(), // 会默认清空 output.path 文件夹
+        // 会默认清空 output.path 文件夹
+        new CleanWebpackPlugin(), 
+        
         new webpack.DefinePlugin({
             // 使用 window.ENV = 'production'
             ENV:JSON.stringify('production')
@@ -62,6 +64,16 @@ module.exports = merge(webpackCommonConf, {
         // 抽离css文件
         new MiniCssExtractPlugin({
             filename:'css/main.[contenthash:8].css'
+        }),
+
+        // 作用：告诉webpack忽略特定的模块或模块模式，这些模块将不会被打包到输出结果中。
+        // 如：忽略moment下的node_modules/moment/locale目录
+        // new webpack.IgnorePlugin(/\.\/locale/,/moment/) //webpack4
+        new webpack.IgnorePlugin({
+            // resourceRegExp（必须）一个正则表达式，用于匹配需要被忽略模块的资源路径
+            resourceRegExp: /^\.\/locale$/,
+            // 另一个正则表达式，用于进一步限制忽略规则的应用范围。只有当模块的上下文（请求该模块的父模块所在目录）也匹配此正则表达式时，才会应用忽略规则。如果不提供，默认为() => true，意味着忽略规则将应用于所有上下文。
+            contextRegExp: /moment$/
         })
     ],
     optimization:{
@@ -103,5 +115,6 @@ module.exports = merge(webpackCommonConf, {
                 }
             }
         }
+
     }
 })

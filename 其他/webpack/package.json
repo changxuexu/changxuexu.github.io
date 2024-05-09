@@ -40,6 +40,7 @@
     "@babel/polyfill": "^7.12.1",
     "@babel/runtime": "^7.24.5",
     "@babel/runtime-corejs3": "^7.24.5",
-    "core-js": "^3.37.0"
+    "core-js": "^3.37.0",
+    "moment": "^2.30.1"
   }
 }

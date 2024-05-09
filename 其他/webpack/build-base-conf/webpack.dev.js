@@ -37,10 +37,15 @@ module.exports = merge(webpackCommonConf, {
         new webpack.DefinePlugin({
             // 自定义全局变量，调用方式： window.ENV = 'development'
             ENV:JSON.stringify('development')
-        })
+        }),
+
+        // 添加热更新插件
+        // new webpack.HotModuleReplacementPlugin(), 
     ],
     // webpack 5 (https://webpack.js.org/configuration/dev-server/#devserverproxy)
     devServer:{
+        hot: true, // 启用热更新
+
         port:3000,
         // open:true, //自动打开浏览器
         compress:true, //启动gzip压缩

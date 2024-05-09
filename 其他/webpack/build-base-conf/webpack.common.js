@@ -13,9 +13,10 @@ module.exports = {
             {
                 test:/\.js$/,
                 // loader:['babel-loader'], //webpack4
-                use:['babel-loader'], //webpack5
-                include:srcPath,
-                exclude:/node_modules/  // 不处理该文件夹下的js文件
+                // use:['babel-loader'], //webpack5
+                use:['babel-loader?cacheDirectory'], //?cacheDirectory表示开启缓存
+                include:srcPath, // 明确范围
+                exclude:/node_modules/  //排除范围：不处理该文件夹下的js文件
             }
         ]
     },

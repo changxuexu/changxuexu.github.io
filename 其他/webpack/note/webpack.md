@@ -61,15 +61,19 @@ webpack大纲
 常见问题：	
 	为何需要webpack和babel?
 		ES6 模块化，浏览器暂不支持
-    	ES6 语法，浏览器并不完全支持
-    	压缩代码，整合代码，以让网页加载更快
+		ES6 语法，浏览器并不完全支持
+		压缩代码，整合代码，以让网页加载更快
     	
-    前端代码为何要进行构建和打包 ?
-    module chunk bundle 分别什么意思，有何区别?
-    loader 和 plugin 的区别 ?
-    webpack 如何实现懒加载 ?
-    webpack 常见性能优化?
-    babel-runtime和babel-polyfill 的区别?
+	前端代码为何要进行构建和打包 ?
+	module chunk bundle 分别什么意思，有何区别?
+		module-各个源码文件，webpack 中一切皆模块；
+		chunk-多模块合并成的，如 entry、import() 、splitChunk
+		bundle-最终的输出文件
+
+	loader 和 plugin 的区别 ?
+	webpack 如何实现懒加载 ?
+	webpack 常见性能优化?
+	babel-runtime和babel-polyfill 的区别?
 ```
 
 # webpack4与webpack5对比
@@ -266,11 +270,67 @@ webpack4 升级 webpack5 以及周边插件后，代码需要做出的调整:
 	js压缩
 		terser-webpack-plugin
 
-	具体配置见配置文件
+具体配置见配置文件
+	module:{
+		rules:[
+			// 抽离css
+			{
+				test:/\.css$/,
+				use:[MiniCssExtractPlugin.loader, 'css-loader' , 'postcss-loader']
+			},
+		]
+	}
+	optimization:{
+		// 压缩
+		minimizer:[
+			// 压缩js
+			new TerserJSPlugin({}),
+			// 压缩css
+			new CssMinimizerPlugin()
+		],
+	}
+
+	查看打包后的css是否抽离和压缩
 ```
 
 ## 抽离公共代码
 ```
+将第三方模块或者共用的模块进行抽离出来，减小代码体积
+// 分割代码块
+optimization:{
+	splitChunks:{
+		/* 
+			取值：
+				initial 入口chunk,对于异步导入的文件不处理
+				async   异步chunk,只对异步导入的文件处理
+				all     全部chunk
+		*/
+		chunks:'all',
+			
+		// 缓存分组
+		cacheGroups:{
+			// 第三方模块
+			vendor:{
+				name:'vendor', //chunk名称
+				priority:1,    //优先级权限更高，优先抽离，重要!!!
+				test: /node_modules/, //匹配任何包含 node_modules 路径的模块
+				minSize:0,     //大小限制
+				minChunks:1    //最少复用过几次
+			},
+
+			// 公共的模块
+			common:{
+				name:'common', //chunk名称
+				priority:0,    //优先级
+				minSize:0,     //公共模块的大小限制
+				minChunks:2    //公共模块最少复用过几次,此处表示将两个或两个以上的 initial chunk 中相同的模块分离出来
+			}
+		}
+	}
+}
+
+表现：
+	将第三方模块或者共用的模块进行抽离出来打包成单独文件，需要时引入即可
 
 ```
 
@@ -294,7 +354,7 @@ webpack自身支持这个功能，无需配置
 
 	表现：
 		开发环境：用到的时候才去加载
-		生产环境：单独打包出一个chunk文件
+		生产环境：单独打包出一个chunk文件，用到的时候才去加载
 
 ```
 
@@ -303,11 +363,166 @@ webpack自身支持这个功能，无需配置
 
 ```
 
-#
+# 优化打包(构建)效率
 ```
+优化打包构建速度：开发体验和效率
+优化产出代码：产品性能
+```
+
+## 优化babel-loader
+```
+场景：es6转化成es5比较耗时
+
+解决：
+	需要缓存优化，同时明确转化范围
+
+配置
+	rules:[
+		// babel-loader 将es6以上语法向下兼容
+		{
+				test:/\.js$/,
+				// loader:['babel-loader'], //webpack4
+				// use:['babel-loader'], //webpack5
+				use:['babel-loader?cacheDirectory'], //?cacheDirectory表示开启缓存，对于没有修改的代码不需要重新编译
+				include:srcPath, // 明确范围
+				exclude:/node_modules/  //排除范围：不处理该文件夹下的js文件
+		}
+	]
+```
+
+## IgnorePlugin
+```
+场景：
+	import moment from 'moment'
+	默认会引入所有语言 JS 代码，代码过大
+	如何只引入中文?
+
+解决：
+	避免引入无用模块
+
+案例
+	./index.js
+		// IgnorePlugin 优化
+		import moment from 'moment'
+		import 'moment/locale/zh-cn' //手动引入中文语言包!!!!!
+		moment.locale('zh-cn') //设置语言为中文
+		console.log('locale=',moment.locale());
+		console.log('date=',moment().format('ll'));
+
+	配置：
+		plugins:[
+			// 作用：告诉webpack忽略特定的模块或模块模式，这些模块将不会被打包到输出结果中。
+			// 如：忽略moment下的node_modules/moment/locale目录
+			// new webpack.IgnorePlugin(/\.\/locale/,/moment/) //webpack4
+			new webpack.IgnorePlugin({
+				// resourceRegExp（必须）一个正则表达式，用于匹配需要被忽略模块的资源路径
+				resourceRegExp: /^\.\/locale$/,
+				// 另一个正则表达式，用于进一步限制忽略规则的应用范围。只有当模块的上下文（请求该模块的父模块所在目录）也匹配此正则表达式时，才会应用忽略规则。如果不提供，默认为() => true，意味着忽略规则将应用于所有上下文。
+				contextRegExp: /moment$/
+			})
+		]
+
+	表现：
+		配置设置前后，打包体积对比以及警告提示
+```
+
+## noParse
+```
+解决：
+	避免重复打包
+
+配置：
+	module.exports = {
+		module:{
+			// 独立完整的(如react.min.js)文件就没必要采用模块化
+			// 忽略对(如react.min.js)文件的递归解析处理
+			noParse:[/react\.min\.js$/]
+		}
+	}
+
+与IgnorePlugin对比
+	IgnorePlugin 直接不引入，代码中没有
+	noParse 引入，但不打包
 
 ```
 
+## 自动刷新、热更新
+```
+1.自动刷新
+	整个网页全部刷新，速度较慢，状态会丢失；
+	修改一个模块，全部模块就会全部重新加载。
+
+2.热更新
+	新代码生效，网页不刷新，状态不丢失；
+	一个模块发生变化，只会重新打包这一个模块，而不是打包所有模块，极大的提升了构建速度。
+
+自动刷新、热更新 都是用于开发环境下
+
+【自动刷新】配置
+	module.exports = {
+    // 开启监听，默认为false
+    // 注意：开启监听之后(true)，webpack-dev-server 会自动开启刷新浏览器！！！
+    watch:true,
+    // 监听配置
+    watchOptions:{
+        ignored:/node_modules/, //忽略
+        // 监听到变化发生后会等300ms再去执行动作，防止文件更新太快导致重新编译频率太高
+        aggregateTimeout:380,   //默认为300ms
+        // 判断文件是否发生变化是通过不停的去询问系统指定文件有没有变化实现的
+        poll:1000 //默认每隔1000毫秒询问一次
+    }
+	}
+
+【热更新】配置
+	module.exports = {
+		plugins:[
+			// 添加热更新插件(webpack4可无需配置)
+      new webpack.HotModuleReplacementPlugin()
+		],
+		devServer:{
+			hot: true, // 启用热更新
+		}
+	}
+
+	热更新
+		优点：
+			主要是通过以下几种方式，来显著加快开发速度:
+				保留在完全重新加载页面期间丢失的应用程序状态
+				只更新变更内容，以节省主贵的开发时间
+				在源代码中 css/js 产生修改时，会立刻在浏览器中进行更新，这几平相当于在浏览器 devtools 直接更改样式:
+					样式文件可以直接使用HMR功能，因为style-loader内部实现了module.hot.accept的支持;
+					js文件不可以，需要配置module.hot.accept  配置请看入口js文件;
+					html模板文件默认也不支持HMR，直接在入口文件将html文件引入就可以了
+	
+		缺点：
+			要在代码里注册热更新的范围，增加代码量。所以除非代码太庞大，更新速度很慢，一般开启热更新反而会增加开发开销。
+
+```
+
+## happyPack
+```
+开启多进程，打包更快
+
+```
+
+## ParatelUglifyPlugin
+```
+开启多进程，进行代码压缩
+
+```
+
+## DIlPlugin
+```
+场景：
+	前端框架如 vue React，体积大，构建慢
+	较稳定，不常升级版本
+	同一个版本只构建一次即可，不用每次都重新构建
+
+解决：
+	动态链接库插件；
+	用于开发环境下
+
+```
 
 #
 ```

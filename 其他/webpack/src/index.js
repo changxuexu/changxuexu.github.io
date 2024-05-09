@@ -1,8 +1,3 @@
-setTimeout(()=>{
-    import('./dynamic-data.js').then(res=>{
-        console.log(res.default.message);
-    })
-},5000)
 
 
 /* 
@@ -34,18 +29,30 @@ console.log('window.ENV=',ENV);
 import _ from 'lodash'
 console.log(_.each); 
 
-// 开启热更新之后的代码逻辑
-if(module.hot){
-    module.hot.accept(['./math'], () => {
-        const sumRes = sum(10, 20)
-        console.log('sumRes in hot', sumRes)
-    })
-}
-
-// 引入动态数据 - 懒加载
+// 引入动态数据 - 懒加载(定义chunk、vue、react异步组件)
 setTimeout(()=>{
     import('./dynamic-data.js').then(res=>{
         console.log(res.default.message);
     })
 },1000)
+
+// IgnorePlugin 优化
+import moment from 'moment'
+import 'moment/locale/zh-cn' //手动引入中文语言包
+moment.locale('zh-cn') //设置语言为中文
+console.log('locale=',moment.locale());
+console.log('date=',moment().format('ll'));
+
+// 开启热更新之后的代码逻辑
+if(module.hot){
+    // 使用module.hot.accept()函数指定热更新监听范围
+    module.hot.accept(['./math'], () => {
+        const sumRes = sum(10, 20)
+        console.log('sumRes in hot', sumRes)
+    })
+}
+// 关闭指定子模块的HMR
+// module.hot.decline('./replace.js')
+
+
 */
