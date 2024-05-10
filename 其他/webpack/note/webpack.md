@@ -13,7 +13,7 @@ TerserWebpackPlugin
 	
 配置案例参考
 	文档和demo：https://github.com/ltadpoles
-
+	https://github.com/dongyuanxin/webpack-demos
 实战：
 	看一看 `vue` 或者 `react` 中的 `webpack` 配置，进行模仿
 ```
@@ -169,7 +169,7 @@ webpack4 升级 webpack5 以及周边插件后，代码需要做出的调整:
 
 # 基本配置
 ```
-webpack的基础配置核心有四个：
+<1>webpack的基础配置核心有四个：
 	(1)entry 入口
 		指示 `webpack` 应该使用哪个模块，来作为构建其内部 依赖图(dependency graph) 的开始。
 		进入入口起点后，`webpack` 会找出有哪些模块和库是入口起点（直接和间接）依赖的，【默认值】是 `./src/index.js`。
@@ -182,7 +182,8 @@ webpack的基础配置核心有四个：
     	`webpack` 只能理解 `JavaScript` 和 `JSON` 文件;
     	`loader` 让 `webpack` 能够去处理其他类型的文件(非 `JavaScript` 文件)，并将它们转换为有效 模块，以供应用程序使用，以及被添加到依赖图中;
     	通俗理解：loader就是【作为模块的解析规则】而存在;
-    	在 `module.rules` 中配置，类型为数组。
+    	特性：链式调用；同步或异步执行；运行在 node.js 环境中；可以接受参数，以此来传递配置项给 loader，
+    	配置：在 `module.rules` 中配置，类型为数组。
     	
     (4)plugin 插件
     	`loader` 用于转换某些类型的模块，而插件则可以用于执行范围更广的任务;
@@ -195,8 +196,39 @@ webpack的基础配置核心有四个：
 		module.exports = {
   			mode: 'production'
 		}
+	
 
-以上基础概念小伙伴们记住就好，知道每个属性是做什么。下面，让我们按以下步骤依次进行实际操作：
+<2>webpack入门使用
+	安装：	npm install webpack-cli
+	
+	使用webpack的几种方式：
+        a.webpack命令
+        b.webpack配置
+        c.第三方脚手架（Vue-cli / Angular-cli / React-starter）
+        
+	webpack命令
+        npx webpack -h  //帮助
+        npx webpack -v  //版本
+        
+       	其他：
+        	--display-error-details // 打印错误详情
+        	--module-bind "css=style-loader!css-loader" //指定loader
+        
+	webpack打包：
+        方式一：
+            webpack <entry> [<entry>] <output> --mode=development/product
+            注意：指定的文件要存在
+                webpack 入口文件 打包后文件(注意文件要存在)
+                webpack app.js ./dist/main.js  --mode=development
+
+        方式二：配置文件打包
+            当配置文件为默认文件名webpack.config.js 直接
+            webpack --mode=development
+             当自定义配置文件名：
+            webpack --config webpack.conf.dev.js --mode=development
+           
+
+<3>以上基础概念小伙伴们记住就好，知道每个属性是做什么。下面，让我们按以下步骤依次进行实际操作：
 	1.拆分配置 和 merge：相对于开发环境和生产环境中的有些配置不一样
 
 	2.启动本地服务
@@ -342,11 +374,25 @@ webpack的基础配置核心有四个：
 
 ## 抽离公共代码
 ```
-将第三方模块或者共用的模块进行抽离出来，减小代码体积
+webpack允许你将一个文件(比如第三方模块或者共用的模块)分割成多个文件抽离出来。
+如果使用的好，它能大幅提升你的应用的性能，其原因是基于浏览器会缓存你的代码这一事实。
+每当你对某一文件做点改变，访问你站点的人们就要重新下载它。
+然而有些依赖却很少变动，如果你将这些依赖分离成单独的文件，访问者就无需多次重复下载它们了。
+
+webpack 总共提供了三种办法来实现 Code Splitting；从而将打包文件bundles抽离出一个一个的chunks
+	入口配置: entry 入口使用多个入口文件；
+	抽取公有代码: 使用 SplitChunks 抽取公有代码；
+	动态加载: 动态加载一些代码。
+
+多页应用一般会重复多次使用部分公共代码，这样每次加载单页的时候，就会重复去加载这些公共代码，会造成以下问题
+	1.相同资源重复被加载，浪费用户流量，增加服务器成本
+	2.每个页面需要加载的资源太大，导致网页首屏加载缓慢，影响用户体验
+	那么，如果将这些公共代码抽取出来，并让浏览器缓存起来，用户在请求资源的时候，可以直接读取缓存中的这些代码，这样就能解决以上问题。
 
 参考：
 	https://webpack.docschina.org/plugins/split-chunks-plugin/
 
+配置：
 // 分割代码块
 optimization:{
 	splitChunks:{
@@ -363,7 +409,7 @@ optimization:{
 			// 第三方模块
 			vendor:{
 				name:'vendor', //chunk名称
-				priority:1,    //优先级权限更高，优先抽离，重要!!!
+				priority:1,    //优先级权限更高，优先抽离，重要!!!（即先去抽离第三方库，再去抽离公共的模块）
 				test: /node_modules/, //通过条件找到要提取的文件：匹配任何包含 node_modules 路径的模块
 				minSize:0,     //大小限制
 				minChunks:1    //最少复用过几次
@@ -384,13 +430,45 @@ optimization:{
 	将第三方模块或者共用的模块进行抽离出来打包成单独文件，需要时引入即可
 
 说明：
-	Webapck < 4.x 使用 `CommonsChunkPlugin` 去做分离
+	1.SplitChunks参数
+		automaticNameDelimiter: 名称分隔符，默认是~
+        automaticNameMaxLength
+        chunks: 表示显示块的范围，有三个可选值：initial(初始块)、async(按需加载块)、all(全部块)，默认为all;
+        minSize: 表示在压缩前的最小模块大小，默认为0
+        minChunks: 表示被引用次数，默认为1；
+        maxAsyncRequests: 最大的按需(异步)加载次数，默认为1；
+        maxInitialRequests: 最大的初始化加载次数，默认为1；
+        name: 拆分出来块的名字(Chunk Names)，默认由块名和hash值自动生成；
+        cacheGroups: 缓存组。
+        priority: 表示缓存的优先级；将权重提高，使得先去抽离第三方库，再去抽离a.js和b.js
+        test: 缓存组的规则，表示符合条件的的放入当前缓存组，值可以是function、boolean、string、RegExp，默认为空；
+        reuseExistingChunk: 表示可以使用已经存在的块，即如果满足条件的块已经存在就使用已有的，不再创建一个新的块
+		
+	2.Webapck < 4.x 使用 `CommonsChunkPlugin` 插件去做分离；
+		{
+          plugins:[
+            new webpack.optimize.CommonsChunkPlugin(options)  
+          ]
+        }
+        options.name or options.names
+        options.filename
+        options.minChunks
+        options.Chunks ：提取代码的范围
+        options.children 
+        options.deepChildren 
+        options.async 
 ```
 
 ## 懒加载
 ```
 异步加载js，用到的时候才去加载；
-webpack自身支持这个功能，无需配置
+通俗理解：通过代码分割和懒加载尽可能在最短的时间内看到加载的页面；
+实现：webpack自身支持这个功能，无需配置。
+
+使用场景：
+  分离业务代码 和 第三方依赖
+  分离业务代码 和 业务公共代码 和 第三方依赖
+  分离首次加载 和 访问后加载的代码
 
 案例：
 	./dynamic-data.js
@@ -399,11 +477,14 @@ webpack自身支持这个功能，无需配置
 		}
 
 	./index.js
+		// 方式一：ES6 Module 动态加载
 		setTimeout(()=>{
 			import('./dynamic-data.js').then(res=>{
 				console.log(res.default.message);
 			})
 		},1000)
+		
+		// 方式二：Commonjs
 
 	表现：
 		开发环境：用到的时候才去加载
@@ -433,7 +514,9 @@ DIlPlugin
 
 ## 优化babel-loader
 ```
-场景：es6转化成es5比较耗时
+场景：
+	对于 Loader 来说，影响打包效率首当其冲必属 Babel 了。
+	因为 Babel 会将代码转为字符串生成 AST，然后对 AST 继续进行转变最后再生成新的代码，项目越大，转换代码越多，效率就越低。
 
 解决：
 	需要缓存优化，同时明确转化范围
@@ -445,9 +528,16 @@ DIlPlugin
 				test:/\.js$/,
 				// loader:['babel-loader'], //webpack4
 				// use:['babel-loader'], //webpack5
-				use:['babel-loader?cacheDirectory'], //?cacheDirectory表示开启缓存，对于没有修改的代码不需要重新编译
+				
+				//?cacheDirectory表示开启缓存，对于没有修改的代码不需要重新编译
+				// 将 Babel 编译过的文件缓存起来，下次只需要编译更改过的代码文件即可，这样可以大幅度加快打包时间
+				use:['babel-loader?cacheDirectory'], 
+				
 				include:srcPath, // 明确范围
-				exclude:/node_modules/  //排除范围：不处理该文件夹下的js文件
+				
+				//排除范围：不处理该文件夹下的js文件
+				// 对于 Babel 来说，我们肯定是希望只作用在 JS 代码上的，然后 node_modules 中使用的代码都是编译过的，所以我们也完全没有必要再去处理一遍
+				exclude:/node_modules/  
 		}
 	]
 ```
@@ -520,6 +610,13 @@ DIlPlugin
 
 注意：
 	1.可以在控制台定义变量或者模版中(<input type="text" placeholder="输入值测试是刷新还是热更新">)，刷新后是否能获取变量值；如果能不能获取，状态就丢失了
+		调试：
+            在谷歌浏览器打开并调试cosole出现：
+            [HMR] Waiting for update signal from WDS...
+            正在等待来自webpack更新的信号
+            [WDS] Hot Module Replacement enabled.
+            模块热替换已经启用
+        
 	2.自动刷新、热更新 都是用于开发环境下
 
 【自动刷新】配置
@@ -573,6 +670,7 @@ DIlPlugin
 						
 		缺点：
 			要在代码里注册热更新的范围，增加代码量。所以除非代码太庞大，更新速度很慢，一般开启热更新反而会增加开发开销。
+	
 
 ```
 
@@ -580,12 +678,36 @@ DIlPlugin
 ```
 开启多进程，打包更快
 
+受限于 Node 是单线程运行的，所以 Webpack 在打包的过程中也是单线程的，特别是在执行 Loader 的时候，长时间编译的任务很多，这样就会导致等待的情况。
+		HappyPack 可以将 Loader 的同步执行转换为并行的，这样就能充分利用系统资源来加快打包效率了
+		module: {
+		  loaders: [
+			{
+			  test: /\.js$/,
+			  include: [resolve('src')],
+			  exclude: /node_modules/,
+			  // id 后面的内容对应下面
+			  loader: 'happypack/loader?id=happybabel'
+			}
+		  ]
+		},
+		plugins: [
+		  new HappyPack({
+			id: 'happybabel',
+			loaders: ['babel-loader?cacheDirectory'],
+			// 开启 4 个线程
+			threads: 4
+		  })
+		]
 ```
 
 ## ParatelUglifyPlugin
 ```
 开启多进程，进行代码压缩
 
+在 Webpack3 中，我们一般使用 UglifyJS 来压缩代码，但是这个是单线程运行的，为了加快效率，我们可以使用 webpack-parallel-uglify-plugin 来并行运行 UglifyJS，从而提高效率。
+		在 Webpack4 中，我们就不需要以上这些操作了，只需要将 mode 设置为 production 就可以默认开启以上功能。代码压缩也是我们必做的性能优化方案，当然我们不止可以压缩 JS 代码，还可以压缩 HTML、CSS 代码，并且在压缩 JS 代码的过程中，我们还可以通过配置实现比如删除 console.log 这类代码的功能。
+		
 ```
 
 ## DIlPlugin
@@ -599,6 +721,46 @@ DIlPlugin
 	动态链接库插件；
 	用于开发环境下
 
+
+DllPlugin 可以将特定的类库提前打包然后引入。
+		这种方式可以极大的减少打包类库的次数，只有当类库更新版本才有需要重新打包，并且也实现了将公共代码抽离成单独文件的优化方案。
+		// 单独配置在一个文件中
+		// webpack.dll.conf.js
+		const path = require('path')
+		const webpack = require('webpack')
+		module.exports = {
+		  entry: {
+			// 想统一打包的类库
+			vendor: ['react']
+		  },
+		  output: {
+			path: path.join(__dirname, 'dist'),
+			filename: '[name].dll.js',
+			library: '[name]-[hash]'
+		  },
+		  plugins: [
+			new webpack.DllPlugin({
+			  // name 必须和 output.library 一致
+			  name: '[name]-[hash]',
+			  // 该属性需要与 DllReferencePlugin 中一致
+			  context: __dirname,
+			  path: path.join(__dirname, 'dist', '[name]-manifest.json')
+			})
+		  ]
+		}
+		
+		然后我们需要执行这个配置文件生成依赖文件，接下来我们需要使用 DllReferencePlugin 将依赖文件引入项目中
+		// webpack.conf.js
+		module.exports = {
+		  // ...省略其他配置
+		  plugins: [
+			new webpack.DllReferencePlugin({
+			  context: __dirname,
+			  // manifest 就是之前打包出来的 json 文件
+			  manifest: require('./dist/vendor-manifest.json'),
+			})
+		  ]
+		}
 ```
 
 # 优化产出代码
@@ -628,13 +790,101 @@ scope hosting
 ## 使用生产环境(production)
 
 ```
+配置：
+	module.exports = {
+  		mode: 'production'
+	}
 
+作用：
+	(1)自动开启代码压缩
+	
+	(2)Vue React 等会自动删掉调试代码(如开发环境的 warning)
+	
+	(3)启动Tree-Shaking,采用分包策略实现按需加载
+		分包策略具有以下规则：
+			- 新的 `chunk` 是否被共享或者是来自 `node_modules` 的模块
+			- 新的 `chunk` 体积在压缩之前是否大于 `30kb`
+			- 按需加载 `chunk` 的并发请求数量小于等于 `5` 个
+			- 页面初始加载时的并发请求数量小于等于 `3` 个
+		
+		案例：
+			// math.js
+            export const sum = (a,b) => {
+                return a + b
+            }
+            export const min = (a,b) => {
+                return a - b
+            }
+            // index.js
+            import { sum } from './math' //只引用了sum
+            const sumRes = sum(10, 20)
+            console.log('sumRes=', sumRes);
+            
+            说明：
+            	Tree Shaking 可以实现删除项目中未被引用的代码，实现按需加载；
+            	表现：
+            		开发模式下打包的bundle中含有sum 和 min模块；
+            		生产模式下回启用Tree-Shaking；由于代码中只引用了sum，因此打包的bundle中只含有sum模块。
+ 
+```
+
+```
+ES6 Module 和 Commonjs 区别？
+ 	ES6 Module 静态引入，编译时引入（打包前处理）
+	Commonjs动态引入，执行时引入（打包后处理）
+	因此：只有 ES6 Module 才能静态分析，实现 Tree-Shaking功能; Commonjs不行
+	
+	// Commonjs
+	let apiList = require('../config/api.js')
+    if(isDev){
+        // 可以动态引入，执行时引入
+        apiList = require('../config/api_dev.js')
+    }
+    
+    // ES6 Module
+	import apiList from '../config/api.js'
+    if(isDev){
+        // 编译时报错，只能静态引入
+        import apiList from '../config/api_dev.js'
+    }
 ```
 
 ## scope hosting
 
 ```
-
+Scope Hoisting 会分析出模块之间的依赖关系，尽可能的把打包出来的模块合并到一个函数中去。
+		比如我们希望打包两个文件
+			// test.js
+			export const a = 1
+			// index.js
+			import { a } from './test.js'
+			
+		对于这种情况，我们打包出来的代码会类似这样
+			[
+			  /* 0 */
+			  function (module, exports, require) {
+				//...
+			  },
+			  /* 1 */
+			  function (module, exports, require) {
+				//...
+			  }
+			]
+		
+		但是如果我们使用 Scope Hoisting 的话，代码就会尽可能的合并到一个函数中去，也就变成了这样的类似代码
+			[
+			  /* 0 */
+			  function (module, exports, require) {
+				//...
+			  }
+			]
+			
+		这样的打包方式生成的代码明显比之前的少多了。如果在 Webpack4 中你希望开启这个功能，只需要启用 optimization.concatenateModules 就可以了。
+			module.exports = {
+			  optimization: {
+				concatenateModules: true
+			  }
+			}
 ```
 
 
@@ -648,21 +898,6 @@ scope hosting
 ```
 
 ```
-
-
-#  webpack的构建流程是什么？
-```
-1. 初始化参数：从配置文件和 `Shell` 语句中读取与合并参数，得出最终的参数
-2. 开始编译：用上一步得到的参数初始化 `Compiler` 对象，加载所有配置的插件，执行对象的 `run` 方法开始执行编译
-3. 确定入口：根据配置中的 `entry` 找出所有的入口文件
-4. 编译模块：从入口文件出发，调用所有配置的 `Loader` 对模块进行翻译，再找出该模块依赖的模块，再递归本步骤直到所有入口依赖的文件都经过了本步骤的处理
-5. 完成模块编译：在经过第4步使用 `Loader` 翻译完所有模块后，得到了每个模块被翻译后的最终内容以及它们之间的依赖关系
-6. 输出资源：根据入口和模块之间的依赖关系，组装成一个个包含多个模块的 `Chunk`，再把每个 `Chunk` 转换成一个单独的文件加入到输出列表，这步是可以修改输出内容的最后机会
-7. 输出完成：在确定好输出内容后，根据配置确定输出的路径和文件名，把文件内容写入到文件系统
-
-	在以上过程中，`Webpack` 会在特定的时间点广播出特定的事件，插件在监听到感兴趣的事件后会执行特定的逻辑，并且插件可以调用 `Webpack` 提供的 `API` 改变 `Webpack` 的运行结果
-```
-
 
 # babel
 ```
@@ -710,10 +945,10 @@ scope hosting
 			通俗理解：垫平不同浏览器或者不同环境下的差异，让新的内置函数、实例方法等在低版本浏览器中也可以使用。
 			
 		@babel/plugin-transform-runtime
-			该插件会开启对 Babel 注入的辅助函数，同时解决全局污染
+			该插件会开启对 Babel 注入的辅助函数(即帮助自动引入helper辅助函数)，同时解决全局污染
 
 		@babel/runtime
-			@babel/runtime中含有辅助函数
+			@babel/runtime提供了各种各样的helper辅助函数
 	
 
 2.新建.babelrc文件及配置
@@ -810,7 +1045,7 @@ scope hosting
 								"corejs":3,
 								
 								// 支持的浏览器
-								//"targets": ">0.2%, not dead, Firefox >= 52, IE >= 8",
+								//"targets": ['> 1%', 'last 2 versions', 'not ie <= 8'],
 								
 								//"amd"、"umd"、 "systemjs"、 "commonjs" 、"cjs" 、"auto" (默认)、false。
 								 modules:auto
@@ -956,6 +1191,45 @@ scope hosting
 # SourceMap
 ```
 https://blog.csdn.net/stand_forever/article/details/132712478
+打包代码如何调试
+  把应用打包之后调试代码要用到source map
+
+  执行命令：webpack --devtool source-map
+
+  把应用打包的同时生成一个文件：bundle.js.map
+
+  此时会在谷歌浏览器调试Sources 下 生成 webpack://
+  包含自己写的代码，便于调试
+
+  此时如果直接在配置文件webpack.config.js中添加
+  devtool:'source-map',
+  便于直接输入webpack命令生成一个bundle.js.map文件
+```
+
+#  webpack的构建流程是什么？
+```
+1. 初始化参数：从配置文件和 `Shell` 语句中读取与合并参数，得出最终的参数
+2. 开始编译：用上一步得到的参数初始化 `Compiler` 对象，加载所有配置的插件，执行对象的 `run` 方法开始执行编译
+3. 确定入口：根据配置中的 `entry` 找出所有的入口文件
+4. 编译模块：从入口文件出发，调用所有配置的 `Loader` 对模块进行翻译，再找出该模块依赖的模块，再递归本步骤直到所有入口依赖的文件都经过了本步骤的处理
+5. 完成模块编译：在经过第4步使用 `Loader` 翻译完所有模块后，得到了每个模块被翻译后的最终内容以及它们之间的依赖关系
+6. 输出资源：根据入口和模块之间的依赖关系，组装成一个个包含多个模块的 `Chunk`，再把每个 `Chunk` 转换成一个单独的文件加入到输出列表，这步是可以修改输出内容的最后机会
+7. 输出完成：在确定好输出内容后，根据配置确定输出的路径和文件名，把文件内容写入到文件系统
+
+	在以上过程中，`Webpack` 会在特定的时间点广播出特定的事件，插件在监听到感兴趣的事件后会执行特定的逻辑，并且插件可以调用 `Webpack` 提供的 `API` 改变 `Webpack` 的运行结果
+```
+
+#  webpack打包原理？
+```
+https://blog.csdn.net/u014168594/article/details/77198729
+
+    把所有依赖打包成一个bundle.js文件，通过代码分割成单元片段并按需加载
+    bundle.js是以模块 id 为记号，通过函数把各个文件依赖封装达到分割效果，如上代码 id 为 0 表示 entry 模块需要的依赖， 1 表示 util1模块需要的依赖
+    require资源文件 id 表示该文件需要加载的各个模块，如上代码_webpack_require__(1) 表示 util1.js 模块，__webpack_require__(2) 表示 util2.js 模块
+    exports.util1=util1 模块化的体现，输出该模块
+
+    var _util1__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("./src/util1.js")
+    console.log(_util1__WEBPACK_IMPORTED_MODULE_0__)
 ```
 
 # 常见问题
@@ -983,7 +1257,7 @@ module
 	是开发中的单个模块,各个源码文件，webpack 中一切皆模块；
 
 chunk
-	指webpack在进行模块的依赖分析的时候，代码分割出来的代码块;
+	指webpack在进行模块的依赖分析的时候，代码分割出来的代码块(bundles),bundles从概念上我们当作它们由一个一个的chunks组成
 	多模块合并成的，如 entry、import() 、splitChunk
 
 bundle
@@ -1011,6 +1285,14 @@ Plugin
 `babel-loader`：把 `ES6` 转换成 `ES5`
 `file-loader`：把文件输出到一个文件夹中，在代码中通过相对 `URL` 去引用输出的文件
 `url-loader`：和 `file-loader` 类似，但是能在文件很小的情况下以 `base64` 的方式把文件内容注入到代码中去
+```
+
+**有哪些常见的Loader？他们是解决什么问题的**
+```
+BannerPlugin：
+	内置插件，给输出的文件bundle.js头部添加注释信息。
+	 new webpack.BannerPlugin('This file is created by xcx')
+
 ```
 
 **为何 Proxy 不能被 Polyfill ?**

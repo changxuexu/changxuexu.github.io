@@ -18,6 +18,7 @@ module.exports = merge(webpackCommonConf, {
                 test:/\.(svg|eot|ttf|woff|woff2)$/,
                 use:'file-loader'
             },
+            // Loader 可以在 require() 引用模块的时候添加，如require('style-loader!css-loader!./style.css');
             // {
             //     test:/\.css$/,
             //     // loader的执行顺序事：从后往前
