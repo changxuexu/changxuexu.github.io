@@ -11,6 +11,7 @@ const { srcPath, distPath } = require('./paths')
 const { library } = require('webpack')
 module.exports = merge(webpackCommonConf, {
     mode:'production', //production下代码会压缩
+    devtool: 'source-map',  //压缩代码与源码对应对应关系，便于bug调试！！
     /* 
         当需要打包出一个第三方包是，如何操作？
         output:{

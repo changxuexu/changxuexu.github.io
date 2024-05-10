@@ -39,7 +39,7 @@ module.exports = {
         // 多入口-生成 index.html-访问()
         new HtmlWebpackPlugin({
             template:path.join(srcPath, 'index.html'), // 使用的模板
-            filename:'index.html', //产出的文件名
+            filename:'index.html', //打包后的文件名
             // chunks 表示该页面要引用哪些 chunk(即entry入口中的index、other)
             // chunks:['index'] //只引用entry入口的index.js
             chunks:['index', 'vendor', 'common'] // 要考虑代码分割

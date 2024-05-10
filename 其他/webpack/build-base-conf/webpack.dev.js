@@ -6,7 +6,6 @@ const { merge } = require('webpack-merge') //webpack5
 const { srcPath, distPath } = require('./paths')
 module.exports = merge(webpackCommonConf, {
     mode:'development', //模式(development/production)，development模式下代码不会压缩
-    devtool: 'cheap-module-source-map',  // 或者 'eval-source-map' 对于更快的源码映射体验
     module:{
         rules:[
             // 表现：直接引入图片url
@@ -27,11 +26,14 @@ module.exports = merge(webpackCommonConf, {
             {
                 test:/\.css$/,
                 // loader的执行顺序事：从后往前
+                // 表现：样式直接使用style标签插入到页面中
                 // loader:['style-loader', 'css-loader', 'postcss-loader'] //webpack4
                 use:['style-loader', 'css-loader' , 'postcss-loader'] //webpack5
             },
             {
                 test:/\.less$/,
+                // pnpm install less-loader less --save-dev 
+                // pnpm install sass-loader node-sass --save-dev
                 // 增加 'less-loader' 注意顺序
                 // loader:['style-loader', 'css-loader', 'less-loader'] //webpack4
                 use:['style-loader', 'css-loader' , 'postcss-loader', 'less-loader'] //webpack5
@@ -75,8 +77,8 @@ module.exports = merge(webpackCommonConf, {
             {
                 context: ['/api2'],
                 target:'http://localhost:3000', //目标代理
+                changeOrigin: true, //改变源到url
                 secure: false, // 是否接受运行在 HTTPS 上
-                changeOrigin: true,
                 pathRewrite: { '^/api2': '' }, //重写路径
             }
         ]
