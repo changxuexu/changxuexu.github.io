@@ -1,0 +1,106 @@
+QQ 528371517
+线上环境：
+《1》设置 ESLint 检查代码格式
+	eslint
+	eslint-loader
+	eslint-plugin-html : 在html文件中使用js时，用这个检测
+	eslint-friendly-formatter : 报错的时候输出的格式
+	
+	配置ESlint
+		webpack.config.js
+		
+		.eslintrc.*
+		package.json
+		
+		
+	ESlint规范：
+		javascript Standard Style(https://standardjs.com/)
+			eslint-config-standard
+			eslint-plugin-promise
+			eslint-plugin-standard
+			eslint-plugin-import
+			eslint-plugin-node
+	
+	eslint-loader
+		options.failOnWarning
+		options.failOnError
+		options.formatter
+		options.outputReport
+	
+	devServer.overlay
+		
+	================================================
+	使用：	
+		安装：
+			cnpm install eslint eslint-loader eslint-plugin-html eslint-friendly-formatter --save-dev
+	
+		配置：webpack.config.js文件
+			{
+				test: /\.js$/,
+				exclude: /node_modules/,
+				use: [
+				  {
+					  loader:'eslint-loader',
+					  options:{
+						  formatter:require('eslint-friendly-formatter')
+					  }
+				  }
+				]
+			}
+			
+			devserver: 
+				overlay:true
+		
+		新建"*eslint.js"规范描述文件并安装：
+			cnpm install eslint-config-standard eslint-plugin-promise eslint-plugin-node eslint-plugin-import eslint-plugin-standard --save-dev
+			
+			module.exports = {
+				root:true,
+				extends:'standard',
+				//插件
+				plugins:[
+					'html'
+				],
+				//环境
+				env:{
+					browser:true,
+					node:true
+				},
+				//可以使用的全局变量
+				globals:{
+					$:true
+				},
+				//特殊规则定义
+				rules:{
+					//'indent':['error',4],
+					//'eol-last':['error','never'],
+				}
+			}
+			
+	================================================		
+			
+《2》Source Map 便于调试
+	从浏览器中进入很快能进到文件对应的位置，比如报错，css定位
+	devtool
+	webpack.SourceMapToolPlugin
+	webpack.EvalSourceMapToolPlugin
+	
+	devtool介绍：
+		开发环境下的值：
+			eval
+			eval-source-map
+			cheap-eval-source-map
+			cheap-module-source-map
+		生产环境下的值：
+			source-map
+			hidden-source-map
+			nosource-source-map
+		
+		css使用map时，使用相关loader的map
+			css-loader.option.sourcemap
+			less-loader.option.sourcemap
+			sass-loader.option.sourcemap
+			
+			
+		
+		

@@ -1,0 +1,292 @@
+
+  webpack安装与使用：
+  https://www.webpackjs.com/
+  1.Webpack 是一个前端资源加载/打包工具。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。
+  2.Webpack 可以将多种静态资源 js、css、less 转换成一个静态文件，减少了页面的请求
+
+  》全局安装webpack;便于使用webpack命令
+  cnpm install webpack -g
+
+  》创建项目
+  0.准备：
+  注意：在命令行进入上面创建的文件夹，在输入并执行以下的命令
+  npm init //创建一个npm的配置文件package.json
+
+  安装webpack并保存到项目开发依赖里面
+  cnpm install webpack --save-dev
+
+  执行后会在package.json的devDependencies属性下生成一个
+  "webpack": "^3.10.0"
+
+
+  1.创建文件 entry.js / index.html
+  entry.js
+  document.getElementById("app").textContent = 'hello ~~';
+
+  index.html
+  <div id="app"></div>
+  <script src="bundle.js"></script>
+
+  2.webpack命令打包
+  webpack 入口文件 打包生成文件
+  eg: webpack entry.js bundle.js
+  然后在浏览器执行显示：hello ~~
+
+
+  -------------------------------------------------------------------------------------
+  》模块
+  在创建项目的时候，需要去安装某一些特定的标准，把项目分成不同的部分，
+  然后他们之间可以相互的使用，在使用webpack工具打包的时候，这个工具会分析
+  文件与文件之间的依赖关系。
+
+  》webpack 根据模块的依赖关系进行静态分析，这些文件(模块)会被包含到 bundle.js 文件中。
+  》Webpack 会给每个模块分配一个唯一的 id 并通过这个 id 索引和访问模块。
+  》在页面启动时，会先执行 entry.js 中的代码，其它模块会在运行 require 的时候再执行。
+
+  commonjs的模块标准写一个模块
+  name.js
+  module.exports = "ninghao.net" //导出模块
+
+  注：module.exports 值的类型任意
+
+  使用模块:entry.js
+  var name = require('./name'); //导入模块
+  document.getElementById("app").textContent = 'hello ~~' + name;
+
+  执行命令并在浏览器浏览
+  webpack entry.js bundle.js
+
+  其他：
+  webpack --display-error-details #打印错误详情
+
+  -------------------------------------------------------------------------------------
+  》LOADER
+  1、webpack 默认只会处理javascript;如果使用webpack去处理一些其他如html css json CoffeeScript、 JSX、 LESS
+  或图片等,需要去安装对应的loader
+  2、loader: 类似于一种模块和资源的转换器，它本身是一个函数，接受源文件作为参数，把资源从一种形式转换成另一种形式，最终得到的还是javascript
+  3、loader的特性
+  1. Loader 可以通过管道方式链式调用，每个 loader 可以把资源转换成任意格式并传递给下一个 loader ，但是最后一个 loader 必须返回
+  JavaScript。
+  2. Loader 可以同步或异步执行。
+  3. Loader 运行在 node.js 环境中，所以可以做任何可能的事情。
+  4. Loader 可以接受参数，以此来传递配置项给 loader。
+  5. Loader 可以通过文件扩展名（或正则表达式）绑定给不同类型的文件。
+  6. Loader 可以通过 npm 发布和安装。
+  7. 除了通过 package.json 的 main 指定，通常的模块也可以导出一个 loader 来使用。
+  8. Loader 可以访问配置。
+  9. 插件可以让 loader 拥有更多特性。
+  10. Loader 可以分发出附加的任意文件。
+
+  4、Loader 本身也是运行在 node.js 环境中的 JavaScript 模块，它通常会返回一个函数。大多数情况下，我们通过 npm 来管理
+  loader，但是你也可以在项目中自己写 loader 模块。
+  按照惯例，而非必须，loader 一般以 xxx-loader 的方式命名，xxx 代表了这个 loader 要做的转换功能，比如 json-loader。
+  在引用 loader 的时候可以使用全名 json-loader，或者使用短名 json。这个命名规则和搜索优先级顺序在 webpack 的
+  resolveLoader.moduleTemplates api 中定义。
+
+  5、Loader 可以在 require() 引用模块的时候添加，也可以在 webpack 全局配置中进行绑定，还可以通过命令行的方式使用。
+
+
+
+  《1》创建一个style.css文件，如果需要在入口文件entry.js使用这个文件，需要安装对应的loader
+  css-loader style-loader
+  css-loader 会遍历 CSS 文件，然后找到 url() 表达式然后处理他们
+  style-loader 会把原来的 CSS 代码插入页面中的一个 style 标签中
+
+  安装：cnpm install css-loader style-loader --save-dev
+
+  创建文件
+  style.css
+  body{background: green;}
+
+  entry.js
+  require('style-loader!css-loader!./style.css');
+
+
+  执行命令并在浏览器浏览
+  webpack entry.js bundle.js
+
+  ----------------------------------------------------------------------
+  还可以：
+  每次 require CSS 文件的时候都要写 loader 前缀，是一件很繁琐的事情，可以根据模块类型（扩展名）来自动绑定需要的 loader
+  将 entry.js 中的 require("!style!css!./style.css") 修改为 require("./style.css") ;
+  执行命令：
+  webpack entry.js bundle.js --module-bind "css=style-loader!css-loader"
+
+
+  -------------------------------------------------------------------------------------
+  》webpack 的配置文件 webpack.config.js
+  《》介绍
+  0.作用 方便webpack命令的一种执行方式。
+  1.Webpack 在执行的时候，除了在命令行传入参数，还可以通过指定的配置文件来执行。
+  2.默认情况下，会搜索当前目录的 webpack.config.js 文件，这个文件是一个 node.js 模块，返回一个 json 格式的配置信息对象，或者通过
+  --config 选项来指定配置文件。
+  3.注意在根目录创建 package.json 来添加 webpack 需要的依赖
+
+  《》创建配置文件webpack.config.js
+
+  简化webpack执行命令
+
+  module.exports = { //打包一个对象
+  entry:'./entry.js', //入口文件
+  output:{ //打包之后生成的文件放哪
+  path:__dirname, //文件存储位置
+  filename:'bundle.js' //生成文件
+  },
+  module:{
+  loaders:[
+  {test:/\.css$/,loader:'style-loader!css-loader'}
+  ]
+  }
+  }
+
+  entry.js
+  require('./style.css');
+
+
+  执行命令并在浏览器浏览(因为此时都在配置文件中说明了，所以只需要写webpack命令)
+  webpack
+
+  《》注意
+  # 如果没有写入权限，请尝试如下代码更改权限
+  chflags -R nouchg .
+  sudo chmod 775 package.json
+  别忘了运行 npm install。
+
+
+  -----------------------------------------------------------------------
+  》打包代码如何调试
+  把应用打包之后调试代码要用到source map
+
+  执行命令：webpack --devtool source-map
+
+  把应用打包的同时生成一个文件：bundle.js.map
+
+  此时会在谷歌浏览器调试Sources 下 生成 webpack://
+  包含自己写的代码，便于调试
+
+  此时如果直接在配置文件webpack.config.js中添加
+  devtool:'source-map',
+  便于直接输入webpack命令生成一个bundle.js.map文件
+
+
+
+  -----------------------------------------------------------------------
+  》babel
+  webpack可以和babel一起使用，比如项目中用了es2015需要babel转换下在使用webpack打包
+
+  《1》创建一个babel的配置文件 .babelrc
+  {
+  "presets": [
+  "es2015"
+  ]
+  }
+
+  《2》安装babel
+  cnpm install babel-loader babel-core babel-preset-es2015 --save-dev
+
+  《3》webpack的配置文件
+  module:{
+  loaders:[
+  {test:/\.js$/,loader:'babel-loader'},
+  {test:/\.css$/,loader:'style-loader!css-loader'}
+  ]
+  }
+
+  《4》测试：
+  name.js
+  let name = "ninghao.net"; //es2015写法
+  export default name; //标准js模块导出写法
+
+  entry.js
+  import name from './name'; //标准js模块导入写法
+  import './style.css';
+
+  执行webpack命令
+
+
+  -----------------------------------------------------------------------
+  》webpack-dev-server
+  作用：生成一个开发用的服务器，在文件有变化的时候会自动给我们打包并刷新页面，
+  它还有一个模块热替换功能（即可以只替换变化的地方，不需要刷新整个页面）
+
+  1.全局安装webpack-dev-server
+  cnpm install -g webpack-dev-server
+
+  2.本地安装并保存项目依赖
+  cnpm install webpack-dev-server --save-dev
+
+  3.执行 ( localhost:8080 启动一个 express 静态资源 web 服务器，并且会以监听模式自动运行 webpack，并且通过一个 socket.io
+  服务实时监听它们的变化并自动刷新页面。)
+  webpack-dev-server --inline --hot
+
+  执行后会生成一个服务器地址：localhost:8080
+
+  在谷歌浏览器打开并调试cosole出现：
+  [HMR] Waiting for update signal from WDS...
+  正在等待来自webpack更新的信号
+  [WDS] Hot Module Replacement enabled.
+  模块热替换已经启用
+
+  4.测试
+  input标签
+
+
+  》其他
+  Webpack 的配置提供了 resolve 和 resolveLoader 参数来设置模块解析的处理细节，resolve
+  用来配置应用层的模块（要被打包的模块）解析，resolveLoader 用来配置 loader 模块的解析。
+  当引入通过 npm 安装的 node.js 模块时，可能出现找不到依赖的错误。
+  Node.js 模块的依赖解析算法很简单，是通过查看模块的每一层父目录中的 node_modules 文件夹来查询依赖的。
+  当出现 Node.js 模块依赖查找失败的时候，可以尝试设置 resolve.fallback 和 resolveLoader.fallback 来解决问题。
+  module.exports = {
+  resolve: { fallback: path.join(__dirname, "node_modules") },
+  resolveLoader: { fallback: path.join(__dirname, "node_modules") }
+  };
+  Webpack 中涉及路径配置最好使用绝对路径，建议通过 path.resolve(__dirname, "app/folder") 或
+  path.join(__dirname, "app", "folder") 的方式来配置，以兼容 Windows 环境。
+
+
+  -----------------------------------------------------------------------
+  创建一个react项目；可以使用babel处理项目中使用es2015代码；还有react JSX 代码，
+  然后使用webpack打包
+
+  创建项目:
+  npm install babel-core babel-preset-es2015 babel-preset-react webpack
+  webpack-dev-server babel-loader react-hot-loader --save-dev
+
+
+  npm install react react-dom --save-dev
+
+  配置文件:{test:/\.js$/,exclude:/node_modules/,loader:'react-hot!babel'}
+
+  .babelrc文件
+
+  {
+  "presets":["es2015","react"]
+  }
+
+  entry.js
+  import React from './react';
+  import ReactDOM from './react-dom';
+  import Name from './name';
+
+  ReactDOM.render(
+  <Name />;
+  document.getElementById('app')
+  )
+
+  package.json 文件：scripts下添加
+  "watch":"webpack-dev-server --inline --hot"
+
+  运行：
+  npm run watch
+
+
+  -------------------------------------------------------------------------------------
+  》Webpack插件
+  插件可以完成更多 loader 不能完成的功能。
+  插件的使用一般是在 webpack 的配置信息 plugins 选项中指定。
+  Webpack 本身内置了一些常用的插件，还可以通过 npm 安装第三方插件。
+  eg:BannerPlugin 内置插件来实践插件的配置和运行，这个插件的作用是给输出的文件bundle.js头部添加注释信息。
+  plugins: [
+  new webpack.BannerPlugin('This file is created by zhaoda')
+  ]

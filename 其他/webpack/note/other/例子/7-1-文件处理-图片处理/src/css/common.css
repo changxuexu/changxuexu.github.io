@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0
+}
+
+.bigbox>div {
+  width: 128px;
+  height: 128px;
+  float: left;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.a1 {
+  background-image: url(../assets/images/1@2x.png)
+}
+
+.a2 {
+  background-image: url(../assets/images/2.png)
+}
+
+.a3 {
+  background-image: url(../assets/images/3.png)
+}
+
+.a4 {
+  background-image: url(../assets/images/4.png)
+}

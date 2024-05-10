@@ -58,24 +58,8 @@ webpack大纲
 		polyfil
 		runtime
 	
-常见问题：	
-	为何需要webpack和babel?
-		ES6 模块化，浏览器暂不支持
-		ES6 语法，浏览器并不完全支持
-		压缩代码，整合代码，以让网页加载更快
-    	
-	前端代码为何要进行构建和打包 ?
-		
+	7.SourceMap
 
-	module chunk bundle 分别什么意思，有何区别?
-		module-各个源码文件，webpack 中一切皆模块；
-		chunk-多模块合并成的，如 entry、import() 、splitChunk
-		bundle-最终的输出文件
-
-	loader 和 plugin 的区别 ?
-	webpack 如何实现懒加载 ?
-	webpack 常见性能优化?
-	babel-runtime和babel-polyfill 的区别?
 ```
 
 # webpack4与webpack5对比
@@ -867,4 +851,70 @@ webpack自身支持这个功能，无需配置
 # SourceMap
 ```
 https://blog.csdn.net/stand_forever/article/details/132712478
+```
+
+# 常见问题
+```
+为何需要webpack和babel?
+	ES6 模块化，浏览器暂不支持
+	ES6 语法，浏览器并不完全支持
+	压缩代码，整合代码，以让网页加载更快
+    	
+前端代码为何要进行构建和打包 ?
+	
+	
+```
+
+```
+module chunk bundle 分别什么意思，有何区别?
+	module
+		是开发中的单个模块,各个源码文件，webpack 中一切皆模块；
+
+	chunk
+		指webpack在进行模块的依赖分析的时候，代码分割出来的代码块;
+		多模块合并成的，如 entry、import() 、splitChunk
+
+	bundle
+		是由webpack打包出来的文件,最终的输出文件
+```
+
+```
+loader 和 plugin 的区别 ?
+	Loaders是用来告诉webpack如何转化处理某一类型的文件，并且引入到打包出的文件中；
+	Plugin是用来自定义webpack打包过程的方式，一个插件是含有apply方法的一个对象，通过这个方法可以参与到整个webpack打包的各个流程（生命周期）
+```
+
+```
+webpack 如何实现懒加载 ?
+```
+
+```
+webpack 常见性能优化?
+```
+
+```
+babel-runtime和babel-polyfill 的区别?
+```
+
+```
+webpack-dev-server 和 http服务器 如nginx有什么区别
+    webpack-dev-server是用【内存】来存储webpack开发环境下的打包文件，并且可以使用模块热更新，他比传统的http服务对开发更加简单高效。
+```
+
+```
+什么是模块热更新？
+  模块热更新是webpack的一个功能，他可以使得代码修改过后不用刷新浏览器就可以更新，是高级版的自动刷新浏览器。
+```
+
+```
+什么是Tree-shaking? css可以Tree-shaking吗？
+    Tree-shaking是指在打包中去除那些引入了，但是在代码中没有被用到的那些死代码。
+    在webpack中Tree-shaking是通过uglifyJSPlugin来Tree-shaking JS。css需要使用
+    Purify-CSS
+```
+
+```
+什么是长缓存？在webpack中如何做到长缓存优化?
+	浏览器在用户访问页面的时候，为了加快加载速度，会对用户访问的静态资源进行存储，但是每一次代码升级或者是更新，都需要浏览器去下载新的代码，最方便和简单的更新方式就是引入新的文件名称。在webpack中可以在output给输出的文件指定chunkhash,并且分离经常更新的代码和框架代码。通过NamedModulesPlugin或是
+	HashedModuleIdsPlugin使再次打包文件名不变。
 ```
