@@ -49,7 +49,7 @@ module.exports = merge(webpackCommonConf, {
     ],
     // webpack 5 (https://webpack.js.org/configuration/dev-server/#devserverproxy)
     devServer:{
-        hot: true, // 启用热更新
+        hot: true, // 启用模块热更新
 
         // open:true, //自动打开浏览器
         compress:true, //启动gzip压缩
@@ -60,8 +60,9 @@ module.exports = merge(webpackCommonConf, {
             directory:distPath //当前启动服务的根目录
         },
 
+        
+        port:3000, //本地服务器端口号
         // 代理设置: 解决跨域问题
-        port:3000,
         proxy:[
             //将本地/api/xxx代理到 localhost:3000/api/xxx
             {
