@@ -2,11 +2,19 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { srcPath, distPath } = require('./paths')
 module.exports = {
-    entry:path.join(srcPath,'index'), // 文件入口
-    /* entry:{
+    // 文件入口
+    entry:path.join(srcPath,'index'), 
+    /* 
+    // 配置多入口
+    entry:{
         index:path.join(srcPath,'index.js'),
         other:path.join(srcPath,'other.js')
-    }, */
+    }, 
+    */
+    /* 
+        关于模块的加载相关，我们就定义在module.loaders中；
+        这里通过正则表达式去匹配不同后缀的文件名，然后给它们定义不同的加载器。
+    */
     module:{
         rules:[
             // babel-loader 将es6以上语法向下兼容

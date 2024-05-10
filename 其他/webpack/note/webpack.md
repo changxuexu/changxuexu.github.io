@@ -1,4 +1,3 @@
-# webpack
 # 待处理
 ```
 vite babel
@@ -11,12 +10,33 @@ TerserWebpackPlugin
 参考
 	https://blog.csdn.net/Maui1027/article/details/126350281
 		options: { importLoaders: 1, esModule: true,},
-```
-# 概述
-```
-webpack 已是前端打包构建的不二选择；
-成熟的工具，重点在于配置和使用，原理并不高优。
+	
+配置案例参考
+	文档和demo：https://github.com/ltadpoles
 
+实战：
+	看一看 `vue` 或者 `react` 中的 `webpack` 配置，进行模仿
+```
+
+# webpack
+# 概述和大纲
+```
+webpack是什么，它能做什么？
+	`webpack` 是一个现代 `JavaScript` 应用程序的静态模块打包器`module bundler`，将项目当作一个整体，通过一个给定的的主文件，`webpack`将从这个文件开始找到你的项目的所有依赖文件，使用 `loaders` 处理它们，最后打包成一个或多个浏览器可识别的 `js` 文件。
+	当 `webpack` 处理应用程序时，它会在内部构建一个 依赖图(`dependency graph`)，此依赖图会映射项目所需的每个模块，并生成一个或多个 `bundle`。
+	webpack 已是前端打包构建的不二选择；成熟的工具，重点在于配置和使用，原理并不高优。
+
+webpack与grunt、gulp的对比
+	(1)三者都是前端构建工具
+	(2)`grunt` 和 `gulp` 是基于任务和流的。
+		找到一个（或一类）文件，对其做一系列链式操作，更新流上的数据， 整条链式操作构成了一个任务，多个任务就构成了整个 `web` 的构建流程
+	(3)`webpack` 是基于入口的。
+		`webpack` 会自动地递归解析入口所需要加载的所有资源文件，然后用不同的` Loader` 来处理不同的文件，用 `Plugin` 来扩展 `webpack` 功能
+	(4)`webpack` 与前者最大的不同就是支持代码分割，模块化（AMD,CommonJ,ES2015），全局分析
+	(5)参考：
+		https://www.zhihu.com/question/37020798
+		https://webpack.docschina.org/concepts/why-webpack/
+		
 webpack大纲
 	1.基本配置
 		安装配置
@@ -33,7 +53,7 @@ webpack大纲
 		懒加载
 		处理 React 和 vue
 		
-	3.优化打包效率
+	3.优化打包效率 (性能优化)
 		优化babel-loader
 		IgnorePlugin
 		noParse
@@ -43,13 +63,14 @@ webpack大纲
 		热更新
 		DIlPlugin
 		
-	4.优化产出代码
-		使用生产环境
+	4.优化产出代码 (性能优化)
 		小图片 base64 编码
 		bundle 加 hash
-		使用CDN
-		提取公共改代码
 		懒加载
+		提取公共改代码
+		IgnorePlugin
+		使用CDN加速
+		使用生产环境(production)
 		scope hosting
 		
 	5.构建流程概述
@@ -148,44 +169,72 @@ webpack4 升级 webpack5 以及周边插件后，代码需要做出的调整:
 
 # 基本配置
 ```
-1.拆分配置 和 merge：相对于开发环境和生产环境中的有些配置不一样
+webpack的基础配置核心有四个：
+	(1)entry 入口
+		指示 `webpack` 应该使用哪个模块，来作为构建其内部 依赖图(dependency graph) 的开始。
+		进入入口起点后，`webpack` 会找出有哪些模块和库是入口起点（直接和间接）依赖的，【默认值】是 `./src/index.js`。
+		
+    (2)output 输出
+    	告诉 `webpack` 在哪里输出它所创建的 `bundle`，以及如何命名这些文件。
+    	主要输出文件的【默认值】是 `./dist/main.js`，其他生成文件默认放置在 `./dist` 文件夹中。
+    	
+    (3)loader 
+    	`webpack` 只能理解 `JavaScript` 和 `JSON` 文件;
+    	`loader` 让 `webpack` 能够去处理其他类型的文件(非 `JavaScript` 文件)，并将它们转换为有效 模块，以供应用程序使用，以及被添加到依赖图中;
+    	通俗理解：loader就是【作为模块的解析规则】而存在;
+    	在 `module.rules` 中配置，类型为数组。
+    	
+    (4)plugin 插件
+    	`loader` 用于转换某些类型的模块，而插件则可以用于执行范围更广的任务;
+    	插件的范围包括：打包优化，资源管理，注入环境变量;
+    	通俗理解：扩展 `webpack` 的功能，让 `webpack` 具有更多的灵活性;
+    	在 `plugins` 中单独配置。类型为数组，每一项是一个 `plugin` 的实例，参数都通过构造函数传入。
+    
+    (5)模式
+		通过选择 `development` 或 `production` 之中的一个，来设置 `mode` 参数，你可以启用相应模式下的 `webpack` 内置的优化
+		module.exports = {
+  			mode: 'production'
+		}
 
-2.启动本地服务
-	参考webpack-dev-server依赖
-	https://webpack.js.org/configuration/dev-server/#devserverproxy
+以上基础概念小伙伴们记住就好，知道每个属性是做什么。下面，让我们按以下步骤依次进行实际操作：
+	1.拆分配置 和 merge：相对于开发环境和生产环境中的有些配置不一样
 
-3.处理 ES6
-	参照babel章节
+	2.启动本地服务
+		参考webpack-dev-server依赖
+		https://webpack.js.org/configuration/dev-server/#devserverproxy
 
-4.处理样式
-	关于样式兼容
-		npm install --save-dev postcss-loader postcss
-		postcss的配置文件postcss.config.js
-			webpack4:
-				module.exports = {
-					plugins: [
-						// 前缀自动补全依赖autoprefixer需下载
-						// https://github.com/postcss/autoprefixer
-						require('autoprefixer') 
-					]
-				}
-			
-			webpack5:
-				module.exports = {
-					plugins:[
-							[
-								'postcss-preset-env',
-								{
-									// 其他选项
-									browsers: 'last 2 versions'   
-								}
-							]
-					]
-				}
+    3.处理 ES6
+        参照babel章节
 
-5.处理图片
+    4.处理样式
+        关于样式兼容
+            npm install --save-dev postcss-loader postcss
+            postcss的配置文件postcss.config.js
+                webpack4:
+                    module.exports = {
+                        plugins: [
+                            // 前缀自动补全依赖autoprefixer需下载
+                            // https://github.com/postcss/autoprefixer
+                            require('autoprefixer') 
+                        ]
+                    }
 
-6.模块化: webpack包含这个功能
+                webpack5:
+                    module.exports = {
+                        plugins:[
+                                [
+                                    'postcss-preset-env',
+                                    {
+                                        // 其他选项
+                                        browsers: 'last 2 versions'   
+                                    }
+                                ]
+                        ]
+                    }
+
+    5.处理图片
+
+    6.模块化: webpack包含这个功能
 ```
 
 
@@ -246,8 +295,8 @@ webpack4 升级 webpack5 以及周边插件后，代码需要做出的调整:
 
 依赖：
 	css抽离
-		mini-css-extract-plugin
-		extract-text-webpack-plugin(webpack < 4)
+		mini-css-extract-plugin     (webpack > 4)
+		extract-text-webpack-plugin (webpack < 4)
 
 	css压缩
 		css-minimizer-webpack-plugin (webpack = 5)
@@ -257,15 +306,27 @@ webpack4 升级 webpack5 以及周边插件后，代码需要做出的调整:
 		terser-webpack-plugin
 
 具体配置见配置文件
+	const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+	
 	module:{
 		rules:[
 			// 抽离css
+			// 修改style-loader 为 MiniCssExtractPlugin.loader
 			{
 				test:/\.css$/,
 				use:[MiniCssExtractPlugin.loader, 'css-loader' , 'postcss-loader']
 			},
 		]
 	}
+	
+	plugins:[
+		// 抽离css文件
+        new MiniCssExtractPlugin({
+            filename:'css/main.[contenthash:8].css'  // 打包文件名称
+            //ignoreOrder: false // 移除警告
+        })
+	]
+	
 	optimization:{
 		// 压缩
 		minimizer:[
@@ -282,6 +343,10 @@ webpack4 升级 webpack5 以及周边插件后，代码需要做出的调整:
 ## 抽离公共代码
 ```
 将第三方模块或者共用的模块进行抽离出来，减小代码体积
+
+参考：
+	https://webpack.docschina.org/plugins/split-chunks-plugin/
+
 // 分割代码块
 optimization:{
 	splitChunks:{
@@ -293,13 +358,13 @@ optimization:{
 		*/
 		chunks:'all',
 			
-		// 缓存分组
+		// 缓存分组：可以对不同的文件做不同的处理
 		cacheGroups:{
 			// 第三方模块
 			vendor:{
 				name:'vendor', //chunk名称
 				priority:1,    //优先级权限更高，优先抽离，重要!!!
-				test: /node_modules/, //匹配任何包含 node_modules 路径的模块
+				test: /node_modules/, //通过条件找到要提取的文件：匹配任何包含 node_modules 路径的模块
 				minSize:0,     //大小限制
 				minChunks:1    //最少复用过几次
 			},
@@ -318,6 +383,8 @@ optimization:{
 表现：
 	将第三方模块或者共用的模块进行抽离出来打包成单独文件，需要时引入即可
 
+说明：
+	Webapck < 4.x 使用 `CommonsChunkPlugin` 去做分离
 ```
 
 ## 懒加载
@@ -353,6 +420,15 @@ webpack自身支持这个功能，无需配置
 ```
 优化打包构建速度：开发体验和效率
 优化产出代码：产品性能
+
+优化babel-loader
+IgnorePlugin
+noParse
+happyPack
+ParatelUglifyPlugin
+自动刷新
+热更新
+DIlPlugin
 ```
 
 ## 优化babel-loader
@@ -462,6 +538,8 @@ webpack自身支持这个功能，无需配置
 	}
 
 【热更新】配置
+	前提：需要下载`webpack-dev-server`依赖,它能够快速开发应用程序，我们可以在其中启动本地服务、设置基础页面、端口号、是否打开浏览器、是否启用热更新等一系列功能
+	
 	module.exports = {
 		plugins:[
 			// 添加热更新插件(webpack4可无需配置)
@@ -523,7 +601,38 @@ webpack自身支持这个功能，无需配置
 
 ```
 
-#
+# 优化产出代码
+```
+小图片 base64 编码
+
+bundle 加 hash 
+	给打包出来的文件名添加哈希，实现浏览器缓存文件
+	
+懒加载
+	按照路由拆分代码，实现按需加载，提取公共代码
+	
+提取公共改代码
+
+IgnorePlugin
+	
+使用CDN加速 
+	在构建过程中，将引用的静态资源路径修改为 `CDN` 上对应的路径
+	
+使用生产环境(production) 
+	删除死代码 `Tree Shaking。将代码中永远不会走到的片段删除掉
+	压缩代码。删除多余的代码、注释、简化代码的写法等等方式
+	
+scope hosting
+```
+
+## 使用生产环境(production)
+
+```
+
+```
+
+## scope hosting
+
 ```
 
 ```
@@ -541,21 +650,17 @@ webpack自身支持这个功能，无需配置
 ```
 
 
-#
+#  webpack的构建流程是什么？
 ```
+1. 初始化参数：从配置文件和 `Shell` 语句中读取与合并参数，得出最终的参数
+2. 开始编译：用上一步得到的参数初始化 `Compiler` 对象，加载所有配置的插件，执行对象的 `run` 方法开始执行编译
+3. 确定入口：根据配置中的 `entry` 找出所有的入口文件
+4. 编译模块：从入口文件出发，调用所有配置的 `Loader` 对模块进行翻译，再找出该模块依赖的模块，再递归本步骤直到所有入口依赖的文件都经过了本步骤的处理
+5. 完成模块编译：在经过第4步使用 `Loader` 翻译完所有模块后，得到了每个模块被翻译后的最终内容以及它们之间的依赖关系
+6. 输出资源：根据入口和模块之间的依赖关系，组装成一个个包含多个模块的 `Chunk`，再把每个 `Chunk` 转换成一个单独的文件加入到输出列表，这步是可以修改输出内容的最后机会
+7. 输出完成：在确定好输出内容后，根据配置确定输出的路径和文件名，把文件内容写入到文件系统
 
-```
-
-
-#
-```
-
-```
-
-
-#
-```
-
+	在以上过程中，`Webpack` 会在特定的时间点广播出特定的事件，插件在监听到感兴趣的事件后会执行特定的逻辑，并且插件可以调用 `Webpack` 提供的 `API` 改变 `Webpack` 的运行结果
 ```
 
 
@@ -854,67 +959,117 @@ https://blog.csdn.net/stand_forever/article/details/132712478
 ```
 
 # 常见问题
+
+**前端代码为何要进行构建和打包 ?**
 ```
-为何需要webpack和babel?
-	ES6 模块化，浏览器暂不支持
-	ES6 语法，浏览器并不完全支持
-	压缩代码，整合代码，以让网页加载更快
-    	
-前端代码为何要进行构建和打包 ?
+代码层面：
+	体积更小(Tree-Shaking、压缩、合并)，让网页加载更快
+	编译高级语言或语法(TS，ES6+，模块化，scss)
+	兼容性和错误检查(Polyfill、postcss、eslint)
+
+项目流程层面：
+	统一、高效的开发环境
+	统一的构建流程和产出标准
+	集成公司构建规范(提测、上线等)
 	
-	
+babel 和 webpack 的区别？
+	babel-JS 新语法编译工具，不关心模块化
+	webpack-打包构建工具，是多个loader plugin 的集合
+```
+
+**module chunk bundle 分别什么意思，有何区别?**
+```
+module
+	是开发中的单个模块,各个源码文件，webpack 中一切皆模块；
+
+chunk
+	指webpack在进行模块的依赖分析的时候，代码分割出来的代码块;
+	多模块合并成的，如 entry、import() 、splitChunk
+
+bundle
+	是由webpack打包出来的文件,最终的输出文件
+```
+
+**loader 和 plugin 的区别 ?**
+```
+Loaders
+	模块转换器;
+	是用来告诉webpack如何转化处理某一类型的文件，并且引入到打包出的文件中；如less->css
+	参考：https://www.webpackjs,com/loaders
+
+Plugin
+	扩展插件;
+	是用来自定义webpack打包过程的方式，一个插件是含有apply方法的一个对象，通过这个方法可以参与到整个webpack打包的各个生命周期流程;如HtmlWebpackPlugin。
+	参考：https://www.webpackjs.com/plugins
+```
+
+**有哪些常见的Loader？他们是解决什么问题的**
+```
+`css-loader`：加载 `CSS`，支持模块化、压缩、文件导入等特性
+`style-loader`：把 `CSS` 代码注入到 `JavaScript 中`，通过 `DOM` 操作去加载 `CSS`
+`slint-loader`：通过 `SLint` 检查 `JavaScript` 代码
+`babel-loader`：把 `ES6` 转换成 `ES5`
+`file-loader`：把文件输出到一个文件夹中，在代码中通过相对 `URL` 去引用输出的文件
+`url-loader`：和 `file-loader` 类似，但是能在文件很小的情况下以 `base64` 的方式把文件内容注入到代码中去
+```
+
+**为何 Proxy 不能被 Polyfill ?**
+```
+如 Class 可以用 function 模拟
+如 Promise 可以用 callback 来模拟
+但 Proxy的功能用 Object.defineProperty 无法模拟
+```
+
+**webpack 如何实现懒加载 ?**
+```
+import()
+结合 Vue React 异步组件
+结合 Vue-router React-router 异步加载路由
+```
+
+**webpack 常见性能优化?**
+```
+目的：
+	体积更小
+	合理分包，不重复加载
+	速度更快、内存使用更少
+
+解决：
+	优化打包效率
+	优化产出代码
+```
+
+**babel-runtime和babel-polyfill 的区别?**
 ```
 
 ```
-module chunk bundle 分别什么意思，有何区别?
-	module
-		是开发中的单个模块,各个源码文件，webpack 中一切皆模块；
 
-	chunk
-		指webpack在进行模块的依赖分析的时候，代码分割出来的代码块;
-		多模块合并成的，如 entry、import() 、splitChunk
-
-	bundle
-		是由webpack打包出来的文件,最终的输出文件
+**webpack-dev-server 和 http服务器 如nginx有什么区别**
+```
+webpack-dev-server是用【内存】来存储webpack开发环境下的打包文件，并且可以使用模块热更新，他比传统的http服务对开发更加简单高效。
 ```
 
+**什么是模块热更新？**
 ```
-loader 和 plugin 的区别 ?
-	Loaders是用来告诉webpack如何转化处理某一类型的文件，并且引入到打包出的文件中；
-	Plugin是用来自定义webpack打包过程的方式，一个插件是含有apply方法的一个对象，通过这个方法可以参与到整个webpack打包的各个流程（生命周期）
-```
-
-```
-webpack 如何实现懒加载 ?
+模块热更新是webpack的一个功能，他可以使得代码修改过后不用刷新浏览器就可以更新，是高级版的自动刷新浏览器。
 ```
 
+**什么是Tree-shaking? css可以Tree-shaking吗？**
 ```
-webpack 常见性能优化?
-```
-
-```
-babel-runtime和babel-polyfill 的区别?
-```
-
-```
-webpack-dev-server 和 http服务器 如nginx有什么区别
-    webpack-dev-server是用【内存】来存储webpack开发环境下的打包文件，并且可以使用模块热更新，他比传统的http服务对开发更加简单高效。
+Tree-shaking是指在打包中去除那些引入了，但是在代码中没有被用到的那些死代码。
+在webpack中Tree-shaking是通过uglifyJSPlugin来Tree-shaking JS。css需要使用
+Purify-CSS
 ```
 
+**什么是长缓存？在webpack中如何做到长缓存优化?**
 ```
-什么是模块热更新？
-  模块热更新是webpack的一个功能，他可以使得代码修改过后不用刷新浏览器就可以更新，是高级版的自动刷新浏览器。
-```
-
-```
-什么是Tree-shaking? css可以Tree-shaking吗？
-    Tree-shaking是指在打包中去除那些引入了，但是在代码中没有被用到的那些死代码。
-    在webpack中Tree-shaking是通过uglifyJSPlugin来Tree-shaking JS。css需要使用
-    Purify-CSS
+浏览器在用户访问页面的时候，为了加快加载速度，会对用户访问的静态资源进行存储，但是每一次代码升级或者是更新，都需要浏览器去下载新的代码，最方便和简单的更新方式就是引入新的文件名称。在webpack中可以在output给输出的文件指定chunkhash,并且分离经常更新的代码和框架代码。通过NamedModulesPlugin或是
+HashedModuleIdsPlugin使再次打包文件名不变。
 ```
 
+**是否写过Loader和Plugin？描述一下编写loader或plugin的思路**
+
 ```
-什么是长缓存？在webpack中如何做到长缓存优化?
-	浏览器在用户访问页面的时候，为了加快加载速度，会对用户访问的静态资源进行存储，但是每一次代码升级或者是更新，都需要浏览器去下载新的代码，最方便和简单的更新方式就是引入新的文件名称。在webpack中可以在output给输出的文件指定chunkhash,并且分离经常更新的代码和框架代码。通过NamedModulesPlugin或是
-	HashedModuleIdsPlugin使再次打包文件名不变。
+	编写 `Loader` 时要遵循单一原则，每个 `Loader` 只做一种"转义"工作。 每个 `Loader` 的拿到的是源文件内容`（source）`，可以通过返回值的方式将处理后的内容输出，也可以调用 `this.callback()` 方法，将内容返回给 `webpack` 。 还可以通过 `this.async() `生成一个 `callback` 函数，再用这个 `callback`` 将处理后的内容输出出去。
+	相对于 `Loader` 而言，`Plugin` 的编写就灵活了许多。 `webpack` 在运行的生命周期中会广播出许多事件，`Plugin` 可以监听这些事件，在合适的时机通过 `Webpack` 提供的 `API` 改变输出结果
 ```

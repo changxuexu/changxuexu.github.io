@@ -11,7 +11,11 @@ module.exports = merge(webpackCommonConf, {
         rules:[
             // 表现：直接引入图片url
             {
-                test:/\.(png|jpg|jpeg|gif)$/,
+                test:/\.(png|jpg|jpeg|gif|bmp)$/,
+                use:'file-loader'
+            },
+            {
+                test:/\.(svg|eot|ttf|woff|woff2)$/,
                 use:'file-loader'
             },
             // {
@@ -46,7 +50,6 @@ module.exports = merge(webpackCommonConf, {
     devServer:{
         hot: true, // 启用热更新
 
-        port:3000,
         // open:true, //自动打开浏览器
         compress:true, //启动gzip压缩
         client: {
@@ -55,21 +58,24 @@ module.exports = merge(webpackCommonConf, {
         static:{
             directory:distPath //当前启动服务的根目录
         },
+
+        // 代理设置: 解决跨域问题
+        port:3000,
         proxy:[
             //将本地/api/xxx代理到 localhost:3000/api/xxx
             {
                 context: ['/api'],
-                target:'http://localhost:3000',
+                target:'http://localhost:3000', 
                 secure: false,
                 changeOrigin: true
             },
             // 将本地 /api2/xxx代理到 localhost:3000/xxx
             {
                 context: ['/api2'],
-                target:'http://localhost:3000',
-                secure: false,
+                target:'http://localhost:3000', //目标代理
+                secure: false, // 是否接受运行在 HTTPS 上
                 changeOrigin: true,
-                pathRewrite: { '^/api2': '' },
+                pathRewrite: { '^/api2': '' }, //重写路径
             }
         ]
     }

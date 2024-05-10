@@ -8,21 +8,35 @@ const TerserJSPlugin = require('terser-webpack-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const webpackCommonConf = require('./webpack.common.js')
 const { srcPath, distPath } = require('./paths')
+const { library } = require('webpack')
 module.exports = merge(webpackCommonConf, {
     mode:'production', //production下代码会压缩
+    /* 
+        当需要打包出一个第三方包是，如何操作？
+        output:{
+            // lib的文件名
+            filename:'lodash.js',
+            // 输出lib到dist目录下
+            path:distPath,
+            // lib的全局变量名，如window.lodash
+            library:'lodash'
+        }
+    */
     output:{
         // 打包代码时，加上。若文件有所改动contentHash就会变，生成的文件名也会变化
         // filename:'bundle.[contentHash:8].js', // webpack4-H大小写
         filename:'bundle.[contenthash:8].js', // webpack5
-        // filename:'[name].[contenthash:8].js', // 多入口。name表示entry入口中的index、other,若没指定,则默认为main
+        // filename:'[name].[contenthash:8].js', // 多入口。name指定分离出来包的chunk名称, 表示entry入口中的index、other,若没指定,则默认为main
         path:distPath,
-        // publicPath:'http://cdn.abc.com' //修改所有静态文件url
+        // publicPath:'http://cdn.abc.com' //修改所有静态文件url，CDN优化需求
     },
     module:{
         rules:[
+            // url-loader` 和 `file-loader` 的功能相类似，不过在文件大小（单位 byte）低于指定的限制时，可以返回一个 `DataURL`，可以这样设置
+            // 表现：查看图片资源路径是base64还是url形式
             // 图片-考虑base64编码的情况
             {
-                test:/\.(png|jpg|jpeg|gif)$/,
+                test:/\.(png|jpg|jpeg|gif|bmp)$/,
                 use:{
                     loader:'url-loader',
                     options:{
@@ -53,17 +67,18 @@ module.exports = merge(webpackCommonConf, {
         ]
     },
     plugins:[
-        // 会默认清空 output.path 文件夹
+        // 每次在打包之前会默认清空 output.path 文件夹(默认 `dist` 文件夹)
         new CleanWebpackPlugin(), 
         
+        // 定义环境变量
         new webpack.DefinePlugin({
-            // 使用 window.ENV = 'production'
-            ENV:JSON.stringify('production')
+            ENV:JSON.stringify('production') // 使用 window.ENV = 'production'
         }),
 
         // 抽离css文件
         new MiniCssExtractPlugin({
-            filename:'css/main.[contenthash:8].css'
+            filename:'css/main.[contenthash:8].css' // 打包文件名称
+            // ignoreOrder: false // 移除警告
         }),
 
         // 作用：告诉webpack忽略特定的模块或模块模式，这些模块将不会被打包到输出结果中。
@@ -95,13 +110,13 @@ module.exports = merge(webpackCommonConf, {
             */
             chunks:'all',
             
-            // 缓存分组
+            // 缓存分组：可以对不同的文件做不同的处理
             cacheGroups:{
                 // 第三方模块
                 vendor:{
                     name:'vendor', //chunk名称
                     priority:1,    //优先级权限更高，优先抽离，重要!!!
-                    test: /node_modules/, //匹配任何包含 node_modules 路径的模块
+                    test: /node_modules/, //通过条件找到要提取的文件：匹配任何包含 node_modules 路径的模块
                     minSize:0,     //大小限制
                     minChunks:1    //最少复用过几次
                 },
