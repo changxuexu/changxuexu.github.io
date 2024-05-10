@@ -639,8 +639,8 @@ DIlPlugin
 	
 	module.exports = {
 		plugins:[
-			// 添加热更新插件(webpack4可无需配置)
-      new webpack.HotModuleReplacementPlugin()
+			// 添加热更新插件(webpack5可无需配置)
+      		//new webpack.HotModuleReplacementPlugin()
 		],
 		devServer:{
 			hot: true, // 启用热更新
@@ -655,7 +655,7 @@ DIlPlugin
 				在源代码中 css/js 产生修改时，会立刻在浏览器中进行更新，这几平相当于在浏览器 devtools 直接更改样式:
 					a.html模板文件默认也不支持HMR，直接在入口文件将html文件引入就可以了。
 					b.样式文件可以直接使用HMR功能，因为style-loader内部实现了module.hot.accept的支持;
-					c.js文件不可以，需要使用module.hot.accept()函数指定热更新监听模块范围，不在此范围的修改都是自动刷新；
+					c.js文件不可以，需要使用module.hot.accept()函数指定热更新监听模块范围，不在此范围的修改都是自动刷新浏览器；
 						// 开启热更新之后的代码逻辑
 						// module.hot 是否开启热更新
 						if(module.hot){
