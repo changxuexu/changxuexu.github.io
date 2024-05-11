@@ -14,10 +14,6 @@
   1.安装
     npm install style-loader css-loader --save-dev
 
-
-
-      
-
     方式二：
       npm install file-loader --save-dev
 
@@ -80,55 +76,5 @@
         1.控制引入样式是否起作用
 
 
-  3. style-loader的 options 配置 
-      insertAt(插入位置)
-      insertInto(插入到指定dom)
-      singleton(是否只使用一个style标签) true/false
-      transform(转化，浏览器环境下，插入页面前执行)
-
-      例子：
-        options: {
-          insertInto: '#app', //页面id为app的元素中
-          singleton: true,
-          transform: './css.transform.js'
-        }
-
-        ./css.transform.js
-
-          module.exports = function (css) {
-            // 不是在打包的时候执行的
-            // 是在样式插入到浏览器之前执行的
-            console.log(css)
-            console.log(window.innerWidth)
-            if (window.innerWidth >= 768) {
-              return css.replace('red', 'green')
-            } else {
-              return css
-            }
-          }
-    
-  4. css-loader的 options 配置 
-      alias (解析的别名)
-      importLoaders (@import)
-      minimize  (是否压缩) //已移除
-      modules (启用css-modules)
-
-        {
-          loader: 'css-loader',
-          options: {
-            modules: true,
-            localIdentName: '[path][name]__[local]--[hash:base64:5]',
-          }
-        }
-
-        app.js
-          import base from './css/base.css'
-          var app = document.getElementById('app')
-          app.innerHTML = '<div class="' + base.box + '"></div>'
-
-        .box{
-          width:100px;
-          height:100px;
-          composes: bigbox from 'library/button.css';
-        }
-      
+  
+  

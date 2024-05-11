@@ -85,14 +85,25 @@ module.exports = merge(webpackCommonConf, {
         ]
     },
     plugins:[
+        // 自定义全局变量
         new webpack.DefinePlugin({
-            // 自定义全局变量，调用方式： window.ENV = 'development'
+            // 调用方式： window.ENV = 'development'
             ENV:JSON.stringify('development')
         }),
+
+        // 使用 dll 文件
+        new webpack.DllReferencePlugin({
+            manifest: require(path.join(distPath,'vue.manifest.json')),
+        })
 
         // 添加热更新插件
         // new webpack.HotModuleReplacementPlugin(), 
     ],
+    resolve: {
+        alias: {
+            'vue': 'vue/dist/vue.esm-bundler.js'
+        }
+    },
     // webpack 5 (https://webpack.js.org/configuration/dev-server/#devserverproxy)
     devServer:{
         hot: true, // 启用模块热更新

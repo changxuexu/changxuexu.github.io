@@ -1,4 +1,13 @@
-import './style/style1.css'
+import { createApp, ref } from 'vue'
+
+let app = createApp({
+    data(){
+        return {
+            message:'vue初始化'
+        }
+    }
+})
+app.mount(document.getElementById('app'))
 
 /* 
 // 引入js, 处理es6
