@@ -238,7 +238,7 @@ webpack4 升级 webpack5 以及周边插件后，代码需要做出的调整:
     3.处理 ES6
         参照babel章节
 
-    4.处理样式
+    4.处理样式_(文件)
         关于样式兼容
             npm install --save-dev postcss-loader postcss
             postcss的配置文件postcss.config.js
@@ -271,9 +271,15 @@ webpack4 升级 webpack5 以及周边插件后，代码需要做出的调整:
                         ]
                     }
 
-    5.处理图片
+    5.处理图片_(文件)
+    
+    6.字体_(文件)
+    
+    7.第三方JS库_(文件)
+    
+    8.生成html_(文件)
 
-    6.模块化: webpack包含这个功能
+    9.模块化: webpack包含这个功能
 ```
 
 

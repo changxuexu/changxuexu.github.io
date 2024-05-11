@@ -8,15 +8,6 @@ module.exports = merge(webpackCommonConf, {
     mode:'development', //模式(development/production)，development模式下代码不会压缩
     module:{
         rules:[
-            // 表现：直接引入图片url
-            {
-                test:/\.(png|jpg|jpeg|gif|bmp)$/,
-                use:'file-loader'
-            },
-            {
-                test:/\.(svg|eot|ttf|woff|woff2)$/,
-                use:'file-loader'
-            },
             // Loader 可以在 require() 引用模块的时候添加，如require('style-loader!css-loader!./style.css');
             // {
             //     test:/\.css$/,
@@ -37,6 +28,59 @@ module.exports = merge(webpackCommonConf, {
                 // 增加 'less-loader' 注意顺序
                 // loader:['style-loader', 'css-loader', 'less-loader'] //webpack4
                 use:['style-loader', 'css-loader' , 'postcss-loader', 'less-loader'] //webpack5
+            },
+            // 表现：直接引入图片url
+            // {
+            //     test:/\.(png|jpg|jpeg|gif|bmp)$/,
+            //     use:'file-loader'
+            // },
+            {
+                test: /\.(png|jpg|jpeg|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: "[name].[contenthash:5][ext]",
+                            //将图片打包到dist/images/
+                            outputPath: 'images/', //打包输出
+                            publicPath:'images/',  //访问
+                            // 由于webpack5弃用了file-loader,因此必须写esModule: false、type:'javascript/auto'才会起作用，不然css中图片资源不显示
+                            esModule: false
+                        }
+                    },
+                ],
+                type:'javascript/auto'
+            },
+            // webpack5推荐 type: 'asset/resource' 方式
+            // {
+            //     test: /\.(png|jpe?g|gif|svg)$/i, // 匹配图片文件类型
+            //     type: 'asset', // 使用 asset/resource 类型处理资源,这会将文件发送到输出目录并导出一个 URL。
+            //     generator: { // 控制输出文件的路径和命名
+            //         filename: 'images/[name].[contenthash:5][ext]', // 输出目录及文件命名规则
+            //     },
+            //     // 可选，进一步控制如何处理资源 需要type:'asset'才生效
+            //     parser: { 
+            //       dataUrlCondition: {
+            //         maxSize: 5*1024, // 小于此阈值的图片会被内联为data URL，默认是8kb
+            //       }
+            //     }
+            // },
+            {
+                test:/\.(svg|eot|ttf|woff|woff2)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: "[name].[contenthash:5][ext]",
+                            //将图片打包到dist/images/
+                            outputPath: 'css/font/', //打包输出
+                            publicPath:'css/font/',  //访问
+                            // 由于webpack5弃用了file-loader,因此必须写esModule: false、type:'javascript/auto'才会起作用，不然css中图片资源不显示
+                            esModule: false
+                        }
+                    },
+                ],
+                type:'javascript/auto'
             }
         ]
     },

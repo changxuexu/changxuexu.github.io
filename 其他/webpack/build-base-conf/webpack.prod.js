@@ -37,19 +37,45 @@ module.exports = merge(webpackCommonConf, {
             // 表现：查看图片资源路径是base64还是url形式
             // 图片-考虑base64编码的情况
             {
-                test:/\.(png|jpg|jpeg|gif|bmp)$/,
-                use:{
-                    loader:'url-loader',
-                    options:{
-                        // 小于 5kb 的图片用 base64 格式产出
-                        // 否则，依然延用 file-loader 的形式，产出url格式
-                        limit:5*1024,
-                        // 打包到 img 目录下, 若配置'/img1/'图片引入会出现“//”
-                        outputPath:'img1/',
-                        // 设置图片的 cdn 地址(也可以统一在外面的 output 中设置)
-                        // publicPath:'http://cdn.abc.com'
+                test:/\.(png|jpg|jpeg|gif)$/,
+                use:[
+                    {
+                        loader:'url-loader',
+                        options:{
+                            name: "[name].[contenthash:5][ext]",
+                            // 小于 5kb 的图片用 base64 格式产出
+                            // 否则，依然延用 file-loader 的形式，产出url格式
+                            limit:5*1024,
+                            // 打包到 images 目录下, 若配置'/images/'图片引入会出现“//”
+                            outputPath:'images/',
+                            publicPath:'images/',
+                            // 设置图片的 cdn 地址(也可以统一在外面的 output 中设置)
+                            // publicPath:'http://cdn.abc.com',
+                            // 由于webpack5弃用了url-loader,因此必须写esModule: false、type:'javascript/auto'才会起作用，不然css中图片资源不显示
+                            esModule: false
+                        }
                     }
-                }
+                ],
+                type:'javascript/auto'
+            },
+            // 字体
+            {
+                test:/\.(svg|eot|ttf|woff|woff2)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: "[name].[contenthash:5][ext]",
+                            limit: 1000,
+                            //将图片打包到dist/images/
+                            outputPath: 'css/font/', //打包输出
+                            publicPath:'css/font/',  //访问
+                            // 由于webpack5弃用了file-loader,因此必须写esModule: false、type:'javascript/auto'才会起作用，不然css中图片资源不显示
+                            esModule: false
+                        }
+                    },
+                ],
+                type:'javascript/auto'
             },
             // 抽离css
             {

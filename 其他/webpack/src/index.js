@@ -1,7 +1,4 @@
-import { sum } from './math'
-const sumRes = sum(10, 20)
-console.log('sumRes=', sumRes);
-
+import './style/style1.css'
 
 /* 
 // 引入js, 处理es6
