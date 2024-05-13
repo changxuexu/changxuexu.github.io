@@ -77,32 +77,7 @@ QQ 528371517
 				}
 			}
 			
-	================================================		
-			
-《2》Source Map 便于调试
-	从浏览器中进入很快能进到文件对应的位置，比如报错，css定位
-	devtool
-	webpack.SourceMapToolPlugin
-	webpack.EvalSourceMapToolPlugin
 	
-	devtool介绍：
-		开发环境下的值：
-			eval
-			eval-source-map
-			cheap-eval-source-map
-			cheap-module-source-map
-		生产环境下的值：
-			source-map
-			hidden-source-map
-			nosource-source-map
-		
-		css使用map时，使用相关loader的map
-			css-loader.option.sourcemap
-			less-loader.option.sourcemap
-			sass-loader.option.sourcemap
-
-
-
 --------------
 创建一个react项目；可以使用babel处理项目中使用es2015代码；还有react JSX 代码，
   然后使用webpack打包
@@ -158,3 +133,7 @@ path.join(__dirname, "app", "folder") 的方式来配置，以兼容 Windows 环
 	resolve.extensions：用来表明文件后缀列表，默认查找顺序是 ['.js', '.json']，如果你的导入文件没有添加后缀就会按照这个顺序查找文件。我们应该尽可能减少后缀列表长度，然后将出现频率高的后缀排在前面
 	resolve.alias：可以通过别名的方式来映射一个路径，能让 Webpack 更快找到路径
 	module.noParse：如果你确定一个文件下没有其他依赖，就可以使用该属性让 Webpack 不扫描该文件，这种方式对于大型的类库很有帮助
+
+
+优化相关:CommonsChunkPlugin 、 UglifyjsWebpackPlugin
+功能相关:ExtractTextWebpackPlugin 、HtmlWebpackPlugin、HotModuleReplacementPlugin、CopyWebpackPlugin

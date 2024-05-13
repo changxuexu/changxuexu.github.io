@@ -689,38 +689,58 @@ DIlPlugin
 
 ## happyPack
 ```
-开启多进程，打包更快
+js单线程，开启多进程打包；
+happyPack多进程打包，提高构建速度，特别是多核CPU。
 
 受限于 Node 是单线程运行的，所以 Webpack 在打包的过程中也是单线程的，特别是在执行 Loader 的时候，长时间编译的任务很多，这样就会导致等待的情况。
-		HappyPack 可以将 Loader 的同步执行转换为并行的，这样就能充分利用系统资源来加快打包效率了
-		module: {
-		  loaders: [
-			{
-			  test: /\.js$/,
-			  include: [resolve('src')],
-			  exclude: /node_modules/,
-			  // id 后面的内容对应下面
-			  loader: 'happypack/loader?id=happybabel'
-			}
-		  ]
-		},
-		plugins: [
-		  new HappyPack({
-			id: 'happybabel',
-			loaders: ['babel-loader?cacheDirectory'],
-			// 开启 4 个线程
-			threads: 4
-		  })
-		]
+HappyPack 可以将 Loader 的同步执行转换为并行的，这样就能充分利用系统资源来加快打包效率了
+	const HappyPack = require('happypack')
+	module.exports = {
+        module: {
+            loaders: [
+                {
+                    test: /\.js$/,
+                    include: [resolve('src')],
+                    exclude: /node_modules/,
+                    // 把对.js文件的处理交给id为happybabel的HappyPack实例
+                    // id 后面的内容对应下面
+                    loader: 'happypack/loader?id=happybabel'
+                }
+            ]
+        },
+        plugins: [
+        	// happyPack开启多线程打包
+            new HappyPack({
+            	// 用唯一的标识符id来代表当前的HappyPack
+                id: 'happybabel',
+                loaders: ['babel-loader?cacheDirectory'],
+                // 开启 4 个线程
+                threads: 4
+            })
+        ]
+    }
 ```
 
 ## ParatelUglifyPlugin
 ```
-开启多进程，进行代码压缩
-
 在 Webpack3 中，我们一般使用 UglifyJS 来压缩代码，但是这个是单线程运行的，为了加快效率，我们可以使用 webpack-parallel-uglify-plugin 来并行运行 UglifyJS，从而提高效率。
-		在 Webpack4 中，我们就不需要以上这些操作了，只需要将 mode 设置为 production 就可以默认开启以上功能。代码压缩也是我们必做的性能优化方案，当然我们不止可以压缩 JS 代码，还可以压缩 HTML、CSS 代码，并且在压缩 JS 代码的过程中，我们还可以通过配置实现比如删除 console.log 这类代码的功能。
-		
+
+在 Webpack4 中，我们就不需要以上这些操作了，只需要将 mode 设置为 production 就可以默认开启以上功能。代码压缩也是我们必做的性能优化方案，当然我们不止可以压缩 JS 代码，还可以压缩 HTML、CSS 代码，并且在压缩 JS 代码的过程中，我们还可以通过配置实现比如删除 console.log 这类代码的功能。
+
+JS时单线程的，开启多进程，进行代码压缩会更快。
+
+配置：
+
+https://blog.csdn.net/qq_24147051/article/details/103557728
+https://blog.csdn.net/chen_enson_1/article/details/113728553
+
+```
+
+```
+关于开启多进程
+	项目较大，打包较慢，开启多进程能提高速度；
+	项目较小，打包很快，开启多进程会降低速度(进程开销)；
+	按需使用。
 ```
 
 ## DIlPlugin
@@ -930,8 +950,8 @@ webpack 通过 devtool 配置 sourcemap？
 	
 	devtool取值：
         eval - JS在eval(..)中，不生成 sourcemap；
-        source-map - 生成单独的 map 文件，并在 JS 最后指定
         eval-source-map : JS在eval(...)中，sourcemap 内嵌在下xx.min.js文件最后
+        source-map - 生成单独的 map 文件，并在 JS 最后指定
         inline-source-map - sourcemap内嵌到JS中
         cheap-source-map - sourcemap 中只有行信息，没有列
         eval-cheap-source-map : 同上（sourcemap 中只有行信息，没有列），没有独立的 map 文件
@@ -960,6 +980,11 @@ webpack 通过 devtool 配置 sourcemap？
     注意：
     	开源项目，也要开源 sourcemap
     	非开源项目，不要泄漏 sourcemap，防止别人轻易拿到源码!!!
+    	
+    	css使用map时，使用相关loader的map
+			css-loader.option.sourcemap
+			less-loader.option.sourcemap
+			sass-loader.option.sourcemap
     
     参考
  		https://blog.csdn.net/stand_forever/article/details/132712478
@@ -1270,15 +1295,42 @@ webpack 通过 devtool 配置 sourcemap？
 
 #  webpack打包原理？
 ```
-https://blog.csdn.net/u014168594/article/details/77198729
+把所有依赖打包成一个bundle.js文件，通过代码分割成单元片段并按需加载。
 
-    把所有依赖打包成一个bundle.js文件，通过代码分割成单元片段并按需加载
-    bundle.js是以模块 id 为记号，通过函数把各个文件依赖封装达到分割效果，如上代码 id 为 0 表示 entry 模块需要的依赖， 1 表示 util1模块需要的依赖
-    require资源文件 id 表示该文件需要加载的各个模块，如上代码_webpack_require__(1) 表示 util1.js 模块，__webpack_require__(2) 表示 util2.js 模块
-    exports.util1=util1 模块化的体现，输出该模块
+假设案例：
+	entry.js是入口文件，调用了util1.js和util2.js，而util1.js又调用了util2.js。（可画图理解）
 
-    var _util1__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("./src/util1.js")
-    console.log(_util1__WEBPACK_IMPORTED_MODULE_0__)
+打包后的bundle.js例子：
+    /******/ ([
+    /* 0 */		//模块id
+    /***/ function(module, exports, __webpack_require__) {
+
+        __webpack_require__(1);		//require资源文件id
+        __webpack_require__(2);
+
+    /***/ },
+    /* 1 */
+    /***/ function(module, exports, __webpack_require__) {
+        //util1.js文件
+        __webpack_require__(2);
+        var util1=1;
+        exports.util1=util1;
+
+    /***/ },
+    /* 2 */
+    /***/ function(module, exports) {
+        //util2.js文件
+        var util2=1;
+        exports.util2=util2;
+
+    /***/ }
+    ...
+    ...
+    /******/ ]);
+
+1.bundle.js是以模块 id 为记号，通过函数把各个文件依赖封装达到分割效果，如上代码 id 为 0 表示 entry 模块需要的依赖， 1 表示 util1模块需要的依赖
+2.require资源文件 id 表示该文件需要加载的各个模块，如上代码_webpack_require__(1) 表示 util1.js 模块，__webpack_require__(2) 表示 util2.js 模块
+3.exports.util1=util1 模块化的体现，输出该模块
 ```
 
 # 常见问题
