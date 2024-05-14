@@ -299,7 +299,8 @@ var data_jquery = {
       second_tit: '插件资源',
       second_child: [
         { name: 'jq22', href: 'http://www.jq22.com', title: '' },
-        { name: 'jquery之家', href: 'http://www.htmleaf.com', title: '' }
+        { name: 'jquery之家', href: 'http://www.htmleaf.com', title: '' },
+        { name: 'jquery-to-javascript-convert', href: 'https://github.com/tayfunerbilen/jquery-to-javascript-convert', title: '将jquery书写方式转化成原生javascript方式' }
       ]
     }
   ]
