@@ -1,19 +1,14 @@
 ======================================
 { name: '', href: '', href_spare:'', title: '' } 
 
-计划: 
-	vue3 + node 技术博客
-		https://xiaoman.blog.csdn.net/category_11618172_2.html
-		
-	管理平台权限功能 vue3-fantastic-admin
-	
-	前台内容展示 nuxt
-	
-	微信公众号
 
-	uni-app app制作与上架
+	
+		
+
 	
 ===============================
+vue3 + node 技术博客
+		https://xiaoman.blog.csdn.net/category_11618172_2.html
 
 动画
 	https://www.webhek.com/post/performant-parallaxing.html
@@ -35,17 +30,6 @@
 =================================
 
 安徽大恒能源/尚特杰/舜禹股份
-
-const dom = document.querySelector('.nav') / document.querySelectorAll('.nav')
-dom.classList
-dom.classList.add('active')
-dom.classList.remove('active')
-dom.classList.toggle('active')
-
-dom.parentNode          //父节点
-dom.nextElementSibling  //后一个兄弟节点
-dom.previousSibling     //前一个兄弟节点
-
 
 //fetch
 	const res = await fetch('https://icanhazdadjoke.com', {
@@ -121,11 +105,6 @@ labels.forEach(label => {
 
 =====================================================================
 
-jquery课程
-	https://study.163.com/course/introduction.htm?courseId=465001#/courseDetail?tab=1
-
-
-	
 	canvas时钟：
 		https://www.webhek.com/post/demo-tear-able-cloth.html
 		https://www.webhek.com/demos/clock.html
@@ -158,10 +137,6 @@ js算法：
 
 ====================================================
 
-vue-cli项目改造为SSR服务端渲染: 
-	https://zhuanlan.zhihu.com/p/51088598
-	https://blog.csdn.net/qq_40323256/article/details/101907326
-	
 3d轮播：
 	https://www.cnblogs.com/hanguozhi/p/7473893.html
 
