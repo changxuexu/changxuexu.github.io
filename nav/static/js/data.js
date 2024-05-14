@@ -895,7 +895,8 @@ var data_jsplug = {
         { name: 'vue-circle-slider', href: 'https://github.com/devstark-com/vue-circle-slider', title: '线性滑块输入：支持触摸控制，允许你设置最大值/最小值，甚至你还可以控制滑块的步长' },
         { name: 'Vue Phone Number', href: 'https://github.com/LouisMazel/vue-phone-number-input', title: '电话号码：有效的国家/地区代码、主题和颜色、电话号码格式' },
         { name: '二维码vue', href: 'https://link-to-qr.com', title: '' },
-        { name: '跨路由动画vue-starport', href: 'https://github.com/antfu/vue-starport', title: '仅支持Vue3，实现跨路由的共享组件动画效果' }
+        { name: '跨路由动画_vue-starport', href: 'https://github.com/antfu/vue-starport', title: '仅支持Vue3，实现跨路由的共享组件动画效果' },
+        { name: '打印/转pdf_vue-plugin-hiprint', href: 'https://gitee.com/CcSimple/vue-plugin-hiprint', title: '基于hiprint：http://hiprint.io/；JS打印插件，快速分页预览、打印、转pdf' }
       ]
     },
     {
