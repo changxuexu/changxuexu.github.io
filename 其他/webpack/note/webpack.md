@@ -729,10 +729,61 @@ HappyPack 可以将 Loader 的同步执行转换为并行的，这样就能充�
 
 JS时单线程的，开启多进程，进行代码压缩会更快。
 
+
+参考
+	https://blog.csdn.net/qq_24147051/article/details/103557728
+	https://blog.csdn.net/chen_enson_1/article/details/113728553
+
 配置：
 
-https://blog.csdn.net/qq_24147051/article/details/103557728
-https://blog.csdn.net/chen_enson_1/article/details/113728553
+// 引入 ParallelUglifyPlugin 插件
+const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
+
+module.exports = {
+  plugins: [
+    // 使用 ParallelUglifyPlugin 并行压缩输出JS代码
+    new ParallelUglifyPlugin({
+      // 传递给 UglifyJS的参数如下：
+      uglifyJS: {
+        output: {
+          /*
+           是否输出可读性较强的代码，即会保留空格和制表符，默认为输出，为了达到更好的压缩效果，
+           可以设置为false
+          */
+          beautify: false,
+          /*
+           是否保留代码中的注释，默认为保留，为了达到更好的压缩效果，可以设置为false
+          */
+          comments: false
+        },
+        compress: {
+          /*
+           是否在UglifyJS删除没有用到的代码时输出警告信息，默认为输出，可以设置为false关闭这些作用
+           不大的警告
+          */
+          warnings: false,
+
+          /*
+           是否删除代码中所有的console语句，默认为不删除，开启后，会删除所有的console语句
+          */
+          drop_console: true,
+
+          /*
+           是否内嵌虽然已经定义了，但是只用到一次的变量，比如将 var x = 1; y = x, 转换成 y = 5, 默认为不
+           转换，为了达到更好的压缩效果，可以设置为false
+          */
+          collapse_vars: true,
+
+          /*
+           是否提取出现了多次但是没有定义成变量去引用的静态值，比如将 x = 'xxx'; y = 'xxx'  转换成
+           var a = 'xxxx'; x = a; y = a; 默认为不转换，为了达到更好的压缩效果，可以设置为false
+          */
+          reduce_vars: true
+        }
+      }
+    }),
+  ]
+}
 
 ```
 
@@ -896,16 +947,17 @@ Scope Hoisting 会分析出模块之间的依赖关系，尽可能的把打包�
 			export const a = 1
 			// index.js
 			import { a } from './test.js'
+			console.log(a)
 			
 		对于这种情况，我们打包出来的代码会类似这样
 			[
 			  /* 0 */
 			  function (module, exports, require) {
-				//...
+				// 定义导出 ...
 			  },
 			  /* 1 */
 			  function (module, exports, require) {
-				//...
+				// 引用 ...
 			  }
 			]
 		
@@ -914,14 +966,35 @@ Scope Hoisting 会分析出模块之间的依赖关系，尽可能的把打包�
 			  /* 0 */
 			  function (module, exports, require) {
 				//...
+				const a = 1
+				console.log(a)
 			  }
 			]
 			
-		这样的打包方式生成的代码明显比之前的少多了。如果在 Webpack4 中你希望开启这个功能，只需要启用 optimization.concatenateModules 就可以了。
+		这样的打包方式生成的代码明显比之前的少多了；创建函数作用域更少；代码可读性更好。
+		
+		默认情况下，此插件在 【生产模式】 下已启用，在其他情况下则禁用。
+		参考：https://webpack.docschina.org/plugins/module-concatenation-plugin/
+		
+		方式一：使用 optimization.concatenateModules 选项可以在其他模式下启用合并行为
+			如果在 Webpack4 中你希望开启这个功能，只需要启用 optimization.concatenateModules 就可以了。
 			module.exports = {
-			  optimization: {
-				concatenateModules: true
-			  }
+			  	optimization: {
+					concatenateModules: true
+			  	}
+			}
+		
+		方式二：手动添加 ModuleConcatenationPlugin
+			const ModuleConcatenationPlugin = require('webpack/lib/optimize/ModuleConcatenationPlugin')
+			module.exports = {
+				resolve:{
+					// 针对 Npm 中的第三方模块优先采用 jsnext:main 中指向的 ES6 模块化语法的文件
+					nainFields:['jsnext:main', "browser', 'main']
+				},
+				plugins: [
+					//开启 Scope Hoisting
+    				new ModuleConcatenationPlugin()
+  				]
 			}
 ```
 
