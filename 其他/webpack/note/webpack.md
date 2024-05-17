@@ -36,7 +36,11 @@ webpack与grunt、gulp的对比
 	(5)参考：
 		https://www.zhihu.com/question/37020798
 		https://webpack.docschina.org/concepts/why-webpack/
-		
+	
+快速上手：
+	Webpack 有大量的配置项，可能会让你不知所措，请利用 webpack-cli 的 init 命令，它可以根据你的项目需求快速生成 webpack 配置文件。
+	> npx webpack init
+	
 webpack大纲
 	1.基本配置
 		安装配置
