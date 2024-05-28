@@ -934,7 +934,8 @@ var data_jsplug = {
         { name: 'Antv', href: 'http://antv.antfin.com/zh-cn/index.html', title: '蚂蚁数据可视化' },
         { name: 'FusionCharts', href: 'https://www.fusioncharts.com/', title: '' },
         { name: '图扑软件', href: 'https://www.hightopo.com/index.html', title: '3D可视化场景' },
-        { name: 'ThingJS', href: 'http://www.thingjs.com/guide', title: '3D可视化场景' }
+        { name: 'ThingJS', href: 'http://www.thingjs.com/guide', title: '3D可视化场景' },
+        { name: 'jtopo', href: 'http://www.jtopo.com/index.html', title: '易上手，快速做出漂亮的网络拓扑图、数据关系图、工厂设备制造流程、监控告警、SCADA组态等交互式软件， 并可定制一套自己的拖拽式编辑器' },
       ]
     },
     {
