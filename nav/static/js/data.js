@@ -141,7 +141,7 @@ var data_vue = {
       second_tit: '组件库P',
       second_child: [
         { name: 'Element2', href: 'https://element.eleme.cn/#/zh-CN/component/installation', title: '' },
-        { name: 'Element3', href: 'https://element-plus.gitee.io/zh-CN/', title: '' },
+        { name: 'Element-plus', href: 'https://element-plus.org/zh-CN/component/overview.html', title: '' },
         { name: 'layui-vue', href: 'http://www.layui-vue.com/zh-CN/index', title: ' 一套Vue 3.0的桌面端组件库.' },
         { name: 'iview2', href: 'http://v4.iviewui.com/docs/introduce', title: '' },
         { name: 'iview3', href: 'https://www.iviewui.com/view-ui-plus/guide/introduce', title: '' },
@@ -915,7 +915,8 @@ var data_jsplug = {
         { name: 'tui.editor', href: 'https://github.com/nhn/tui.editor', title: '在网页中编辑 Markdown 文档的文本或所见即所得' },
         { name: 'UEditor', href: 'http://fex.baidu.com/ueditor', title: '百度' },
         { name: 'KindEditor', href: 'http://kindeditor.net/demo.php', title: '' },
-		{ name: 'canvas-editor', href: 'https://github.com/Hufe921/canvas-editor', title: '类word可分页在线编辑器' },
+        { name: 'Lexical', href: 'https://github.com/facebook/lexical', title: '谷歌开源，使用介绍：https://mp.weixin.qq.com/s/1tz1cTLNqrQOZxR_RPzgRA' },
+		    { name: 'canvas-editor', href: 'https://github.com/Hufe921/canvas-editor', title: '类word可分页在线编辑器' },
       ]
     },
     {
