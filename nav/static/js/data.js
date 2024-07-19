@@ -900,6 +900,7 @@ var data_jsplug = {
         { name: 'vue-plugin-hiprint(打印/转pdf)', href: 'https://gitee.com/CcSimple/vue-plugin-hiprint', title: '基于hiprint：http://hiprint.io/；JS打印插件，快速分页预览、打印、转pdf' },
         { name: 'vue-plugin-hiprint(Demo)', href: 'https://github.com/CcSimple/vue-plugin-hiprint-start', title: '入门案例，教程：https://segmentfault.com/a/1190000043633722' },
         { name: 'SheetJS', href: 'https://github.com/SheetJS/sheetjs', title: 'excel插件，入门案例，教程：https://juejin.cn/post/6844903672523161613' },
+        { name: 'iframe-resizer', href: 'https://github.com/davidjbradshaw/iframe-resizer', title: '调整iframe的大小以匹配内容的大小，然后监视iframe以确保其始终是完美的大小。' },
       ]
     },
     {
