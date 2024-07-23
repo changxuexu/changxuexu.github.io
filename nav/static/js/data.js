@@ -1264,6 +1264,26 @@ var data_canvas = {
   ]
 }
 
+var data_canvas = {
+  super_tit: 'java',
+  super_child: [
+    {
+      second_tit: '文档',
+      second_child: [
+        
+      ]
+    },
+    {
+      second_tit: '框架jar',
+      second_child: [
+        { name: 'commons-io', href: 'https://commons.apache.org/io/download_io.cgi', title: 'IO流操作相关' },
+        { name: 'dom4j', href: 'https://dom4j.github.io', title: '读写XML文件相关' },
+        { name: 'logback', href: 'https://logback.qos.ch/index.html', title: '操作日志相关' }
+      ]
+    }
+  ]
+}
+
 var arr_data = [
   data_daily,
   data_vue,
