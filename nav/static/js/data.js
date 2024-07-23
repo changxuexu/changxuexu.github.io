@@ -1264,7 +1264,7 @@ var data_canvas = {
   ]
 }
 
-var data_canvas = {
+var data_Java = {
   super_tit: 'java',
   super_child: [
     {
@@ -1299,6 +1299,7 @@ var arr_data = [
   data_css,
   data_canvas,
   data_Node,
+  data_Java,
   data_Redis,
   data_Nginx,
   data_Docker,
