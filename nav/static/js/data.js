@@ -426,6 +426,7 @@ var data_WeChat = {
       second_tit: '文档资料',
       second_child: [
         { name: '微信开放文档', href: 'https://developers.weixin.qq.com/miniprogram/dev/framework', title: '' },
+        { name: '小程序快速入门文档1.0', href: 'https://developers.weixin.qq.com/ebook?action=get_post_info', title: '' },
         { name: '微信公众平台', href: 'https://mp.weixin.qq.com', title: '' },
         { name: '开放服务类目', href: 'https://developers.weixin.qq.com/miniprogram/product/material', title: '开发之前要仔细考虑下该类目是否能审核通过,可在社区进行搜索' },
         { name: '微信开放社区', href: 'https://developers.weixin.qq.com/community/develop/mixflow', title: '' },
