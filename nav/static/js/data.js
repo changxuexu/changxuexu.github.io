@@ -1271,7 +1271,9 @@ var data_Java = {
     {
       second_tit: '文档',
       second_child: [
-        
+        { name: 'maven_官网', href: 'https://maven.apache.org', title: '' },
+		{ name: 'maven_包搜索', href: 'https://repo1.maven.org/maven2', title: '' },
+        { name: 'maven_包搜索', href: 'https://mvnrepository.com', title: '' }
       ]
     },
     {
