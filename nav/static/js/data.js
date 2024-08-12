@@ -6,7 +6,6 @@ var data_daily = {
       second_child: [
         { name: '百度搜索', href: 'https://www.baidu.com', title: '' },
         { name: '头条搜索', href: 'https://www.toutiao.com', title: '' },
-        { name: '搜猫搜索', href: 'https://www.soumao.cc', title: '' },
         { name: '谷歌搜索', href: 'https://www.google.com', title: '' },
         { name: '开发百度搜索', href: 'https://kaifa.baidu.com', title: '' },
         { name: 'libraryMirror', href: 'https://jia110.github.io', href_spare1: 'https://www.library.ac.cn', title: '' },
@@ -19,7 +18,8 @@ var data_daily = {
     {
       second_tit: 'js搜索',
       second_child: [
-        { name: 'npm包搜索', href: 'https://www.npmjs.com', title: '' },
+        { name: 'npm包搜索_官网', href: 'https://www.npmjs.com', title: '' },
+        { name: 'npm包搜索_阿里', href: 'https://npmmirror.com', title: '' },
         { name: 'Skypack', href: 'https://www.skypack.dev', title: '类似CDN,无需安装和构建工具即可加载针对浏览器优化的npm包' },
         { name: 'node_modules依赖大小', href: 'https://bundlejs.com', title: '快速查询依赖构建后最小化和压缩的包大小' },
         { name: 'MDN-developer', href: 'https://developer.mozilla.org/zh-CN', title: '' },
@@ -1063,7 +1063,8 @@ var data_jsplug = {
         { name: 'Dinero.js', href: 'https://dinerojs.com', title: '使用JavaScript处理货币值的库' },
         { name: 'Tesseract.js', href: 'https://github.com/naptha/tesseract.js', title: 'OCR图片文字识别,在浏览器或使用NodeJS的服务器上运行' },
         { name: 'Color Thief', href: 'https://www.npmjs.com/package/color-thief', title: '从图像中获取颜色值，使用Javascript和canvas标记来实现这一点' },
-        { name: '@imgly/background-removal', href: 'https://www.npmjs.com/package/@imgly/background-removal',title:'AI自动抠图库' }
+        { name: '@imgly/background-removal', href: 'https://www.npmjs.com/package/@imgly/background-removal',title:'AI自动抠图库' },
+        { name: 'jsdiff', href: '',title:'jsdiff + diff2html 文件差异对比以及高亮区分' },
       ]
     },
     {
