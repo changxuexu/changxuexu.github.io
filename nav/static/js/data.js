@@ -1274,7 +1274,8 @@ var data_Java = {
       second_child: [
         { name: 'maven_官网', href: 'https://maven.apache.org', title: '' },
         { name: 'maven_包搜索', href: 'https://mvnrepository.com', title: '' },
-		{ name: 'maven_包搜索', href: 'https://repo1.maven.org/maven2', title: '' }
+		    { name: 'maven_包搜索', href: 'https://repo1.maven.org/maven2', title: '' },
+        { name: 'Mybatis中文官网', href: 'https://mybatis.p2hp.com', title: 'Java程序操作数据库, IDEA的MybatisX插件辅助快速定位' },
       ]
     },
     {
