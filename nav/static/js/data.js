@@ -1272,6 +1272,8 @@ var data_Java = {
     {
       second_tit: '文档',
       second_child: [
+        { name: 'Spring_官网', href: 'https://spring.io', title: '' },
+        { name: 'Tomcat_官网', href: 'https://tomcat.apache.org', title: '' },
         { name: 'maven_官网', href: 'https://maven.apache.org', title: '' },
         { name: 'maven_包搜索', href: 'https://mvnrepository.com', title: '' },
 		    { name: 'maven_包搜索', href: 'https://repo1.maven.org/maven2', title: '' },
@@ -1283,7 +1285,9 @@ var data_Java = {
       second_child: [
         { name: 'commons-io', href: 'https://commons.apache.org/io/download_io.cgi', title: 'IO流操作相关' },
         { name: 'dom4j', href: 'https://dom4j.github.io', title: '读写XML文件相关' },
-        { name: 'logback', href: 'https://logback.qos.ch/index.html', title: '操作日志相关' }
+        { name: 'logback', href: 'https://logback.qos.ch/index.html', title: '操作日志相关' },
+        { name: 'JSON Web Token', href: 'https://jwt.io', title: '登录认证' },
+        { name: 'PageHelper', href: 'https://pagehelper.github.io', title: '分页插件' },
       ]
     }
   ]
