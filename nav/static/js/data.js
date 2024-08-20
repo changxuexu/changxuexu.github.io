@@ -6,7 +6,6 @@ var data_daily = {
       second_child: [
         { name: '百度搜索', href: 'https://www.baidu.com', title: '' },
         { name: '头条搜索', href: 'https://www.toutiao.com', title: '' },
-        { name: '搜猫搜索', href: 'https://www.soumao.cc', title: '' },
         { name: '谷歌搜索', href: 'https://www.google.com', title: '' },
         { name: '开发百度搜索', href: 'https://kaifa.baidu.com', title: '' },
         { name: 'libraryMirror', href: 'https://jia110.github.io', href_spare1: 'https://www.library.ac.cn', title: '' },
@@ -19,7 +18,8 @@ var data_daily = {
     {
       second_tit: 'js搜索',
       second_child: [
-        { name: 'npm包搜索', href: 'https://www.npmjs.com', title: '' },
+        { name: 'npm包搜索_官网', href: 'https://www.npmjs.com', title: '' },
+        { name: 'npm包搜索_阿里', href: 'https://npmmirror.com', title: '' },
         { name: 'Skypack', href: 'https://www.skypack.dev', title: '类似CDN,无需安装和构建工具即可加载针对浏览器优化的npm包' },
         { name: 'node_modules依赖大小', href: 'https://bundlejs.com', title: '快速查询依赖构建后最小化和压缩的包大小' },
         { name: 'MDN-developer', href: 'https://developer.mozilla.org/zh-CN', title: '' },
@@ -426,6 +426,7 @@ var data_WeChat = {
       second_tit: '文档资料',
       second_child: [
         { name: '微信开放文档', href: 'https://developers.weixin.qq.com/miniprogram/dev/framework', title: '' },
+        { name: '小程序快速入门文档1.0', href: 'https://developers.weixin.qq.com/ebook?action=get_post_info', title: '' },
         { name: '微信公众平台', href: 'https://mp.weixin.qq.com', title: '' },
         { name: '开放服务类目', href: 'https://developers.weixin.qq.com/miniprogram/product/material', title: '开发之前要仔细考虑下该类目是否能审核通过,可在社区进行搜索' },
         { name: '微信开放社区', href: 'https://developers.weixin.qq.com/community/develop/mixflow', title: '' },
@@ -897,8 +898,10 @@ var data_jsplug = {
         { name: 'Vue Phone Number', href: 'https://github.com/LouisMazel/vue-phone-number-input', title: '电话号码：有效的国家/地区代码、主题和颜色、电话号码格式' },
         { name: '二维码vue', href: 'https://link-to-qr.com', title: '' },
         { name: '跨路由动画_vue-starport', href: 'https://github.com/antfu/vue-starport', title: '仅支持Vue3，实现跨路由的共享组件动画效果' },
-        { name: '打印/转pdf_vue-plugin-hiprint', href: 'https://gitee.com/CcSimple/vue-plugin-hiprint', title: '基于hiprint：http://hiprint.io/；JS打印插件，快速分页预览、打印、转pdf' },
-        { name: 'Demo_vue-plugin-hiprint', href: 'https://github.com/CcSimple/vue-plugin-hiprint-start', title: '入门案例，教程：https://segmentfault.com/a/1190000043633722' }
+        { name: 'vue-plugin-hiprint(打印/转pdf)', href: 'https://gitee.com/CcSimple/vue-plugin-hiprint', title: '基于hiprint：http://hiprint.io/；JS打印插件，快速分页预览、打印、转pdf' },
+        { name: 'vue-plugin-hiprint(Demo)', href: 'https://github.com/CcSimple/vue-plugin-hiprint-start', title: '入门案例，教程：https://segmentfault.com/a/1190000043633722' },
+        { name: 'SheetJS', href: 'https://github.com/SheetJS/sheetjs', title: 'excel插件，入门案例，教程：https://juejin.cn/post/6844903672523161613' },
+        { name: 'iframe-resizer', href: 'https://github.com/davidjbradshaw/iframe-resizer', title: '调整iframe的大小以匹配内容的大小，然后监视iframe以确保其始终是完美的大小。' },
       ]
     },
     {
@@ -1060,7 +1063,8 @@ var data_jsplug = {
         { name: 'Dinero.js', href: 'https://dinerojs.com', title: '使用JavaScript处理货币值的库' },
         { name: 'Tesseract.js', href: 'https://github.com/naptha/tesseract.js', title: 'OCR图片文字识别,在浏览器或使用NodeJS的服务器上运行' },
         { name: 'Color Thief', href: 'https://www.npmjs.com/package/color-thief', title: '从图像中获取颜色值，使用Javascript和canvas标记来实现这一点' },
-        { name: '@imgly/background-removal', href: 'https://www.npmjs.com/package/@imgly/background-removal',title:'AI自动抠图库' }
+        { name: '@imgly/background-removal', href: 'https://www.npmjs.com/package/@imgly/background-removal',title:'AI自动抠图库' },
+        { name: 'jsdiff', href: '',title:'jsdiff + diff2html 文件差异对比以及高亮区分' },
       ]
     },
     {
@@ -1262,6 +1266,33 @@ var data_canvas = {
   ]
 }
 
+var data_Java = {
+  super_tit: 'java',
+  super_child: [
+    {
+      second_tit: '文档',
+      second_child: [
+        { name: 'Spring_官网', href: 'https://spring.io', title: '' },
+        { name: 'Tomcat_官网', href: 'https://tomcat.apache.org', title: '' },
+        { name: 'maven_官网', href: 'https://maven.apache.org', title: '' },
+        { name: 'maven_包搜索', href: 'https://mvnrepository.com', title: '' },
+		    { name: 'maven_包搜索', href: 'https://repo1.maven.org/maven2', title: '' },
+        { name: 'Mybatis中文官网', href: 'https://mybatis.p2hp.com', title: 'Java程序操作数据库, IDEA的MybatisX插件辅助快速定位' },
+      ]
+    },
+    {
+      second_tit: '框架jar',
+      second_child: [
+        { name: 'commons-io', href: 'https://commons.apache.org/io/download_io.cgi', title: 'IO流操作相关' },
+        { name: 'dom4j', href: 'https://dom4j.github.io', title: '读写XML文件相关' },
+        { name: 'logback', href: 'https://logback.qos.ch/index.html', title: '操作日志相关' },
+        { name: 'JSON Web Token', href: 'https://jwt.io', title: '登录认证' },
+        { name: 'PageHelper', href: 'https://pagehelper.github.io', title: '分页插件' },
+      ]
+    }
+  ]
+}
+
 var arr_data = [
   data_daily,
   data_vue,
@@ -1277,6 +1308,7 @@ var arr_data = [
   data_css,
   data_canvas,
   data_Node,
+  data_Java,
   data_Redis,
   data_Nginx,
   data_Docker,
