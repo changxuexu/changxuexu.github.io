@@ -883,6 +883,7 @@ var data_jsplug = {
         { name: 'mhtml-to-word', href: 'https://www.npmjs.com/package/mhtml-to-word', title: '将html模板字符串通过模板引擎转换并导出word文件' },
         { name: 'Vue Grid Layout', href: 'https://jbaysolutions.github.io/vue-grid-layout/zh/', title: '' },
         { name: 'vue-easytable', href: 'https://github.com/Happy-Coding-Clans/vue-easytable', title: '表格组件：虚拟滚动、列固定、标题固定、标题分组、过滤器、排序、单元格省略号、行扩展、行复选框等' },
+        { name: 'Vxe Table', href: 'https://vxetable.cn/#/start/install', title: '可结合vxe-table-plugin-element插件兼容element ui 做复杂的表格' },
         { name: 'FormKit', href: 'https://formkit.com/', title: 'Vue 表单的一站式解决方案:包括您需要的一切——标签、帮助文本、主题支持、验证、从 JSON 生成表单、可访问性、国际化等等！' },
         { name: 'vee-validate', href: 'https://github.com/logaretm/vee-validate', title: '表单验证库:允许验证输入并以熟悉的声明样式或使用组合函数构建更好的表单UI' },
         { name: 'vuex-persist', href: 'https://www.npmjs.com/package/vuex-persist', title: '使vuex状态持久存储,解决刷新丢失问题' },
