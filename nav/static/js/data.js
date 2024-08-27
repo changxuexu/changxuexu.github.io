@@ -905,6 +905,9 @@ var data_jsplug = {
         { name: 'iframe-resizer', href: 'https://github.com/davidjbradshaw/iframe-resizer', title: '调整iframe的大小以匹配内容的大小，然后监视iframe以确保其始终是完美的大小。' },
         { name: 'v-focus-next', href:'https://npmmirror.com/package/v-focus-next', title:'提示：在表单的某个元素中输入回车符，可以自动聚焦到下一个表单元素，避免了用户通过鼠标来回选中表单元素，大大提升了表单填写的效率和用户体验。'},
         { name: 'vue-next-focus', href:'https://npmmirror.com/package/vue-next-focus?version=0.0.12', title:'提示：在表单的某个元素中输入回车符，可以自动聚焦到下一个表单元素，避免了用户通过鼠标来回选中表单元素，大大提升了表单填写的效率和用户体验。'},
+        { name: 'screenfull', href:'https://github.com/sindresorhus/screenfull', title:'将页面或任何dom元素置于全屏状态'},
+        { name: 'ua-parser-js', href:'https://github.com/faisalman/ua-parser-js', title:'用于检测用户的浏览器、引擎、操作系统、CPU 和设备类型/型号，可在浏览器（客户端）或 node.js（服务器端）中使用'},
+        { name: 'file-saver', href:'https://github.com/eligrey/FileSaver.js', title:'用于在客户端保存文件的解决方案，非常适合在客户端生成文件的 Web 应用程序，但是，如果文件来自服务器，我们建议您首先尝试使用Content-Disposition附件响应标头，因为它具有更好的跨浏览器兼容性。'}
       ]
     },
     {
@@ -925,6 +928,9 @@ var data_jsplug = {
         { name: 'KindEditor', href: 'http://kindeditor.net/demo.php', title: '' },
         { name: 'Lexical', href: 'https://github.com/facebook/lexical', title: '谷歌开源，使用介绍：https://mp.weixin.qq.com/s/1tz1cTLNqrQOZxR_RPzgRA' },
 		    { name: 'canvas-editor', href: 'https://github.com/Hufe921/canvas-editor', title: '类word可分页在线编辑器' },
+		    { name: 'simplemde (Markdown)', href: 'https://www.npmjs.com/package/simplemde', title: 'Markdown编辑器，使用 https://simplemde.com/' },
+		    { name: 'marked (解析Markdown)', href: 'https://www.npmjs.com/package/marked', title: '用于解析 Markdown，无需长时间缓存或阻塞，同时实现所支持的风格和规范的所有 markdown 功能' },
+		    { name: 'vue-codemirror', href: 'https://www.npmjs.com/package/vue-codemirror', title: '代码编辑器' },
       ]
     },
     {
