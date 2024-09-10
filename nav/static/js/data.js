@@ -952,6 +952,7 @@ var data_jsplug = {
         { name: 'ThingJS', href: 'http://www.thingjs.com/guide', title: '3D可视化场景' },
         { name: 'jtopo', href: 'http://www.jtopo.com/index.html', title: '易上手，快速做出漂亮的网络拓扑图、数据关系图、工厂设备制造流程、监控告警、SCADA组态等交互式软件， 并可定制一套自己的拖拽式编辑器' },
         { name: 'GoJS', href: 'https://gojs.net.cn/index.html', title: '用于浏览器中创建交互图形，（比如流程图，树图，关系图，力导图等等）；入门：https://blog.csdn.net/qq_53742640/article/details/136117181' },
+        { name: 'LogicFlow', href: 'https://site.logic-flow.cn', title: '流程图' },
       ]
     },
     {
