@@ -883,6 +883,7 @@ var data_jsplug = {
         { name: 'mhtml-to-word', href: 'https://www.npmjs.com/package/mhtml-to-word', title: '将html模板字符串通过模板引擎转换并导出word文件' },
         { name: 'Vue Grid Layout', href: 'https://jbaysolutions.github.io/vue-grid-layout/zh/', title: '' },
         { name: 'vue-easytable', href: 'https://github.com/Happy-Coding-Clans/vue-easytable', title: '表格组件：虚拟滚动、列固定、标题固定、标题分组、过滤器、排序、单元格省略号、行扩展、行复选框等' },
+        { name: 'Vxe Table', href: 'https://vxetable.cn/#/start/install', title: '可结合vxe-table-plugin-element插件兼容element ui 做复杂的表格' },
         { name: 'FormKit', href: 'https://formkit.com/', title: 'Vue 表单的一站式解决方案:包括您需要的一切——标签、帮助文本、主题支持、验证、从 JSON 生成表单、可访问性、国际化等等！' },
         { name: 'vee-validate', href: 'https://github.com/logaretm/vee-validate', title: '表单验证库:允许验证输入并以熟悉的声明样式或使用组合函数构建更好的表单UI' },
         { name: 'vuex-persist', href: 'https://www.npmjs.com/package/vuex-persist', title: '使vuex状态持久存储,解决刷新丢失问题' },
@@ -900,8 +901,13 @@ var data_jsplug = {
         { name: '跨路由动画_vue-starport', href: 'https://github.com/antfu/vue-starport', title: '仅支持Vue3，实现跨路由的共享组件动画效果' },
         { name: 'vue-plugin-hiprint(打印/转pdf)', href: 'https://gitee.com/CcSimple/vue-plugin-hiprint', title: '基于hiprint：http://hiprint.io/；JS打印插件，快速分页预览、打印、转pdf' },
         { name: 'vue-plugin-hiprint(Demo)', href: 'https://github.com/CcSimple/vue-plugin-hiprint-start', title: '入门案例，教程：https://segmentfault.com/a/1190000043633722' },
-        { name: 'SheetJS', href: 'https://github.com/SheetJS/sheetjs', title: 'excel插件，入门案例，教程：https://juejin.cn/post/6844903672523161613' },
+        { name: 'SheetJS(xlsx)', href: 'https://github.com/SheetJS/sheetjs', title: 'excel插件，入门案例，教程：https://juejin.cn/post/6844903672523161613' },
         { name: 'iframe-resizer', href: 'https://github.com/davidjbradshaw/iframe-resizer', title: '调整iframe的大小以匹配内容的大小，然后监视iframe以确保其始终是完美的大小。' },
+        { name: 'v-focus-next', href:'https://npmmirror.com/package/v-focus-next', title:'提示：在表单的某个元素中输入回车符，可以自动聚焦到下一个表单元素，避免了用户通过鼠标来回选中表单元素，大大提升了表单填写的效率和用户体验。'},
+        { name: 'vue-next-focus', href:'https://npmmirror.com/package/vue-next-focus?version=0.0.12', title:'提示：在表单的某个元素中输入回车符，可以自动聚焦到下一个表单元素，避免了用户通过鼠标来回选中表单元素，大大提升了表单填写的效率和用户体验。'},
+        { name: 'screenfull', href:'https://github.com/sindresorhus/screenfull', title:'将页面或任何dom元素置于全屏状态'},
+        { name: 'ua-parser-js', href:'https://github.com/faisalman/ua-parser-js', title:'用于检测用户的浏览器、引擎、操作系统、CPU 和设备类型/型号，可在浏览器（客户端）或 node.js（服务器端）中使用'},
+        { name: 'file-saver', href:'https://github.com/eligrey/FileSaver.js', title:'用于在客户端保存文件的解决方案，非常适合在客户端生成文件的 Web 应用程序，但是，如果文件来自服务器，我们建议您首先尝试使用Content-Disposition附件响应标头，因为它具有更好的跨浏览器兼容性。'}
       ]
     },
     {
@@ -913,13 +919,18 @@ var data_jsplug = {
         { name: 'ckeditor', href: 'https://github.com/galetahub/ckeditor', title: '老牌富文本' },
         { name: 'squire', href: 'https://github.com/neilj/Squire', title: '轻量富文本' },
         { name: 'slate', href: 'https://github.com/ianstormtaylor/slate', title: '完全可定制富文本' },
-        { name: 'medium-editor', href: 'https://github.com/yabwe/medium-editor', title: '' },
+        { name: 'medium-editor', href: 'https://github.com/yabwe/medium-editor', title: '教程：https://blog.csdn.net/qq_44930306/article/details/136912246' },
         { name: 'quill', href: 'https://github.com/quilljs/quill', title: '对图片的各种操作不友善' },
+        { name: 'vue-quill-editor', href: 'https://npmmirror.com/package/vue-quill-editor', title: '' },
         { name: 'tui.editor', href: 'https://github.com/nhn/tui.editor', title: '在网页中编辑 Markdown 文档的文本或所见即所得' },
         { name: 'UEditor', href: 'http://fex.baidu.com/ueditor', title: '百度' },
+        { name: 'vue-ueditor-wrap', href: 'https://npmmirror.com/package/vue-ueditor-wrap', title: '教程：https://blog.csdn.net/qq_44930306/article/details/136912246' },
         { name: 'KindEditor', href: 'http://kindeditor.net/demo.php', title: '' },
         { name: 'Lexical', href: 'https://github.com/facebook/lexical', title: '谷歌开源，使用介绍：https://mp.weixin.qq.com/s/1tz1cTLNqrQOZxR_RPzgRA' },
 		    { name: 'canvas-editor', href: 'https://github.com/Hufe921/canvas-editor', title: '类word可分页在线编辑器' },
+		    { name: 'simplemde (Markdown)', href: 'https://www.npmjs.com/package/simplemde', title: 'Markdown编辑器，使用 https://simplemde.com/' },
+		    { name: 'marked (解析Markdown)', href: 'https://www.npmjs.com/package/marked', title: '用于解析 Markdown，无需长时间缓存或阻塞，同时实现所支持的风格和规范的所有 markdown 功能' },
+		    { name: 'vue-codemirror', href: 'https://www.npmjs.com/package/vue-codemirror', title: '代码编辑器' },
       ]
     },
     {
@@ -941,6 +952,7 @@ var data_jsplug = {
         { name: 'ThingJS', href: 'http://www.thingjs.com/guide', title: '3D可视化场景' },
         { name: 'jtopo', href: 'http://www.jtopo.com/index.html', title: '易上手，快速做出漂亮的网络拓扑图、数据关系图、工厂设备制造流程、监控告警、SCADA组态等交互式软件， 并可定制一套自己的拖拽式编辑器' },
         { name: 'GoJS', href: 'https://gojs.net.cn/index.html', title: '用于浏览器中创建交互图形，（比如流程图，树图，关系图，力导图等等）；入门：https://blog.csdn.net/qq_53742640/article/details/136117181' },
+        { name: 'LogicFlow', href: 'https://site.logic-flow.cn', title: '流程图' },
       ]
     },
     {
