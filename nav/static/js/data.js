@@ -800,6 +800,7 @@ var data_study = {
       second_child: [
         { name: '意象商城系统', href: 'https://gitee.com/guchengwuyue', title: '' },
         { name: 'crmeb', href: 'https://www.crmeb.com', title: 'https://gitee.com/ZhongBangKeJi/CRMEB' },
+        { name: '三勾商城', href: 'https://www.jjjshop.net', title: '' },
         { name: 'mall', href: 'https://www.macrozheng.com', title: '电商系统,技术涵盖了SpringBoot、MyBatis、Elasticsearch、RabbitMQ、Redis、MongoDB、Mysql等,采用Docker容器化部署。' },
         { name: 'likeshop', href: 'https://www.likeshop.cn', title: '' },
         { name: '鲁班H5', href: 'https://github.com/ly525/luban-h5', title: '类似易企秀Maka百度 H5等平台,通过拖拽快速生成页面的平台' }
