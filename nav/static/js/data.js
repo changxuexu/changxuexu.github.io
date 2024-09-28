@@ -1102,11 +1102,23 @@ var data_jsplug = {
     {
       second_tit: 'uni-app',
       second_child: [
+        { name: 'uni-ui', href: 'https://github.com/dcloudio/uni-ui', href_spare:'', title: 'uni-ui 是 DCloud 提供的一个跨端ui库，它是基于vue组件的、flex布局的、无dom的跨全端高性能 UI 框架。' },
         { name: 'uView vue2', href: 'https://www.uviewui.com', href_spare:'', title: '全面兼容nvue的uni-app生态框架' },
         { name: 'uview-plus vue3', href: 'https://uiadmin.net/uview-plus', href_spare:'', title: '全面兼容nvue的uni-app生态框架' },
+        { name: 'Cool Uni', href: 'https://uni-docs.cool-js.com', href_spare:'', title: '开源免费、uni-app脚手架、ui组件库、扩展插件、模块化' },
+        { name: 'Wot Design Uni', href: 'https://github.com/Moonofweisheng/wot-design-uni', href_spare:'', title: '基于vue3+Typescript构建，参照wot-design打造的uni-app组件库' },
+        { name: 'ThorUI', href: 'https://github.com/dingyong0214/ThorUI-uniapp', href_spare:'', title: '' },
+        { name: 'unibest(模板)', href: 'https://github.com/codercup/unibest', href_spare:'', title: '【uniapp项目开发模板】：由 uniapp + Vue3 + Ts + Vite5 + UnoCss + wot-ui + z-paging 构成，使用了最新的前端技术栈，无需依靠 HBuilderX，通过命令行方式运行 web、小程序 和 App。unibest 内置了约定式路由、layout布局、请求封装、请求拦截、登录拦截、UnoCSS、i18n多语言等基础功能，提供了 代码提示、自动格式化、统一配置、代码片段等辅助功能，让你编写 uniapp 拥有 best 体验 。' },
+        { name: 'vitesse-uni-app(模板)', href: 'https://github.com/uni-helper/vitesse-uni-app', href_spare:'', title: '【uniapp项目开发模板】' },
         { name: 'uni-simple-router', href: 'https://github.com/SilurianYang/uni-simple-router', href_spare:'', title: '路由管理工具,兼容h5,小程序,app' },
+        { name: 'uni-use', href: 'https://github.com/unocss-applet/unocss-applet', href_spare:'', title: 'uni-app (vue3) 组合式工具集，类似于 Vueuse。' },
+        { name: 'z-paging(分页)', href: 'https://github.com/SmileZXLee/uni-z-paging', href_spare:'', title: ' 分页组件，支持自定义下拉刷新、上拉加载更多、虚拟列表、下拉进入二楼、自动管理空数据图、无闪动聊天分页、本地分页、国际化等100+项配置' },
         { name: 'mp-html', href: 'https://github.com/jin-yufeng/mp-html', href_spare:'', title: '一个强大的小程序富文本组件' },
         { name: 'parser-audio', href: 'https://github.com/woxiaoyao81/parser-audio', title: '完善jyf-parser的audio插件' },
+        { name: 'uQRCode', href: 'https://github.com/Sansnn/uQRCode', href_spare:'', title: 'uQRCode是一款基于Javascript环境开发的二维码生成插件，适用所有Javascript运行环境的前端应用和Node.js' },
+        { name: 'lucky-canvas', href: 'https://github.com/buuing/lucky-canvas', href_spare:'', title: '基于 TS + Canvas 开发的【大转盘 / 九宫格 / 老虎机】抽奖插件，一套源码适配多端框架 JS / Vue / React / Taro / UniApp / 微信小程序等，奖品 / 文字 / 图片 / 颜色 / 按钮均可配置，支持同步 / 异步抽奖，概率前 / 后端可控，自动根据 dpr 调整清晰度适配移动端。' },
+        { name: 'uni-network', href: 'https://github.com/uni-helper/uni-network', href_spare:'', title: '为 uni-app 打造的基于 Promise 的 HTTP 客户端。' },
+        { name: 'uni-pay', href: 'https://gitcode.net/dcloud/uni-pay.git', href_spare:'', title: '更简单的支付接口调用方式、拉齐不同支付平台。' },
         { name: 'uni-calendar', href: 'https://ext.dcloud.net.cn/plugin?id=56', href_spare:'', title: '日历组件可以查看日期，选择任意范围内的日期，打点操作。常用场景如：酒店日期预订、火车机票选择购买日期、上下班打卡等。' },
         { name: 'simple-address省市区', href: 'https://ext.dcloud.net.cn/plugin?id=1084', href_spare:'', title: '三级地址联动，支持（app）nvue、小程序、H5 ' },
       ]
@@ -1143,6 +1155,7 @@ var data_css = {
     {
       second_tit: 'css工具',
       second_child: [
+        { name: 'Tailwind CSS', href: 'https://tailwindcss.com/docs/installation', title: '提供了大量可组合的工具类（utility classes），与各种前端框架（如 React、Vue、Angular）的集成' },
         { name: 'CSS-Tricks', href: 'https://css-tricks.com', title: '学习各类css技巧，开发更加漂亮的web应用' },
         { name: 'NavNav+', href: 'https://navnav.co', title: 'UI界面交互模板' },
         { name: 'headless', href: 'https://headlessui.com', title: 'vue/reactUI界面' },
