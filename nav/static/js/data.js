@@ -1106,6 +1106,7 @@ var data_jsplug = {
         { name: 'uView vue2', href: 'https://www.uviewui.com', href_spare:'', title: '全面兼容nvue的uni-app生态框架' },
         { name: 'uview-plus vue3', href: 'https://uiadmin.net/uview-plus', href_spare:'', title: '全面兼容nvue的uni-app生态框架' },
         { name: 'Cool Uni', href: 'https://uni-docs.cool-js.com', href_spare:'', title: '开源免费、uni-app脚手架、ui组件库、扩展插件、模块化' },
+		{ name: 'Cool Uni github', href: 'https://github.com/cool-team-official/cool-uni/tree/6.x/ui', href_spare:'', title: '版本追溯 github' },
         { name: 'Wot Design Uni', href: 'https://github.com/Moonofweisheng/wot-design-uni', href_spare:'', title: '基于vue3+Typescript构建，参照wot-design打造的uni-app组件库' },
         { name: 'ThorUI', href: 'https://github.com/dingyong0214/ThorUI-uniapp', href_spare:'', title: '' },
         { name: 'unibest(模板)', href: 'https://github.com/codercup/unibest', href_spare:'', title: '【uniapp项目开发模板】：由 uniapp + Vue3 + Ts + Vite5 + UnoCss + wot-ui + z-paging 构成，使用了最新的前端技术栈，无需依靠 HBuilderX，通过命令行方式运行 web、小程序 和 App。unibest 内置了约定式路由、layout布局、请求封装、请求拦截、登录拦截、UnoCSS、i18n多语言等基础功能，提供了 代码提示、自动格式化、统一配置、代码片段等辅助功能，让你编写 uniapp 拥有 best 体验 。' },
