@@ -2768,6 +2768,12 @@ var data_jsplug = {
           title: "",
         },
         {
+          name: "firstui",
+          href: "https://firstui.cn",
+          href_spare: "",
+          title: "",
+        },
+        {
           name: "unibest(模板)",
           href: "https://github.com/codercup/unibest",
           href_spare: "",
