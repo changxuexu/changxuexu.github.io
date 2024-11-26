@@ -38,6 +38,11 @@ var data_daily = {
         { name: "npm包搜索_官网", href: "https://www.npmjs.com", title: "" },
         { name: "npm包搜索_阿里", href: "https://npmmirror.com", title: "" },
         {
+          name: "jsDelivr",
+          href: "https://www.jsdelivr.com",
+          title: "js资源CDN网站",
+        },
+        {
           name: "Skypack",
           href: "https://www.skypack.dev",
           title: "类似CDN,无需安装和构建工具即可加载针对浏览器优化的npm包",
