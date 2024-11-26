@@ -43,6 +43,11 @@ var data_daily = {
           title: "js资源CDN网站",
         },
         {
+          name: "cdnjs",
+          href: "https://cdnjs.com",
+          title: "js资源CDN网站",
+        },
+        {
           name: "Skypack",
           href: "https://www.skypack.dev",
           title: "类似CDN,无需安装和构建工具即可加载针对浏览器优化的npm包",
