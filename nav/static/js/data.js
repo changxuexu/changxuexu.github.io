@@ -207,6 +207,11 @@ var data_vue = {
           title: "工具型组合式函数集合",
         },
         {
+          name: "@vueuse/motion",
+          href: "https://www.npmjs.com/package/@vueuse/motion",
+          title: "vue动画方案",
+        },
+        {
           name: "StackBlitz在线编辑",
           href: "https://stackblitz.com",
           title: "代码在线构建工具",
@@ -1871,14 +1876,19 @@ var data_jsplug = {
           title: "上拉加载,v2.0",
         },
         {
+          name: "sortablejs",
+          href: "https://www.npmjs.com/package/sortablejs",
+          title: "拖拽排序",
+        },
+        {
           name: "vuedraggable",
           href: "https://www.npmjs.com/package/vuedraggable",
           title: "拖拽排序(v2)",
         },
         {
-          name: "sortablejs",
-          href: "https://www.npmjs.com/package/sortablejs",
-          title: "拖拽排序",
+          name: "VueDraggablePlus",
+          href: "https://www.npmjs.com/package/vue-draggable-plus",
+          title: "拖拽排序(v3)",
         },
         {
           name: "NProgress",
@@ -2044,6 +2054,16 @@ var data_jsplug = {
           title: "将页面或任何dom元素置于全屏状态",
         },
         {
+          name: "vue-best-verify",
+          href: "https://www.npmjs.com/package/vue-best-verify",
+          title: "基于 vue3 的表单验证库，创建这个库的原因是 element-plus antd-vue 等，其内部的表单组件太TMD难用了！结构不透明，api记忆量大，代码结构可读性差，不符合直觉， 强约定代码侵入性高。",
+        },
+        {
+          name: "sunshine-track",
+          href: "https://www.npmjs.com/package/sunshine-track",
+          title: "前端监控、埋点",
+        },
+        {
           name: "ua-parser-js",
           href: "https://github.com/faisalman/ua-parser-js",
           title:
@@ -2054,7 +2074,7 @@ var data_jsplug = {
           href: "https://github.com/eligrey/FileSaver.js",
           title:
             "用于在客户端保存文件的解决方案，非常适合在客户端生成文件的 Web 应用程序，但是，如果文件来自服务器，我们建议您首先尝试使用Content-Disposition附件响应标头，因为它具有更好的跨浏览器兼容性。",
-        },
+        }
       ],
     },
     {
@@ -2202,8 +2222,13 @@ var data_jsplug = {
           title: "高性能跨平台图表库：PC、H5、APP、小程序、Vue、Taro",
         },
         {
+          name: "Vue Data UI",
+          href: "http://vue-data-ui.graphieros.com",
+          title: "类似echarts图表"
+        },
+        {
           name: "Antv",
-          href: "http://antv.antfin.com/zh-cn/index.html",
+          href: "https://antv.antgroup.com",
           title: "蚂蚁数据可视化",
         },
         {
@@ -2239,6 +2264,12 @@ var data_jsplug = {
           title: "流程图",
         },
       ],
+    },
+    {
+      second_tit: "canvas",
+      second_child: [
+        { name: "Fabric", href: "https://fabricjs.com", title: "Fabric.js是一个用于创建交互式的HTML5 Canvas应用程序的JavaScript库" },
+      ]
     },
     {
       second_tit: "地图",
@@ -2665,6 +2696,11 @@ var data_jsplug = {
           name: "Tesseract.js",
           href: "https://github.com/naptha/tesseract.js",
           title: "OCR图片文字识别,在浏览器或使用NodeJS的服务器上运行",
+        },
+        {
+          name: "FingerprintJS",
+          href: "https://github.com/fingerprintjs/fingerprintjs",
+          title: "浏览器指纹库。应用场景：访问某宝或某东购物网站，在没有登录的情况下访问一些商品A，过一段时间你访问的那些网站的浏览器就会推送跟商品A相似的商品。https://www.cnblogs.com/beginnerzyh/p/16741169.html",
         },
         {
           name: "Color Thief",
