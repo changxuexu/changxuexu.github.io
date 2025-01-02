@@ -1863,7 +1863,12 @@ var data_jsplug = {
         {
           name: "Axios",
           href: "https://www.kancloud.cn/yunye/axios/234845",
-          title: "",
+          title: "XMLHttpRequest",
+        },
+		{
+          name: "umi-request",
+          href: "https://github.com/umijs/umi-request",
+          title: "Fetch；兼容 https://github.com/camsong/blog/issues/2",
         },
         {
           name: "BetterScroll",
@@ -1888,6 +1893,11 @@ var data_jsplug = {
         {
           name: "VueDraggablePlus",
           href: "https://www.npmjs.com/package/vue-draggable-plus",
+          title: "拖拽排序(v3)",
+        },
+		{
+          name: "vue-draggable-next",
+          href: "https://www.npmjs.com/package/vue-draggable-next",
           title: "拖拽排序(v3)",
         },
         {
