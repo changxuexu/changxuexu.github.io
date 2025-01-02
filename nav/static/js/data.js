@@ -1865,7 +1865,7 @@ var data_jsplug = {
           href: "https://www.kancloud.cn/yunye/axios/234845",
           title: "XMLHttpRequest",
         },
-		{
+        {
           name: "umi-request",
           href: "https://github.com/umijs/umi-request",
           title: "Fetch；兼容 https://github.com/camsong/blog/issues/2",
@@ -1895,7 +1895,7 @@ var data_jsplug = {
           href: "https://www.npmjs.com/package/vue-draggable-plus",
           title: "拖拽排序(v3)",
         },
-		{
+        {
           name: "vue-draggable-next",
           href: "https://www.npmjs.com/package/vue-draggable-next",
           title: "拖拽排序(v3)",
@@ -1936,12 +1936,6 @@ var data_jsplug = {
           href: "https://github.com/Happy-Coding-Clans/vue-easytable",
           title:
             "表格组件：虚拟滚动、列固定、标题固定、标题分组、过滤器、排序、单元格省略号、行扩展、行复选框等",
-        },
-        {
-          name: "Vxe Table",
-          href: "https://vxetable.cn/#/start/install",
-          title:
-            "可结合vxe-table-plugin-element插件兼容element ui 做复杂的表格",
         },
         {
           name: "umy-ui",
@@ -2086,6 +2080,47 @@ var data_jsplug = {
             "用于在客户端保存文件的解决方案，非常适合在客户端生成文件的 Web 应用程序，但是，如果文件来自服务器，我们建议您首先尝试使用Content-Disposition附件响应标头，因为它具有更好的跨浏览器兼容性。",
         }
       ],
+    },
+    {
+      second_tit: "表格",
+      second_child: [
+        {
+          name: "Vxe Table",
+          href: "https://vxetable.cn/#/start/install",
+          title:
+            "可结合vxe-table-plugin-element插件兼容element ui 做复杂的表格",
+        },
+        {
+          name: "tabulator",
+          href: "https://tabulator.info",
+          title: "免费，元老级 table 组件 高级功能平民化",
+        },
+        {
+          name: "handsontable",
+          href: "https://www.npmjs.com/package/handsontable",
+          title: "媲美 Excel 的 Table 组件",
+        },
+        {
+          name: "ag-grid",
+          href: "https://github.com/ag-grid/ag-grid",
+          title: "媲美 Excel 的 Table 组件；中文文档：https://www.itxst.com/ag-grid/tutorial.html",
+        },
+        {
+          name: "Surely Vue Table",
+          href: "https://www.surely.cool",
+          title: "解决大数据渲染、图表集成等复杂高频问题;该组件4.0 及以上版本组件底层默认依赖 Ant Design Vue 4.x 版本组件库，但当然这并不影响你使用其它组件库。",
+        },
+        {
+          name: "vue-good-table-next",
+          href: "https://github.com/borisflesch/vue-good-table-next",
+          title: "适合小项目",
+        },
+        {
+          name: "vue-easytable",
+          href: "https://www.npmjs.com/package/vue-easytable",
+          title: "一个强大的 vue2.x 表格组件。你可以将它用做数据表、微软 excel 或者 goole sheet. 支持虚拟滚动、单元格编辑等功能。",
+        }
+      ]
     },
     {
       second_tit: "编辑器",
