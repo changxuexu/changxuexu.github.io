@@ -2060,7 +2060,7 @@ var data_jsplug = {
         {
           name: "vue-best-verify",
           href: "https://www.npmjs.com/package/vue-best-verify",
-          title: "基于 vue3 的表单验证库，创建这个库的原因是 element-plus antd-vue 等，其内部的表单组件太TMD难用了！结构不透明，api记忆量大，代码结构可读性差，不符合直觉， 强约定代码侵入性高。",
+          title: "基于 vue3 的表单验证库，创建这个库的原因是 element-plus antd-vue 等，其内部的表单组件太TMD难用了！结构不透明，api记忆量大，代码结构可读性差，不符合直觉， 强约定代码侵入性高。数据网格和复杂交互的场景（提供了丰富的 API 和插件机制，支持复杂的数据交互逻辑，比如多维分组、拖拽排序等功能，非常适合在 SaaS、管理系统等需要处理复杂数据的场景中使用。）",
         },
         {
           name: "sunshine-track",
@@ -2109,6 +2109,11 @@ var data_jsplug = {
           name: "Surely Vue Table",
           href: "https://www.surely.cool",
           title: "解决大数据渲染、图表集成等复杂高频问题;该组件4.0 及以上版本组件底层默认依赖 Ant Design Vue 4.x 版本组件库，但当然这并不影响你使用其它组件库。",
+        },
+        {
+          name: "@tanstack/vue-table",
+          href: "https://github.com/TanStack/table",
+          title: "TanStack Table 不局限于单一框架，它支持多种前端框架，如 React、Vue、Svelte、Solid 等，非常适合那些跨框架或需要高复用性的项目。处理大数据集的应用：TanStack Table 轻量且支持虚拟滚动，在处理大数据集时，它能够仅渲染可视区域的数据，极大提升了性能表现。特别适合电商、管理系统等需要展示大量数据的应用场景。需要高度定制表格样式的项目（如果项目对表格的外观有特定要求，TanStack Table 的无 UI 设计让你可以自由定制表格样式。结合你喜欢的 UI 库或自定义组件，打造完全符合需求的表格组件。）",
         },
         {
           name: "vue-good-table-next",
