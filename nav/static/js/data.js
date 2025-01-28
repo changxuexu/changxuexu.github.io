@@ -100,7 +100,11 @@ var data_daily = {
     {
       second_tit: "AI工具",
       second_child: [
-        { name: "AI工具集", href: "https://ai-bot.cn", title: "" },
+        {
+          name: "deepseek",
+          href: "https://www.deepseek.com",
+          title: "",
+        },
         {
           name: "通义千问_阿里",
           href: "https://qianwen.aliyun.com",
@@ -115,13 +119,7 @@ var data_daily = {
         { name: "混元_腾讯", href: "https://hunyuan.tencent.com", title: "" },
         { name: "豆包_抖音", href: "https://www.doubao.com", title: "" },
         { name: "文心一言_百度", href: "https://yiyan.baidu.com", title: "" },
-        { name: "ChatMoss", href: "https://chatmoss.aihao123.cn/", title: "" },
-        {
-          name: "ChatGPT集合",
-          href: "https://ziyuantan.com/t/topic/516",
-          title: "",
-        },
-        { name: "36krai", href: "https://36krai.com", title: "AI工具集" },
+		{ name: "AI工具集", href: "https://ai-bot.cn", title: "" },
         { name: "AIGC", href: "https://www.aigc.cn", title: "AI工具集" },
       ],
     },
