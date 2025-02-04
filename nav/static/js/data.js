@@ -1796,6 +1796,11 @@ var data_javascript = {
           href: "https://www.lodashjs.com",
           title: "javascript工具库",
         },
+		{
+          name: "sugar",
+          href: "https://sugarjs.com",
+          title: "javascript工具库",
+        },
         {
           name: "babel",
           href: "https://www.babeljs.cn",
@@ -2122,6 +2127,11 @@ var data_jsplug = {
           name: "vue-easytable",
           href: "https://www.npmjs.com/package/vue-easytable",
           title: "一个强大的 vue2.x 表格组件。你可以将它用做数据表、微软 excel 或者 goole sheet. 支持虚拟滚动、单元格编辑等功能。",
+        },
+		{
+          name: "jQuery table插件",
+          href: "https://www.jianshu.com/p/552018f43b56",
+          title: "",
         }
       ]
     },
