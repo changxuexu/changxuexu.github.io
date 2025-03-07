@@ -2128,7 +2128,12 @@ var data_jsplug = {
           href: "https://www.npmjs.com/package/vue-easytable",
           title: "一个强大的 vue2.x 表格组件。你可以将它用做数据表、微软 excel 或者 goole sheet. 支持虚拟滚动、单元格编辑等功能。",
         },
-		{
+        {
+          name: "DataTables",
+          href: "https://editor.datatables.net",
+          title: "",
+        },
+		    {
           name: "jQuery table插件",
           href: "https://www.jianshu.com/p/552018f43b56",
           title: "",
