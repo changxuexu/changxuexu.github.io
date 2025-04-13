@@ -149,6 +149,14 @@ var data_daily = {
         { name: "草料二维码生成器", href: "https://cli.im", title: "" },
       ],
     },
+    {
+      second_tit: "文档快速查找",
+      second_child: [
+        { name: "菜鸟教程", href: "https://www.runoob.com", title: "" },
+        { name: "w3cschool", href: "https://www.w3cschool.cn", title: "" },
+        { name: "w3schools", href: "https://www.w3ccoo.com", title: "" }
+      ]
+    }
   ],
 };
 
@@ -1297,7 +1305,7 @@ var data_tool = {
         {
           name: "图标_iconPark",
           href: "http://iconpark.oceanengine.com",
-          title: "图标",
+          title: "字节，优点：风格比较统一",
         },
         {
           name: "图标_streamline",
