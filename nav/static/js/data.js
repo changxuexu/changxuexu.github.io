@@ -2046,6 +2046,11 @@ var data_jsplug = {
             "excel插件，入门案例，教程：https://juejin.cn/post/6844903672523161613",
         },
         {
+          name: "docx-preview",
+          href: "https://www.npmjs.com/package/docx-preview",
+          title:"预览word文档"
+        },
+        {
           name: "iframe-resizer",
           href: "https://github.com/davidjbradshaw/iframe-resizer",
           title:
