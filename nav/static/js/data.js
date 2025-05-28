@@ -406,13 +406,18 @@ var data_vue = {
       second_child: [
         {
           name: "fantastic-admin",
-          href: "https://hooray.gitee.io/fantastic-admin/",
+          href: "https://gitee.com/fantastic-admin/basic",
           title: "Vite + Vue3 + Vue-router + Pinia + Element Plus",
         },
         {
           name: "vue-vben-admin",
           href: "https://github.com/vbenjs",
           title: "Vue3",
+        },
+        {
+          name: "vue-pure-admin",
+          href: "https://gitee.com/yiming_chang/vue-pure-admin",
+          title: "ESM+Vue3+Vite+Element-Plus+TypeScript编写的一款后台管理系统（兼容移动端）",
         },
         {
           name: "BuildAdmin",
@@ -2363,7 +2368,16 @@ var data_jsplug = {
     {
       second_tit: "播放器",
       second_child: [
-        { name: "ckplayer", href: "http://www.ckplayer.com", title: "" },
+        { 
+          name: "xgplayer", 
+          href: "https://github.com/bytedance/xgplayer", 
+          title: "西瓜播放器" 
+        },
+        { 
+          name: "ckplayer", 
+          href: "http://www.ckplayer.com", 
+          title: "" 
+        },
         {
           name: "DPlayer",
           href: "https://github.com/MoePlayer/DPlayer",
@@ -2418,6 +2432,11 @@ var data_jsplug = {
           name: "Three.js_案例",
           href: "https://github.com/dragonir/3d",
           title: "",
+        },
+        {
+          name: "CesiumJS",
+          href: "https://www.npmjs.com/package/cesium",
+          title: "用于在Web浏览器中创建3D地球和地图应用，应用于地理信息系统(GIS)、智慧城市、仿真模拟等领域。",
         },
         {
           name: "Anime.js",
