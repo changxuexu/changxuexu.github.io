@@ -2117,6 +2117,11 @@ var data_jsplug = {
           title: "免费，元老级 table 组件 高级功能平民化",
         },
         {
+          name: "VTable",
+          href: "https://visactor.io",
+          title: "VTable 是 VisActor 可视化体系中的表格组件库，支持百万级数据快速运算与渲染",
+        },
+        {
           name: "handsontable",
           href: "https://www.npmjs.com/package/handsontable",
           title: "媲美 Excel 的 Table 组件",
