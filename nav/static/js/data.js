@@ -1273,6 +1273,7 @@ var data_tool = {
       second_child: [
         { name: "在线PS", href: "https://ps.gaoding.com/#/", title: "" },
         { name: "tinypng图片压缩", href: "https://tinypng.com", title: "" },
+        { name: "iloveimg图片压缩", href: "https://www.iloveimg.com", title: "图片压缩、去水印、去背景等" },
         { name: "蓝湖", href: "https://lanhuapp.com", title: "UI设计交互演示" },
         { name: "墨刀", href: "https://modao.cc", title: "UI设计交互演示" },
         {
