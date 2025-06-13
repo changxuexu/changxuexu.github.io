@@ -1839,7 +1839,12 @@ var data_javascript = {
           href_spare1: "https://www.webpackjs.com/concepts",
           title: "",
         },
-        { name: "gulpjs", href: "https://www.gulpjs.com.cn", title: "" },
+        {
+          name: "webcrack",
+          href: "https://github.com/j4k0xb/webcrack",
+          title: "Webpack 编译代码进行反编译"
+        },
+        { name: "gulpjs", href: "https://www.gulpjs.com.cn", title: "" }
       ],
     },
   ],
@@ -2100,6 +2105,11 @@ var data_jsplug = {
           href: "https://github.com/eligrey/FileSaver.js",
           title:
             "用于在客户端保存文件的解决方案，非常适合在客户端生成文件的 Web 应用程序，但是，如果文件来自服务器，我们建议您首先尝试使用Content-Disposition附件响应标头，因为它具有更好的跨浏览器兼容性。",
+        },
+        {
+          name: "Fly Barrage",
+          href: "https://github.com/feiafei27/fly-barrage",
+          title:"web 端弹幕库"
         }
       ],
     },
