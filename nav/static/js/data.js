@@ -233,6 +233,11 @@ var data_vue = {
           title: "项目工程化构建脚手架工具,官方推荐",
         },
         {
+          name: "rolldown-vite",
+          href: "https://www.npmjs.com/package/rolldown-vite",
+          title: "项目工程化构建脚手架工具",
+        },
+        {
           name: "vue-cli",
           href: "https://cli.vuejs.org/zh/guide",
           title: "项目工程化构建脚手架工具",
@@ -753,6 +758,8 @@ var data_Node = {
         { name: "nodejs中文文档", href: "http://nodejs.cn", title: "" },
         { name: "node社区", href: "https://cnodejs.org", title: "" },
         { name: "五月君node教程", href: "https://www.nodejs.red", title: "" },
+        { name: "Deno", href: "https://github.com/denoland/deno", title: "" },
+        { name: "Bun", href: "https://github.com/oven-sh/bun", title: "" },
       ],
     },
     {
