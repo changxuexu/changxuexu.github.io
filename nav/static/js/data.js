@@ -2117,8 +2117,13 @@ var data_jsplug = {
           name: "Fly Barrage",
           href: "https://github.com/feiafei27/fly-barrage",
           title:"web 端弹幕库"
+        },
+        {
+          name: "Danmaku",
+          href: "https://www.npmjs.com/package/danmaku",
+          title:"流畅、无延迟的弹幕, 支持 Web、Android 和 iOS 等多种平台"
         }
-      ],
+      ]
     },
     {
       second_tit: "表格",
@@ -3068,6 +3073,11 @@ var data_css = {
           name: "Magic Animations",
           href: "https://github.com/miniMAC/magic",
           title: "",
+        },
+        {
+          name: "uiverse",
+          href: "https://uiverse.io/",
+          title: "css Animations交互动画",
         },
         {
           name: "CSShake",
