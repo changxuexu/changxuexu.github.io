@@ -775,6 +775,7 @@ var data_Node = {
       second_child: [
         { name: "express", href: "https://www.expressjs.com.cn", title: "" },
         { name: "koa", href: "https://www.koajs.com.cn", title: "" },
+        { name: "h3", href: "https://h3.zhcndoc.com", title: "" },
         { name: "egg", href: "https://www.eggjs.org/zh-CN", title: "" },
         { name: "fastify", href: "https://www.fastify.io", title: "" },
         {
@@ -1139,6 +1140,11 @@ var data_Crossplatform = {
         {
           name: "uni-app官网案例",
           href: "https://hellouniapp.dcloud.net.cn/pages/component/view/view",
+          title: "",
+        },
+        {
+          name: "uni-app插件市场",
+          href: "https://ext.dcloud.net.cn",
           title: "",
         },
         {
@@ -2819,6 +2825,11 @@ var data_jsplug = {
           name: "Tesseract.js",
           href: "https://github.com/naptha/tesseract.js",
           title: "OCR图片文字识别,在浏览器或使用NodeJS的服务器上运行",
+        },
+        {
+          name: "Transformers.js",
+          href: "https://github.com/huggingface/transformers.js",
+          title: "图像分类、物体检测、分割和深度估计",
         },
         {
           name: "FingerprintJS",
