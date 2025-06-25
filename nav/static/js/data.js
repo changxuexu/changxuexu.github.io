@@ -213,6 +213,11 @@ var data_vue = {
           title: "工具型组合式函数集合",
         },
         {
+          name: "VueUse中文",
+          href: "https://www.itxst.com/vueuse/tutorial.html",
+          title: "工具型组合式函数集合",
+        },
+        {
           name: "@vueuse/motion",
           href: "https://www.npmjs.com/package/@vueuse/motion",
           title: "vue动画方案",
