@@ -2881,6 +2881,21 @@ var data_jsplug = {
       ],
     },
     {
+      second_tit: "加密",
+      second_child: [
+        {
+          name: "js-base64",
+          href: "https://www.npmjs.com/package/js-base64",
+          title: "base64可逆",
+        },
+        {
+          name: "sm-crypto",
+          href: "https://www.npmjs.com/package/sm-crypto",
+          title: "国密算法sm2、sm3和sm4的js实现；sm3不可解密",
+        }
+      ],
+    },
+    {
       second_tit: "jquery",
       second_child: [
         {
