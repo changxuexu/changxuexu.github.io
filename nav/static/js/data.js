@@ -3053,6 +3053,31 @@ var data_jsplug = {
         },
       ],
     },
+    {
+      second_tit: "AI对话组件",
+      second_child: [
+        {
+          name: "element-plus-x",
+          href: "https://element-plus-x.com",
+          title: "Vue Element PC"
+        },
+        {
+          name: "TD Chat for Al",
+          href: "https://tdesign.tencent.com/chat/getting-started",
+          title: "Vue TDesign PC"
+        },
+        {
+          name: "chatui",
+          href: "https://chatui.io",
+          title: "移动端react"
+        },
+        {
+          name: "Ant Design X",
+          href: "https://ant-design-x.antgroup.com/index-cn",
+          title: "React PC"
+        }
+      ]
+    }
   ],
 };
 
@@ -3162,6 +3187,11 @@ var data_css = {
           name: "Transition.css",
           href: "https://www.transition.style/",
           title: "",
+        },
+        {
+          name: "Easing Wizard",
+          href: "https://easingwizard.com",
+          title: "直观生成速度贝塞尔曲线的函数",
         },
         {
           name: "css3样式在线兼容",
