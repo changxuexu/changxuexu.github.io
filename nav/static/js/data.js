@@ -1201,6 +1201,7 @@ var data_Crossplatform = {
           title: "",
         },
         { name: "Tauri", href: "https://tauri.app/zh/", title: "构建桌面应用" },
+        { name: "PakePlus", href: "https://github.com/Sjj1024/PakePlus", title: "将任意网页、Vue、React 等项目快速打包为轻量级（小于 5MB）的多端桌面应用和手机应用，仅需几分钟。" },
       ],
     },
     {
@@ -2076,6 +2077,11 @@ var data_jsplug = {
             "excel插件，入门案例，教程：https://juejin.cn/post/6844903672523161613",
         },
         {
+          name: "vue-office",
+          href: "https://github.com/501351981/vue-office",
+          title:"支持多种文件(docx、excel、pdf、pptx)预览的vue组件库，支持vue2/3。也支持非Vue框架的预览。"
+        },
+        {
           name: "docx-preview",
           href: "https://www.npmjs.com/package/docx-preview",
           title:"预览word文档"
@@ -2104,9 +2110,14 @@ var data_jsplug = {
           title: "将页面或任何dom元素置于全屏状态",
         },
         {
-          name: "vue-best-verify",
+          name: "vue-best-verify (表单验证)",
           href: "https://www.npmjs.com/package/vue-best-verify",
           title: "基于 vue3 的表单验证库，创建这个库的原因是 element-plus antd-vue 等，其内部的表单组件太TMD难用了！结构不透明，api记忆量大，代码结构可读性差，不符合直觉， 强约定代码侵入性高。数据网格和复杂交互的场景（提供了丰富的 API 和插件机制，支持复杂的数据交互逻辑，比如多维分组、拖拽排序等功能，非常适合在 SaaS、管理系统等需要处理复杂数据的场景中使用。）",
+        },
+        {
+          name: "@vorms/core (表单验证)",
+          href: "https://github.com/mini-ghost/vorms",
+          title: "表单验证",
         },
         {
           name: "sunshine-track",
@@ -2453,6 +2464,11 @@ var data_jsplug = {
           href: "https://github.com/Bilibili/flv.js",
           title: "用纯JavaScript编写的HTML5 Flash视频（FLV）播放器，无Flash",
         },
+        {
+          name: "video.js",
+          href: "https://github.com/videojs/video.js",
+          title: ""
+        },
       ],
     },
     {
@@ -2683,6 +2699,12 @@ var data_jsplug = {
             "是一个轻量的处理时间和日期的 JavaScript 库，和 Moment.js 的 API 设计保持完全一样",
         },
         {
+          name: "FullCalendar",
+          href: "https://github.com/fullcalendar/fullcalendar",
+          title:
+            "日历功能：@fullcalendar/interaction：提供点击、触摸、拖动交互功能。@fullcalendar/daygrid：提供每月、每日和每周的日历视图。@fullcalendar/timegrid：提供时间网格视图。@fullcalendar/list：提供简化的列表视图。@fullcalendar/vue3：支持 Vue3。@fullcalendar/vue：支持 Vue2。@fullcalendar/angular：支持 Angular 组件。@fullcalendar/react：支持 React 组件。",
+        },
+        {
           name: "DHTMLX Scheduler",
           href: "https://www.npmjs.com/package/@ryancavanaugh/dhtmlxscheduler",
           href_spare: "https://dhtmlx.com",
@@ -2831,6 +2853,11 @@ var data_jsplug = {
           name: "Tesseract.js",
           href: "https://github.com/naptha/tesseract.js",
           title: "OCR图片文字识别,在浏览器或使用NodeJS的服务器上运行",
+        },
+        {
+          name: "Umi-OCR",
+          href: "https://github.com/hiroi-sora/Umi-OCR",
+          title: "截图OCR / 批量OCR / PDF识别 / 二维码 / 公式识别",
         },
         {
           name: "Transformers.js",
