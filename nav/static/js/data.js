@@ -366,7 +366,7 @@ var data_vue = {
       ],
     },
     {
-      second_tit: "组件库P",
+      second_tit: "组件库",
       second_child: [
         {
           name: "Element2",
@@ -548,7 +548,7 @@ var data_React = {
       ],
     },
     {
-      second_tit: "组件库P",
+      second_tit: "组件库",
       second_child: [
         {
           name: "Ant Design",
@@ -569,9 +569,19 @@ var data_React = {
           name: "ZEIT UI",
           href: "https://github.com/zeit-ui/react",
           title: "抖音/UED",
-        },
+        }
       ],
     },
+    {
+      second_tit: "管理框架",
+      second_child: [
+        {
+          name: "ant-design-pro",
+          href: "https://github.com/ant-design/ant-design-pro",
+          title: "",
+        },
+      ]
+    }
   ],
 };
 
