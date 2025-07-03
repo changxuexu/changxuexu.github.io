@@ -781,6 +781,7 @@ var data_Node = {
       second_tit: "包管理器",
       second_child: [
         { name: "npm", href: "https://docs.npmjs.com", title: "" },
+        { name: "vlt", href: "https://www.vlt.sh", title: "" },
         { name: "yarn", href: "https://www.yarnpkg.cn", title: "" },
         { name: "pnpm", href: "https://pnpm.io", title: "" },
       ],
@@ -2264,6 +2265,11 @@ var data_jsplug = {
           title: "对图片的各种操作不友善",
         },
         {
+          name: "Lexical",
+          href: "https://github.com/facebook/lexical",
+          title: "facebook开源，可以二次扩展，比如支持多人协作，定制文本插件等",
+        },
+        {
           name: "vue-quill-editor",
           href: "https://npmmirror.com/package/vue-quill-editor",
           title: "",
@@ -2482,6 +2488,16 @@ var data_jsplug = {
       ],
     },
     {
+      second_tit: "音频",
+      second_child: [
+        {
+          name: "howler.js",
+          href: "https://github.com/goldfire/howler.js",
+          title: "2D/3D 音频控制库；无论简单的背景音乐播放，复杂的音频、游戏，3D 音效管理，howler 都可以提供强大而灵活的音频控制能力，包括播放、暂停、快进、快退、调整播放速率、音量控制、淡入淡出效果和循环播放等。",
+        },
+      ]
+    },
+    {
       second_tit: "动画",
       second_child: [
         {
@@ -2507,7 +2523,7 @@ var data_jsplug = {
         {
           name: "Anime.js",
           href: "https://animejs.com",
-          title: "轻量级,强大API",
+          title: "轻量级,强大API；涵盖CSS，DOM，SVG还有JS的对象，各种带数值属性的东西都可以动起来。",
         },
         {
           name: "vue-kinesis",
@@ -2529,7 +2545,7 @@ var data_jsplug = {
           title:
             "对html元素进行动画处理，用于创建高性能、零依赖性、跨游览器动画",
         },
-        { name: "Mo.js", href: "https://mojs.github.io", title: "模块化,流畅" },
+        { name: "Mo.js", href: "https://mojs.github.io", title: "模块化,流畅，专注于运动和动画的 JavaScript 库" },
         {
           name: "particlesJS",
           href: "https://github.com/VincentGarreau/particles.js",
@@ -2548,13 +2564,19 @@ var data_jsplug = {
         {
           name: "Lottie",
           href: "https://github.com/airbnb/lottie-web",
-          title: "Lottie for Web, Android, iOS, React Native, and Windows",
+          title: "Lottie for Web, Android, iOS, React Native, and Windows；允许开发者使用JSON格式的动画文件在移动端和Web端展示高质量的矢量动画效果。结合Javascript，可以在动画播放完毕后显示页面。vue3-lottie@latest",
         },
         {
           name: "dynamics.js",
           href: "http://dynamicsjs.com",
           title:
             "用于创建基于物理的动画;为任何DOM元素的CSS属性设置动画;可以设置SVG属性的动画",
+        },
+        {
+          name: "ScrollReveal",
+          href: "https://scrollrevealjs.org/",
+          title:
+            "在 DOM 元素进入或离开浏览器视口时轻松为其设置动画。它提供了各种类型的优雅效果来显示或隐藏多个浏览器中滚动的元素。",
         },
       ],
     },
