@@ -2092,22 +2092,6 @@ var data_jsplug = {
           title: "入门案例，教程：https://segmentfault.com/a/1190000043633722",
         },
         {
-          name: "SheetJS(xlsx)",
-          href: "https://github.com/SheetJS/sheetjs",
-          title:
-            "excel插件，入门案例，教程：https://juejin.cn/post/6844903672523161613",
-        },
-        {
-          name: "vue-office",
-          href: "https://github.com/501351981/vue-office",
-          title:"支持多种文件(docx、excel、pdf、pptx)预览的vue组件库，支持vue2/3。也支持非Vue框架的预览。"
-        },
-        {
-          name: "docx-preview",
-          href: "https://www.npmjs.com/package/docx-preview",
-          title:"预览word文档"
-        },
-        {
           name: "iframe-resizer",
           href: "https://github.com/davidjbradshaw/iframe-resizer",
           title:
@@ -2227,6 +2211,42 @@ var data_jsplug = {
           name: "jQuery table插件",
           href: "https://www.jianshu.com/p/552018f43b56",
           title: "",
+        }
+      ]
+    },
+    {
+      second_tit: "文档",
+      second_child: [
+        {
+          name: "SheetJS(xlsx)",
+          href: "https://github.com/SheetJS/sheetjs",
+          title:
+            "SheetJS（通常指其核心库 xlsx）用于处理 Excel 和其他电子表格文件（如  .xlsx, .xls, .xlsb, .xlsm .csv, .txt, .ods）读取/写入格式；无需依赖后端：纯前端即可完成文件解析和生成。支持浏览器、Node.js、Deno、React Native、Electron 等环境。教程：https://juejin.cn/post/6844903672523161613",
+        },
+        {
+          name: "vue-office",
+          href: "https://github.com/501351981/vue-office",
+          title:"支持多种文件(docx、excel、pdf、pptx)【预览】的vue组件库，支持vue2/3。也支持非Vue框架的预览。"
+        },
+        {
+          name: "docx-preview",
+          href: "https://www.npmjs.com/package/docx-preview",
+          title:"用于在网页或应用程序中预览 Microsoft Word (.docx) 文档"
+        },
+        {
+          name: "onlyOffice",
+          href: "https://api.onlyoffice.com/zh-CN/",
+          title:"可以实现【在线预览和编辑】 文档（Word）、表格（Excel）、幻灯片（PPT）。支持内网部署，并且可以实现多人协同编辑。提供 iOS/Android App，可查看和编辑文档"
+        },
+        {
+          name: "Office Online",
+          href: "https://www.office.com/",
+          title:"微软的 Office Online 插件来实现，可在线预览也支持多人协同编辑，也无需安装，自动保存，这样看是很符合领导的需求了,但是他的文件有暴露风险（公司文件密级特别高，我可不想吃免费饭）"
+        },
+        {
+          name: "kkfileview",
+          href: "https://github.com/kekingcn/kkFileView",
+          title: "一个强大的在线文件预览和编辑控件，可以支持内网使用，同时也支持多人协同编辑。麻烦点：需要后端部署",
         }
       ]
     },
@@ -2939,17 +2959,17 @@ var data_jsplug = {
         },
         {
           name: "decimal.js",
-          href: "",
+          href: "https://www.npmjs.com/package/decimal.js",
           title:"为 JavaScript 提供十进制类型的任意精度数值。精确小数计算，无二进制浮点误差;适用财务计算、货币处理"
         },
         {
           name: "big.js",
-          href: "",
+          href: "https://www.npmjs.com/package/big.js",
           title:"轻量级高精度计算;API 简单，体积小;适用基础高精度计算（如前端金额）"
         },
         {
           name: "bignumber.js",
-          href: "",
+          href: "https://www.npmjs.com/package/bignumber.js",
           title:"任意精度数字处理;支持超大数、复杂舍入模式;适用金融计算(利率/汇率)，科学计算(高精度实验数据)，区块链(加密货币计算)，游戏开发(虚拟货币体系)"
         }
       ],
