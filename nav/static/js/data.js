@@ -2948,6 +2948,11 @@ var data_jsplug = {
           title: "base64可逆",
         },
         {
+          name: "js-md5",
+          href: "https://www.npmjs.com/package/js-md5",
+          title: "md5加密，不可逆",
+        },
+        {
           name: "sm-crypto",
           href: "https://www.npmjs.com/package/sm-crypto",
           title: "国密算法sm2、sm3和sm4的js实现；sm3不可解密",
