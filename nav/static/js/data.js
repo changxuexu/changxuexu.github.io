@@ -599,6 +599,16 @@ var data_Angular = {
       ],
     },
     {
+      second_tit: "组件库",
+      second_child: [
+        {
+          name: "OpenTiny",
+          href: "https://opentiny.design",
+          title: "",
+        }
+      ]
+    },
+    {
       second_tit: "管理框架",
       second_child: [
         {
@@ -2922,11 +2932,26 @@ var data_jsplug = {
       second_tit: "数学库",
       second_child: [
         {
-          name: "MathJS",
+          name: "Math.js",
           href: "https://mathjs.org",
           title:
-            "JavaScript和Node.js的一个扩展数学库,可以灵活地计算和处理许多不同的数据类型，例如数字、大数、复数、分数、单位和矩阵",
+            "JavaScript和Node.js的一个全能数学计算库,可以灵活地计算和处理许多不同的数据类型，例如数字、大数、复数、分数、单位和矩阵",
         },
+        {
+          name: "decimal.js",
+          href: "",
+          title:"为 JavaScript 提供十进制类型的任意精度数值。精确小数计算，无二进制浮点误差;适用财务计算、货币处理"
+        },
+        {
+          name: "big.js",
+          href: "",
+          title:"轻量级高精度计算;API 简单，体积小;适用基础高精度计算（如前端金额）"
+        },
+        {
+          name: "bignumber.js",
+          href: "",
+          title:"任意精度数字处理;支持超大数、复杂舍入模式;适用金融计算(利率/汇率)，科学计算(高精度实验数据)，区块链(加密货币计算)，游戏开发(虚拟货币体系)"
+        }
       ],
     },
     {
