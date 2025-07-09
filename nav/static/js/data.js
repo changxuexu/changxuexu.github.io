@@ -1898,15 +1898,25 @@ var data_typeScript = {
       second_tit: "文档资料",
       second_child: [
         {
+          name: "TypeScript官网",
+          href: "https://www.typescriptlang.org/docs/handbook/intro.html",
+          title: "",
+        },
+        {
           name: "TypeScript 菜鸟教程",
           href: "https://www.runoob.com/typescript/ts-tutorial.html",
           title: "",
         },
         {
-          name: "TypeScript官网",
-          href: "https://www.typescriptlang.org/docs/handbook/intro.html",
-          title: "",
+          name: "tsconfig.json配置属性",
+          href: "https://www.typescriptlang.org/tsconfig",
+          title: "TS配置文件属性",
         },
+        {
+          name: "DefinitelyTyped（*.d.ts）",
+          href: "https://github.com/DefinitelyTyped/DefinitelyTyped",
+          title: "第三方库*.d.ts类型声明文件查找,或者直接在npm包查看"
+        }
       ],
     },
   ],
