@@ -2924,9 +2924,9 @@ var data_jsplug = {
             "通过JavaScript生成.docx文件的组件,可以同时被运用于Node端和浏览器端",
         },
         {
-          name: "Dinero.js",
-          href: "https://dinerojs.com",
-          title: "使用JavaScript处理货币值的库",
+          name: "compressorjs",
+          href: "https://www.npmjs.com/package/compressorjs",
+          title: "图片压缩",
         },
         {
           name: "Tesseract.js",
@@ -2988,6 +2988,11 @@ var data_jsplug = {
           name: "bignumber.js",
           href: "https://www.npmjs.com/package/bignumber.js",
           title:"任意精度数字处理;支持超大数、复杂舍入模式;适用金融计算(利率/汇率)，科学计算(高精度实验数据)，区块链(加密货币计算)，游戏开发(虚拟货币体系)"
+        },
+        {
+          name: "Dinero.js",
+          href: "https://dinerojs.com",
+          title: "使用JavaScript处理货币值的库",
         }
       ],
     },
