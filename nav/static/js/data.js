@@ -1314,6 +1314,7 @@ var data_tool = {
         { name: "在线PS", href: "https://ps.gaoding.com/#/", title: "" },
         { name: "tinypng图片压缩", href: "https://tinypng.com", title: "" },
         { name: "iloveimg图片压缩", href: "https://www.iloveimg.com", title: "图片压缩、去水印、去背景等" },
+        { name: "GemDesign", href: "https://design.gemcoder.com", title: "一款AI时代的高保真原型设计工具" },
         { name: "蓝湖", href: "https://lanhuapp.com", title: "UI设计交互演示" },
         { name: "墨刀", href: "https://modao.cc", title: "UI设计交互演示，开放的资源案例" },
         { name: "即时设计", href: "https://js.design", title: "UI设计交互演示,开放的资源案例" },
@@ -2451,6 +2452,11 @@ var data_jsplug = {
           href: "https://site.logic-flow.cn",
           title: "流程图",
         },
+        {
+          name: "XRender - XFlow",
+          href: "https://xrender.fun/xflow",
+          title: "XFlow 是一个基于 ReactFlow 底层能力和 Dify 交互体验实现的新一代开箱即用流程画布插件。它旨在为中后台项目提供统一、高效、易用的流程画布解决方案。",
+        }
       ],
     },
     {
