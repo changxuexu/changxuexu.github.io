@@ -2456,6 +2456,7 @@ var data_jsplug = {
     {
       second_tit: "canvas",
       second_child: [
+        { name: "LeaferJS", href: "https://www.leaferjs.com", title: "LeaferJS 是一款好用的 Canvas 引擎，革新的开发体验，可用于高效绘图 、UI 交互（小游戏、互动应用、组态）、图形编辑。" },
         { name: "Fabric", href: "https://fabricjs.com", title: "Fabric.js是一个用于创建交互式的HTML5 Canvas应用程序的JavaScript库" },
       ]
     },
@@ -3414,6 +3415,7 @@ var data_css = {
         { name: "弹性盒子", href: "http://flexboxfroggy.com", title: "" },
         { name: "网格布局", href: "http://cssgridgarden.com", title: "" },
         { name: "css选择器", href: "https://flukeout.github.io", title: "" },
+        { name: "DaisyUI", href: "https://v2.daisyui.com/", title: "纯净 CSS、支持任意框架" },
       ],
     },
   ],
@@ -3438,6 +3440,11 @@ var data_other = {
           title: "",
         },
         { name: "国家统计局官网", href: "http://www.stats.gov.cn", title: "" },
+        {
+          name: "骚扰电话",
+          href: "https://www.12321.cn/",
+          title: "骚扰电话投诉",
+        },
         {
           name: "工信部申诉受理中心",
           href: "https://yhssglxt.miit.gov.cn",
@@ -3529,6 +3536,11 @@ var data_other = {
           name: "国家教育资源公共服务平台",
           href: "https://www.eduyun.cn",
           title: "",
+        },
+        {
+          name: "phet",
+          href: "https://phet.colorado.edu/",
+          title: "免费的在线物理、化学、生物、地理及数学仿真程序",
         },
         { name: "皖教云", href: "http://www.ahedu.cn/#/", title: "" },
         { name: "国家终身教育平台", href: "https://le.ouchn.cn", title: "" },
