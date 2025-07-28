@@ -212,7 +212,7 @@ var data_vue = {
         },
         {
           name: "VueUse中文",
-          href: "https://www.itxst.com/vueuse/tutorial.html",
+          href: "https://vueuse.nodejs.cn/guide",
           title: "工具型组合式函数集合",
         },
         {
@@ -948,7 +948,7 @@ var data_Linux = {
       ],
     },
     {
-      second_tit: "",
+      second_tit: "工具",
       second_child: [
         {
           name: "vmware",
@@ -960,6 +960,11 @@ var data_Linux = {
           name: "宝塔",
           href: "https://www.bt.cn/new/index.html",
           title: "linux可视化操作",
+        },
+        {
+          name: "Cron表达式生成器",
+          href: "https://cron.ciding.cc",
+          title: "Cron 定时器",
         },
       ],
     },
@@ -1404,6 +1409,11 @@ var data_tool = {
           name: "17track", 
           href: "https://www.17track.net/zh-cn", 
           title: "跨境物流" 
+        },
+        { 
+          name: "省市区数据", 
+          href: "https://github.com/modood/Administrative-divisions-of-China", 
+          title: "" 
         },
         {
           name: "腾讯ocr识别",
