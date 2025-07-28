@@ -808,6 +808,11 @@ var data_Node = {
           title:
             "用于构建高效、可靠和可扩展的服务器端应用程序的渐进式 Node.js 框架",
         },
+        {
+          name: "ElysiaJs",
+          href: "https://elysiajs.com",
+          title: "充分考虑了简洁性和类型安全性，拥有熟悉的 API，广泛支持 TypeScript，并针对 Bun 进行了优化",
+        }
       ],
     },
     {
@@ -1574,6 +1579,11 @@ var data_tool = {
     {
       second_tit: "其他",
       second_child: [
+        { 
+          name: "破解软件", 
+          href: "https://mtzy.top", 
+          title: "" 
+        },
         { 
           name: "168大卖家", 
           href: "https://168dmj.com", 
@@ -3477,6 +3487,8 @@ var data_css = {
         { name: "网格布局", href: "http://cssgridgarden.com", title: "" },
         { name: "css选择器", href: "https://flukeout.github.io", title: "" },
         { name: "DaisyUI", href: "https://v2.daisyui.com/", title: "纯净 CSS、支持任意框架" },
+        { name: "CSS-Inspiration", href: "https://github.com/taopanwoaini/CSS-Inspiration", title: "css实战案例技巧" },
+        { name: "iCSS", href: "https://github.com/chokcoco/iCSS", title: "css实战案例技巧" }
       ],
     },
   ],
