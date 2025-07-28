@@ -1392,8 +1392,21 @@ var data_tool = {
     {
       second_tit: "第三方api",
       second_child: [
-        { name: "快递100", href: "http://api.kuaidi100.com/home", title: "" },
-        { name: "快递鸟", href: "http://www.kdniao.com", title: "" },
+        { 
+          name: "快递100", 
+          href: "http://api.kuaidi100.com/home", 
+          title: "" 
+        },
+        { 
+          name: "快递鸟", 
+          href: "http://www.kdniao.com", 
+          title: "" 
+        },
+        { 
+          name: "17track", 
+          href: "https://www.17track.net/zh-cn", 
+          title: "跨境物流" 
+        },
         {
           name: "腾讯ocr识别",
           href: "https://cloud.tencent.com/document/product/866/45338",
@@ -1739,6 +1752,11 @@ var data_study = {
     {
       second_tit: "运维",
       second_child: [
+        {
+          name: "SSL管理工具",
+          href: "https://github.com/usual2970/certimate",
+          title: "",
+        },
         { name: "运维派", href: "http://www.yunweipai.com", title: "" },
         { name: "阿汤运维", href: "https://www.amd5.cn", title: "" },
         {
@@ -1764,7 +1782,16 @@ var data_study = {
           href: "https://www.ym4j.com",
           title: "h5、网页游戏、vue等",
         },
-        { name: "F2EX", href: "http://f2ex.cn", title: "" },
+        { 
+          name: "F2EX", 
+          href: "http://f2ex.cn", 
+          title: "" 
+        },
+        { 
+          name: "站长chinaz", 
+          href: "https://tuan.chinaz.com", 
+          title: "" 
+        }
       ],
     },
     {
