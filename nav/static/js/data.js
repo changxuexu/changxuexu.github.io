@@ -64,13 +64,10 @@ var data_daily = {
         },
         { name: "Can I use", href: "https://www.caniuse.com", title: "" },
         { name: "w3c", href: "https://www.w3.org", title: "" },
-        {
-          name: "Stack Overflow",
-          href: "https://stackoverflow.com",
-          title: "编程棘手bug",
-        },
+        { name: "Stack Overflow", href: "https://stackoverflow.com", title: "编程棘手bug"},
         { name: "segmentfault", href: "https://segmentfault.com/", title: "" },
         { name: "稀土掘金", href: "https://juejin.cn", title: "" },
+        { name: "reddit", href: "https://www.reddit.com", title: "" }
       ],
     },
     {
@@ -154,7 +151,8 @@ var data_daily = {
       second_child: [
         { name: "菜鸟教程", href: "https://www.runoob.com", title: "" },
         { name: "w3cschool", href: "https://www.w3cschool.cn", title: "" },
-        { name: "w3schools", href: "https://www.w3ccoo.com", title: "" }
+        { name: "w3schools", href: "https://www.w3ccoo.com", title: "" },
+        { name: "TIOBE", href: "https://www.tiobe.com/tiobe-index", title: "编程语言排行" }
       ]
     }
   ],
@@ -1566,6 +1564,16 @@ var data_tool = {
     {
       second_tit: "其他",
       second_child: [
+        { 
+          name: "168大卖家", 
+          href: "https://168dmj.com", 
+          title: "跨境电商工具" 
+        },
+        { 
+          name: "Snipaste截图", 
+          href: "https://zh.snipaste.com", 
+          title: "免费，截图" 
+        },
         {
           name: "转转大师",
           href: "https://pdftoword.55.la/",
@@ -2660,7 +2668,12 @@ var data_jsplug = {
         {
           name: "SVGA动画",
           href: "http://svga.io/index.html",
-          title: "跨平台的开源动画方案",
+          title: "直播，跨平台的开源动画方案",
+        },
+        {
+          name: "PAG动画",
+          href: "https://pag.io",
+          title: "直播，跨平台的开源动画方案",
         },
         {
           name: "Vivus.js",
