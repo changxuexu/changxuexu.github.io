@@ -2277,6 +2277,11 @@ var data_jsplug = {
           name: "jQuery table插件",
           href: "https://www.jianshu.com/p/552018f43b56",
           title: "",
+        },
+        {
+          name: "spreadjs",
+          href: "https://www.grapecity.com.cn/developer/spreadjs",
+          title: "纯前端表格组件，具备高性能、跨平台、与 Excel高度兼容的产品特性，支持 Vue、React、Angular、NextJS、Nuxt 等主流前端开发框架，其设计目的是帮助开发者快速实现浏览器中各类 Excel 表格应用，已成功在数据填报、在线表格文档、类 Excel 报表制作与生成、企业预决算、计量检测、实验室管理等领域得到广泛应用，可让您快速具备与飞书、语雀、灵犀文档等同源的表格开发能力。",
         }
       ]
     },
