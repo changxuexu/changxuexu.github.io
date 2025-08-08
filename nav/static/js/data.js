@@ -99,7 +99,12 @@ var data_daily = {
       second_child: [
         {
           name: "deepseek",
-          href: "https://www.deepseek.com",
+          href: "https://chat.deepseek.com",
+          title: "",
+        },
+        {
+          name: "ChatGPT",
+          href: "https://chatgpt.com",
           title: "",
         },
         {
@@ -1565,12 +1570,6 @@ var data_tool = {
     {
       second_tit: "AI编程",
       second_child: [
-        { name: "ChatGPT", href: "https://chat.openai.com/chat", title: "" },
-        {
-          name: "chatgpt_1",
-          href: "https://chat.forchange.cn",
-          title: "无需账号",
-        },
         { name: "Copilot", href: "", title: "" },
         { name: "Pitchfork", href: "", title: "" },
         { name: "AlphaCode", href: "", title: "" },
