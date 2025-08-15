@@ -1268,6 +1268,11 @@ var data_Crossplatform = {
       second_tit: "IOS",
       second_child: [
         { name: "IOS开放平台", href: "https://developer.apple.com", title: "" },
+        { 
+          name: "蒲公英", 
+          href: "https://www.pgyer.com", 
+          title: "移动应用内测分发管理平台。快速发布测试版：开发者可以上传iOS/Android应用的测试包（如APK或IPA文件），生成下载链接或二维码，方便测试团队或用户直接安装体验，无需通过官方应用商店审核。无需越狱的iOS分发：解决iOS测试包需要苹果审核的问题，支持通过企业证书或TestFlight替代方案分发。" 
+        },
       ],
     },
     {
@@ -3630,9 +3635,13 @@ var data_other = {
       ],
     },
     {
-      second_tit: "购物批发",
+      second_tit: "垂直技术领域",
       second_child: [
-        { name: "慧聪网", href: "https://www.hc360.com", title: "" },
+        { 
+          name: "即时通讯网", 
+          href: "http://www.52im.net", 
+          title: "即时通讯IM开发" 
+        },
       ],
     },
     {
@@ -3650,6 +3659,12 @@ var data_other = {
         },
       ],
     },
+    {
+      second_tit: "购物批发",
+      second_child: [
+        { name: "慧聪网", href: "https://www.hc360.com", title: "" },
+      ],
+    }
   ],
 };
 
