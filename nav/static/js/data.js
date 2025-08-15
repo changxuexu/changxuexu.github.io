@@ -67,6 +67,7 @@ var data_daily = {
         { name: "Stack Overflow", href: "https://stackoverflow.com", title: "编程棘手bug"},
         { name: "segmentfault", href: "https://segmentfault.com/", title: "" },
         { name: "稀土掘金", href: "https://juejin.cn", title: "" },
+        { name: "墨滴", href: "https://mdnice.com", title: "" },
         { name: "reddit", href: "https://www.reddit.com", title: "" }
       ],
     },
@@ -3632,6 +3633,21 @@ var data_other = {
       second_tit: "购物批发",
       second_child: [
         { name: "慧聪网", href: "https://www.hc360.com", title: "" },
+      ],
+    },
+    {
+      second_tit: "其他",
+      second_child: [
+        { 
+          name: "合肥圈子", 
+          href: "https://996.baduhefei.com/index.html", 
+          title: "避免踩坑" 
+        },
+        { 
+          name: "济南圈子", 
+          href: "https://gshmd.vip/", 
+          title: "避免踩坑" 
+        },
       ],
     },
   ],
