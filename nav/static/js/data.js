@@ -1406,6 +1406,16 @@ var data_tool = {
       second_tit: "第三方api",
       second_child: [
         { 
+          name: "省市区数据", 
+          href: "https://github.com/modood/Administrative-divisions-of-China", 
+          title: "" 
+        },
+        {
+          name: "腾讯ocr识别",
+          href: "https://cloud.tencent.com/document/product/866/45338",
+          title: "",
+        },
+        { 
           name: "快递100", 
           href: "http://api.kuaidi100.com/home", 
           title: "" 
@@ -1421,14 +1431,9 @@ var data_tool = {
           title: "跨境物流" 
         },
         { 
-          name: "省市区数据", 
-          href: "https://github.com/modood/Administrative-divisions-of-China", 
-          title: "" 
-        },
-        {
-          name: "腾讯ocr识别",
-          href: "https://cloud.tencent.com/document/product/866/45338",
-          title: "",
+          name: "dLocal", 
+          href: "https://docs.dlocal.com/docs/get-started", 
+          title: "跨境支付" 
         },
       ],
     },
