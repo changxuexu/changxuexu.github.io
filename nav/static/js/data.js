@@ -1708,6 +1708,7 @@ var data_study = {
       second_child: [
         { name: "尤雨溪", href: "https://github.com/yyx990803", title: "" },
         { name: "后盾人", href: "https://doc.houdunren.com", title: "" },
+        { name: "Jcloud", href: "https://www.cnblogs.com/Jcloud", title: "京东云开发者" },
         {
           name: "Nicholas C.Zakas",
           href: "https://humanwhocodes.com",
