@@ -99,13 +99,15 @@ html, body {
 .nav-content-wrap .second-link:before {content: ''; background: var(--main-color);display: block;position: absolute;bottom: -2px;left: 0;width: 0;height: 2px;transition: width 0.3s ease-in-out; }
 .nav-content-wrap .second-link:hover::before { width:100%; }
 .headertopwrap{height:36px;}
-.headertop{ position: fixed; left:150px; right:0; top:0; z-index:1; background:#ffffff; display:flex; align-items: center; justify-content:space-between; padding-top:8px; padding-bottom:8px; transition:  all 0.9s ease-in-out; box-shadow: rgba(0, 0, 0, .05) 0 1px 4px, rgba(0, 0, 0, .12) 0 1px 2px; }
+/* justify-content:space-between;  */
+.headertop{ position: fixed; left:150px; right:0; top:0; z-index:1; background:#ffffff; display:flex; align-items: center; padding-top:8px; padding-bottom:8px; transition:  all 0.9s ease-in-out; box-shadow: rgba(0, 0, 0, .05) 0 1px 4px, rgba(0, 0, 0, .12) 0 1px 2px; }
 .headertop::after{content: '';position: absolute;left:0;right:0;bottom:0;width:100%;height:2px;background-size: 70px;background-image: repeating-linear-gradient(-45deg, #ff6c6c 0, #ff6c6c 20%, transparent 0, transparent 25%, #1989fa 0, #1989fa 45%, transparent 0, transparent 50%);}
 .headertopClose{left:0;transition:  all 0.5s ease-in-out;}
 .headertop-ltME{ left:0; }
 .headertop .iconOprate{margin-left:20px;width:20px;height:20px;display: block;cursor: pointer;flex-shrink: 0;}
 .headertop .iconOprate:hover{ opacity:0.8;}
 .headertop .des{color:var(--main-color);margin-right:20px;margin-left: 20px;overflow: hidden; white-space: nowrap;text-overflow: ellipsis;}
+.headertop .motto{  flex:1; text-align: right; font-weight:600; }
 /* 右边-end */
 
 /* 顶部进度条 */

@@ -37,6 +37,7 @@
     <div class="headertopwrap">
       <div class="headertop" :class="{'headertopClose':!ismobile && !showsidebar, 'headertop-ltME':ismobile  }">
         <img @click="showsidebarhandle" :src="showsidebar ? './static/img/icon_close.png':'./static/img/icon_open.png'" class="iconOprate">
+        <div class="motto">技术没有高低之分，只有先后之别</div>
         <div class="des" id="typeitmotto" v-scroll-to="`#app`"></div>
         <div class="scrollinebox" v-if="wscrolline">
           <div class="scrollineinside" :style="{'width':`${wscrolline}%`}"></div>
