@@ -474,6 +474,11 @@ var data_vue = {
           href: "http://www.ruoyi.vip",
           title: "基于java SpringBoot",
         },
+        {
+          name: "小诺admin",
+          href: "https://xiaonuo.vip",
+          title: "小诺开源",
+        },
       ],
     },
   ],
