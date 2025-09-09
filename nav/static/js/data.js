@@ -3738,19 +3738,23 @@ var data_Java = {
         {
           name: "commons-io",
           href: "https://commons.apache.org/io/download_io.cgi",
-          title: "IO流操作相关",
+          title: "IO流操作，复制文件夹等",
         },
         {
           name: "dom4j",
           href: "https://dom4j.github.io",
-          title: "读写XML文件相关",
+          title: "XML文件内容解析等",
         },
         {
           name: "logback",
           href: "https://logback.qos.ch/index.html",
           title: "操作日志相关",
         },
-        { name: "JSON Web Token", href: "https://jwt.io", title: "登录认证" },
+        { 
+          name: "JSON Web Token", 
+          href: "https://jwt.io", 
+          title: "登录认证" 
+        },
         {
           name: "PageHelper",
           href: "https://pagehelper.github.io",
