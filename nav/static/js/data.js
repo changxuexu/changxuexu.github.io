@@ -3141,7 +3141,7 @@ var data_jsplug = {
         },
         {
           name: "uView vue2",
-          href: "https://www.uviewui.com",
+          href: "https://uviewui.com",
           href_spare: "",
           title: "全面兼容nvue的uni-app生态框架",
         },
