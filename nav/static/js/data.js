@@ -2232,6 +2232,12 @@ var data_jsplug = {
           name: "Danmaku",
           href: "https://www.npmjs.com/package/danmaku",
           title:"流畅、无延迟的弹幕, 支持 Web、Android 和 iOS 等多种平台"
+        },
+        {
+          name: "React Bits/Vue Bits",
+          href: "https://github.com/DavidHDev",
+          title:
+            "一个包含大量动画 VueJS UI 组件的集合，旨在为您的网页创作增添活力",
         }
       ]
     },
@@ -2700,7 +2706,7 @@ var data_jsplug = {
           href: "https://scrollrevealjs.org/",
           title:
             "在 DOM 元素进入或离开浏览器视口时轻松为其设置动画。它提供了各种类型的优雅效果来显示或隐藏多个浏览器中滚动的元素。",
-        },
+        }
       ],
     },
     {
