@@ -2026,6 +2026,11 @@ var data_jsplug = {
           title: "上拉加载,v2.0",
         },
         {
+          name: "gridstack",
+          href: "https://www.npmjs.com/package/gridstack",
+          title: "拖拽排序，与 Angular（包括）、React、Vue、Knockout.js、Ember 等配合得很好",
+        },
+        {
           name: "sortablejs",
           href: "https://www.npmjs.com/package/sortablejs",
           title: "拖拽排序",
