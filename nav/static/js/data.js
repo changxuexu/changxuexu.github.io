@@ -2508,6 +2508,16 @@ var data_jsplug = {
           title: "蚂蚁数据可视化",
         },
         {
+          name: "Cytoscape.js",
+          href: "https://js.cytoscape.org",
+          title: "专注于绘制网络关系图，非常适合复杂的人物关系、社交网络分析。",
+        },
+        {
+          name: "Vis.js",
+          href: "https://visjs.org",
+          title: "提供 Network 模块，拖拽缩放效果比较丝滑",
+        },
+        {
           name: "FusionCharts",
           href: "https://www.fusioncharts.com/",
           title: "",
