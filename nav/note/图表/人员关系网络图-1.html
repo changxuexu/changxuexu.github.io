@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人员关系网络图 - 优化版</title>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        
+        .network-container {
+            flex: 3;
+            min-width: 300px;
+            height: 500px;
+            border: 1px solid #e1e1e1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .controls {
+            flex: 1;
+            min-width: 250px;
+            padding: 0 20px;
+        }
+        
+        .search-box {
+            margin-bottom: 20px;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        input[type="text"]:focus {
+            border-color: #4b6cb7;
+            box-shadow: 0 0 0 2px rgba(75, 108, 183, 0.2);
+            outline: none;
+        }
+        
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        button {
+            flex: 1;
+            min-width: 120px;
+            padding: 10px 15px;
+            background: #4b6cb7;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        button:hover {
+            background: #3a559f;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .node-list {
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #e1e1e1;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+        
+        .node-item {
+            padding: 8px 10px;
+            margin-bottom: 5px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .node-item:hover {
+            background-color: #eef2ff;
+            transform: translateX(5px);
+        }
+        
+        .node-item.active {
+            background-color: #4b6cb7;
+            color: white;
+        }
+        
+        .info-panel {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f0f7ff;
+            border-radius: 8px;
+            border-left: 4px solid #4b6cb7;
+        }
+        
+        .info-panel h3 {
+            margin-bottom: 10px;
+            color: #4b6cb7;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #f1f1f1;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            
+            .network-container {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            
+            .controls {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>人员关系网络图</h1>
+            <p class="subtitle">优化版 - 更紧密的连接布局</p>
+        </header>
+        
+        <div class="content">
+            <div class="network-container" id="network"></div>
+            
+            <div class="controls">
+                <div class="search-box">
+                    <input type="text" id="search" placeholder="搜索节点...">
+                </div>
+                
+                <div class="button-group">
+                    <button id="reset">重置视图</button>
+                    <button id="hierarchical">分层布局</button>
+                    <button id="circular">环形布局</button>
+                </div>
+                
+                <h3>节点列表</h3>
+                <div class="node-list" id="node-list"></div>
+                
+                <div class="info-panel">
+                    <h3>使用说明</h3>
+                    <p>• 点击节点可查看详细信息</p>
+                    <p>• 双击节点可聚焦放大</p>
+                    <p>• 拖拽可移动视图</p>
+                    <p>• 使用鼠标滚轮缩放</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>使用Vis.js生成 | 共17个节点 | 优化连接布局</p>
+        </footer>
+    </div>
+
+    <script>
+        // 节点数据
+        const names = [
+            "孙雅婷", "魏俊杰", "许志强", "赵志豪", "韩雪薇", 
+            "徐浩然", "何静雅", "张心怡", "陈俊逸", "罗梓萱", 
+            "程雨萱", "林晓妍", "吴昊天", "唐婉儿", "刘梦琪", 
+            "郭子轩", "谢明辉"
+        ];
+        
+        // 创建分组
+        const groups = {
+            group1: {
+                color: {
+                    background: '#4b6cb7',
+                    border: '#2B2B2B'
+                }
+            },
+            group2: {
+                color: {
+                    background: '#3498db',
+                    border: '#2B2B2B'
+                }
+            },
+            group3: {
+                color: {
+                    background: '#9b59b6',
+                    border: '#2B2B2B'
+                }
+            }
+        };
+        
+        // 创建节点
+        const nodes = new vis.DataSet();
+        names.forEach((name, index) => {
+            // 分配节点到不同组
+            let group;
+            if (index < 6) group = 'group1';
+            else if (index < 12) group = 'group2';
+            else group = 'group3';
+            
+            nodes.add({
+                id: index,
+                label: name,
+                group: group,
+                font: { color: '#fff', size: 14 },
+                shape: 'circle',
+                size: 25,
+                shadow: true
+            });
+        });
+        
+        // 创建边（连接）
+        const edges = new vis.DataSet();
+        
+        // 生成更紧密的连接
+        function generateTightEdges() {
+            edges.clear();
+            
+            // 创建组内连接
+            for (let i = 0; i < names.length; i++) {
+                // 每个节点连接到组内其他节点
+                for (let j = i + 1; j < names.length; j++) {
+                    // 同一组内的节点有更高概率连接
+                    const iGroup = i < 6 ? 'group1' : (i < 12 ? 'group2' : 'group3');
+                    const jGroup = j < 6 ? 'group1' : (j < 12 ? 'group2' : 'group3');
+                    
+                    if (iGroup === jGroup && Math.random() > 0.5) {
+                        edges.add({
+                            from: i,
+                            to: j,
+                            color: { color: getGroupColor(iGroup) },
+                            width: 2,
+                            smooth: { enabled: true, type: 'continuous' }
+                        });
+                    }
+                }
+            }
+            
+            // 创建跨组连接
+            for (let i = 0; i < 8; i++) {
+                const from = Math.floor(Math.random() * names.length);
+                let to = Math.floor(Math.random() * names.length);
+                
+                // 确保不连接到自身
+                while (to === from) {
+                    to = Math.floor(Math.random() * names.length);
+                }
+                
+                edges.add({
+                    from: from,
+                    to: to,
+                    color: { color: '#97C2FC' },
+                    width: 2,
+                    dashes: true,
+                    smooth: { enabled: true, type: 'continuous' }
+                });
+            }
+            
+            // 创建中心节点连接
+            const centerNodes = [0, 5, 10, 15]; // 选择一些节点作为中心节点
+            centerNodes.forEach(center => {
+                for (let i = 0; i < names.length; i++) {
+                    if (i !== center && Math.random() > 0.7) {
+                        edges.add({
+                            from: center,
+                            to: i,
+                            color: { color: '#FF6B6B' },
+                            width: 3,
+                            smooth: { enabled: true, type: 'continuous' }
+                        });
+                    }
+                }
+            });
+        }
+        
+        // 初始化生成紧密连接
+        generateTightEdges();
+        
+        // 网络图数据
+        const data = {
+            nodes: nodes,
+            edges: edges
+        };
+        
+        // 网络图选项 - 使用分层布局
+        const options = {
+            layout: {
+                hierarchical: {
+                    enabled: true,
+                    direction: 'UD',
+                    sortMethod: 'directed',
+                    levelSeparation: 150,
+                    nodeSpacing: 120
+                }
+            },
+            physics: {
+                enabled: true,
+                hierarchicalRepulsion: {
+                    centralGravity: 0.0,
+                    springLength: 120,
+                    springConstant: 0.01,
+                    nodeDistance: 150,
+                    damping: 0.09
+                },
+                stabilization: { iterations: 100 }
+            },
+            interaction: {
+                hover: true,
+                tooltipDelay: 200,
+                hideEdgesOnDrag: false,
+                navigationButtons: true,
+                keyboard: true
+            },
+            groups: groups
+        };
+        
+        // 初始化网络图
+        const container = document.getElementById('network');
+        const network = new vis.Network(container, data, options);
+        
+        // 获取组颜色
+        function getGroupColor(group) {
+            switch(group) {
+                case 'group1': return '#4b6cb7';
+                case 'group2': return '#3498db';
+                case 'group3': return '#9b59b6';
+                default: return '#97C2FC';
+            }
+        }
+        
+        // 重置视图
+        document.getElementById('reset').addEventListener('click', function() {
+            network.fit();
+        });
+        
+        // 分层布局
+        document.getElementById('hierarchical').addEventListener('click', function() {
+            network.setOptions({
+                layout: {
+                    hierarchical: {
+                        enabled: true,
+                        direction: 'UD',
+                        sortMethod: 'directed',
+                        levelSeparation: 150,
+                        nodeSpacing: 120
+                    }
+                }
+            });
+        });
+        
+        // 环形布局
+        document.getElementById('circular').addEventListener('click', function() {
+            network.setOptions({
+                layout: {
+                    hierarchical: {
+                        enabled: false
+                    }
+                },
+                physics: {
+                    enabled: true,
+                    stabilization: { iterations: 100 }
+                }
+            });
+            
+            // 使用力导向布局模拟环形
+            network.setData(data);
+            network.stabilize(100);
+        });
+        
+        // 搜索功能
+        document.getElementById('search').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            nodes.forEach(node => {
+                const nodeElement = document.getElementById(`node-${node.id}`);
+                if (node.label.toLowerCase().includes(searchTerm)) {
+                    nodeElement.style.display = 'block';
+                } else {
+                    nodeElement.style.display = 'none';
+                }
+            });
+        });
+        
+        // 创建节点列表
+        const nodeList = document.getElementById('node-list');
+        nodes.forEach(node => {
+            const nodeElement = document.createElement('div');
+            nodeElement.className = 'node-item';
+            nodeElement.id = `node-${node.id}`;
+            nodeElement.textContent = node.label;
+            nodeElement.addEventListener('click', function() {
+                // 聚焦到该节点
+                network.focus(node.id, {
+                    scale: 1.5,
+                    animation: { duration: 1000, easingFunction: 'easeInOutQuad' }
+                });
+                
+                // 高亮显示
+                document.querySelectorAll('.node-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+            nodeList.appendChild(nodeElement);
+        });
+        
+        // 网络图事件
+        network.on("click", function(params) {
+            if (params.nodes.length > 0) {
+                const nodeId = params.nodes[0];
+                
+                // 更新节点列表高亮
+                document.querySelectorAll('.node-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                document.getElementById(`node-${nodeId}`).classList.add('active');
+            }
+        });
+        
+        // 双击节点事件
+        network.on("doubleClick", function(params) {
+            if (params.nodes.length > 0) {
+                const nodeId = params.nodes[0];
+                network.focus(nodeId, {
+                    scale: 1.5,
+                    animation: { duration: 1000, easingFunction: 'easeInOutQuad' }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
