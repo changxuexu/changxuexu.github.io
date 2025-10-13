@@ -3737,7 +3737,9 @@ var data_Java = {
       second_tit: "文档",
       second_child: [
         { name: "java_官网", href: "https://www.oracle.com/cn/java", title: "" },
+        { name: "javase文档", href: "https://docs.oracle.com/javase/8/docs/api", title: "" },
         { name: "Spring_官网", href: "https://spring.io", title: "" },
+        { name: "SpringBoot文档", href: " https://docs.spring.io/spring-boot/docs/current/reference/html", title: "" },
         { name: "Tomcat_官网", href: "https://tomcat.apache.org", title: "" },
         { name: "maven_官网", href: "https://maven.apache.org", title: "" },
         { name: "maven_包搜索", href: "https://mvnrepository.com", title: "" },
