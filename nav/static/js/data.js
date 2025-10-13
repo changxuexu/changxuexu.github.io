@@ -3185,6 +3185,11 @@ var data_jsplug = {
           title: "版本追溯 github",
         },
         {
+          name: "Cool Unix",
+          href: "https://unix.cool-js.com",
+          title: "基于 Uni-App X 的 Vue3 组合式开发框架，内置了UI 组件库、Service 请求、Tailwind CSS、支持多主题切换与国际化。兼容h5、Android、iOS、鸿蒙、微信小程序"
+        },
+        {
           name: "Wot Design Uni",
           href: "https://github.com/Moonofweisheng/wot-design-uni",
           href_spare: "",
