@@ -122,9 +122,34 @@ var data_daily = {
         { name: "混元_腾讯", href: "https://hunyuan.tencent.com", title: "" },
         { name: "豆包_抖音", href: "https://www.doubao.com", title: "" },
         { name: "文心一言_百度", href: "https://yiyan.baidu.com", title: "" },
-		{ name: "AI工具集", href: "https://ai-bot.cn", title: "" },
+		    { name: "AI工具集", href: "https://ai-bot.cn", title: "" },
         { name: "AIGC", href: "https://www.aigc.cn", title: "AI工具集" },
       ],
+    },
+    {
+      second_tit: "AI产品",
+      second_child: [
+        {
+          name: "Figma Make",
+          href: "https://www.figma.com/make",
+          title: "免费，构建功能原型",
+        },
+        {
+          name: "Miro Prototyping",
+          href: "https://miro.com/ai/prototype-ai",
+          title: "AI 原型生成",
+        },
+        {
+          name: "UX Pilot",
+          href: "https://uxpilot.ai/ai-prototype-generator",
+          title: "AI 原型／UI 设计",
+        },
+        {
+          name: "Banani",
+          href: "https://www.banani.co",
+          title: "文本提示转 UI／原型",
+        }
+      ]
     },
     {
       second_tit: "便利工具",
