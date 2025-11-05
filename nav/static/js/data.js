@@ -673,7 +673,7 @@ var data_svelte = {
       second_child: [
         {
           name: "Svelte文档",
-          href: "https://www.sveltejs.cn/",
+          href: "https://svelte.dev",
           title:
             "传统框架如 React 和 Vue 在浏览器中需要做大量的工作，而 Svelte 在 构建/编译阶段 将你的应用程序转换为理想的 JavaScript 应用，而不是在 运行阶段 解释应用程序的代码",
         },
