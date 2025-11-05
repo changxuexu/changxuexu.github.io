@@ -109,6 +109,11 @@ var data_daily = {
           title: "",
         },
         {
+          name: "lmarena",
+          href: "https://lmarena.ai",
+          title: "人工智能模型集合",
+        },
+        {
           name: "通义千问_阿里",
           href: "https://qianwen.aliyun.com",
           title: "",
