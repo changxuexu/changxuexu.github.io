@@ -140,6 +140,11 @@ var data_daily = {
           title: "免费，构建功能原型",
         },
         {
+          name: "UXBot",
+          href: "https://www.uxbot.cn",
+          title: "构建功能原型",
+        },
+        {
           name: "Miro Prototyping",
           href: "https://miro.com/ai/prototype-ai",
           title: "AI 原型生成",
@@ -3343,6 +3348,36 @@ var data_jsplug = {
           name: "Ant Design X",
           href: "https://ant-design-x.antgroup.com/index-cn",
           title: "React PC"
+        }
+      ]
+    },
+    {
+      second_tit: "文档编辑",
+      second_child: [
+        {
+          name: "tldraw",
+          href: "https://github.com/tldraw/tldraw",
+          title: "开源白板框架"
+        },
+        {
+          name: "excalidraw",
+          href: "https://github.com/excalidraw/excalidraw",
+          title: "手绘风原型工具"
+        },
+        {
+          name: "React Flow",
+          href: "https://reactflow.dev",
+          title: "可视化节点/流程编辑"
+        },
+        {
+          name: "Grida Figma",
+          href: "https://grida.co",
+          title: "风格编辑器"
+        },
+        {
+          name: "vue-konva",
+          href: "https://github.com/konvajs/vue-konva",
+          title: "Vue Konva 用于使用 Vue 绘制复杂的画布图形。"
         }
       ]
     }
