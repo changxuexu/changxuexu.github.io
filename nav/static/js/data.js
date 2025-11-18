@@ -3060,6 +3060,11 @@ var data_jsplug = {
           title:
             "通过JavaScript生成.docx文件的组件,可以同时被运用于Node端和浏览器端",
         },
+		{
+          name: "Jimp",
+          href: "https://jimp-dev.github.io/jimp",
+          title: "Jimp 的主要功能是让你能够在不依赖任何外部工具或服务器的情况下，直接在 JavaScript 环境中（比如 Node.js 服务器端，或者通过工具在 浏览器 中）对图像进行各种操作:调整尺寸、裁剪、旋转和翻转、颜色处理(亮度/对比度/色相/饱和度/灰度化/反色)、添加效果(模糊/像素化/晕影暗角)、绘制文字和形状、图像合成-水印、读写图像",
+        },
         {
           name: "compressorjs",
           href: "https://www.npmjs.com/package/compressorjs",
