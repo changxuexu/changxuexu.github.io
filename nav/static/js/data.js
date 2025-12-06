@@ -886,6 +886,11 @@ var data_Redis = {
       second_tit: "文档资料",
       second_child: [
         { name: "redis官网", href: "https://redis.io", title: "" },
+		{
+          name: "redis中文网",
+          href: "https://www.redis.net.cn",
+          title: "",
+        },
         {
           name: "redis菜鸟教程",
           href: "https://www.runoob.com/redis/redis-tutorial.html",
@@ -893,16 +898,31 @@ var data_Redis = {
         },
         { name: "redis命令参考", href: "http://doc.redisfans.com", title: "" },
         {
-          name: "安装包下载",
-          href: "https://github.com/tporadowski/redis/releases",
-          title: "",
-        },
-        { name: "redis在线测试", href: "https://try.redis.io", title: "" },
-        {
           name: "redis源码",
           href: "https://github.com/redis/redis",
           title: "",
         },
+		
+		{
+          name: "Another Redis Desktop Manager 客户端图形工具",
+          href: "https://gitee.com/qishibo/AnotherRedisDesktopManager/releases",
+          title: "",
+        },
+		{
+          name: "安装包下载",
+          href: "https://github.com/tporadowski/redis/releases",
+          title: "",
+        },
+		{
+          name: "window下载Redis-x64-3.2.100.zip",
+          href: "https://github.com/microsoftarchive/redis/releases",
+          title: "",
+        },
+		{
+          name: "Linux下载redis-4.0.0.tar.gz",
+          href: "https://download.redis.io/releases",
+          title: "",
+        }
       ],
     },
   ],
