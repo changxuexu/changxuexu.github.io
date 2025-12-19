@@ -192,8 +192,16 @@ var data_daily = {
       second_child: [
         { name: "菜鸟教程", href: "https://www.runoob.com", title: "" },
         { name: "w3cschool", href: "https://www.w3cschool.cn", title: "" },
-        { name: "w3schools", href: "https://www.w3ccoo.com", title: "" },
-        { name: "TIOBE", href: "https://www.tiobe.com/tiobe-index", title: "编程语言排行" }
+        { name: "w3schools", href: "https://www.w3ccoo.com", title: "" }
+      ]
+    },
+    {
+      second_tit: "top趋势",
+      second_child: [
+        { name: "TIOBE", href: "https://www.tiobe.com/tiobe-index", title: "编程语言排行" },
+        { name: "npmStat", href: "https://npm-stat.com", title: "不同包的趋势对比: 每日 / 每周 / 每月下载量" },
+        { name: "npmTrends", href: "https://npmtrends.com", title: "对比多个 npm 包流行度" },
+        { name: "bestofjs", href: "https://bestofjs.org", title: "前端生态排行榜" },
       ]
     }
   ],
@@ -2725,6 +2733,11 @@ var data_jsplug = {
           title: "用于在Web浏览器中创建3D地球和地图应用，应用于地理信息系统(GIS)、智慧城市、仿真模拟等领域。",
         },
         {
+          name: "motion-v",
+          href: "https://www.npmjs.com/package/motion-v",
+          title: "体积小, 使用 Web Animations API, 60fps 流畅动画, GPU 加速, 适用vue3的组件",
+        },
+        {
           name: "Anime.js",
           href: "https://animejs.com",
           title: "轻量级,强大API；涵盖CSS，DOM，SVG还有JS的对象，各种带数值属性的东西都可以动起来。",
@@ -3355,6 +3368,41 @@ var data_jsplug = {
           title: "三级地址联动，支持（app）nvue、小程序、H5 ",
         },
       ],
+    },
+    {
+       second_tit: "全文搜索",
+       second_child: [
+        {
+          name: "FlexSearch.js",
+          href: "https://www.npmjs.com/package/flexsearch",
+          title: "高性能:通过预计算索引实现毫秒级响应，支持多线程（Web Worker）和复杂字段权重5。适用场景:专为大数据量（10万+条）设计，适合实时搜索需求5。"
+        },
+        {
+          name:"fuse.js",
+          href:"https://www.npmjs.com/package/fuse.js",
+          title:"算法:基于Bitap算法的模糊搜索，支持拼写容错和多种匹配模式（前缀、后缀、逻辑组合等）7。配置:提供权重控制、结果高亮、最小匹配长度等参数，适合非结构化数据搜索26。轻量级:无依赖，压缩后仅12KB，适合简单场景6。"
+        },
+        {
+          name:"Lunr.js",
+          href:"https://www.npmjs.com/package/lunr",
+          title:"索引机制：基于倒排索引，支持同义词扩展和布尔运算，适合静态网站客户端搜索1。扩展性：需手动构建索引，API简单但功能较基础，不支持模糊匹配1。"
+        },
+        {
+          name:"minisearch",
+          href:"https://www.npmjs.com/package/minisearch",
+          title:"轻量替代：类似Lunr但更轻量，支持前缀搜索和字段权重，适合中小型数据集MCP_3]^。"
+        },
+        {
+          name:"search-index",
+          href:"https://www.npmjs.com/package/search-index",
+          title:"持久化：基于LevelDB的索引存储，支持离线搜索和增量更新，适合需要本地持久化的应用MCP_3]^。"
+        },
+        {
+          name:"js-search",
+          href:"https://www.npmjs.com/package/js-search",
+          title:"简单API：提供链式调用和多种分词器，但功能较为基础，适合快速集成简单搜索MCP_3]^。"
+        },
+      ]
     },
     {
       second_tit: "AI对话组件",
