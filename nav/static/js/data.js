@@ -2119,9 +2119,19 @@ var data_jsplug = {
           title: "拖拽排序(v3)",
         },
         {
+          name: "vue-draggable-resizable",
+          href: "https://www.npmjs.com/package/vue-draggable-next",
+          title: "拖拽移动、调整大小、网格对齐等多种功能，拖拽过程中可以获取位置、大小等信息，在手机等触摸设备上也能正常工作",
+        },
+        {
           name: "NProgress",
           href: "https://www.npmjs.com/package/nprogress",
           title: "页面顶部加载进度条",
+        },
+        {
+          name: "vue-dompurify-html",
+          href: "https://www.npmjs.com/package/vue-dompurify-html",
+          title: "v-html替代方案，安全渲染库,防止XSS攻击script alert('XSS') script img src='x' onerror=alert('XSS')",
         },
         {
           name: "mescroll.js",
@@ -2167,12 +2177,7 @@ var data_jsplug = {
           title:
             "Vue 表单的一站式解决方案:包括您需要的一切——标签、帮助文本、主题支持、验证、从 JSON 生成表单、可访问性、国际化等等！",
         },
-        {
-          name: "vee-validate",
-          href: "https://github.com/logaretm/vee-validate",
-          title:
-            "表单验证库:允许验证输入并以熟悉的声明样式或使用组合函数构建更好的表单UI",
-        },
+        
         {
           name: "vuex-persist",
           href: "https://www.npmjs.com/package/vuex-persist",
@@ -2198,37 +2203,8 @@ var data_jsplug = {
           href: "https://github.com/troisjs/trois",
           title: "基于ThreeJS的Vue3可视化库创建3D效果",
         },
-        {
-          name: "Vue Dropzone",
-          href: "https://rowanwins.github.io/vue-dropzone/docs/dist/#/demo",
-          title: "拖放文件上传库",
-        },
-        {
-          name: "VueJS DatePicker",
-          href: "https://github.com/charliekassel/vuejs-datepicker",
-          title: "",
-        },
-        {
-          name: "Vue Switches",
-          href: "https://github.com/drewjbartlett/vue-switches",
-          title: "",
-        },
-        {
-          name: "Vue Color",
-          href: "https://github.com/xiaokaike/vue-color",
-          title: "选择颜色添加",
-        },
-        {
-          name: "vue-circle-slider",
-          href: "https://github.com/devstark-com/vue-circle-slider",
-          title:
-            "线性滑块输入：支持触摸控制，允许你设置最大值/最小值，甚至你还可以控制滑块的步长",
-        },
-        {
-          name: "Vue Phone Number",
-          href: "https://github.com/LouisMazel/vue-phone-number-input",
-          title: "电话号码：有效的国家/地区代码、主题和颜色、电话号码格式",
-        },
+        
+        
         { name: "二维码vue", href: "https://link-to-qr.com", title: "" },
         {
           name: "跨路由动画_vue-starport",
@@ -2252,33 +2228,13 @@ var data_jsplug = {
           title:
             "调整iframe的大小以匹配内容的大小，然后监视iframe以确保其始终是完美的大小。",
         },
-        {
-          name: "v-focus-next",
-          href: "https://npmmirror.com/package/v-focus-next",
-          title:
-            "提示：在表单的某个元素中输入回车符，可以自动聚焦到下一个表单元素，避免了用户通过鼠标来回选中表单元素，大大提升了表单填写的效率和用户体验。",
-        },
-        {
-          name: "vue-next-focus",
-          href: "https://npmmirror.com/package/vue-next-focus?version=0.0.12",
-          title:
-            "提示：在表单的某个元素中输入回车符，可以自动聚焦到下一个表单元素，避免了用户通过鼠标来回选中表单元素，大大提升了表单填写的效率和用户体验。",
-        },
+        
         {
           name: "screenfull",
           href: "https://github.com/sindresorhus/screenfull",
           title: "将页面或任何dom元素置于全屏状态",
         },
-        {
-          name: "vue-best-verify (表单验证)",
-          href: "https://www.npmjs.com/package/vue-best-verify",
-          title: "基于 vue3 的表单验证库，创建这个库的原因是 element-plus antd-vue 等，其内部的表单组件太TMD难用了！结构不透明，api记忆量大，代码结构可读性差，不符合直觉， 强约定代码侵入性高。数据网格和复杂交互的场景（提供了丰富的 API 和插件机制，支持复杂的数据交互逻辑，比如多维分组、拖拽排序等功能，非常适合在 SaaS、管理系统等需要处理复杂数据的场景中使用。）",
-        },
-        {
-          name: "@vorms/core (表单验证)",
-          href: "https://github.com/mini-ghost/vorms",
-          title: "表单验证",
-        },
+        
         {
           name: "sunshine-track",
           href: "https://www.npmjs.com/package/sunshine-track",
@@ -2311,6 +2267,185 @@ var data_jsplug = {
           href: "https://github.com/DavidHDev",
           title:
             "一个包含大量动画 VueJS UI 组件的集合，旨在为您的网页创作增添活力",
+        },
+        {
+          name: "vue-advanced-cropper",
+          href: "https://www.npmjs.com/package/vue-advanced-cropper",
+          title:"图片裁剪,完全支持移动端/桌面端,缩放、旋转、调整图片大小"
+        },
+        {
+          name: "vue-cropper",
+          href: "https://www.npmjs.com/package/vue-cropper",
+          title:"图片裁剪"
+        },
+        {
+          name: "v-viewer",
+          href: "https://www.npmjs.com/package/v-viewer",
+          title:"图片预览"
+        },
+        {
+          name: "vue3-zoomer",
+          href: "https://www.npmjs.com/package/vue3-zoomer",
+          title:"图像查看器组件，放大镜效果，为电商、艺术画廊、信息图及其他需要放大的图片创建惊艳的可缩放图片"
+        },
+        
+        {
+          name: "vue3-context-menu",
+          href: "https://www.npmjs.com/package/@imengyu/vue3-context-menu",
+          title:"右键菜单组件库，支持函数模式与组件模式、内置多套主题、可自定义图标与样式、完善的事件与键盘交互。"
+        },
+        {
+          name: "vue-marquee-text-component",
+          href: "https://www.npmjs.com/package/vue-marquee-text-component",
+          title: "利用 CSS GPU 动画实现高性能的文字滚动效果。它可以轻松地为你的网页添加吸引眼球的滚动文字效果，适用于公告、标语、新闻标题等场景。"
+        },
+        {
+          name: "Epic-Spinners",
+          href: "https://www.npmjs.com/package/epic-spinners",
+          title: "加载动画组件库"
+        },
+        {
+          name: "vue-spinner",
+          href: "https://www.npmjs.com/package/vue-spinner",
+          title: "加载动画组件库"
+        },
+        {
+          name: "vue-loading-overlay",
+          href: "https://www.npmjs.com/package/vue-loading-overlay",
+          title: "加载指示器组件：在数据加载、API 请求等异步操作期间显示美观的加载动画，提升用户体验"
+        },
+      ]
+    },
+    {
+      second_tit: "表单",
+      second_child: [
+        {
+          name: "vue-best-verify(表单验证)",
+          href: "https://www.npmjs.com/package/vue-best-verify",
+          title: "基于 vue3 的表单验证库，创建这个库的原因是 element-plus antd-vue 等，其内部的表单组件太TMD难用了！结构不透明，api记忆量大，代码结构可读性差，不符合直觉， 强约定代码侵入性高。数据网格和复杂交互的场景（提供了丰富的 API 和插件机制，支持复杂的数据交互逻辑，比如多维分组、拖拽排序等功能，非常适合在 SaaS、管理系统等需要处理复杂数据的场景中使用。）",
+        },
+        {
+          name: "@vorms/core(表单验证)",
+          href: "https://github.com/mini-ghost/vorms",
+          title: "表单验证",
+        },
+        {
+          name: "Regle(表单验证)",
+          href: "https://www.npmjs.com/package/@regle/rules",
+          title: "不提供 UI，只专注于校验逻辑，你可以搭配任意组件库或自定义样式。",
+        },
+        {
+          name: "async-validator(表单验证)",
+          href: "https://www.npmjs.com/package/async-validator",
+          title:
+            "表单验证库:异步表单验证库，广泛应用于各类前端框架（如 Vue、React）中。它允许开发者定义灵活的验证规则，支持同步和异步验证，是处理复杂表单验证逻辑的理想选择。",
+        },
+        {
+          name: "vee-validate(表单验证)",
+          href: "https://github.com/logaretm/vee-validate",
+          title:
+            "表单验证库:允许验证输入并以熟悉的声明样式或使用组合函数构建更好的表单UI",
+        },
+        {
+          name: "VueJS DatePicker",
+          href: "https://github.com/charliekassel/vuejs-datepicker",
+          title: "",
+        },
+        {
+          name: "Vue Switches",
+          href: "https://github.com/drewjbartlett/vue-switches",
+          title: "",
+        },
+        {
+          name: "Vue Color",
+          href: "https://github.com/xiaokaike/vue-color",
+          title: "颜色选择器",
+        },
+        {
+          name: "vue3-colorpicker",
+          href: "https://www.npmjs.com/package/vue3-colorpicker",
+          title: "颜色选择器",
+        },
+        {
+          name: "vue-color-kit",
+          href: "https://www.npmjs.com/package/vue-color-kit",
+          title: "颜色选择器：支持浅色/深色主题切换，支持吸管取色，支持自定义颜色格式",
+        },
+        {
+          name: "vue-circle-slider",
+          href: "https://github.com/devstark-com/vue-circle-slider",
+          title:
+            "线性滑块输入：支持触摸控制，允许你设置最大值/最小值，甚至你还可以控制滑块的步长",
+        },
+        {
+          name: "vue-slider-component",
+          href: "https://github.com/devstark-com/vue-circle-slider",
+          title:
+            "滑块组件：场景：音量控制、价格筛选、参数调节",
+        },
+        {
+          name: "Vue Phone Number",
+          href: "https://github.com/LouisMazel/vue-phone-number-input",
+          title: "电话号码：有效的国家/地区代码、主题和颜色、电话号码格式",
+        },
+        {
+          name: "vue-star-rating",
+          href: "https://www.npmjs.com/package/vue-star-rating",
+          title: "星级评分",
+        },
+        {
+          name: "vue-multiselect",
+          href: "https://www.npmjs.com/package/vue-multiselect",
+          title:"下拉选择组件库：支持单选、多选、标签输入、搜索过滤、选项分组显示等多种功能"
+        },
+        {
+          name: "v-focus-next",
+          href: "https://npmmirror.com/package/v-focus-next",
+          title:
+            "提示：在表单的某个元素中输入回车符，可以自动聚焦到下一个表单元素，避免了用户通过鼠标来回选中表单元素，大大提升了表单填写的效率和用户体验。",
+        },
+        {
+          name: "vue-next-focus",
+          href: "https://npmmirror.com/package/vue-next-focus?version=0.0.12",
+          title:
+            "提示：在表单的某个元素中输入回车符，可以自动聚焦到下一个表单元素，避免了用户通过鼠标来回选中表单元素，大大提升了表单填写的效率和用户体验。",
+        },
+        {
+          name: "vue-upload-component",
+          href: "https://www.npmjs.com/package/vue-star-rating",
+          title: "多文件上传,拖拽上传,文件预览,进度显示,文件过滤,响应式设计",
+        },
+        {
+          name: "Vue Dropzone",
+          href: "https://rowanwins.github.io/vue-dropzone/docs/dist/#/demo",
+          title: "拖放文件上传库",
+        },
+      ]
+    },
+    {
+      second_tit: "toast",
+      second_child:[
+        {
+          name: "notivue",
+          href: "https://www.npmjs.com/package/notivue",
+          title: "toast通知",
+        },
+        {
+          name: "vue-toastification",
+          href: "https://www.npmjs.com/package/vue-toastification",
+          title:
+            "添加各种类型的通知消息（toast），如成功、错误、警告、信息等。",
+        },
+        {
+          name: "vue-sonner",
+          href: "https://github.com/xiaoluoboding/vue-sonner",
+          title:"toast通知",
+        },
+        {
+          name: "floating-vue",
+          href: "https://www.npmjs.com/package/floating-vue",
+          title:
+            "Tooltip/Popover/Dropdown 浮动交互",
         }
       ]
     },
@@ -2696,6 +2831,11 @@ var data_jsplug = {
           name: "video.js",
           href: "https://github.com/videojs/video.js",
           title: ""
+        },
+        {
+          name: "Plyr.js",
+          href: "https://www.npmjs.com/package/plyr",
+          title: "支持完全自定义样式,完美适配各种屏幕尺寸,支持 HLS.js、Shaka 和 dash.js,所有格式的事件都标准化处理"
         },
       ],
     },
