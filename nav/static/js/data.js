@@ -2145,6 +2145,11 @@ var data_jsplug = {
           title: "",
         },
         {
+          name: "vue3-touch-events",
+          href: "https://github.com/robinrodricks/vue3-touch-events",
+          title: "移动端：完美支持各种触摸手势；桌面端：自动将触摸事件映射为鼠标事件；点击类：tap、longtap、hold，滑动类：swipe、swipe.left、swipe.right、swipe.top、swipe.bottom；拖拽类：press、drag、drag.once、release；缩放类：zoom、zoom.in、zoom.out",
+        },
+        {
           name: "v-org-tree",
           href: "https://github.com/lison16/v-org-tree",
           title: "组织结构树",
