@@ -716,6 +716,38 @@ var data_ember = {
   ],
 };
 
+var data_solidjs = {
+  super_tit: "solid-js",
+  super_child: [
+    {
+      second_tit: "文档资料",
+      second_child: [
+        {
+          name: "solidjs官网",
+          href: "https://www.solidjs.com",
+          title: "真正的响应式：基于细粒度响应式（类似Svelte）；编译时优化：在构建时分析依赖关系；无虚拟DOM：直接操作真实DOM，更新更高效；JSX语法：React开发者友好；小巧：~7KB，API简洁",
+        },
+      ],
+    },
+  ],
+};
+
+var data_Inferno = {
+  super_tit: "Inferno",
+  super_child: [
+    {
+      second_tit: "文档资料",
+      second_child: [
+        {
+          name: "Inferno官网",
+          href: "https://infernojs.org",
+          title: "极速虚拟DOM：号称最快的虚拟DOM实现；React兼容：部分API与React兼容（Inferno-compat）；极致优化：内存占用小，启动速度快；体积小：~9KB gzip；手动优化API：提供linkEvent等性能优化工具",
+        },
+      ],
+    },
+  ],
+};
+
 var data_jquery = {
   super_tit: "jquery/Zepto",
   super_child: [
@@ -1991,7 +2023,7 @@ var data_javascript = {
           href: "https://www.lodashjs.com",
           title: "javascript工具库",
         },
-		{
+		    {
           name: "sugar",
           href: "https://sugarjs.com",
           title: "javascript工具库",
@@ -2002,10 +2034,15 @@ var data_javascript = {
           title: "js语法兼容降级处理",
         },
         {
+          name: "Vanilla JS",
+          href: "http://vanilla-js.com",
+          title: "Vanilla JS 的框架，号称是 史上最轻量级的 JavaScript 框架；实际上是对前端生态中过度依赖和讨论各类框架、库的一种善意的反讽和调侃。零依赖：无需学习框架API，直接使用浏览器原生能力；极致性能：没有虚拟DOM、框架运行时开销；完全控制：可以精确控制每一行代码的执行；包体积最小：0KB 框架开销；学习成本：只需要掌握原生JS和Web API",
+        },
+        {
           name: "JavaScript代码片段",
           href: "https://www.html.cn/30-seconds-of-code",
           title: "",
-        },
+        }
       ],
     },
     {
@@ -4087,6 +4124,8 @@ var arr_data = [
   data_React,
   data_Angular,
   data_svelte,
+  data_solidjs,
+  data_Inferno,
   data_ember,
   data_Crossplatform,
   data_MicroFrontEnd,
