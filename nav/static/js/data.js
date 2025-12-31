@@ -2920,6 +2920,11 @@ var data_jsplug = {
           title: "体积小, 使用 Web Animations API, 60fps 流畅动画, GPU 加速, 适用vue3的组件",
         },
         {
+          name: "Inspira UI",
+          href: "https://inspira-ui.com",
+          title: "专为 Vue3 设计的动效组件库, 不仅提供了丰富的动画效果，还支持高度自定义和灵活的集成方式，能够轻松实现吸引眼球的用户界面。",
+        },
+        {
           name: "Anime.js",
           href: "https://animejs.com",
           title: "轻量级,强大API；涵盖CSS，DOM，SVG还有JS的对象，各种带数值属性的东西都可以动起来。",
