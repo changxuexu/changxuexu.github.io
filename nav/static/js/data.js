@@ -2462,6 +2462,11 @@ var data_jsplug = {
           href: "https://rowanwins.github.io/vue-dropzone/docs/dist/#/demo",
           title: "拖放文件上传库",
         },
+        {
+          name: "vue3-emoji-picker",
+          href: "https://www.npmjs.com/package/vue3-emoji-picker",
+          title: "表情包选择器",
+        }
       ]
     },
     {
