@@ -522,6 +522,11 @@ var data_vue = {
           href: "https://xiaonuo.vip",
           title: "小诺开源",
         },
+        {
+          name: "JeecgBoot",
+          href: "https://www.jeecg.com",
+          title: "低代码",
+        },
       ],
     },
   ],
@@ -1870,7 +1875,12 @@ var data_study = {
     {
       second_tit: "面试",
       second_child: [
-        { name: "木易杨前端进阶", href: "https://muyiy.cn", title: "" },
+        { 
+          name: "系统进阶", 
+          href: "https://interview.poetries.top", 
+          title: "" 
+        },
+        { name: "木易杨前端进阶", href: "http://muyiy.cn", title: "" },
         {
           name: "Daily-Interview-Question",
           href: "https://github.com/Advanced-Frontend/Daily-Interview-Question/blob/master/datum/summary.md",
@@ -2159,6 +2169,11 @@ var data_jsplug = {
           name: "vue-draggable-resizable",
           href: "https://www.npmjs.com/package/vue-draggable-next",
           title: "拖拽移动、调整大小、网格对齐等多种功能，拖拽过程中可以获取位置、大小等信息，在手机等触摸设备上也能正常工作",
+        },
+        {
+          name: "splitpanes",
+          href: "https://www.npmjs.com/package/splitpanes",
+          title: "Splitter 分隔面板",
         },
         {
           name: "NProgress",
