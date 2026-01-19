@@ -202,6 +202,7 @@ var data_daily = {
         { name: "npmStat", href: "https://npm-stat.com", title: "不同包的趋势对比: 每日 / 每周 / 每月下载量" },
         { name: "npmTrends", href: "https://npmtrends.com", title: "对比多个 npm 包流行度" },
         { name: "bestofjs", href: "https://bestofjs.org", title: "前端生态排行榜" },
+        { name: "JavaScript Rising Stars", href: "https://risingstars.js.org", title: "前端生态排行榜" },
       ]
     }
   ],
@@ -1255,8 +1256,16 @@ var data_Crossplatform = {
     {
       second_tit: "Flutter",
       second_child: [
-        { name: "Flutter官网", href: "https://docs.flutter.dev", title: "" },
-        { name: "Flutter中文", href: "https://flutter.cn", title: "" },
+        { 
+          name: "Flutter官网", 
+          href: "https://docs.flutter.dev", 
+          title: "iOS/Android/Web/桌面" 
+        },
+        { 
+          name: "Flutter中文", 
+          href: "https://flutter.cn", 
+          title: "" 
+        },
         {
           name: "Flutter中文社区",
           href: "https://flutterchina.club",
@@ -1272,6 +1281,11 @@ var data_Crossplatform = {
           href: "https://juejin.im/tag/Flutter?utm_source=flutterchina&utm_medium=word&utm_content=btn&utm_campaign=q3_website",
           title: "",
         },
+        {
+          name: "OpenWebF",
+          href: "https://openwebf.com",
+          title: "在 Flutter 里运行 React、Vue、Svelte 和 Tailwind。构建原生应用，直接访问整个 Flutter 生态系统。",
+        },
       ],
     },
     {
@@ -1280,7 +1294,7 @@ var data_Crossplatform = {
         {
           name: "uni-app文档",
           href: "https://uniapp.dcloud.net.cn/",
-          title: "",
+          title: "小程序/H5/App",
         },
         {
           name: "uni-app官网案例",
@@ -1303,6 +1317,12 @@ var data_Crossplatform = {
     {
       second_tit: "其他",
       second_child: [
+        {
+          name: "lynx",
+          href: "https://lynxjs.org/zh/index.html",
+          title:
+            "字节，享受 iOS，Android，鸿蒙, Web 原生渲染，或选择在移动和桌面端达到像素级一致的自渲染。核心：C++核心；",
+        },
         {
           name: "Taro",
           href: "https://taro.jd.com/",
@@ -1331,18 +1351,51 @@ var data_Crossplatform = {
           title: "腾讯开放支持iOS、Android、Web,支持react/vue",
         },
         {
+          name: "Expo",
+          href: "https://expo.dev",
+          title: "iOS、Android， 基于 React Native",
+        },
+        {
+          name: "Valdi",
+          href: "https://github.com/Snapchat/Valdi",
+          title: "Valdi框架采用声明式的TypeScript编写UI，能够直接编译成iOS、Android和macOS的原生视图，无需Web视图或JavaScript桥接，从而提供了真正的原生性能。",
+        }
+      ],
+    },
+    {
+      second_tit: "桌面",
+      second_child: [
+        {
           name: "Electron",
           href: "https://www.electronjs.org/",
-          title: "使用 JavaScript，HTML 和 CSS 构建跨平台的桌面应用程序",
+          title: "核心技术:Chromium + Node.js; 前端 UI:HTML/CSS/JS 任意框架;应用体积:大（通常 80–150MB+）",
+        },
+        {
+          name: "electron-vite",
+          href: "https://cn.electron-vite.org",
+          title: "",
         },
         {
           name: "electron-vue",
           href: "https://simulatedgreg.gitbooks.io/electron-vue/content/cn",
           title: "",
         },
-        { name: "Tauri", href: "https://tauri.app/zh/", title: "构建桌面应用" },
-        { name: "PakePlus", href: "https://github.com/Sjj1024/PakePlus", title: "将任意网页、Vue、React 等项目快速打包为轻量级（小于 5MB）的多端桌面应用和手机应用，仅需几分钟。" },
-      ],
+        {
+          name: "Tauri", 
+          href: "https://tauri.app/zh/", 
+          title: "核心技术:操作系统 WebView + Rust; 前端 UI:HTML/CSS/JS 任意框架;应用体积:非常小（≈3–10MB）" 
+        },
+        {
+          name: "Wails",
+          href: "https://wails.io/zh-Hans",
+          title: "核心技术:OS WebView + Go; 前端 UI:HTML/CSS/JS 任意框架;应用体积:小（<20MB）",
+        },
+        { 
+          name: "PakePlus", 
+          href: "https://github.com/Sjj1024/PakePlus", 
+          title: "将任意网页、Vue、React 等项目快速打包为轻量级（小于 5MB）的多端桌面应用和手机应用，仅需几分钟。" 
+        }
+      ]
     },
     {
       second_tit: "安卓",
@@ -2370,6 +2423,11 @@ var data_jsplug = {
           name: "vue-loading-overlay",
           href: "https://www.npmjs.com/package/vue-loading-overlay",
           title: "加载指示器组件：在数据加载、API 请求等异步操作期间显示美观的加载动画，提升用户体验"
+        },
+        {
+          name: "vue3-json-viewer",
+          href: "https://www.npmjs.com/package/vue3-json-viewer",
+          title: "JSON 可视化组件"
         },
       ]
     },
