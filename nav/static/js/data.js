@@ -2169,6 +2169,16 @@ var data_jsplug = {
       second_tit: "Vue常用",
       second_child: [
         {
+          name: "shadcn-vue",
+          href: "https://shadcn-vue.com",
+          title: "基于 Vue 3 和 Tailwind CSS 构建的、可自由定制的高质量 UI 组件库,它不是作为一个 node_module 来“安装”，而是将组件的源码“添加”到你的项目里，从而让你获得完全的所有权和控制权。",
+        },
+        {
+          name: "Elevenlabs UI Vue",
+          href: "https://github.com/vuepont/elevenlabs-ui-vue",
+          title: "ElevenLabs UI Vue 提供预构建的、可定制的 Vue 组件，专为智能代理和音频应用而设计，包括 Orb 图标、波形图、语音代理、音频播放器等等。通过 CLI，您可以轻松地将这些组件添加到您的 Vue 和 Nuxt 项目中。",
+        },
+        {
           name: "snabbdom_vdom",
           href: "https://github.com/snabbdom/snabbdom",
           title: "虚拟DOM库,可用于学习、理解虚拟dom",
