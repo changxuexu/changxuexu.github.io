@@ -140,6 +140,11 @@ var data_daily = {
           title: "免费，构建功能原型",
         },
         {
+          name: "Figma Make",
+          href: "https://stitch.withgoogle.com",
+          title: "免费，构建功能原型",
+        },
+        {
           name: "UXBot",
           href: "https://www.uxbot.cn",
           title: "构建功能原型",
