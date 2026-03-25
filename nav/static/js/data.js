@@ -2444,6 +2444,11 @@ var data_jsplug = {
           href: "https://www.npmjs.com/package/vue3-json-viewer",
           title: "JSON 可视化组件"
         },
+        {
+          name: "vue3-signature",
+          href: "https://www.npmjs.com/package/vue3-signature",
+          title: "电子签名"
+        }
       ]
     },
     {
