@@ -132,6 +132,19 @@ var data_daily = {
       ],
     },
     {
+      second_tit: "AI Skills",
+      second_child: [
+        {
+          name: "skills.sh",
+          href: "https://skills.sh"
+        },
+        {
+          name: "MiniMax-AI/skills",
+          href: "https://github.com/MiniMax-AI/skills"
+        },
+      ]
+    },
+    {
       second_tit: "AI产品",
       second_child: [
         {
@@ -2652,6 +2665,11 @@ var data_jsplug = {
           name: "spreadjs",
           href: "https://www.grapecity.com.cn/developer/spreadjs",
           title: "纯前端表格组件，具备高性能、跨平台、与 Excel高度兼容的产品特性，支持 Vue、React、Angular、NextJS、Nuxt 等主流前端开发框架，其设计目的是帮助开发者快速实现浏览器中各类 Excel 表格应用，已成功在数据填报、在线表格文档、类 Excel 报表制作与生成、企业预决算、计量检测、实验室管理等领域得到广泛应用，可让您快速具备与飞书、语雀、灵犀文档等同源的表格开发能力。",
+        },
+        {
+          name: "Stk Table Vue",
+          href: "https://www.npmjs.com/package/stk-table-vue",
+          title: "实时大数据、虚拟表格; (高频推送、WebSocket 高频、股票/行情类 UI)",
         }
       ]
     },
