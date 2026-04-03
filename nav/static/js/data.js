@@ -1506,6 +1506,7 @@ var data_tool = {
     {
       second_tit: "产品设计",
       second_child: [
+        { name: "Nano Banana Pro", href: "https://nano.ai586.cn", title: "专业的Al图像创作神器" },
         { name: "在线PS", href: "https://ps.gaoding.com/#/", title: "" },
         { name: "tinypng图片压缩", href: "https://tinypng.com", title: "" },
         { name: "iloveimg图片压缩", href: "https://www.iloveimg.com", title: "图片压缩、去水印、去背景等" },
