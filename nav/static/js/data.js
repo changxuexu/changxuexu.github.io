@@ -3218,6 +3218,11 @@ var data_jsplug = {
           href: "https://www.npmjs.com/package/smoothscroll-polyfill",
           title: "平滑滚动behavior:smooth",
         },
+        {
+          name: "waypoints",
+          href: "https://github.com/imakewebthings/waypoints",
+          title: "滚动到某个元素时轻松地执行函数，无限滚动、粘性元素、内视检测",
+        },
       ],
     },
     {

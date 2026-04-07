@@ -1,5 +1,4 @@
 
-let { reactive, ref, onMounted, watchEffect, toRaw } = Vue
 
 let favicon = new Favico({ animation: "pop", position: 'down' }); // 动态favico.ico
 
@@ -10,7 +9,7 @@ const option = {
   data() {
     return {
       arr_data,
-      scrolltimer: null,
+      scrollraf: null,  //scroll requestAnimationFrame ID
       resizetimer: null,
       totoptimer: null,
       currentfloor: '',   //当前楼层
@@ -22,9 +21,9 @@ const option = {
   },
   computed: {
     arr_super_tit() {
-      let arr_data = this.arr_data
-      if (arr_data.length) {
-        return arr_data.map(item => { return item.super_tit })
+      const data = this.arr_data
+      if (data.length) {
+        return data.map(item => { return item.super_tit })
       } else {
         return []
       }
@@ -67,21 +66,17 @@ const option = {
         window.addEventListener('resize', this.resizehandle)
       })
     },
-    pointermovehandle(e){
+    async pointermovehandle(e){
       const pos1 = { x: e.clientX, y: e.clientY }
       this.$refs.dotfollow1.style.transform = `translate(${pos1.x}px, ${pos1.y}px)`
-      this.delayedpositionValue(pos1,150).then(pos2 => {
-        this.$refs.dotfollow2.style.transform = `translate(${pos2.x}px, ${pos2.y}px)`
-        this.delayedpositionValue(pos2,150).then(pos3 => {
-          this.$refs.dotfollow3.style.transform = `translate(${pos3.x}px, ${pos3.y}px)`
-          this.delayedpositionValue(pos3,150).then(pos4 => {
-            this.$refs.dotfollow4.style.transform = `translate(${pos4.x}px, ${pos4.y}px)`
-            this.delayedpositionValue(pos4,150).then(pos5 => {
-              this.$refs.dotfollow5.style.transform = `translate(${pos5.x}px, ${pos5.y}px)`
-            })
-          })
-        })
-      })
+      const pos2 = await this.delayedpositionValue(pos1, 150)
+      this.$refs.dotfollow2.style.transform = `translate(${pos2.x}px, ${pos2.y}px)`
+      const pos3 = await this.delayedpositionValue(pos2, 150)
+      this.$refs.dotfollow3.style.transform = `translate(${pos3.x}px, ${pos3.y}px)`
+      const pos4 = await this.delayedpositionValue(pos3, 150)
+      this.$refs.dotfollow4.style.transform = `translate(${pos4.x}px, ${pos4.y}px)`
+      const pos5 = await this.delayedpositionValue(pos4, 150)
+      this.$refs.dotfollow5.style.transform = `translate(${pos5.x}px, ${pos5.y}px)`
     },
     // 相当于存储历史数据，历史dom复现
     delayedpositionValue(value, delay){
@@ -102,7 +97,8 @@ const option = {
           let arr_flooritem = this.$refs.flooritem
           arr_flooritem.length && arr_flooritem.forEach((item, idx) => { temp.push(item.offsetTop - offsetY) });
           temp.forEach((item, idx, arr) => {
-            if (arr[idx] <= scrollTop && arr[idx + 1] >= scrollTop) {
+            const nextOffset = idx < arr.length - 1 ? arr[idx + 1] : Infinity
+            if (arr[idx] <= scrollTop && nextOffset >= scrollTop) {
               this.currentfloor = `element_super_${idx + 1}`
               this._navscrollToTop(idx)
             }
@@ -118,7 +114,6 @@ const option = {
         this.totopback()
 
         this._updateCounter()
-
       }, 20)
     },
     showsidebarhandle() {
@@ -158,7 +153,7 @@ const option = {
           case '-165px 0px':
             totopdom.style.backgroundPosition = '-217px 0px'
             break;
-          case '-165px 0px':
+          case '-217px 0px':
             totopdom.style.backgroundPosition = '-268px 0px'
             break;
           default:
@@ -190,17 +185,18 @@ const option = {
         totopdom.classList.add('rocket-top-none')
         //解决：style属性opacity对animation中的opacity属性不起作用
         totopdom.style.opacity = '' 
-        window.addEventListener("animationend", (e) => {
+        const onAnimEnd = (e) => {
           if (e.animationName == 'rocketPos') {
             if (this.totoptimer) { 
-              // clearInterval(this.totoptimer)
               cancelAnimationFrame(this.totoptimer) 
             }
             totopdom.style.display = 'none'
             totopdom.classList.remove('rocket-top-none')
             totopdom.style.backgroundPosition = '-4px 0px'
+            window.removeEventListener("animationend", onAnimEnd)
           }
-        })
+        }
+        window.addEventListener("animationend", onAnimEnd)
       } else if (scrollTop >= 500) {
         totopdom.style.display = 'block'
         let opacitynum = this._scalenum(this.wscrolline, 0, 100, 0, 1)
@@ -300,6 +296,12 @@ const option = {
     window.removeEventListener('scroll', this.scroll)
     window.removeEventListener('pointermove', this.pointermovehandle)
     window.removeEventListener('resize', this.resizehandle)
+    if (this.totoptimer) {
+      cancelAnimationFrame(this.totoptimer)
+    }
+    if (this.scrollraf) {
+      cancelAnimationFrame(this.scrollraf)
+    }
   }
 }
 
@@ -319,7 +321,7 @@ app.use(VueScrollTo, {
   cancelable: true,
   onStart: (el) => {
     noscroll = true
-    this._active(el)
+    _active(el)
   },
   onDone: (el) => {
     noscroll = false
