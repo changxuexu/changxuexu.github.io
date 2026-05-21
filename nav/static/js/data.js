@@ -142,6 +142,10 @@ var data_daily = {
           name: "MiniMax-AI/skills",
           href: "https://github.com/MiniMax-AI/skills"
         },
+        {
+          name: "SkillHub",
+          href: "https://skillhub.cn"
+        },
       ]
     },
     {
@@ -153,9 +157,9 @@ var data_daily = {
           title: "免费，构建功能原型",
         },
         {
-          name: "Figma Make",
+          name: "Stitch",
           href: "https://stitch.withgoogle.com",
-          title: "免费，构建功能原型",
+          title: "免费，构建功能原型google",
         },
         {
           name: "UXBot",
@@ -1506,7 +1510,8 @@ var data_tool = {
     {
       second_tit: "产品设计",
       second_child: [
-        { name: "Nano Banana Pro", href: "https://nano.ai586.cn", title: "专业的Al图像创作神器" },
+        { name: "Nano Banana Pro", href: "https://nano.ai586.cn", title: "专业的AI图像、视频创作神器" },
+        { name: "即梦", href: "https://jimeng.jianying.com", title: "专业的AI图像、视频创作神器" },
         { name: "在线PS", href: "https://ps.gaoding.com/#/", title: "" },
         { name: "tinypng图片压缩", href: "https://tinypng.com", title: "" },
         { name: "iloveimg图片压缩", href: "https://www.iloveimg.com", title: "图片压缩、去水印、去背景等" },
@@ -2457,14 +2462,10 @@ var data_jsplug = {
           name: "vue3-json-viewer",
           href: "https://www.npmjs.com/package/vue3-json-viewer",
           title: "JSON 可视化组件"
-        },
-        {
-          name: "vue3-signature",
-          href: "https://www.npmjs.com/package/vue3-signature",
-          title: "电子签名"
         }
       ]
     },
+    
     {
       second_tit: "表单",
       second_child: [
@@ -2689,6 +2690,11 @@ var data_jsplug = {
           title:"支持多种文件(docx、excel、pdf、pptx)【预览】的vue组件库，支持vue2/3。也支持非Vue框架的预览。"
         },
         {
+          name: "@flyfish-group/file-viewer3",
+          href: "https://www.npmjs.com/package/@flyfish-group/file-viewer3",
+          title:"支持多种文件(docx、excel、pdf、pptx)【预览】的vue组件库，支持vue2/3"
+        },
+        {
           name: "docx-preview",
           href: "https://www.npmjs.com/package/docx-preview",
           title:"用于在网页或应用程序中预览 Microsoft Word (.docx) 文档"
@@ -2707,6 +2713,21 @@ var data_jsplug = {
           name: "kkfileview",
           href: "https://github.com/kekingcn/kkFileView",
           title: "一个强大的在线文件预览和编辑控件，可以支持内网使用，同时也支持多人协同编辑。麻烦点：需要后端部署",
+        }
+      ]
+    },
+    {
+      second_tit: "电子签",
+      second_child: [
+        {
+          name: "vue3-signature",
+          href: "https://www.npmjs.com/package/vue3-signature",
+          title: "电子签名"
+        },
+        {
+          name: "vue3-signature-pad",
+          href: "https://www.npmjs.com/package/vue3-signature-pad",
+          title: "使用: https://mp.weixin.qq.com/s/DPrQE17q3mS6kaLvlneItA"
         }
       ]
     },
@@ -3141,6 +3162,11 @@ var data_jsplug = {
       second_tit: "滚动",
       second_child: [
         {
+          name: "ScrollMagic",
+          href: "https://www.npmjs.com/package/scrollmagic",
+          title: "ScrollMagic 可以帮助您轻松地对用户当前的滚动位置做出反应。ScrollMagic 支持多种动画框架(GSAP、 VelocityJS) ，可用于实现动画效果。",
+        },
+        {
           name: "Pagepiling.js",
           href: "https://github.com/alvarotrigo/pagePiling.js",
           title: "全屏一页滚动",
@@ -3452,6 +3478,11 @@ var data_jsplug = {
           href: "",
           title: "jsdiff + diff2html 文件差异对比以及高亮区分",
         },
+        {
+          name: "translate.js",
+          href: "https://gitee.com/mail_osc/translate",
+          title: "AI i18n，两行js实现html全自动翻译；交给AI，无需改动页面、无语言配置文件、无API Key、对SEO友好！",
+        },
       ],
     },
     {
@@ -3558,6 +3589,12 @@ var data_jsplug = {
           href: "https://uiadmin.net/uview-plus",
           href_spare: "",
           title: "全面兼容nvue的uni-app生态框架",
+        },
+        {
+          name: "uview-ultra【x】",
+          href: "https://uview-ultra.lingyun.net",
+          href_spare: "",
+          title: "uview-ultra v4版本，是uni-app-x生态框架，基于uview-plus v3升级而来，最大化保持uview的API兼容性。",
         },
         {
           name: "Cool Uni",
