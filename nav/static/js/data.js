@@ -109,6 +109,11 @@ var data_daily = {
           title: "",
         },
         {
+          name: "kimi",
+          href: "https://www.kimi.com",
+          title: "",
+        },
+        {
           name: "lmarena",
           href: "https://lmarena.ai",
           title: "人工智能模型集合",
