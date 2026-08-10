@@ -2718,9 +2718,19 @@ var data_jsplug = {
             "SheetJS（通常指其核心库 xlsx）用于处理 Excel 和其他电子表格文件（如  .xlsx, .xls, .xlsb, .xlsm .csv, .txt, .ods）读取/写入格式；无需依赖后端：纯前端即可完成文件解析和生成。支持浏览器、Node.js、Deno、React Native、Electron 等环境。教程：https://juejin.cn/post/6844903672523161613",
         },
         {
+          name: "open-file-viewer",
+          href: "https://github.com/xushanpei/open-file-viewer",
+          title:"轻量、统一的前端预览容器，强调一个容器预览所有文件;但复杂格式（如CAD、3D）官方明确表示是基础预览和持续增强; @open-file-viewer/vue"
+        },
+        {
+          name: "Flyfish File Viewer",
+          href: "https://github.com/flyfish-dev/file-viewer",
+          title:"支持达 208 种 格式，其中对Office、CAD、3D等复杂格式有专门的解析链路; @file-viewer/vue3"
+        },
+        {
           name: "vue-office",
           href: "https://github.com/501351981/vue-office",
-          title:"支持多种文件(docx、excel、pdf、pptx)【预览】的vue组件库，支持vue2/3。也支持非Vue框架的预览。"
+          title:"支持多种文件(docx、excel、pdf、pptx)【预览】的vue组件库，支持vue2/3。也支持非Vue框架的预览。缺点：不支持doc"
         },
         {
           name: "@flyfish-group/file-viewer3",
@@ -2731,6 +2741,11 @@ var data_jsplug = {
           name: "docx-preview",
           href: "https://www.npmjs.com/package/docx-preview",
           title:"用于在网页或应用程序中预览 Microsoft Word (.docx) 文档"
+        },
+        {
+          name: "vue-pdf-embed",
+          href: "https://github.com/hrynko/vue-pdf-embed",
+          title:"预览 PDF"
         },
         {
           name: "onlyOffice",
