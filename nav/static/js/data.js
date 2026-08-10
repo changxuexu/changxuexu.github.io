@@ -2720,17 +2720,17 @@ var data_jsplug = {
         {
           name: "open-file-viewer",
           href: "https://github.com/xushanpei/open-file-viewer",
-          title:"轻量、统一的前端预览容器，强调一个容器预览所有文件;但复杂格式（如CAD、3D）官方明确表示是基础预览和持续增强; @open-file-viewer/vue"
+          title:"【纯前端】轻量、统一的前端预览容器，强调一个容器预览所有文件;但复杂格式（如CAD、3D）官方明确表示是基础预览和持续增强; @open-file-viewer/vue"
         },
         {
           name: "Flyfish File Viewer",
           href: "https://github.com/flyfish-dev/file-viewer",
-          title:"支持达 208 种 格式，其中对Office、CAD、3D等复杂格式有专门的解析链路; @file-viewer/vue3"
+          title:"【纯前端】支持达 208 种 格式，其中对Office、CAD、3D等复杂格式有专门的解析链路; @file-viewer/vue3"
         },
         {
           name: "vue-office",
           href: "https://github.com/501351981/vue-office",
-          title:"支持多种文件(docx、excel、pdf、pptx)【预览】的vue组件库，支持vue2/3。也支持非Vue框架的预览。缺点：不支持doc"
+          title:"【纯前端】支持多种文件(docx、excel、pdf、pptx)【预览】的vue组件库，支持vue2/3。也支持非Vue框架的预览。缺点：不支持doc"
         },
         {
           name: "@flyfish-group/file-viewer3",
@@ -2749,18 +2749,23 @@ var data_jsplug = {
         },
         {
           name: "onlyOffice",
+          href: "https://github.com/basemetas/fileview",
+          title: "【需后端支持】包含独立的预览调度服务(Preview)和文件转换服务(Convert)，通过消息队列解耦，可水平扩展"
+        },
+        {
+          name: "onlyOffice",
           href: "https://api.onlyoffice.com/zh-CN/",
-          title:"可以实现【在线预览和编辑】 文档（Word）、表格（Excel）、幻灯片（PPT）。支持内网部署，并且可以实现多人协同编辑。提供 iOS/Android App，可查看和编辑文档"
+          title:"【需后端支持】可以实现【在线预览和编辑】 文档（Word）、表格（Excel）、幻灯片（PPT）。支持内网部署，并且可以实现多人协同编辑。提供 iOS/Android App，可查看和编辑文档"
         },
         {
           name: "Office Online",
           href: "https://www.office.com/",
-          title:"微软的 Office Online 插件来实现，可在线预览也支持多人协同编辑，也无需安装，自动保存，这样看是很符合领导的需求了,但是他的文件有暴露风险（公司文件密级特别高，我可不想吃免费饭）"
+          title:"【需后端支持】微软的 Office Online 插件来实现，可在线预览也支持多人协同编辑，也无需安装，自动保存，这样看是很符合领导的需求了,但是他的文件有暴露风险（公司文件密级特别高，我可不想吃免费饭）"
         },
         {
           name: "kkfileview",
           href: "https://github.com/kekingcn/kkFileView",
-          title: "一个强大的在线文件预览和编辑控件，可以支持内网使用，同时也支持多人协同编辑。麻烦点：需要后端部署",
+          title: "【需后端支持】一个强大的在线文件预览和编辑控件，可以支持内网使用，同时也支持多人协同编辑。",
         }
       ]
     },
