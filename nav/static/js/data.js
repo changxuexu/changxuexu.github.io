@@ -3604,7 +3604,7 @@ var data_jsplug = {
         },
         {
           name: "uview-plus vue3",
-          href: "https://uiadmin.net/uview-plus",
+          href: "https://uview-plus.jiangruyi.com",
           href_spare: "",
           title: "全面兼容nvue的uni-app生态框架",
         },
