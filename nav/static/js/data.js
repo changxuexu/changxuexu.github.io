@@ -2583,6 +2583,34 @@ var data_jsplug = {
       ]
     },
     {
+      second_tit: "时间",
+      second_child:[
+        {
+          name: "momentjs",
+          href: "http://momentjs.cn",
+          title: "日期时间处理类库",
+        },
+        {
+          name: "Day.js",
+          href: "https://dayjs.gitee.io/zh-CN",
+          title:
+            "【轻量极简流派】是一个轻量的处理时间和日期的 JavaScript 库，和 Moment.js 的 API 设计保持完全一样",
+        },
+        {
+          name: "date-fns",
+          href: "https://www.npmjs.com/package/date-fns",
+          title:
+            "【函数式流派】对现代打包工具（如 Webpack、Vite）非常友好，支持 Tree Shaking,打包体积可控，支持在浏览器和 Node.js 中使用",
+        },
+        {
+          name: "FullCalendar",
+          href: "https://github.com/fullcalendar/fullcalendar",
+          title:
+            "日历功能：@fullcalendar/interaction：提供点击、触摸、拖动交互功能。@fullcalendar/daygrid：提供每月、每日和每周的日历视图。@fullcalendar/timegrid：提供时间网格视图。@fullcalendar/list：提供简化的列表视图。@fullcalendar/vue3：支持 Vue3。@fullcalendar/vue：支持 Vue2。@fullcalendar/angular：支持 Angular 组件。@fullcalendar/react：支持 React 组件。",
+        },
+      ]
+    },
+    {
       second_tit: "toast",
       second_child:[
         {
@@ -3256,6 +3284,7 @@ var data_jsplug = {
         },
       ],
     },
+    
     {
       second_tit: "其他",
       second_child: [
@@ -3281,23 +3310,7 @@ var data_jsplug = {
           href: "https://masonry.desandro.com",
           title: "瀑布流",
         },
-        {
-          name: "momentjs",
-          href: "http://momentjs.cn",
-          title: "日期时间处理类库",
-        },
-        {
-          name: "Day.js",
-          href: "https://dayjs.gitee.io/zh-CN",
-          title:
-            "是一个轻量的处理时间和日期的 JavaScript 库，和 Moment.js 的 API 设计保持完全一样",
-        },
-        {
-          name: "FullCalendar",
-          href: "https://github.com/fullcalendar/fullcalendar",
-          title:
-            "日历功能：@fullcalendar/interaction：提供点击、触摸、拖动交互功能。@fullcalendar/daygrid：提供每月、每日和每周的日历视图。@fullcalendar/timegrid：提供时间网格视图。@fullcalendar/list：提供简化的列表视图。@fullcalendar/vue3：支持 Vue3。@fullcalendar/vue：支持 Vue2。@fullcalendar/angular：支持 Angular 组件。@fullcalendar/react：支持 React 组件。",
-        },
+        
         {
           name: "DHTMLX Scheduler",
           href: "https://www.npmjs.com/package/@ryancavanaugh/dhtmlxscheduler",
