@@ -1311,7 +1311,7 @@ var data_Crossplatform = {
         {
           name: "OpenWebF",
           href: "https://openwebf.com",
-          title: "在 Flutter 里运行 React、Vue、Svelte 和 Tailwind。构建原生应用，直接访问整个 Flutter 生态系统。",
+          title: "在 Flutter 里运行 React、Vue、Svelte 和 Tailwind。（Vue/React -> WebF -> Flutter）构建原生应用，直接访问整个 Flutter 生态系统。",
         },
       ],
     },
@@ -1349,6 +1349,11 @@ var data_Crossplatform = {
           href: "https://lynxjs.org/zh/index.html",
           title:
             "字节，享受 iOS，Android，鸿蒙, Web 原生渲染，或选择在移动和桌面端达到像素级一致的自渲染。核心：C++核心；",
+        },
+        {
+          name: "NativeScript-Vue3",
+          href: "https://nativescript-vue.org/",
+          title: ""
         },
         {
           name: "Taro",
@@ -2113,7 +2118,12 @@ var data_javascript = {
         {
           name: "Lodash",
           href: "https://www.lodashjs.com",
-          title: "javascript工具库",
+          title: "javascript工具库，CommonJS (使用 require 和 module.exports)",
+        },
+        {
+          name: "lodash-es",
+          href: "https://www.npmjs.com/package/lodash-es",
+          title: "javascript工具库，ES Module (使用 import 和 export) ，支持Tree Shaking",
         },
 		    {
           name: "sugar",
@@ -2578,6 +2588,11 @@ var data_jsplug = {
         {
           name: "vue3-emoji-picker",
           href: "https://www.npmjs.com/package/vue3-emoji-picker",
+          title: "表情包选择器",
+        },
+        {
+          name: "emoji-picker-element",
+          href: "https://github.com/nolanlawson/emoji-picker-element",
           title: "表情包选择器",
         }
       ]
