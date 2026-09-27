@@ -192,6 +192,7 @@ var data_daily = {
       second_tit: "便利工具",
       second_child: [
         { name: "菜鸟工具", href: "https://c.runoob.com", title: "" },
+		{ name: "JSON解析工具", href: "https://www.sojson.com", title: "JSON工具、解密加密、正则生成、前端工具、开发文档等" },
         { name: "cxy521", href: "http://www.cxy521.com", title: "" },
         { name: "LearnKu论坛", href: "https://learnku.com/", title: "" },
         { name: "书栈网", href: "https://www.bookstack.cn", title: "" },
