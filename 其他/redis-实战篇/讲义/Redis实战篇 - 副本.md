@@ -68,7 +68,7 @@
 
 ![1653060337562](.\Redis实战篇.assets\1653060337562.png)
 
-#### 1.1.5 运行前端项目
+#### 1.1.5、运行前端项目
 
 ![1653060588190](.\Redis实战篇.assets\1653060588190.png)
 
@@ -110,7 +110,7 @@
 
 ```java
     @Override
-    public Result sendCode(String phone, HttpSession session) {
+    public c sendCode(String phone, HttpSession session) {
         // 1.校验手机号
         if (RegexUtils.isPhoneInvalid(phone)) {
             // 2.如果不符合，返回错误信息
