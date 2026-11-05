@@ -4336,6 +4336,11 @@ var data_Java = {
           href: "https://pagehelper.github.io",
           title: "分页插件",
         },
+        {
+          name: "Hutool",
+          href: "https://doc.hutool.cn",
+          title: "类似前端JavaScript 生态中的Lodash库。Hutool是一个小而全的Java工具类库，通过静态方法封装，降低相关API的学习成本，除了基础工具（字符串、日期、集合），它还封装了 JSON 解析、HTTP 客户端、加密解密、JDBC/数据库操作、Excel/Word 操作、定时任务等偏向“组件级”的功能。",
+        },
       ],
     },
   ],
