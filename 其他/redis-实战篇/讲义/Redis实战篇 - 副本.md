@@ -189,14 +189,19 @@ public Result login(LoginFormDTO loginForm, HttpSession session) {
     }
 
     // 7.保存用户信息到 redis中
+    
     // 7.1.随机生成token，作为登录令牌
     String token = UUID.randomUUID().toString(true);
+    
     // 7.2.将User对象转为HashMap存储
     UserDTO userDTO = BeanUtil.copyProperties(user, UserDTO.class);
+    
+    // ？？？？？确保每一个值为String
     Map<String, Object> userMap = BeanUtil.beanToMap(userDTO, new HashMap<>(),
             CopyOptions.create()
                     .setIgnoreNullValue(true)
                     .setFieldValueEditor((fieldName, fieldValue) -> fieldValue.toString()));
+    
     // 7.3.存储
     String tokenKey = LOGIN_USER_KEY + token;
     stringRedisTemplate.opsForHash().putAll(tokenKey, userMap);
@@ -228,7 +233,8 @@ public Result login(LoginFormDTO loginForm, HttpSession session) {
 
 ```java
 public class RefreshTokenInterceptor implements HandlerInterceptor {
-
+	
+    // 为啥这块不能用@aut注入？？？？？
     private StringRedisTemplate stringRedisTemplate;
 
     public RefreshTokenInterceptor(StringRedisTemplate stringRedisTemplate) {
@@ -244,7 +250,7 @@ public class RefreshTokenInterceptor implements HandlerInterceptor {
         }
         // 2.基于TOKEN获取redis中的用户
         String key  = LOGIN_USER_KEY + token;
-        Map<Object, Object> userMap = stringRedisTemplate.opsForHash().entries(key);
+        Map<Object, Object> userMap = stringRedisTemplate.opsForHash().entries(key); // ？？？
         // 3.判断用户是否存在
         if (userMap.isEmpty()) {
             return true;
